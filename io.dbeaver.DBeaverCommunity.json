@@ -84,8 +84,8 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://github.com/dbeaver/dbeaver/releases/download/5.2.4/dbeaver-ce-5.2.4-linux.gtk.x86_64.tar.gz",
-                    "sha256": "f7f27c8b8fb2481d26f3ad89b43f8dff4f85d5c2b7793a4f3f279ba34bc68bff"
+                    "url": "https://github.com/dbeaver/dbeaver/releases/download/5.2.5/dbeaver-ce-5.2.5-linux.gtk.x86_64.tar.gz",
+                    "sha256": "b581a8348d587577f58671ff6cf467a83114a2c3f03412474f11e625b07c4f76"
                 }
             ]
         }
