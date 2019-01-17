@@ -2,7 +2,7 @@
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
-    <metadata_license>ALS</metadata_license>
+    <metadata_license>Apache-2.0</metadata_license>
     <project_license>LicenseRef=https://dbeaver.io/files/dbeaver_license.txt</project_license>
     <name>DBeaver Community</name>
     <url type="homepage">https://dbeaver.io</url>
@@ -30,6 +30,7 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="5.3.2" date="2019-01-07"/>
         <release version="5.3.1" date="2018-12-23"/>
         <release version="5.3.0" date="2018-12-09"/>
         <release version="5.2.5" date="2018-11-18"/>
