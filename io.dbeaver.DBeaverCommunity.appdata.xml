@@ -38,54 +38,40 @@
                     <li>Content editor (XML, JSON): contents formatting was added (Ctrl+Shift+F)</li>
                     <li>Charts: copy image to clipboard action was added</li>
                     <li>SQL editor:</li>
-                    <ul>
-                        <li>Morph to delimited text action was fixed (spaces processing)</li>
-                        <li>Delete file action was added in tab context menu</li>
-                        <li>Intelligent bracket auto-close was improved</li>
-                        <li>Variables resolution was fixed (mixed letters case)</li>
-                        <li>Script Save As in non-UTF encoding was fixed</li>
-                        <li>Files delete: keep local history by default</li>
-                        <li>Statistics panel rendering was fixed</li>
-                    </ul>
+                    <li>Morph to delimited text action was fixed (spaces processing)</li>
+                    <li>Delete file action was added in tab context menu</li>
+                    <li>Intelligent bracket auto-close was improved</li>
+                    <li>Variables resolution was fixed (mixed letters case)</li>
+                    <li>Script Save As in non-UTF encoding was fixed</li>
+                    <li>Files delete: keep local history by default</li>
+                    <li>Statistics panel rendering was fixed</li>
                     <li>Data editor:</li>
-                    <ul>
-                        <li>JSON auto-format was fixed (null values)</li>
-                        <li>Standalone editor of NULL values was fixed</li>
-                        <li>Date-time editor in native format was fixed</li>
-                        <li>Plaintext renderer was fixed (extra spaces)</li>
-                    </ul>
+                    <li>JSON auto-format was fixed (null values)</li>
+                    <li>Standalone editor of NULL values was fixed</li>
+                    <li>Date-time editor in native format was fixed</li>
+                    <li>Plaintext renderer was fixed (extra spaces)</li>
                     <li>SSH tunnel: keyboard-interactive AND publickey auth support was added</li>
                     <li>Open resources in embedded text editor support was added</li>
                     <li>Dark theme support was improved</li>
                     <li>Tips of the day dialog font was fixed (HighDPI)</li>
                     <li>PostgreSQL:</li>
-                    <ul>
-                        <li>Arrays editor was fixed (new array create)</li>
-                        <li>Indexes statistics was fixed (rel size)</li>
-                        <li>Table dependencies info was added</li>
-                    </ul>
+                    <li>Arrays editor was fixed (new array create)</li>
+                    <li>Indexes statistics was fixed (rel size)</li>
+                    <li>Table dependencies info was added</li>
                     <li>SQL Server:</li>
-                    <ul>
-                        <li>SQL errors processing was fixed (error inside stored procedures)</li>
-                    </ul>
+                    <li>SQL errors processing was fixed (error inside stored procedures)</li>
                     <li>Oracle:</li>
-                    <ul>
-                        <li>Objects search was fixed (synonyms resolution)</li>
-                        <li>Procedures/packages compile was fixed (trailing delimiter, log error position)</li>
-                    </ul>
+                    <li>Objects search was fixed (synonyms resolution)</li>
+                    <li>Procedures/packages compile was fixed (trailing delimiter, log error position)</li>
                     <li>CockroachDB:</li>
-                    <ul>
-                        <li>Database schema browser was fixed (aggregate functions, rules)</li>
-                        <li>Permissions reading was fixed (CRDB style)</li>
-                    </ul>
+                    <li>Database schema browser was fixed (aggregate functions, rules)</li>
+                    <li>Permissions reading was fixed (CRDB style)</li>
                     <li>MySQL: database dump without DROP statement option was fixed</li>
                     <li>Firebird: sequences metadata reading was fixed</li>
                     <li>Sybase:</li>
-                    <ul>
-                        <li>Stored procedure reading was fixed (multiple databases)</li>
-                        <li>Query processing was fixed (trailing semicolon issue)</li>
-                        <li>Synonyms tab removed</li>
-                    </ul>
+                    <li>Stored procedure reading was fixed (multiple databases)</li>
+                    <li>Query processing was fixed (trailing semicolon issue)</li>
+                    <li>Synonyms tab removed</li>
                     <li>Many minor UI bugfixes</li>
                 </ul>
             </description>
