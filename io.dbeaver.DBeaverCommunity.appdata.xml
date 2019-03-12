@@ -30,6 +30,44 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.0.0" date="2019-03-10">
+            <description>
+                DBeaver 6.0 is our new major release.
+                <ul>
+                    <li>Navigator:</li>
+                    <li>Filters were fixed for multi-database drivers (PostgreSQL, SQL Server)</li>
+                    <li>Folders management was improved (move, drag-n-drop, etc)</li>
+                    <li>Scripts ordering was fixed</li>
+                    <li>Data view:</li>
+                    <li>Multiple cells editor was fixed (performance)</li>
+                    <li>Plain text presentation was improved</li>
+                    <li>Context menus were fixed</li>
+                    <li>PostgreSQL:</li>
+                    <li>Views dependencies tab was added</li>
+                    <li>Composite data types rendering and editing was fixed</li>
+                    <li>GIS data types rendering was fixed</li>
+                    <li>Table columns collation support was added</li>
+                    <li>Geometry type and SRID are shown in DDL</li>
+                    <li>Support of triggers delete was added</li>
+                    <li>SQL Server:</li>
+                    <li>Tables DDL generation was improved</li>
+                    <li>Column default values render was fixed</li>
+                    <li>Sybase procedures loading was fixed</li>
+                    <li>BigQuery: error position discovery was added</li>
+                    <li>Generic driver: JDBC URL</li>
+                    <li>Dashboards rendering was fixed</li>
+                    <li>ERD: rendering was fixed (IDEF1X compatibility)</li>
+                    <li>Tools editor opening was fixed (sessions, locks)</li>
+                    <li>CSV import: support of custom data/tme format was added</li>
+                    <li>SQL editor colors were updated for dark theme</li>
+                    <li>Multiple shortcuts were fixed</li>
+                    <li>CrateDB driver was added</li>
+                    <li>Elasticsearch driver was fixed (6.6 compatibility)</li>
+                    <li>Some icons in UI were updated</li>
+                    <li>A lot of minor UI fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="5.3.5" date="2019-02-17">
             <description>
                 <ul>
