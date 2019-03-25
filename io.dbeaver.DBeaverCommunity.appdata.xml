@@ -30,6 +30,28 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.0.1" date="2019-03-25">
+            <description>
+                <ul>
+                    <li>Eclipse 2018-12 is now the default platform</li>
+                    <li>32-bit versions were obsoleted</li>
+                    <li>Charts colors configuration</li>
+                    <li>Navigator resource folders visibility configuration</li>
+                    <li>Mock data: new random texts generators were added</li>
+                    <li>Data editor: inline editor focus handler was fixed</li>
+                    <li>Plaintext format: show Western European characters</li>
+                    <li>Data transfer: new connection close fix</li>
+                    <li>Snowflake: tables and columns comments edit support was added</li>
+                    <li>Oracle:</li>
+                    <li>Session manager now tracks global sessions (RAC)</li>
+                    <li>Procedures/packages save/compile command was fixed</li>
+                    <li>PostgreSQL:</li>
+                    <li>Multi-tenant  databases support was improved</li>
+                    <li>Database description reading was added</li>
+                    <li>MySQL: execution plan build fix</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.0.0" date="2019-03-10">
             <description>
                 DBeaver 6.0 is our new major release.
