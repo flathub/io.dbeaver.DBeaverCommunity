@@ -30,6 +30,54 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="6.0.2" date="2019-04-07">
+            <description>
+                <ul>
+                  <li> Eclipse 2019-03 is now the default platform</li>
+                  <li> Embedded editor activation problem fixed (Linux)</li>
+                  <li> SQL editor:</li>
+                  <li> SQL errors now shown in results panel instead of modal dialog (configurable)</li>
+                  <li> Certain long strings visibility problem was fixed</li>
+                  <li> Auto completion was fixed for CALL/EXEC keywords</li>
+                  <li> Tables/schemas were removed from columns proposals</li>
+                  <li> Context menu was improved (redundant items were removed)</li>
+                  <li> Numerous NPE errors were fixed</li>
+                  <li> Multi-statements scripts formatter was improved (adding statement delimiters)</li>
+                  <li> Database-specific named parameters prefix was added</li>
+                  <li> SQL formatting was fixed</li>
+                  <li> Morph delimited list formatter was fixed (spaces in tokens)</li>
+                  <li> Data editor:</li>
+                  <li> Unnecessary focus changing was fixed</li>
+                  <li> Calc panel: strings/numbers aggregation toggle was added</li>
+                  <li> Data transfer: fetch size was added in export settings (may significantly improve performance)</li>
+                  <li> ERD (custom diagrams):</li>
+                  <li> Additional styles were added for notes (colors, transparency, border, font settings)</li>
+                  <li> Notes now can be connected with entities</li>
+                  <li> Dashboards:</li>
+                  <li> Timeseries dashboards rendering was fixed.</li>
+                  <li> New dashboards extraction model was added (statistics reading by intervals)</li>
+                  <li> Exasol dashboards were added</li>
+                  <li> PostgreSQL:</li>
+                  <li> Alpha version of GIS/spatial data viewer (maps) was added</li>
+                  <li> Explain for queries with parameters was fixed</li>
+                  <li> Database description reading was fixed (PG < 9.4)</li>
+                  <li> Greenplum: tables reading for GP 4.x was fixed</li>
+                  <li> Oracle:</li>
+                  <li> Public synonyms in auto-completion</li>
+                  <li> Session manager now shows instance ID (for clusters)</li>
+                  <li> MySQL/MariaDB:</li>
+                  <li> New database dialog now uses server charset/collation defaults</li>
+                  <li> Native client was updated (problems with dump/restore compatibility)</li>
+                  <li> MS SQL Server/Azure: driver version was updated, support of AD MSI authentication was added</li>
+                  <li> Elasticsearch: metadata reading was fixed (schema/table names escaping)</li>
+                  <li> Pervasive SQL driver configuration was added</li>
+                  <li> MySQL NDB cluster driver configuration was added</li>
+                  <li> Google BigQuery driver was updated</li>
+                  <li> Numerous localization bugs were fixed</li>
+                  <li> Many minor UI bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.0.1" date="2019-03-25">
             <description>
                 <ul>
