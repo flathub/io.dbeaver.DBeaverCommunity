@@ -14,7 +14,7 @@
     <screenshots>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-classic.png</image>
-            <caption>Query Editor</caption>
+            <caption>Query Editor</caption>https://github.com/dbeaver/dbeaver/releases/download/6.0.2/dbeaver-ce-6.0.2-linux.gtk.x86_64.tar.gz
         </screenshot>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-dark.png</image>
@@ -30,6 +30,47 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.0.3" date="2019-04-21">
+            <description>
+                <ul>
+                    <li>- Connection/schema selector toolbar was redesigned</li>
+                    <li>- Create object context menu was redesigned</li>
+                    <li>- Data viewer:</li>
+                    <li>    - Panels UI was redesigned</li>
+                    <li>    - "Copy As" command was added (CSV, HTML, JSON, etc)</li>
+                    <li>    - IN filter UI was improved (previous selection save)</li>
+                    <li>    - Statistics view was improved (proper view of multiline queries)</li>
+                    <li>- SQL editor: auto-indent was fixed</li>
+                    <li>- GIS spatial data viewer beta version (PostgreSQL, MySQL/MariaDB):</li>
+                    <li>    - Viewer panel was redesigned, special results presentation was added</li>
+                    <li>    - Multiple objects viewing support was added</li>
+                    <li>    - Copy/save as picture, print, SRID selector</li>
+                    <li>- Data transfer:</li>
+                    <li>    - Export progress monitoring was fixed</li>
+                    <li>    - Export from custom SQL queries performance was improved (using fetch size)</li>
+                    <li>    - Split output file feature was added</li>
+                    <li>- Reset UI settings menu item was added</li>
+                    <li>- Backup/restore wizards: native client configuration was added in the dialog</li>
+                    <li>- MacOS X installer was updated (JRE version update)</li>
+                    <li>- PostgreSQL:</li>
+                    <li>    - Schema/tables backup wizard was fixed</li>
+                    <li>    - Triggers enable/disable tool was added</li>
+                    <li>- Greenplum: tables reading for GP 4.x was fixed</li>
+                    <li>- SQL Server:</li>
+                    <li>    - Use TOP to limit queries fetch size</li>
+                    <li>    - Dynamic parameters binding bug was fixed</li>
+                    <li>    - Table triggers enable/disable tool was added</li>
+                    <li>    - Support of special characters in object names was added</li>
+                    <li>- Oracle:</li>
+                    <li>    - New config option for metadata reading performance fix</li>
+                    <li>    - Subpartitions browser was added</li>
+                    <li>    - PL/SQL blocks parser was improved</li>
+                    <li>    - Configuration of system views usage was added</li>
+                    <li>    - DDL reading was fixed (problem with string truncate with some driver versions)</li>
+                    <li>- Many minor UI bug fixes    </li>
+                </ul>
+            </description>
+        </release>
         <release version="6.0.2" date="2019-04-07">
             <description>
                 <ul>
