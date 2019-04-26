@@ -30,7 +30,7 @@
         </screenshot>
     </screenshots>
     <releases>
-        <release version="6.0.2" date="2019-04-07">
+        <release version="6.0.3" date="2019-04-21">
             <description>
                 <ul>
                     <li>- Connection/schema selector toolbar was redesigned</li>
@@ -67,7 +67,7 @@
                     <li>    - PL/SQL blocks parser was improved</li>
                     <li>    - Configuration of system views usage was added</li>
                     <li>    - DDL reading was fixed (problem with string truncate with some driver versions)</li>
-                    <li>- Many minor UI bug fixes    </li>                
+                    <li>- Many minor UI bug fixes    </li>
                 </ul>
             </description>
         </release>
