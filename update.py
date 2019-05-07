@@ -5,6 +5,7 @@ import sys
 import subprocess
 import json
 import urllib.request
+import shutil
 import iso8601
 from lxml import etree
 
@@ -25,7 +26,12 @@ if VERSION in data['modules'][-1]['sources'][-1]['url']:
 source_entry = data['modules'][-1]['sources'][-1]
 source_entry['url'] = 'https://github.com/dbeaver/dbeaver/releases/download/' + VERSION + '/dbeaver-ce-' + VERSION + '-linux.gtk.x86_64.tar.gz'
 FILENAME = 'dbeaver-ce-' + VERSION + '-linux.gtk.x86_64.tar.gz'
-subprocess.call(['curl', '-R', '-L', '-o', FILENAME, '-C', '-', source_entry['url']])
+
+print('Downloading ' + FILENAME)
+with urllib.request.urlopen(source_entry['url']) as response, open(FILENAME, 'wb') as out_file:
+    shutil.copyfileobj(response, out_file)
+print('Download complete')
+
 source_entry['sha256'] = subprocess.check_output(['sha256sum', FILENAME]).decode("utf-8").split(None, 1)[0]
 source_entry['size'] = os.path.getsize(FILENAME)
 
