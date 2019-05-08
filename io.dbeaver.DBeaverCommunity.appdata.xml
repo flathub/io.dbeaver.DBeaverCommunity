@@ -30,6 +30,48 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.0.4" date="2019-05-05">
+            <description>
+                <ul>
+                    <li>- Data editor:</li>
+                    <li>    - Value transformers for custom queries and pseudo columns</li>
+                    <li>    - Advanced data coloring configuration</li>
+                    <li>    - Logical entity structure editor</li>
+                    <li>    - Gradient colors for numerical/datetime columns</li>
+                    <li>    - Navigate to FK/references: multiple rows support</li>
+                    <li>    - Extra shortcuts were added</li>
+                    <li>- Spatial (GIS) viewer:</li>
+                    <li>    - CRS (SRID) transformations support was added</li>
+                    <li>    - Inverted coordinates support was added</li>
+                    <li>    - Support of geography data type was added</li>
+                    <li>    - Support of curved geometries was added</li>
+                    <li>    - Open map in browser command</li>
+                    <li>    - Maximum geometry objects limitation was added</li>
+                    <li>    - Numerous bug fixes (tooltips, actions)</li>
+                    <li>- SQL editor:</li>
+                    <li>    - Indentation was fixed (keyword-based indents were disabled)</li>
+                    <li>    - Process @set commands in data export</li>
+                    <li>    - "Format" context menu was fixed</li>
+                    <li>- Schema selector toolbar was fixed (missing database name)</li>
+                    <li>- Global native clients configuration was added</li>
+                    <li>- Shortcuts for connection/schema selectors were fixed</li>
+                    <li>- PostgreSQL:</li>
+                    <li>    - Full schema DDL generation was added</li>
+                    <li>    - Function create was fixed (function body)</li>
+                    <li>    - Trigger create support was added</li>
+                    <li>    - Columns DDL was added</li>
+                    <li>- MySQL: query metadata extraction was fixed (bug with wrong database name)</li>
+                    <li>- Oracle: metadata reading was fixed</li>
+                    <li>- SQL Server:</li>
+                    <li>    - Procedures auto-completion was fixed</li>
+                    <li>    - Support of older Azure versions was added</li>
+                    <li>- Redshift: external tables (spectrum) data reading was fixed</li>
+                    <li>- Clickhouse additional array data type support was added</li>
+                    <li>- Korean localization was added (thanks to Seongbae Chang)</li>
+                    <li>- Many minor UI bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.0.3" date="2019-04-21">
             <description>
                 <ul>
