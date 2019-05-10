@@ -49,8 +49,8 @@ description.text = RELEASEDATA['body']
 parser = etree.XMLParser(remove_comments=False)
 tree = etree.parse(APPDATA, parser=parser)
 releases = tree.find('releases')
-#for child in list(releases):
-#    releases.remove(child)
+for child in list(releases):
+    releases.remove(child)
 release.tail = '\n  '
 releases.append(release)
 tree.write(APPDATA, encoding="utf-8", xml_declaration=True)
