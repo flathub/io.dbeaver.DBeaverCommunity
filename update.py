@@ -42,6 +42,10 @@ release = etree.Element('release', {
     'version': VERSION,
     'date': iso8601.parse_date(RELEASEDATA['published_at']).strftime('%Y-%m-%d')
 })
+
+description = etree.SubElement(release,'description')
+description.text = RELEASEDATA['body']
+
 parser = etree.XMLParser(remove_comments=False)
 tree = etree.parse(APPDATA, parser=parser)
 releases = tree.find('releases')
