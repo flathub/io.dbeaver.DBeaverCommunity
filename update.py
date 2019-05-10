@@ -55,4 +55,6 @@ release.tail = '\n  '
 releases.append(release)
 tree.write(APPDATA, encoding="utf-8", xml_declaration=True)
 
+os.remove(FILENAME)
+
 print("Update done. New version: " + VERSION)
