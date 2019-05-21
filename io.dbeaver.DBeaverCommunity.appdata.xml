@@ -2,8 +2,8 @@
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
-    <metadata_license>Apache-2.0</metadata_license>
-    <project_license>LicenseRef=https://dbeaver.io/files/dbeaver_license.txt</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
     <name>DBeaver Community</name>
     <url type="homepage">https://dbeaver.io</url>
     <summary>Universal Database Manager.</summary>
@@ -14,7 +14,7 @@
     <screenshots>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-classic.png</image>
-            <caption>Query Editor</caption>https://github.com/dbeaver/dbeaver/releases/download/6.0.2/dbeaver-ce-6.0.2-linux.gtk.x86_64.tar.gz
+            <caption>Query Editor</caption>
         </screenshot>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-dark.png</image>
@@ -22,7 +22,7 @@
         </screenshot>
         <screenshot type="default">
             <image>https://dbeaver.io/product/dbeaver-ss-erd.png</image>
-            <caption>ERD</caption>
+            <caption>Entity Relationship Diagram</caption>
         </screenshot>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-mock.png</image>
@@ -30,6 +30,43 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.0.5" date="2019-05-19">
+            <description>
+                <ul>
+                    <li>- Database navigator:</li>
+                    <li>    - Create object menu was improved (no redundant sub-menu)</li>
+                    <li>    - Connection folders creation was fixed</li>
+                    <li>    - Elements coloring was improved (for different connection types)</li>
+                    <li>    - Shortcuts processing was fixed (broken shortcuts after some actions)</li>
+                    <li>    - Table editor tabs activation was fixed</li>
+                    <li>- Columns editor: auto-completion was fixed in drop-downs.</li>
+                    <li>- Data transfer: export from multiple queries was fixed (target file names)</li>
+                    <li>- SQL Editor: SQL formatter was fixed (exp numbers and other minor fixes)</li>
+                    <li>- Spatial data editor:</li>
+                    <li>    - Geography/geometry value editor (plaintext, WKT)</li>
+                    <li>    - Numerous fixes in different SRIDs support</li>
+                    <li>- Oracle: metadata (constraints, foreign keys) reading performance was significantly improved</li>
+                    <li>- PostgreSQL:</li>
+                    <li>    - Multiple query result sets support was added</li>
+                    <li>    - Table partitions information was extended</li>
+                    <li>    - Native database backup was fixed</li>
+                    <li>    - Database creation was fixed (special characters in db name)</li>
+                    <li>    - Sequence rename was fixed</li>
+                    <li>    - Full schema DDL generation was fixed</li>
+                    <li>- Greenplum, Redshift: execution plan explain now supports plaintext format</li>
+                    <li>- SQLite: sample database was updated</li>
+                    <li>- Sybase (12 and older): stored procedures source reading was fixed</li>
+                    <li>- Apache Ignite: identifiers quoting was fixed</li>
+                    <li>- DB2 iSeries: schema reading was fixed</li>
+                    <li>- Extra command line parameters (connection opening)</li>
+                    <li>- Connections import from SQL Developer was fixed</li>
+                    <li>- Windows installer: config files (dbeaver.ini) backup</li>
+                    <li>- Extensions (Office, SVG, etc) installer was fixed</li>
+                    <li>- Checking for multiple DBeaver instances was added</li>
+                    <li>- Many minor UI bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.0.4" date="2019-05-05">
             <description>
                 <ul>
