@@ -2,8 +2,8 @@
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
-    <metadata_license>Apache-2.0</metadata_license>
-    <project_license>LicenseRef=https://dbeaver.io/files/dbeaver_license.txt</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
     <name>DBeaver Community</name>
     <url type="homepage">https://dbeaver.io</url>
     <summary>Universal Database Manager.</summary>
@@ -14,7 +14,7 @@
     <screenshots>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-classic.png</image>
-            <caption>Query Editor</caption>https://github.com/dbeaver/dbeaver/releases/download/6.0.2/dbeaver-ce-6.0.2-linux.gtk.x86_64.tar.gz
+            <caption>Query Editor</caption>
         </screenshot>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-dark.png</image>
@@ -22,7 +22,7 @@
         </screenshot>
         <screenshot type="default">
             <image>https://dbeaver.io/product/dbeaver-ss-erd.png</image>
-            <caption>ERD</caption>
+            <caption>Entity Relationship Diagram</caption>
         </screenshot>
         <screenshot>
             <image>https://dbeaver.io/product/dbeaver-ss-mock.png</image>
