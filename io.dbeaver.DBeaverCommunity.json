@@ -19,7 +19,6 @@
     ],
     "add-extensions": {
       "io.dbeaver.DBeaverCommunity.Client": {
-        "version": "6",
         "directory": "clients",
         "add-ld-path": "lib",
         "merge-dirs": "bin",
