@@ -17,6 +17,17 @@
         "--talk-name=org.freedesktop.Notifications",
         "--filesystem=home"
     ],
+    "add-extensions": {
+      "io.dbeaver.DBeaverCommunity.Client": {
+        "version": "6",
+        "directory": "clients",
+        "add-ld-path": "lib",
+        "merge-dirs": "bin",
+        "subdirectories": true,
+        "no-autodownload": true,
+        "autodelete": true
+      }
+    },
     "modules": [
         {
             "name": "openjdk",
