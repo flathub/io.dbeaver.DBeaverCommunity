@@ -3,21 +3,22 @@
 import os
 import sys
 import subprocess
+import yaml
 import json
 import urllib.request
 import shutil
 import iso8601
 from lxml import etree
 
-MANIFEST = 'io.dbeaver.DBeaverCommunity.json'
+MANIFEST = 'io.dbeaver.DBeaverCommunity.yml'
 APPDATA = 'io.dbeaver.DBeaverCommunity.appdata.xml'
 
 with urllib.request.urlopen('https://api.github.com/repos/dbeaver/dbeaver/releases/latest') as url:
     RELEASEDATA = json.loads(url.read().decode())
     VERSION = RELEASEDATA['tag_name']
 
-with open(MANIFEST, 'r') as json_file:
-    data = json.load(json_file)
+with open(MANIFEST, 'r') as yaml_file:
+    data = yaml.load(yaml_file)
 
 if VERSION in data['modules'][-1]['sources'][-1]['url']:
     print('No update needed. Current version: ' + VERSION)
@@ -35,8 +36,8 @@ print('Download complete')
 source_entry['sha256'] = subprocess.check_output(['sha256sum', FILENAME]).decode("utf-8").split(None, 1)[0]
 source_entry['size'] = os.path.getsize(FILENAME)
 
-with open(MANIFEST, 'w') as json_file:
-    json.dump(data, json_file, indent=4)
+with open(MANIFEST, 'w') as yaml_file:
+    yaml.dump(data, yaml_file)
 
 release = etree.Element('release', {
     'version': VERSION,
