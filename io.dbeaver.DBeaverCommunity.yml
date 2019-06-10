@@ -1,7 +1,7 @@
 app-id: io.dbeaver.DBeaverCommunity
-runtime: org.freedesktop.Platform
-runtime-version: '18.08'
-sdk: org.freedesktop.Sdk
+runtime: org.gnome.Platform
+runtime-version: '3.32'
+sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk9
 command: dbeaver
