@@ -30,6 +30,48 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.1.0" date="2019-06-10">
+            <description>
+                <ul>
+                    <li>New intermediate DBeaver release 6.1.</li>
+                    <li>A lot of performance improvements for data transfer and XLSX format export.</li>
+                    <li>Stable release of geo spatial data viewer, many UI improvements and bug fixes.</li>
+                    <li>- Data viewer:</li>
+                    <li>    - Spreadsheet column-based coloring support was added</li>
+                    <li>    - Copy as HTML now uses html clipboard format</li>
+                    <li>    - Focus loss bug was fixed (MacOS)</li>
+                    <li>- Data transfer:</li>
+                    <li>    - Export to XLSX format: performance was greatly improved</li>
+                    <li>    - Table truncate confirmation was added</li>
+                    <li>    - Plaintext export was fixed (datetime data types formatting)</li>
+                    <li>- SQL editor:</li>
+                    <li>    - SQL execution plan save/load support was added</li>
+                    <li>    - Bug with keywords in comments was fixed</li>
+                    <li>    - Active connection/schema selectors were fixed in the main/context menus</li>
+                    <li>    - Workbench/J formatter was fixed</li>
+                    <li>- ERD diagram: Dark theme support was improved</li>
+                    <li>- Database navigator:</li>
+                    <li>    - New object create context menu redesigned</li>
+                    <li>    - Duplicated nodes bug was fixed</li>
+                    <li>- Spatial viewer:</li>
+                    <li>    - Coordinates inversion was fixed (MySQL)</li>
+                    <li>    - Column SRID and coordinates flip settings are now saved between sessions</li>
+                    <li>- Oracle:</li>
+                    <li>    - Constraints metadata reading was fixed (fixes table editor as well)</li>
+                    <li>    - Indexes DDL reading was added</li>
+                    <li>- PostgreSQL:</li>
+                    <li>    - Backup of "quoted" schemas and tables was fixed</li>
+                    <li>    - Functions' dependencies information was added</li>
+                    <li>    - Struct data types parser was fixed (boolean fields extraction)</li>
+                    <li>- MySQL:</li>
+                    <li>    - BEGIN keyword handler was fixed</li>
+                    <li>    - View DDL was fixed (extra delimiters)</li>
+                    <li>- SQL Server: drop index qury was fixed</li>
+                    <li>- Eclipse plugin installer was fixed (missed bundles)</li>
+                    <li>- Many minor UI bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.0.5" date="2019-05-19">
             <description>
                 <ul>
