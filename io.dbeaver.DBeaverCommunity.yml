@@ -4,7 +4,7 @@ runtime-version: '3.32'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk9
-command: dbeaver
+command: /app/dbeaver/dbeaver
 finish-args:
   - "--share=ipc"
   - "--socket=x11"
@@ -14,6 +14,7 @@ finish-args:
   - "--device=dri"
   - "--talk-name=org.freedesktop.Notifications"
   - "--filesystem=home"
+  - "--env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin"
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
     directory: clients
@@ -34,7 +35,6 @@ modules:
       - rm -rf dbeaver.tar.gz
       - cp -r dbeaver_unpack/dbeaver /app
       - install -d /app/clients/bin
-      - install -Dt /app/bin dbeaver
       - install -Dm644 dbeaver_unpack/dbeaver/dbeaver.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WM_CLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -47,17 +47,13 @@ modules:
       - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Exec /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Exec --set-value='dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Exec --set-value='/app/dbeaver/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
       - for icon_size in 32 48 64 128; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
         install -m644 io.dbeaver.DBeaverCommunity-${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
         done
     sources:
-      - type: script
-        commands:
-          - exec env PATH="$PATH:/app/jre/bin:/app/clients/bin" /app/dbeaver/dbeaver "$@"
-        dest-filename: dbeaver
       - type: file
         path: io.dbeaver.DBeaverCommunity-32.png
       - type: file
