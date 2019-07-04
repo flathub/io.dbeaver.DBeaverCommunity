@@ -30,6 +30,21 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.1.1" date="2019-06-24">
+            <description>
+                <ul>
+                    <li>- We have migrated to Java11 (Windows and MacOS bundled JRE is OpenJDK 11.0.3)</li>
+                    <li>- ERD: diagram refresh fixed (do not re-layout elements)</li>
+                    <li>- ERD: support of zoom with mouse wheel was added</li>
+                    <li>- PostgreSQL: ref cursor data type support was fixed</li>
+                    <li>- Oracle: bootstrap queries execute was fixed</li>
+                    <li>- DB2 for iSeries, DB2 for z/OS: schema list reading was fixed</li>
+                    <li>- SQLite: datetime columns support was fixed</li>
+                    <li>- SAP HANA: triggers support was added (read-only)</li>
+                    <li>- Data views: calc panel was fixed (min/max functions evaluation)</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.1.0" date="2019-06-10">
             <description>
                 <ul>
