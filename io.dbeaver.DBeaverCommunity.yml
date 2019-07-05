@@ -3,7 +3,7 @@ runtime: org.gnome.Platform
 runtime-version: '3.32'
 sdk: org.gnome.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk9
+  - org.freedesktop.Sdk.Extension.openjdk11
 command: /app/dbeaver/dbeaver
 finish-args:
   - "--share=ipc"
@@ -27,7 +27,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - "/usr/lib/sdk/openjdk9/install.sh"
+      - "/usr/lib/sdk/openjdk11/install.sh"
   - name: dbeaver-client
     buildsystem: simple
     build-commands:
