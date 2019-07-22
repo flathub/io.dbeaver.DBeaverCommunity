@@ -30,6 +30,66 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.1.3" date="2019-07-22">
+            <description>
+                <ul>
+                    <li>New project configuration format was implemented. Main advantages:</li>
+                    <li>    - Better security (now we keep user credentials separately)</li>
+                    <li>    - Better support for version control systems (e.g. Git)</li>
+                    <li>    - Now we use standard (OS-specific) directories for configuration location</li>
+                    <li>Major features:</li>
+                    <li>    - Logical foreign keys</li>
+                    <li>    - Data viewer: "References" panel was added (browse values by foreign and reference keys)</li>
+                    <li>    - Network profiles support was added: you may configure SSH/Proxy settings once and reuse them for any number of connections</li>
+                    <li>Other:</li>
+                    <li>    - Connection page was redesigned</li>
+                    <li>    - Data viewer filter panel UI was improved</li>
+                    <li>    - Snowflake: procedures DDL, connection page fix</li>
+                    <li>    - Google Spanned database support was added</li>
+                    <li>    - PostgreSQL: struct/array data types support was fixed</li>
+                    <li>    - MySQL: privileges viewer was fixed (global privileges grant/revoke)</li>
+                    <li>    - DB2 i: procedure list and DDL reading was fixed</li>
+                    <li>    - Many minor UI bugs were fixed</li>
+                </ul>
+            </description>
+        </release>
+        <release version="6.1.2" date="2019-07-07">
+            <description>
+                <ul>
+                    <li>- Git integration:</li>
+                    <li>    - Create projects in remote repositories</li>
+                    <li>    - Pull/commit/push automation from the DBeaver perspective</li>
+                    <li>    - Integrate existing projectys with Git repositories</li>
+                    <li>- Problem with SSH and SSL connections was solved</li>
+                    <li>- Problem with missing legacy character encoding was fixed</li>
+                    <li>- Data editor:</li>
+                    <li>    - "Delete cascade" feature was added</li>
+                    <li>    - Problem with column order was fixed (when result contains multiple columns with the same name)</li>
+                    <li>    - Problem with duplicated values in column filters was fixed</li>
+                    <li>    - "Default" values were added for numbers, strings and booleans</li>
+                    <li>- Data transfer:</li>
+                    <li>    - Export to a single file was fixed</li>
+                    <li>    - TXT format: extra options were added</li>
+                    <li>    - CSV import: timestamp columns parser was fixed</li>
+                    <li>- PostgeSQL:</li>
+                    <li>    - Extensions management was added</li>
+                    <li>    - Partitions DDL was added</li>
+                    <li>    - Partitions create/drop support was added</li>
+                    <li>    - Object description reading was fixed (+ problem with duplicated objects was solved)</li>
+                    <li>    - Complex data types rendering was fixed</li>
+                    <li>    - float4 data type support was fixed (wrong value render)</li>
+                    <li>- Greenplum: ERD renderer was fixed</li>
+                    <li>- Orclele:</li>
+                    <li>    - Problem with read-only tables was fixed (for some Oracle versions)</li>
+                    <li>    - View management: problem with semicolons was fixed</li>
+                    <li>- DB2 for iSeries:</li>
+                    <li>    - Procedures DDL was added</li>
+                    <li>    - Problem with schema list reading  was fixed</li>
+                    <li>- Generic driver (SQLite and others): problem with view create command was fixed</li>
+                    <li>    - Plenty of minor UI bugs were fixed</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.1.1" date="2019-06-24">
             <description>
                 <ul>
