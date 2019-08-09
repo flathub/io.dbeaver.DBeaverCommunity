@@ -30,6 +30,41 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.1.4" date="2019-08-04">
+            <description>
+                <ul>
+                    <li> - Many problems with workspace migration were fixed</li>
+                    <li> - Data viewer:</li>
+                    <li>     - UI look and feel was significantly improved</li>
+                    <li>     - New interface for rows/columns coloring</li>
+                    <li>     - Logical foreign key creation was simplified</li>
+                    <li>     - Many bugs were fixed in References panel rendering</li>
+                    <li>     - Column filters UI was fixed (dups, dictionary reading errors)</li>
+                    <li>     - Unique key detection was fixed (use indexes with nullable columns if no other identifiers found)</li>
+                    <li> - Entiy diagrams: logical foreign keys can be created/deleted right in the diagram editor</li>
+                    <li> - Data transfer: auto-generated (identity) columns handler was added</li>
+                    <li> - DDL generation: now we generate tables DDL according to their foreign keys order</li>
+                    <li> - Geometry viewer: simple (flat) geometry support was added</li>
+                    <li> - Execution log: reading of row count for DML statements was fixed</li>
+                    <li> - SQL Editor:</li>
+                    <li>     - SQL formatter was fixed (DECLARE statements)</li>
+                    <li>     - Copy SQL to Java code was improved (thanks to loro2)</li>
+                    <li> - PostgreSQL:</li>
+                    <li>     - Array data type handler was fixed</li>
+                    <li>     - Indexes metadata reading was fixed</li>
+                    <li>     - Execution plan visualization was fixed for CTE nodes</li>
+                    <li> - SQL Server:</li>
+                    <li>     - Support of identity columns creation was added</li>
+                    <li>     - Session manager was fixed</li>
+                    <li> - Oracle:</li>
+                    <li>     - Scheduled jobs metadata reading was fixed</li>
+                    <li>     - Session management was fixed for RAC mode</li>
+                    <li> - Firebird: views and indexes metadata reading was fixed</li>
+                    <li> - Apache Hive: many bugfixes related to complex (struct/array) data types handling</li>
+                    <li> - Apache Drill: driver was fixed (missing JDK modules were added)</li>
+                    <li> - Many other minor UI bugs were fixed</li>
+                </ul>
+            </description>
         <release version="6.1.3" date="2019-07-22">
             <description>
                 <ul>
