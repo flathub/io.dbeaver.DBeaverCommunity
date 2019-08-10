@@ -2,3 +2,5 @@
 build-dir
 repo
 _build
+venv
+.vscode
