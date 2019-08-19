@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
@@ -30,6 +30,51 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.1.5" date="2019-08-18">
+            <description>
+                <ul>
+                    <li>- Data viewer:</li>
+                    <li>    - Virtual primary/foreign keys editors were enhanced</li>
+                    <li>    - Problem with filters on data refresh was fixed</li>
+                    <li>    - Added confirmation dialog before opened result tabs closing</li>
+                    <li>    - Problem with missing updated row count (in script mode) was fixed</li>
+                    <li>    - References panel now remembers last FK/reference selection</li>
+                    <li>    - Value view panel now supports Find/Replace</li>
+                    <li>    - Float values rendering was fixed (numbers rounding is disabled by default)</li>
+                    <li>- Data transfer:</li>
+                    <li>    - Save of previous target container selections was added</li>
+                    <li>    - Export of tables/queries with complex data types (structs, objects) was improved</li>
+                    <li>- Connection management:</li>
+                    <li>    - Connection permissions config was added (restrictions of data/metadata changes for a particular connection or connection type)</li>
+                    <li>    - Problem with bootstrap queries and auto-commit state save/load was fixed</li>
+                    <li>    - Multi-project support was improved (use selected project for new connections)</li>
+                    <li>    - Support of empty database passwords was added</li>
+                    <li>    - Copy/paste and drag-n-drop connections between different projects was fixed</li>
+                    <li>- Database navigator:</li>
+                    <li>    - Default double-click behavior configuration was added (view properties/data/erd)</li>
+                    <li>    - Object edit dialogs are properly sized now (problem with too small dialog window was fixed)</li>
+                    <li>    - Connection type coloring in the main toolbar is back</li>
+                    <li>    - DBeaver toolbars visibility was fixed (for Eclipse plugin version)</li>
+                    <li>- New DBeaver version automatic downloading (optional) was added</li>
+                    <li>- MySQL:</li>
+                    <li>    - Datetime columns edit was fixed. Problems with timezone were fixed.</li>
+                    <li>    - Legacy MySQL &lt;4 driver was added (again)</li>
+                    <li>- PostgreSQL:</li>
+                    <li>    - Automatic transaction error recovery was added (famous "current transaction is aborted" error)</li>
+                    <li>    - Partition management was added (partition create/drop)</li>
+                    <li>    - Support of VACUUM tool for older PG version was fixed</li>
+                    <li>    - Enum items order was fixed (in metadata editor)</li>
+                    <li>    - Legacy PostgreSQL &lt;= 8 driver was added</li>
+                    <li>- SQL Server: index DDL was improved (now it contains all index properties)</li>
+                    <li>- Redshift: table DDL generation was fixed ("diststyle AUTO" and other improvements)</li>
+                    <li>- Hive: struct/array data types support was added</li>
+                    <li>- Presto: array data types support was fixed</li>
+                    <li>- DB2 i: routine list reading was fixed</li>
+                    <li>- We have migrated to the Eclipse 2019-06 platform (fixes many minor UI bugs on Linux)</li>
+                    <li>- Many other minor bugs were fixed</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.1.4" date="2019-08-04">
             <description>
                 <ul>
@@ -183,287 +228,6 @@
                 </ul>
             </description>
         </release>
-        <release version="6.0.5" date="2019-05-19">
-            <description>
-                <ul>
-                    <li>- Database navigator:</li>
-                    <li>    - Create object menu was improved (no redundant sub-menu)</li>
-                    <li>    - Connection folders creation was fixed</li>
-                    <li>    - Elements coloring was improved (for different connection types)</li>
-                    <li>    - Shortcuts processing was fixed (broken shortcuts after some actions)</li>
-                    <li>    - Table editor tabs activation was fixed</li>
-                    <li>- Columns editor: auto-completion was fixed in drop-downs.</li>
-                    <li>- Data transfer: export from multiple queries was fixed (target file names)</li>
-                    <li>- SQL Editor: SQL formatter was fixed (exp numbers and other minor fixes)</li>
-                    <li>- Spatial data editor:</li>
-                    <li>    - Geography/geometry value editor (plaintext, WKT)</li>
-                    <li>    - Numerous fixes in different SRIDs support</li>
-                    <li>- Oracle: metadata (constraints, foreign keys) reading performance was significantly improved</li>
-                    <li>- PostgreSQL:</li>
-                    <li>    - Multiple query result sets support was added</li>
-                    <li>    - Table partitions information was extended</li>
-                    <li>    - Native database backup was fixed</li>
-                    <li>    - Database creation was fixed (special characters in db name)</li>
-                    <li>    - Sequence rename was fixed</li>
-                    <li>    - Full schema DDL generation was fixed</li>
-                    <li>- Greenplum, Redshift: execution plan explain now supports plaintext format</li>
-                    <li>- SQLite: sample database was updated</li>
-                    <li>- Sybase (12 and older): stored procedures source reading was fixed</li>
-                    <li>- Apache Ignite: identifiers quoting was fixed</li>
-                    <li>- DB2 iSeries: schema reading was fixed</li>
-                    <li>- Extra command line parameters (connection opening)</li>
-                    <li>- Connections import from SQL Developer was fixed</li>
-                    <li>- Windows installer: config files (dbeaver.ini) backup</li>
-                    <li>- Extensions (Office, SVG, etc) installer was fixed</li>
-                    <li>- Checking for multiple DBeaver instances was added</li>
-                    <li>- Many minor UI bug fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.0.4" date="2019-05-05">
-            <description>
-                <ul>
-                    <li>- Data editor:</li>
-                    <li>    - Value transformers for custom queries and pseudo columns</li>
-                    <li>    - Advanced data coloring configuration</li>
-                    <li>    - Logical entity structure editor</li>
-                    <li>    - Gradient colors for numerical/datetime columns</li>
-                    <li>    - Navigate to FK/references: multiple rows support</li>
-                    <li>    - Extra shortcuts were added</li>
-                    <li>- Spatial (GIS) viewer:</li>
-                    <li>    - CRS (SRID) transformations support was added</li>
-                    <li>    - Inverted coordinates support was added</li>
-                    <li>    - Support of geography data type was added</li>
-                    <li>    - Support of curved geometries was added</li>
-                    <li>    - Open map in browser command</li>
-                    <li>    - Maximum geometry objects limitation was added</li>
-                    <li>    - Numerous bug fixes (tooltips, actions)</li>
-                    <li>- SQL editor:</li>
-                    <li>    - Indentation was fixed (keyword-based indents were disabled)</li>
-                    <li>    - Process @set commands in data export</li>
-                    <li>    - "Format" context menu was fixed</li>
-                    <li>- Schema selector toolbar was fixed (missing database name)</li>
-                    <li>- Global native clients configuration was added</li>
-                    <li>- Shortcuts for connection/schema selectors were fixed</li>
-                    <li>- PostgreSQL:</li>
-                    <li>    - Full schema DDL generation was added</li>
-                    <li>    - Function create was fixed (function body)</li>
-                    <li>    - Trigger create support was added</li>
-                    <li>    - Columns DDL was added</li>
-                    <li>- MySQL: query metadata extraction was fixed (bug with wrong database name)</li>
-                    <li>- Oracle: metadata reading was fixed</li>
-                    <li>- SQL Server:</li>
-                    <li>    - Procedures auto-completion was fixed</li>
-                    <li>    - Support of older Azure versions was added</li>
-                    <li>- Redshift: external tables (spectrum) data reading was fixed</li>
-                    <li>- Clickhouse additional array data type support was added</li>
-                    <li>- Korean localization was added (thanks to Seongbae Chang)</li>
-                    <li>- Many minor UI bug fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.0.3" date="2019-04-21">
-            <description>
-                <ul>
-                    <li>- Connection/schema selector toolbar was redesigned</li>
-                    <li>- Create object context menu was redesigned</li>
-                    <li>- Data viewer:</li>
-                    <li>    - Panels UI was redesigned</li>
-                    <li>    - "Copy As" command was added (CSV, HTML, JSON, etc)</li>
-                    <li>    - IN filter UI was improved (previous selection save)</li>
-                    <li>    - Statistics view was improved (proper view of multiline queries)</li>
-                    <li>- SQL editor: auto-indent was fixed</li>
-                    <li>- GIS spatial data viewer beta version (PostgreSQL, MySQL/MariaDB):</li>
-                    <li>    - Viewer panel was redesigned, special results presentation was added</li>
-                    <li>    - Multiple objects viewing support was added</li>
-                    <li>    - Copy/save as picture, print, SRID selector</li>
-                    <li>- Data transfer:</li>
-                    <li>    - Export progress monitoring was fixed</li>
-                    <li>    - Export from custom SQL queries performance was improved (using fetch size)</li>
-                    <li>    - Split output file feature was added</li>
-                    <li>- Reset UI settings menu item was added</li>
-                    <li>- Backup/restore wizards: native client configuration was added in the dialog</li>
-                    <li>- MacOS X installer was updated (JRE version update)</li>
-                    <li>- PostgreSQL:</li>
-                    <li>    - Schema/tables backup wizard was fixed</li>
-                    <li>    - Triggers enable/disable tool was added</li>
-                    <li>- Greenplum: tables reading for GP 4.x was fixed</li>
-                    <li>- SQL Server:</li>
-                    <li>    - Use TOP to limit queries fetch size</li>
-                    <li>    - Dynamic parameters binding bug was fixed</li>
-                    <li>    - Table triggers enable/disable tool was added</li>
-                    <li>    - Support of special characters in object names was added</li>
-                    <li>- Oracle:</li>
-                    <li>    - New config option for metadata reading performance fix</li>
-                    <li>    - Subpartitions browser was added</li>
-                    <li>    - PL/SQL blocks parser was improved</li>
-                    <li>    - Configuration of system views usage was added</li>
-                    <li>    - DDL reading was fixed (problem with string truncate with some driver versions)</li>
-                    <li>- Many minor UI bug fixes    </li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.0.2" date="2019-04-07">
-            <description>
-                <ul>
-                    <li> Eclipse 2019-03 is now the default platform</li>
-                    <li> Embedded editor activation problem fixed (Linux)</li>
-                    <li> SQL editor:</li>
-                    <li> SQL errors now shown in results panel instead of modal dialog (configurable)</li>
-                    <li> Certain long strings visibility problem was fixed</li>
-                    <li> Auto completion was fixed for CALL/EXEC keywords</li>
-                    <li> Tables/schemas were removed from columns proposals</li>
-                    <li> Context menu was improved (redundant items were removed)</li>
-                    <li> Numerous NPE errors were fixed</li>
-                    <li> Multi-statements scripts formatter was improved (adding statement delimiters)</li>
-                    <li> Database-specific named parameters prefix was added</li>
-                    <li> SQL formatting was fixed</li>
-                    <li> Morph delimited list formatter was fixed (spaces in tokens)</li>
-                    <li> Data editor:</li>
-                    <li> Unnecessary focus changing was fixed</li>
-                    <li> Calc panel: strings/numbers aggregation toggle was added</li>
-                    <li> Data transfer: fetch size was added in export settings (may significantly improve performance)</li>
-                    <li> ERD (custom diagrams):</li>
-                    <li> Additional styles were added for notes (colors, transparency, border, font settings)</li>
-                    <li> Notes now can be connected with entities</li>
-                    <li> Dashboards:</li>
-                    <li> Timeseries dashboards rendering was fixed.</li>
-                    <li> New dashboards extraction model was added (statistics reading by intervals)</li>
-                    <li> Exasol dashboards were added</li>
-                    <li> PostgreSQL:</li>
-                    <li> Alpha version of GIS/spatial data viewer (maps) was added</li>
-                    <li> Explain for queries with parameters was fixed</li>
-                    <li> Database description reading was fixed (PG  9.4)</li>
-                    <li> Greenplum: tables reading for GP 4.x was fixed</li>
-                    <li> Oracle:</li>
-                    <li> Public synonyms in auto-completion</li>
-                    <li> Session manager now shows instance ID (for clusters)</li>
-                    <li> MySQL/MariaDB:</li>
-                    <li> New database dialog now uses server charset/collation defaults</li>
-                    <li> Native client was updated (problems with dump/restore compatibility)</li>
-                    <li> MS SQL Server/Azure: driver version was updated, support of AD MSI authentication was added</li>
-                    <li> Elasticsearch: metadata reading was fixed (schema/table names escaping)</li>
-                    <li> Pervasive SQL driver configuration was added</li>
-                    <li> MySQL NDB cluster driver configuration was added</li>
-                    <li> Google BigQuery driver was updated</li>
-                    <li> Numerous localization bugs were fixed</li>
-                    <li> Many minor UI bug fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.0.1" date="2019-03-25">
-            <description>
-                <ul>
-                    <li>Eclipse 2018-12 is now the default platform</li>
-                    <li>32-bit versions were obsoleted</li>
-                    <li>Charts colors configuration</li>
-                    <li>Navigator resource folders visibility configuration</li>
-                    <li>Mock data: new random texts generators were added</li>
-                    <li>Data editor: inline editor focus handler was fixed</li>
-                    <li>Plaintext format: show Western European characters</li>
-                    <li>Data transfer: new connection close fix</li>
-                    <li>Snowflake: tables and columns comments edit support was added</li>
-                    <li>Oracle:</li>
-                    <li>Session manager now tracks global sessions (RAC)</li>
-                    <li>Procedures/packages save/compile command was fixed</li>
-                    <li>PostgreSQL:</li>
-                    <li>Multi-tenant  databases support was improved</li>
-                    <li>Database description reading was added</li>
-                    <li>MySQL: execution plan build fix</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.0.0" date="2019-03-10">
-            <description>
-                DBeaver 6.0 is our new major release.
-                <ul>
-                    <li>Navigator:</li>
-                    <li>Filters were fixed for multi-database drivers (PostgreSQL, SQL Server)</li>
-                    <li>Folders management was improved (move, drag-n-drop, etc)</li>
-                    <li>Scripts ordering was fixed</li>
-                    <li>Data view:</li>
-                    <li>Multiple cells editor was fixed (performance)</li>
-                    <li>Plain text presentation was improved</li>
-                    <li>Context menus were fixed</li>
-                    <li>PostgreSQL:</li>
-                    <li>Views dependencies tab was added</li>
-                    <li>Composite data types rendering and editing was fixed</li>
-                    <li>GIS data types rendering was fixed</li>
-                    <li>Table columns collation support was added</li>
-                    <li>Geometry type and SRID are shown in DDL</li>
-                    <li>Support of triggers delete was added</li>
-                    <li>SQL Server:</li>
-                    <li>Tables DDL generation was improved</li>
-                    <li>Column default values render was fixed</li>
-                    <li>Sybase procedures loading was fixed</li>
-                    <li>BigQuery: error position discovery was added</li>
-                    <li>Generic driver: JDBC URL</li>
-                    <li>Dashboards rendering was fixed</li>
-                    <li>ERD: rendering was fixed (IDEF1X compatibility)</li>
-                    <li>Tools editor opening was fixed (sessions, locks)</li>
-                    <li>CSV import: support of custom data/tme format was added</li>
-                    <li>SQL editor colors were updated for dark theme</li>
-                    <li>Multiple shortcuts were fixed</li>
-                    <li>CrateDB driver was added</li>
-                    <li>Elasticsearch driver was fixed (6.6 compatibility)</li>
-                    <li>Some icons in UI were updated</li>
-                    <li>A lot of minor UI fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="5.3.5" date="2019-02-17">
-            <description>
-                <ul>
-                    <li>Database health monitoring dashboards were added (for PostgreSQL, MySQL and MariaDB)</li>
-                    <li>Bookmarks: navigate to object action was added</li>
-                    <li>Content editor (XML, JSON): contents formatting was added (Ctrl+Shift+F)</li>
-                    <li>Charts: copy image to clipboard action was added</li>
-                    <li>SQL editor:</li>
-                    <li>Morph to delimited text action was fixed (spaces processing)</li>
-                    <li>Delete file action was added in tab context menu</li>
-                    <li>Intelligent bracket auto-close was improved</li>
-                    <li>Variables resolution was fixed (mixed letters case)</li>
-                    <li>Script Save As in non-UTF encoding was fixed</li>
-                    <li>Files delete: keep local history by default</li>
-                    <li>Statistics panel rendering was fixed</li>
-                    <li>Data editor:</li>
-                    <li>JSON auto-format was fixed (null values)</li>
-                    <li>Standalone editor of NULL values was fixed</li>
-                    <li>Date-time editor in native format was fixed</li>
-                    <li>Plaintext renderer was fixed (extra spaces)</li>
-                    <li>SSH tunnel: keyboard-interactive AND publickey auth support was added</li>
-                    <li>Open resources in embedded text editor support was added</li>
-                    <li>Dark theme support was improved</li>
-                    <li>Tips of the day dialog font was fixed (HighDPI)</li>
-                    <li>PostgreSQL:</li>
-                    <li>Arrays editor was fixed (new array create)</li>
-                    <li>Indexes statistics was fixed (rel size)</li>
-                    <li>Table dependencies info was added</li>
-                    <li>SQL Server:</li>
-                    <li>SQL errors processing was fixed (error inside stored procedures)</li>
-                    <li>Oracle:</li>
-                    <li>Objects search was fixed (synonyms resolution)</li>
-                    <li>Procedures/packages compile was fixed (trailing delimiter, log error position)</li>
-                    <li>CockroachDB:</li>
-                    <li>Database schema browser was fixed (aggregate functions, rules)</li>
-                    <li>Permissions reading was fixed (CRDB style)</li>
-                    <li>MySQL: database dump without DROP statement option was fixed</li>
-                    <li>Firebird: sequences metadata reading was fixed</li>
-                    <li>Sybase:</li>
-                    <li>Stored procedure reading was fixed (multiple databases)</li>
-                    <li>Query processing was fixed (trailing semicolon issue)</li>
-                    <li>Synonyms tab removed</li>
-                    <li>Many minor UI bugfixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="5.3.4" date="2019-02-03"/>
-        <release version="5.3.3" date="2019-01-20"/>
-        <release version="5.3.2" date="2019-01-07"/>
-        <release version="5.3.1" date="2018-12-23"/>
-        <release version="5.3.0" date="2018-12-09"/>
-        <release version="5.2.5" date="2018-11-18"/>
-        <release version="5.2.4" date="2018-11-05"/>
-    </releases>
+        </releases>
     <content_rating type="oars-1.1"/>
 </component>

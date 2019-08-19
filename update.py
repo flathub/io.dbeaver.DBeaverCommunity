@@ -36,12 +36,14 @@ print('Download complete')
 
 # using replace, yaml reformats file funny
 
-new_url = 'https://github.com/dbeaver/dbeaver/releases/download/' + VERSION + '/dbeaver-ce-' + VERSION + '-linux.gtk.x86_64.tar.gz'
-new_sha256 = subprocess.check_output(['sha256sum', FILENAME]).decode("utf-8").split(None, 1)[0]
+new_url = 'https://github.com/dbeaver/dbeaver/releases/download/' + \
+    VERSION + '/dbeaver-ce-' + VERSION + '-linux.gtk.x86_64.tar.gz'
+new_sha256 = subprocess.check_output(
+    ['sha256sum', FILENAME]).decode("utf-8").split(None, 1)[0]
 
 # Read in the file
-with open(MANIFEST, 'r') as file :
-  filedata = file.read()
+with open(MANIFEST, 'r') as file:
+    filedata = file.read()
 
 # Replace the target string
 filedata = filedata.replace(old_url, new_url)
@@ -54,21 +56,27 @@ release = etree.Element('release', {
     'version': VERSION,
     'date': iso8601.parse_date(RELEASEDATA['published_at']).strftime('%Y-%m-%d')
 })
-release.tail = '\n'
+release.text = '\n            '
+release.tail = '\n        '
 
-# TODO: add missing elements (ul/li)
-description = etree.SubElement(release,'description')
-description.tail = '\n'
+description = etree.SubElement(release, 'description')
+description.tail = '\n        '
+description.text = '\n                '
 
-ul = etree.SubElement(description,'ul')
-ul.tail = '\n'
+ul = etree.SubElement(description, 'ul')
+ul.tail = '\n            '
+ul.text = '\n                    '
 
 release_notes = textwrap.dedent(RELEASEDATA['body'])
 release_notes = os.linesep.join([s for s in release_notes.splitlines() if s])
 for rn in release_notes.splitlines():
-  li = etree.SubElement(ul, 'li')
-  li.text = rn
-  li.tail = '\n'
+    li = etree.SubElement(ul, 'li')
+    li.text = rn
+    if rn == release_notes.splitlines()[-1]:
+      li.tail = '\n                '
+    else:
+      li.tail = '\n                    '
+
 
 parser = etree.XMLParser(remove_comments=False)
 tree = etree.parse(APPDATA, parser=parser)
@@ -76,11 +84,14 @@ releases = tree.find('releases')
 old_releases = list(releases)[:5]
 for child in list(releases):
     releases.remove(child)
-release.tail = '\n  '
+
+
 releases.append(release)
 for o_r in old_releases:
     releases.append(o_r)
-tree.write(APPDATA, encoding="utf-8", xml_declaration=True, pretty_print=True)
+
+
+tree.write(APPDATA, encoding="utf-8", xml_declaration=True)
 
 os.remove(FILENAME)
 
