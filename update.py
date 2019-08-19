@@ -29,15 +29,16 @@ old_url = data['modules'][-1]['sources'][-1]['url']
 old_sha256 = data['modules'][-1]['sources'][-1]['sha256']
 FILENAME = 'dbeaver-ce-' + VERSION + '-linux.gtk.x86_64.tar.gz'
 
+new_url = 'https://github.com/dbeaver/dbeaver/releases/download/' + \
+    VERSION + '/' + FILENAME
+
 print('Downloading ' + FILENAME)
-with urllib.request.urlopen(old_url) as response, open(FILENAME, 'wb') as out_file:
+with urllib.request.urlopen(new_url) as response, open(FILENAME, 'wb') as out_file:
      shutil.copyfileobj(response, out_file)
 print('Download complete')
 
 # using replace, yaml reformats file funny
 
-new_url = 'https://github.com/dbeaver/dbeaver/releases/download/' + \
-    VERSION + '/dbeaver-ce-' + VERSION + '-linux.gtk.x86_64.tar.gz'
 new_sha256 = subprocess.check_output(
     ['sha256sum', FILENAME]).decode("utf-8").split(None, 1)[0]
 
