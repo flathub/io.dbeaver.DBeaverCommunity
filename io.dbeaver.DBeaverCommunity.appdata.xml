@@ -30,6 +30,52 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.2.0" date="2019-09-08">
+            <description>
+                <ul>
+                    <li>- Data viewer:</li>
+                    <li>    - JSON highlighting/formatting was added</li>
+                    <li>    - Select/deselect rows with alt+click was improved</li>
+                    <li>    - Reference panel now supports virtual foreign keys</li>
+                    <li>    - "Set to default value" action was fixed (for timestamp columns)</li>
+                    <li>    - Dictionary read was fixed</li>
+                    <li>- ERD:</li>
+                    <li>    - Table/schema diagram edit is now supported</li>
+                    <li>    - Virtual foreign keys support was added</li>
+                    <li>- Database navigator:</li>
+                    <li>    - Transactions tracking was improved (+now commit/rollback actions are always active)</li>
+                    <li>    - Cross-project connections copy-paste and drag-n-drop was fixed</li>
+                    <li>    - Navigator tree state save (and restore on restart) was added (thanks to loro2)</li>
+                    <li>    - Columns reordering was fixed</li>
+                    <li>    - Global filters configuration was fixed</li>
+                    <li>    - Connection permissions are now supported in connection type (prod, dev, test)</li>
+                    <li>- SQL editor:</li>
+                    <li>    - Query execution time logging was fixed</li>
+                    <li>    - Generate SQL dialog was improved (FQ names, copy to clipboard)</li>
+                    <li>    - Script selector panel UI was fixed</li>
+                    <li>    - Variables binding now can be skipped for a query/script</li>
+                    <li>    - JDBC fetch size now set for custom SQL queries</li>
+                    <li>- Data export now reuses SQL editor connection</li>
+                    <li>- Metadata editor: columns drop was fixed</li>
+                    <li>- SQL Server:</li>
+                    <li>    - NVARCHAR/NCHAR length calculation was fixed</li>
+                    <li>    - Column default value edit support was added</li>
+                    <li>    - DDL for TEXT/NTEXT data types was fixed</li>
+                    <li>- PostgreSQL:</li>
+                    <li>    - Driver now uses URL template (by default)</li>
+                    <li>    - Column comments for new tables now saved properly</li>
+                    <li>- SQL Server Data Warehouse support was added</li>
+                    <li>- MySQL: bit stream data type support was fixed</li>
+                    <li>- CockroachDB: table metadata read was fixed</li>
+                    <li>- Apache Derby driver was upgraded</li>
+                    <li>- Teradata: multiple resultsets support was added</li>
+                    <li>- Test connection dialog was redesigned</li>
+                    <li>- Driver libraries cache was fixed (re-download of Maven artifacts)</li>
+                    <li>- Widows registry reading was fixed (Java 8 compatibility)</li>
+                    <li>- Many other minor bugs were fixed</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.1.5" date="2019-08-18">
             <description>
                 <ul>
@@ -183,48 +229,6 @@
                     <li>- SQLite: datetime columns support was fixed</li>
                     <li>- SAP HANA: triggers support was added (read-only)</li>
                     <li>- Data views: calc panel was fixed (min/max functions evaluation)</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.1.0" date="2019-06-10">
-            <description>
-                <ul>
-                    <li>New intermediate DBeaver release 6.1.</li>
-                    <li>A lot of performance improvements for data transfer and XLSX format export.</li>
-                    <li>Stable release of geo spatial data viewer, many UI improvements and bug fixes.</li>
-                    <li>- Data viewer:</li>
-                    <li>    - Spreadsheet column-based coloring support was added</li>
-                    <li>    - Copy as HTML now uses html clipboard format</li>
-                    <li>    - Focus loss bug was fixed (MacOS)</li>
-                    <li>- Data transfer:</li>
-                    <li>    - Export to XLSX format: performance was greatly improved</li>
-                    <li>    - Table truncate confirmation was added</li>
-                    <li>    - Plaintext export was fixed (datetime data types formatting)</li>
-                    <li>- SQL editor:</li>
-                    <li>    - SQL execution plan save/load support was added</li>
-                    <li>    - Bug with keywords in comments was fixed</li>
-                    <li>    - Active connection/schema selectors were fixed in the main/context menus</li>
-                    <li>    - Workbench/J formatter was fixed</li>
-                    <li>- ERD diagram: Dark theme support was improved</li>
-                    <li>- Database navigator:</li>
-                    <li>    - New object create context menu redesigned</li>
-                    <li>    - Duplicated nodes bug was fixed</li>
-                    <li>- Spatial viewer:</li>
-                    <li>    - Coordinates inversion was fixed (MySQL)</li>
-                    <li>    - Column SRID and coordinates flip settings are now saved between sessions</li>
-                    <li>- Oracle:</li>
-                    <li>    - Constraints metadata reading was fixed (fixes table editor as well)</li>
-                    <li>    - Indexes DDL reading was added</li>
-                    <li>- PostgreSQL:</li>
-                    <li>    - Backup of "quoted" schemas and tables was fixed</li>
-                    <li>    - Functions' dependencies information was added</li>
-                    <li>    - Struct data types parser was fixed (boolean fields extraction)</li>
-                    <li>- MySQL:</li>
-                    <li>    - BEGIN keyword handler was fixed</li>
-                    <li>    - View DDL was fixed (extra delimiters)</li>
-                    <li>- SQL Server: drop index qury was fixed</li>
-                    <li>- Eclipse plugin installer was fixed (missed bundles)</li>
-                    <li>- Many minor UI bug fixes</li>
                 </ul>
             </description>
         </release>
