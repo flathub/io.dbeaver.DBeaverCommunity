@@ -14,15 +14,19 @@
     <screenshots>
         <screenshot type="default">
             <image>https://i.imgur.com/AiCETK9.png</image>
-            <caption>Query Editor overview</caption>
+            <caption>Query properties overview</caption>
         </screenshot>
         <screenshot>
             <image>https://i.imgur.com/5S6ohkF.png</image>
-            <caption>Query Editor overview</caption>
+            <caption>Query properties overview</caption>
         </screenshot>
         <screenshot>
             <image>https://i.imgur.com/0a4OyvB.png</image>
-            <caption>Query Editor overview</caption>
+            <caption>Query search overview</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://i.imgur.com/neoEtsF.png</image>
+            <caption>ER Diagram Example</caption>
         </screenshot>
     </screenshots>
     <releases>
