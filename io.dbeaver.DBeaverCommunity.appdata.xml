@@ -12,21 +12,21 @@
         <p>This is the official build of DBeaver, packaged into a Flatpak. This repackaging is not supported by DBeaver Community Edition.</p>
     </description>
     <screenshots>
-        <screenshot>
-            <image>https://dbeaver.io/product/dbeaver-ss-classic.png</image>
-            <caption>Query Editor</caption>
-        </screenshot>
-        <screenshot>
-            <image>https://dbeaver.io/product/dbeaver-ss-dark.png</image>
-            <caption>Diagram</caption>
-        </screenshot>
         <screenshot type="default">
-            <image>https://dbeaver.io/product/dbeaver-ss-erd.png</image>
-            <caption>Entity Relationship Diagram</caption>
+            <image>https://i.imgur.com/AiCETK9.png</image>
+            <caption>Query properties overview</caption>
         </screenshot>
         <screenshot>
-            <image>https://dbeaver.io/product/dbeaver-ss-mock.png</image>
-            <caption>Mock Data Generator</caption>
+            <image>https://i.imgur.com/5S6ohkF.png</image>
+            <caption>Query properties overview</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://i.imgur.com/0a4OyvB.png</image>
+            <caption>Query search overview</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://i.imgur.com/neoEtsF.png</image>
+            <caption>ER Diagram Example</caption>
         </screenshot>
     </screenshots>
     <releases>
