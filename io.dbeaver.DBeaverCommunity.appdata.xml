@@ -30,6 +30,35 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.2.1" date="2019-09-22">
+            <description>
+                <ul>
+                    <li>Data viewer:</li>
+                    <li>    Spatial (GIS) presentation improved (tooltips, different shape colors for different columns)</li>
+                    <li>    JSON render performance was significantly improved</li>
+                    <li>    XML value viewer was fixed (proper error handle)</li>
+                    <li>    XML auto-formatting was fixed (extra whitespaces)</li>
+                    <li>    Context menu "Navigate" was added (returned)</li>
+                    <li>    Floating numbers representation was fixed (exponential view)</li>
+                    <li>    Columns transformation settings dialog was fixed </li>
+                    <li>SQL Editor: update row count calculation was fixed</li>
+                    <li>MySQL: date/time formatting was fixed</li>
+                    <li>PostgreSQL: 3D geometry columns render was fixed</li>
+                    <li>SQL Server: problem with identifiers with "go" characters was fixed</li>
+                    <li>Oracle: SQL parser was fixed (CASE WHEN ELSE END)</li>
+                    <li>Connection settings:</li>
+                    <li>    Load multiple data-sources*.json files</li>
+                    <li>    Respect preference changes (timeouts and other) in "Test Connection" dialog.</li>
+                    <li>    Project export/import wizard was fixed </li>
+                    <li>Database metadata search wizard was fixed</li>
+                    <li>New database drivers:</li>
+                    <li>    H2GIS</li>
+                    <li>    Kognitio</li>
+                    <li>    Opendistro (Elasticsearch) </li>
+                    <li>A lot of other minor UI bugs were fixed</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.2.0" date="2019-09-08">
             <description>
                 <ul>
@@ -214,21 +243,6 @@
                     <li>    - Problem with schema list reading  was fixed</li>
                     <li>- Generic driver (SQLite and others): problem with view create command was fixed</li>
                     <li>    - Plenty of minor UI bugs were fixed</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.1.1" date="2019-06-24">
-            <description>
-                <ul>
-                    <li>- We have migrated to Java11 (Windows and MacOS bundled JRE is OpenJDK 11.0.3)</li>
-                    <li>- ERD: diagram refresh fixed (do not re-layout elements)</li>
-                    <li>- ERD: support of zoom with mouse wheel was added</li>
-                    <li>- PostgreSQL: ref cursor data type support was fixed</li>
-                    <li>- Oracle: bootstrap queries execute was fixed</li>
-                    <li>- DB2 for iSeries, DB2 for z/OS: schema list reading was fixed</li>
-                    <li>- SQLite: datetime columns support was fixed</li>
-                    <li>- SAP HANA: triggers support was added (read-only)</li>
-                    <li>- Data views: calc panel was fixed (min/max functions evaluation)</li>
                 </ul>
             </description>
         </release>
