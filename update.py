@@ -72,7 +72,7 @@ release_notes = textwrap.dedent(RELEASEDATA['body'])
 release_notes = os.linesep.join([s for s in release_notes.splitlines() if s])
 for rn in release_notes.splitlines():
     li = etree.SubElement(ul, 'li')
-    li.text = rn
+    li.text = rn.replace("-","",1)
     if rn == release_notes.splitlines()[-1]:
       li.tail = '\n                '
     else:
