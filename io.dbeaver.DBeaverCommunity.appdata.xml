@@ -30,6 +30,42 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.2.2" date="2019-10-06">
+            <description>
+                <ul>
+                    <li> Task management: now all data transfer operations (export/import) can be saved as tasks:</li>
+                    <li>     New task management view</li>
+                    <li>     Running saved tasks in two clicks</li>
+                    <li>     Task execution logs</li>
+                    <li> Data transfer:</li>
+                    <li>     Output file names were fixed</li>
+                    <li>     Previous wizard settings save was fixed</li>
+                    <li>     Many minor improvements</li>
+                    <li> Virtual table columns</li>
+                    <li>     Supported for all tables and views</li>
+                    <li>     Supports expressions, math functions and geometry transformation functions</li>
+                    <li> Virtual foreign keys config save/copy was fixed</li>
+                    <li> Data viewer:</li>
+                    <li>     Hex viewer was added for string content</li>
+                    <li>     Long CLOB text viewer was fixed</li>
+                    <li>     Filter dialog was fixed (orderings, distinct value reading)</li>
+                    <li> SQL editor: parameters binding was improved:</li>
+                    <li>     Show dialog before script execution</li>
+                    <li>     Show current query text</li>
+                    <li> Object editor: new command for expensive properties (row count) reading</li>
+                    <li> SAP HANA - new extension developed (thanks to @kai-morich):</li>
+                    <li>     Driver auto-download</li>
+                    <li>     Sequences, synonyms, triggers</li>
+                    <li>     SQL execution plan</li>
+                    <li>     Object searcher</li>
+                    <li> H2GIS: spatial data viewer was added</li>
+                    <li> Redshift: stored procedures support was added</li>
+                    <li> Yellowbrick: driver config was fixed for better performance</li>
+                    <li> Oracle: view column comments edit support was added</li>
+                    <li> A lot of minor UI fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.2.1" date="2019-09-22">
             <description>
                 <ul>
@@ -206,43 +242,6 @@
                     <li>    - MySQL: privileges viewer was fixed (global privileges grant/revoke)</li>
                     <li>    - DB2 i: procedure list and DDL reading was fixed</li>
                     <li>    - Many minor UI bugs were fixed</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.1.2" date="2019-07-07">
-            <description>
-                <ul>
-                    <li>- Git integration:</li>
-                    <li>    - Create projects in remote repositories</li>
-                    <li>    - Pull/commit/push automation from the DBeaver perspective</li>
-                    <li>    - Integrate existing projectys with Git repositories</li>
-                    <li>- Problem with SSH and SSL connections was solved</li>
-                    <li>- Problem with missing legacy character encoding was fixed</li>
-                    <li>- Data editor:</li>
-                    <li>    - "Delete cascade" feature was added</li>
-                    <li>    - Problem with column order was fixed (when result contains multiple columns with the same name)</li>
-                    <li>    - Problem with duplicated values in column filters was fixed</li>
-                    <li>    - "Default" values were added for numbers, strings and booleans</li>
-                    <li>- Data transfer:</li>
-                    <li>    - Export to a single file was fixed</li>
-                    <li>    - TXT format: extra options were added</li>
-                    <li>    - CSV import: timestamp columns parser was fixed</li>
-                    <li>- PostgeSQL:</li>
-                    <li>    - Extensions management was added</li>
-                    <li>    - Partitions DDL was added</li>
-                    <li>    - Partitions create/drop support was added</li>
-                    <li>    - Object description reading was fixed (+ problem with duplicated objects was solved)</li>
-                    <li>    - Complex data types rendering was fixed</li>
-                    <li>    - float4 data type support was fixed (wrong value render)</li>
-                    <li>- Greenplum: ERD renderer was fixed</li>
-                    <li>- Orclele:</li>
-                    <li>    - Problem with read-only tables was fixed (for some Oracle versions)</li>
-                    <li>    - View management: problem with semicolons was fixed</li>
-                    <li>- DB2 for iSeries:</li>
-                    <li>    - Procedures DDL was added</li>
-                    <li>    - Problem with schema list reading  was fixed</li>
-                    <li>- Generic driver (SQLite and others): problem with view create command was fixed</li>
-                    <li>    - Plenty of minor UI bugs were fixed</li>
                 </ul>
             </description>
         </release>
