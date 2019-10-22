@@ -70,5 +70,5 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/6.2.2/dbeaver-ce-6.2.2-linux.gtk.x86_64.tar.gz
-        sha256: e13ef96a60dabbb73b7e4e57ec68e033ccb62a0bb7ecc6d2ecb4645a2007ea62
+        url: https://github.com/dbeaver/dbeaver/releases/download/6.2.3/dbeaver-ce-6.2.3-linux.gtk.x86_64.tar.gz
+        sha256: 523d7d9079f475f364a10eed7bdb828f7ec643e0bf351234928e7cb53fa59aec
