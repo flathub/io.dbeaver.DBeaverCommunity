@@ -30,6 +30,34 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.2.5" date="2019-11-17">
+            <description>
+                <ul>
+                    <li> Problem with context menu was fixed (on Linux)</li>
+                    <li> Problem with mixed global/connection settings was fixed</li>
+                    <li> SSH: "jump" server support was added (thanks to bsv798)</li>
+                    <li> Data editor:</li>
+                    <li>     Vertical and horizontal scroll position is now saved between data refresh/filter</li>
+                    <li>     Smooth scroll mode is now the default mode (and configurable)</li>
+                    <li>     Large json loading performance was improved</li>
+                    <li>     Ordering by unnamed columns was fixed</li>
+                    <li>     Grouping panel refresh was fixed</li>
+                    <li>     Data export/copy as: use the same connection by default</li>
+                    <li> Object editor: property change and object rename was fixed (right order of DDL queries)</li>
+                    <li> SQL editor: CASE/WHEN formatting was fixed</li>
+                    <li> Oracle: data type editor UI was fixed</li>
+                    <li> MySQL: events DDL was fixed (interval)</li>
+                    <li> PostgreSQL: array-based domain data types handle was fixed</li>
+                    <li> SQL Server: synonyms search was added</li>
+                    <li> HANA: table column create was fixed</li>
+                    <li> Greenplum 6+: table DDL (distribution) was fixed</li>
+                    <li> Full-text search dialog render was fixed</li>
+                    <li> Application startup speed was improved</li>
+                    <li> Several rendering glitches on HighDPI screens were fixed</li>
+                    <li> Many other minor UI fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.2.4" date="2019-11-03">
             <description>
                 <ul>
@@ -189,51 +217,6 @@
                     <li>- Test connection dialog was redesigned</li>
                     <li>- Driver libraries cache was fixed (re-download of Maven artifacts)</li>
                     <li>- Widows registry reading was fixed (Java 8 compatibility)</li>
-                    <li>- Many other minor bugs were fixed</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.1.5" date="2019-08-18">
-            <description>
-                <ul>
-                    <li>- Data viewer:</li>
-                    <li>    - Virtual primary/foreign keys editors were enhanced</li>
-                    <li>    - Problem with filters on data refresh was fixed</li>
-                    <li>    - Added confirmation dialog before opened result tabs closing</li>
-                    <li>    - Problem with missing updated row count (in script mode) was fixed</li>
-                    <li>    - References panel now remembers last FK/reference selection</li>
-                    <li>    - Value view panel now supports Find/Replace</li>
-                    <li>    - Float values rendering was fixed (numbers rounding is disabled by default)</li>
-                    <li>- Data transfer:</li>
-                    <li>    - Save of previous target container selections was added</li>
-                    <li>    - Export of tables/queries with complex data types (structs, objects) was improved</li>
-                    <li>- Connection management:</li>
-                    <li>    - Connection permissions config was added (restrictions of data/metadata changes for a particular connection or connection type)</li>
-                    <li>    - Problem with bootstrap queries and auto-commit state save/load was fixed</li>
-                    <li>    - Multi-project support was improved (use selected project for new connections)</li>
-                    <li>    - Support of empty database passwords was added</li>
-                    <li>    - Copy/paste and drag-n-drop connections between different projects was fixed</li>
-                    <li>- Database navigator:</li>
-                    <li>    - Default double-click behavior configuration was added (view properties/data/erd)</li>
-                    <li>    - Object edit dialogs are properly sized now (problem with too small dialog window was fixed)</li>
-                    <li>    - Connection type coloring in the main toolbar is back</li>
-                    <li>    - DBeaver toolbars visibility was fixed (for Eclipse plugin version)</li>
-                    <li>- New DBeaver version automatic downloading (optional) was added</li>
-                    <li>- MySQL:</li>
-                    <li>    - Datetime columns edit was fixed. Problems with timezone were fixed.</li>
-                    <li>    - Legacy MySQL &lt;4 driver was added (again)</li>
-                    <li>- PostgreSQL:</li>
-                    <li>    - Automatic transaction error recovery was added (famous "current transaction is aborted" error)</li>
-                    <li>    - Partition management was added (partition create/drop)</li>
-                    <li>    - Support of VACUUM tool for older PG version was fixed</li>
-                    <li>    - Enum items order was fixed (in metadata editor)</li>
-                    <li>    - Legacy PostgreSQL &lt;= 8 driver was added</li>
-                    <li>- SQL Server: index DDL was improved (now it contains all index properties)</li>
-                    <li>- Redshift: table DDL generation was fixed ("diststyle AUTO" and other improvements)</li>
-                    <li>- Hive: struct/array data types support was added</li>
-                    <li>- Presto: array data types support was fixed</li>
-                    <li>- DB2 i: routine list reading was fixed</li>
-                    <li>- We have migrated to the Eclipse 2019-06 platform (fixes many minor UI bugs on Linux)</li>
                     <li>- Many other minor bugs were fixed</li>
                 </ul>
             </description>
