@@ -15,8 +15,6 @@ finish-args:
   - "--talk-name=org.freedesktop.Notifications"
   - "--filesystem=home"
   - "--env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin"
-  # Required because the app is nearly unfunctional with a dark theme
-  - "--env=GTK_THEME=Adwaita:light"
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
     directory: clients
