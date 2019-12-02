@@ -30,6 +30,38 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.3.0" date="2019-12-01">
+            <description>
+                <ul>
+                    <li> SSH Agent support was added (pageant and ssh-agent)</li>
+                    <li> Disconnect project/folder/all actions were reworked</li>
+                    <li> Problem with connection properties save was fixed</li>
+                    <li> Connection properties dialogs UI was improved (test connection, password save, pref page search)</li>
+                    <li> Task management UI was improved (task create/save actions in data transfer wizard)</li>
+                    <li> ER diagrams: dummy errors are now suppressed (now they present in log file only)</li>
+                    <li> Legacy Eclipse plugins installation support was added (with hold update site format)</li>
+                    <li> Dark theme support was significantly improved</li>
+                    <li> Auto-commit mode behavior change:</li>
+                    <li>     Toolbar toggle now affects current connection only</li>
+                    <li>     Mode change affects active DBeaver session only</li>
+                    <li> Data export:</li>
+                    <li>     Export from SQL script now supports commands (@set and others)</li>
+                    <li>     Saved settings loading was fixed</li>
+                    <li>     XLSX exporter now respects export configuration</li>
+                    <li> Data editor:</li>
+                    <li>     Fetch size can be changed before query execute</li>
+                    <li>     Spatial viewer now supports different pluggable tiles (mapbox, osm, etc)</li>
+                    <li>     Wrong date/time format now treated as error</li>
+                    <li> SQL Editor: editor layout now saved between DBeaver sessions</li>
+                    <li> Object editor (tables, views, etc) now checks for object name duplicates</li>
+                    <li> Oracle: now we use full type name presentation by default</li>
+                    <li> PostgreSQL: support of extra type aliases and array data types was added</li>
+                    <li> CockroachDB: native CDB data types were added</li>
+                    <li> Impala: active schema change support was added</li>
+                    <li> A lot of minor UI/DB-specific bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.2.5" date="2019-11-17">
             <description>
                 <ul>
@@ -172,52 +204,6 @@
                     <li>    Kognitio</li>
                     <li>    Opendistro (Elasticsearch) </li>
                     <li>A lot of other minor UI bugs were fixed</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.2.0" date="2019-09-08">
-            <description>
-                <ul>
-                    <li>- Data viewer:</li>
-                    <li>    - JSON highlighting/formatting was added</li>
-                    <li>    - Select/deselect rows with alt+click was improved</li>
-                    <li>    - Reference panel now supports virtual foreign keys</li>
-                    <li>    - "Set to default value" action was fixed (for timestamp columns)</li>
-                    <li>    - Dictionary read was fixed</li>
-                    <li>- ERD:</li>
-                    <li>    - Table/schema diagram edit is now supported</li>
-                    <li>    - Virtual foreign keys support was added</li>
-                    <li>- Database navigator:</li>
-                    <li>    - Transactions tracking was improved (+now commit/rollback actions are always active)</li>
-                    <li>    - Cross-project connections copy-paste and drag-n-drop was fixed</li>
-                    <li>    - Navigator tree state save (and restore on restart) was added (thanks to loro2)</li>
-                    <li>    - Columns reordering was fixed</li>
-                    <li>    - Global filters configuration was fixed</li>
-                    <li>    - Connection permissions are now supported in connection type (prod, dev, test)</li>
-                    <li>- SQL editor:</li>
-                    <li>    - Query execution time logging was fixed</li>
-                    <li>    - Generate SQL dialog was improved (FQ names, copy to clipboard)</li>
-                    <li>    - Script selector panel UI was fixed</li>
-                    <li>    - Variables binding now can be skipped for a query/script</li>
-                    <li>    - JDBC fetch size now set for custom SQL queries</li>
-                    <li>- Data export now reuses SQL editor connection</li>
-                    <li>- Metadata editor: columns drop was fixed</li>
-                    <li>- SQL Server:</li>
-                    <li>    - NVARCHAR/NCHAR length calculation was fixed</li>
-                    <li>    - Column default value edit support was added</li>
-                    <li>    - DDL for TEXT/NTEXT data types was fixed</li>
-                    <li>- PostgreSQL:</li>
-                    <li>    - Driver now uses URL template (by default)</li>
-                    <li>    - Column comments for new tables now saved properly</li>
-                    <li>- SQL Server Data Warehouse support was added</li>
-                    <li>- MySQL: bit stream data type support was fixed</li>
-                    <li>- CockroachDB: table metadata read was fixed</li>
-                    <li>- Apache Derby driver was upgraded</li>
-                    <li>- Teradata: multiple resultsets support was added</li>
-                    <li>- Test connection dialog was redesigned</li>
-                    <li>- Driver libraries cache was fixed (re-download of Maven artifacts)</li>
-                    <li>- Widows registry reading was fixed (Java 8 compatibility)</li>
-                    <li>- Many other minor bugs were fixed</li>
                 </ul>
             </description>
         </release>
