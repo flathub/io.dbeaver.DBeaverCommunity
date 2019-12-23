@@ -30,6 +30,47 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.3.1" date="2019-12-22">
+            <description>
+                <ul>
+                    <li> SQL editor:</li>
+                    <li>     Active database/schema change now affects current editor only</li>
+                    <li>     Server-side output now works with huge outputs</li>
+                    <li>     New command @unset was introduced</li>
+                    <li>     Table alias generation was fixed (conflicts with SQL keywords were fixed)</li>
+                    <li>     Query parameters dialog now doesn't appear on scrolling/refresh</li>
+                    <li>     Code templates now saved in utf-8</li>
+                    <li> Data editor:</li>
+                    <li>     Smart option "Use all columns" for virtual identifier</li>
+                    <li>     Inline cell editor now uses the same font as in grid</li>
+                    <li>     Decimal values formatting was fixed</li>
+                    <li> Data transfer:</li>
+                    <li>     Selected rows/columns option support was fixed</li>
+                    <li>     CSV import was fixed</li>
+                    <li>     Export to single file was fixed (timestamp pattern)</li>
+                    <li>     Export from query now works with variables</li>
+                    <li> Transaction log/query manager: dark theme support was fixed</li>
+                    <li> Dashboards + timeseries + minute interval support was fixed</li>
+                    <li> SSH with private key + password support was fixed</li>
+                    <li> Extra locales (pt and ru) support was added in bundled JDK</li>
+                    <li> SAP HANA: GIS/spatial data type viewer support was added (thanks to @stefanuhrig)</li>
+                    <li> Presto: metadata reading was improved (dummy errors suppressed)</li>
+                    <li> AWS Athena: URL template now respected in new connections</li>
+                    <li> MySQL:</li>
+                    <li>     Database backup can be saved as task now</li>
+                    <li>     Events editor (DDL) was fixed</li>
+                    <li> PostgreSQL:</li>
+                    <li>     Connection dialog was improved (new tab was added)</li>
+                    <li>     $$ and $tag$ parser was improved (new config options were added)</li>
+                    <li>     JSON and struct data types support was fixed</li>
+                    <li> DB2: table truncate command was fixed</li>
+                    <li> Oracle: new function DDL was fixed</li>
+                    <li> Snap repository dbeaver-ce is now official. We will update it on every version release</li>
+                    <li> A lot of minor bugs were fixed</li>
+                    <li> Merry Christmas and Happy New Year!</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.3.0" date="2019-12-01">
             <description>
                 <ul>
@@ -175,35 +216,6 @@
                     <li> Yellowbrick: driver config was fixed for better performance</li>
                     <li> Oracle: view column comments edit support was added</li>
                     <li> A lot of minor UI fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.2.1" date="2019-09-22">
-            <description>
-                <ul>
-                    <li>Data viewer:</li>
-                    <li>    Spatial (GIS) presentation improved (tooltips, different shape colors for different columns)</li>
-                    <li>    JSON render performance was significantly improved</li>
-                    <li>    XML value viewer was fixed (proper error handle)</li>
-                    <li>    XML auto-formatting was fixed (extra whitespaces)</li>
-                    <li>    Context menu "Navigate" was added (returned)</li>
-                    <li>    Floating numbers representation was fixed (exponential view)</li>
-                    <li>    Columns transformation settings dialog was fixed </li>
-                    <li>SQL Editor: update row count calculation was fixed</li>
-                    <li>MySQL: date/time formatting was fixed</li>
-                    <li>PostgreSQL: 3D geometry columns render was fixed</li>
-                    <li>SQL Server: problem with identifiers with "go" characters was fixed</li>
-                    <li>Oracle: SQL parser was fixed (CASE WHEN ELSE END)</li>
-                    <li>Connection settings:</li>
-                    <li>    Load multiple data-sources*.json files</li>
-                    <li>    Respect preference changes (timeouts and other) in "Test Connection" dialog.</li>
-                    <li>    Project export/import wizard was fixed </li>
-                    <li>Database metadata search wizard was fixed</li>
-                    <li>New database drivers:</li>
-                    <li>    H2GIS</li>
-                    <li>    Kognitio</li>
-                    <li>    Opendistro (Elasticsearch) </li>
-                    <li>A lot of other minor UI bugs were fixed</li>
                 </ul>
             </description>
         </release>
