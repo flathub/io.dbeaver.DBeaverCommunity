@@ -30,6 +30,32 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.3.2" date="2020-01-05">
+            <description>
+                <ul>
+                    <li> Database backup/restore/sql tools (PostgreSQL, MySQL, Oracle) now can be saved as tasks</li>
+                    <li> Smart auto-commit mode was introduced (enable transactions vefore data modifying query execute)</li>
+                    <li> SQL editor:</li>
+                    <li>     Alias generation was improved</li>
+                    <li>     Output log flush eas fixed</li>
+                    <li>     Default database assign (for SQL script) was fixed</li>
+                    <li> Data editor: advances paste now respects NULLs for dates and numbers</li>
+                    <li> PostgreSQL:</li>
+                    <li>     $$ strings parser was fixed</li>
+                    <li>     Domain type arrays support was fixed</li>
+                    <li> DB2 (iSeries, z/OS): new connection issue was fixed</li>
+                    <li> Oracle: session manager now shows servr-side execution plans (thanks to @SergDzh)</li>
+                    <li> MySQL: database backup/restore was fixed</li>
+                    <li> Firebird: unique key DDL was fixed</li>
+                    <li> Number of fixes and improvements in backup/restore tools</li>
+                    <li> Workspace switch: last chosen workspace is now saved between app restarts</li>
+                    <li> Dark theme support was improved (toolbars, dark colors customization)</li>
+                    <li> Eclipse 4.6 support was fixed</li>
+                    <li> Problem with missing toolbar buttons was fixed (Linux)</li>
+                    <li> A lot of minor bugfixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.3.1" date="2019-12-22">
             <description>
                 <ul>
@@ -179,42 +205,6 @@
                     <li> Windows: app crash problem was fixed</li>
                     <li> MacOS: app notarization added for all distributions</li>
                     <li> Eclipse plugin: create .dbeaver folder on demand</li>
-                    <li> A lot of minor UI fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.2.2" date="2019-10-06">
-            <description>
-                <ul>
-                    <li> Task management: now all data transfer operations (export/import) can be saved as tasks:</li>
-                    <li>     New task management view</li>
-                    <li>     Running saved tasks in two clicks</li>
-                    <li>     Task execution logs</li>
-                    <li> Data transfer:</li>
-                    <li>     Output file names were fixed</li>
-                    <li>     Previous wizard settings save was fixed</li>
-                    <li>     Many minor improvements</li>
-                    <li> Virtual table columns</li>
-                    <li>     Supported for all tables and views</li>
-                    <li>     Supports expressions, math functions and geometry transformation functions</li>
-                    <li> Virtual foreign keys config save/copy was fixed</li>
-                    <li> Data viewer:</li>
-                    <li>     Hex viewer was added for string content</li>
-                    <li>     Long CLOB text viewer was fixed</li>
-                    <li>     Filter dialog was fixed (orderings, distinct value reading)</li>
-                    <li> SQL editor: parameters binding was improved:</li>
-                    <li>     Show dialog before script execution</li>
-                    <li>     Show current query text</li>
-                    <li> Object editor: new command for expensive properties (row count) reading</li>
-                    <li> SAP HANA - new extension developed (thanks to @kai-morich):</li>
-                    <li>     Driver auto-download</li>
-                    <li>     Sequences, synonyms, triggers</li>
-                    <li>     SQL execution plan</li>
-                    <li>     Object searcher</li>
-                    <li> H2GIS: spatial data viewer was added</li>
-                    <li> Redshift: stored procedures support was added</li>
-                    <li> Yellowbrick: driver config was fixed for better performance</li>
-                    <li> Oracle: view column comments edit support was added</li>
                     <li> A lot of minor UI fixes</li>
                 </ul>
             </description>
