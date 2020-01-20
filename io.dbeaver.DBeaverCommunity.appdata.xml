@@ -30,6 +30,46 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.3.3" date="2020-01-19">
+            <description>
+                <ul>
+                    <li>Tasks:</li>
+                    <li>    SQL script execute task was added</li>
+                    <li>    Variables support was added</li>
+                    <li>    Grouping of tasks by project/type was added</li>
+                    <li>    Active database/schema now saved for custom SQL queries</li>
+                    <li>    Target table mapping was fixed for database-to-database data transfer</li>
+                    <li>Data viewer:</li>
+                    <li>    Column filter UI was improved (multi-value select, value search)</li>
+                    <li>    Null XML columns support was fixed</li>
+                    <li>    Column value transformations and coloring was fixed</li>
+                    <li>    Context menu was improved (layout was change, missing commands were added)</li>
+                    <li>    Problem with missing toolbar actions was fixed</li>
+                    <li>    Hex editor coloring was improved, dark theme support was added</li>
+                    <li>SQL editor:</li>
+                    <li>    Auto-complete now respects active schema</li>
+                    <li>    Database output read was fixed (async mode)</li>
+                    <li>    Hyperlinks and object navigation were fixed</li>
+                    <li>    Aliases generation algorithm was improved</li>
+                    <li>PostgreSQL:</li>
+                    <li>    Database restore task was fixed (target database)</li>
+                    <li>    SQL parser was fixed (BEGIN/END keywords)</li>
+                    <li>Oracle: procedures/views source code editor was fixed</li>
+                    <li>MySQL: database restore log level config was fixed</li>
+                    <li>Netezza: views and procedures source extraction was fixed</li>
+                    <li>Hive: view editor was fixed</li>
+                    <li>Neo4j: arrays support was fixed, SQL parser was fixed</li>
+                    <li>Metadata editor: current database detection was fixed</li>
+                    <li>Tooltips for database navigator were improved</li>
+                    <li>Variables in connection parameters now enabled by default</li>
+                    <li>Connection type permissions save was fixed</li>
+                    <li>Dark theme support was improved in the main toolbar and in different dialogs</li>
+                    <li>SSH agents support was fixed (now we use ssh-agent on Linux)</li>
+                    <li>SSH + private key + password: configuration dialog was fixed</li>
+                    <li>A lot of minor bugfixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.3.2" date="2020-01-05">
             <description>
                 <ul>
@@ -182,30 +222,6 @@
                     <li> SQL Server: functions and synonyms support was added in object search</li>
                     <li> Java version in Windows ad MacOS installers was upgraded to OpenJDK 11.0.5</li>
                     <li> A lot of other minor UI fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.2.3" date="2019-10-20">
-            <description>
-                <ul>
-                    <li> SQL Editor: parameters binding dialog improvements (value preview)</li>
-                    <li> Data viewer:</li>
-                    <li>     Result tabs drag-n-drop support was added</li>
-                    <li>     Spatial data viewer was fixed (tooltips generator)</li>
-                    <li> Task editor: add/remove tables for existing task was fixed</li>
-                    <li> Virtual foreign keys support was fixed (table rename support)</li>
-                    <li> Oracle: Q-style quoting support was added</li>
-                    <li> PostgreSQL:</li>
-                    <li>     Foreign Data Wrappers configurator wizard was added</li>
-                    <li>     $$-quote support was fixed</li>
-                    <li>     Dependencies info reading was fixed (PG12)</li>
-                    <li>     Function signature generator was fixed (FQ type names)</li>
-                    <li> MySQL: column autoincrement flag editor was fixed</li>
-                    <li> Elasticsearch: driver version was updated</li>
-                    <li> Windows: app crash problem was fixed</li>
-                    <li> MacOS: app notarization added for all distributions</li>
-                    <li> Eclipse plugin: create .dbeaver folder on demand</li>
-                    <li> A lot of minor UI fixes</li>
                 </ul>
             </description>
         </release>
