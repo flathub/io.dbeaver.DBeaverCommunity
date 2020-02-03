@@ -30,6 +30,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.3.4" date="2020-02-02">
+            <description>
+                <ul>
+                    <li> A lot of minor bugfixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.3.3" date="2020-01-19">
             <description>
                 <ul>
@@ -194,34 +201,6 @@
                     <li> Application startup speed was improved</li>
                     <li> Several rendering glitches on HighDPI screens were fixed</li>
                     <li> Many other minor UI fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.2.4" date="2019-11-03">
-            <description>
-                <ul>
-                    <li> SQL editor:</li>
-                    <li>     Select row count from custom query was fixed (ORDER BY now allowed)</li>
-                    <li>     Parameters/variable binding was fixed</li>
-                    <li>     Export from query with parameters was fixed</li>
-                    <li>     Number of improvements in intellisense algorithms</li>
-                    <li> Data viewer:</li>
-                    <li>     Smooth scrolling mode was added</li>
-                    <li>     Number of fixes in floating point numbers handling</li>
-                    <li>     Option for short/fully qualified table names in SQL script was added</li>
-                    <li>     Grid state save/restore (after ordering/filter apply) was fixed</li>
-                    <li>     Tabs pin + drag-n-drop behavior was fixed</li>
-                    <li> Tables navigation was fixed (filter value refresh)</li>
-                    <li> Query manager: query ordering/refresh was fixed</li>
-                    <li> ERD: problem with broken layout after config change was fixed</li>
-                    <li> CSV export: row separator config was added</li>
-                    <li> PostgreSQL:</li>
-                    <li>     $$ delimiters handle was fixed</li>
-                    <li>     Function parameters default value reading was fixed</li>
-                    <li> Oracle: table column comments save was fixed</li>
-                    <li> SQL Server: functions and synonyms support was added in object search</li>
-                    <li> Java version in Windows ad MacOS installers was upgraded to OpenJDK 11.0.5</li>
-                    <li> A lot of other minor UI fixes</li>
                 </ul>
             </description>
         </release>
