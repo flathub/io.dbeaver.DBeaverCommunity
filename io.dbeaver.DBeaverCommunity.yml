@@ -72,3 +72,8 @@ modules:
           - x86_64
         url: https://github.com/dbeaver/dbeaver/releases/download/6.3.3/dbeaver-ce-6.3.3-linux.gtk.x86_64.tar.gz
         sha256: 64a6ade299716c5cbb1bd9eb93bc30dd7549047140eaab1620afc0ef5e3c2e23
+        x-checker-data:
+          type: html
+          url: https://dbeaver.io/download/
+          version-pattern: "Community Edition ((?:\\d+\\.)?(?:\\d+\\.)?\\d+)"
+          url-template: "https://dbeaver.io/files/$version/dbeaver-ce-$version-linux.gtk.x86_64.tar.gz"
