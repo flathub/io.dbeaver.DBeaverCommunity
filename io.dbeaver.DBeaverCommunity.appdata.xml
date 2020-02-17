@@ -30,6 +30,54 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="6.3.5" date="2020-02-16">
+            <description>
+                <ul>
+                    <li> Data viewer:</li>
+                    <li>     Read-only columns UI was improved (icon + explanation were added)</li>
+                    <li>     Filter text content assistant was significantly improved</li>
+                    <li>     Row count calculation control UI ws fixed</li>
+                    <li>     "Set default value" shortcut was changed</li>
+                    <li>     Ordering in record mode was fixed</li>
+                    <li>     Data change confirmation was fixed</li>
+                    <li>     Plaintext presentation rendering was fixed (extra spaces)</li>
+                    <li>     Numbers native representation mode (no client-side formatting) was added</li>
+                    <li> SQL editor:</li>
+                    <li>     Export from query task was fixed</li>
+                    <li>     Output tab now remains active after query execute</li>
+                    <li>     Auto-commit toggle was fixed (rollback is performed on mode switch)</li>
+                    <li>     Connection initialization was fixed ("Not connected to a  database" bug)</li>
+                    <li>     Column values assistance was added</li>
+                    <li>     Numbers color and font was fixed</li>
+                    <li> ERD viewer:</li>
+                    <li>     Entity/schema diagram "reset" action was added</li>
+                    <li>     "Show views" option handle was fixed</li>
+                    <li> Connections and drivers:</li>
+                    <li>     Variables support was improved (now all properties may contain variables)</li>
+                    <li>     Maven artifact version resolution was fixed (null version bug)</li>
+                    <li>     External drivers configuration support was added (see wiki)</li>
+                    <li> PostgreSQL:</li>
+                    <li>     Query cancellation was fixed</li>
+                    <li>     Hyperlinks and "Go to object" action were fixed (now they use current database instead of default one)</li>
+                    <li>     Schema privileges were added in DDL</li>
+                    <li>     Indexes read was fixed (redundant primary key constraint was removed)</li>
+                    <li>     Arrays of domain types support was fixed</li>
+                    <li>     Column copy-paste support was added</li>
+                    <li> MySQL:</li>
+                    <li>     Identifiers redundant quotation was fixed</li>
+                    <li>     Column copy-paste support was added</li>
+                    <li> Oracle:</li>
+                    <li>     Default schema detection was fixed</li>
+                    <li>     Double compilation of package was fixed</li>
+                    <li>     PL/SQL parser was improved (case .. when .. end)</li>
+                    <li> DB2: alter column DDL was fixed (column modifiers were added)</li>
+                    <li> SQL Server: metadata search was fixed (wrong object types bug)</li>
+                    <li> AWS Athena: error position highlighting was added</li>
+                    <li> Sybase: legacy versions (12 and earlier) support was improved</li>
+                    <li> A lot of minor bugfixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.3.4" date="2020-02-02">
             <description>
                 <ul>
@@ -173,34 +221,6 @@
                     <li> CockroachDB: native CDB data types were added</li>
                     <li> Impala: active schema change support was added</li>
                     <li> A lot of minor UI/DB-specific bug fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.2.5" date="2019-11-17">
-            <description>
-                <ul>
-                    <li> Problem with context menu was fixed (on Linux)</li>
-                    <li> Problem with mixed global/connection settings was fixed</li>
-                    <li> SSH: "jump" server support was added (thanks to bsv798)</li>
-                    <li> Data editor:</li>
-                    <li>     Vertical and horizontal scroll position is now saved between data refresh/filter</li>
-                    <li>     Smooth scroll mode is now the default mode (and configurable)</li>
-                    <li>     Large json loading performance was improved</li>
-                    <li>     Ordering by unnamed columns was fixed</li>
-                    <li>     Grouping panel refresh was fixed</li>
-                    <li>     Data export/copy as: use the same connection by default</li>
-                    <li> Object editor: property change and object rename was fixed (right order of DDL queries)</li>
-                    <li> SQL editor: CASE/WHEN formatting was fixed</li>
-                    <li> Oracle: data type editor UI was fixed</li>
-                    <li> MySQL: events DDL was fixed (interval)</li>
-                    <li> PostgreSQL: array-based domain data types handle was fixed</li>
-                    <li> SQL Server: synonyms search was added</li>
-                    <li> HANA: table column create was fixed</li>
-                    <li> Greenplum 6+: table DDL (distribution) was fixed</li>
-                    <li> Full-text search dialog render was fixed</li>
-                    <li> Application startup speed was improved</li>
-                    <li> Several rendering glitches on HighDPI screens were fixed</li>
-                    <li> Many other minor UI fixes</li>
                 </ul>
             </description>
         </release>
