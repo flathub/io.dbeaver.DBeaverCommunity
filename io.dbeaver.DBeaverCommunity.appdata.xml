@@ -30,6 +30,65 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.0.0" date="2020-03-02">
+            <description>
+                <ul>
+                    <li>                DBeaver 7.0 is our new major release.</li>
+                    <li>                Changes since 6.0:</li>
+                    <li>                     Tasks management: data transfer, backup-restore, SQL execution</li>
+                    <li>                     Data viewer and data editor UI major improvements:</li>
+                    <li>                         GIS/geo-spatial viewer</li>
+                    <li>                         JSON viewer</li>
+                    <li>                         Logical columns, primary and foreign keys</li>
+                    <li>                         References panel</li>
+                    <li>                         Advanced row coloring</li>
+                    <li>                     SQL editor major improvements:</li>
+                    <li>                         Smart-commit mode</li>
+                    <li>                         Enhanced SQL parser and auto-complete proposals</li>
+                    <li>                     Git integration</li>
+                    <li>                     SSH agents and jump servers support</li>
+                    <li>                     And a lot of other great things</li>
+                    <li>                Moreover:</li>
+                    <li>                     We increased number of supported drivers to 81</li>
+                    <li>                     We closed almost 2000 issues on GitHub.</li>
+                    <li>                Thank you for your support!</li>
+                    <li>                Changes since 6.3.5:</li>
+                    <li>                     SQL script execute task:</li>
+                    <li>                         Support of multiple scripts was added</li>
+                    <li>                         Support of multiple connections was added</li>
+                    <li>                         Configuration wizard was completely redesigned</li>
+                    <li>                     SQL editor:</li>
+                    <li>                         Auto-complete proposals were colorized</li>
+                    <li>                         Auto-complete for table column possible values</li>
+                    <li>                         Synonyms are now resolved as tables</li>
+                    <li>                     Data viewer:</li>
+                    <li>                         Filter panel auto-completion was fixed</li>
+                    <li>                         Value viewer panel refresh was fixed</li>
+                    <li>                         Boolean column transformation was added (view numeric columns as checkboxes)</li>
+                    <li>                     Import from CSV: column mappings was fixed</li>
+                    <li>                     Popup panels unexpected close was fixed</li>
+                    <li>                     Invalidation of dead SSH tunnels was fixed</li>
+                    <li>                     PostgreSQL:</li>
+                    <li>                         Type cast for updates and filters is now used</li>
+                    <li>                         Timestamp scale edit was fixed</li>
+                    <li>                     SQL Server:</li>
+                    <li>                         Driver version upgrade (to 8.2)</li>
+                    <li>                         Data import for IDENTITY columns was fixed</li>
+                    <li>                     MySQL: permission editor supports schema masks</li>
+                    <li>                     Oracle:</li>
+                    <li>                         PL/SQL parser was fixed</li>
+                    <li>                         Comment editor for views and functions was fixed</li>
+                    <li>                         TIMESTAMP WITH TIMEZONE support was improved</li>
+                    <li>                     HANA:</li>
+                    <li>                         GIS (geometry) data types support was improved (by @stefanuhrig)</li>
+                    <li>                         Table column drop was fixed</li>
+                    <li>                     OmniSci: driver version was updated.</li>
+                    <li>                     Linux: UI freezes were fixed</li>
+                    <li>                     A few minor UI improvements (icons, English localization, ERD colors, shortcuts)</li>
+                    <li>                     A lot of minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="6.3.5" date="2020-02-16">
             <description>
                 <ul>
@@ -189,38 +248,6 @@
                     <li> Snap repository dbeaver-ce is now official. We will update it on every version release</li>
                     <li> A lot of minor bugs were fixed</li>
                     <li> Merry Christmas and Happy New Year!</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.3.0" date="2019-12-01">
-            <description>
-                <ul>
-                    <li> SSH Agent support was added (pageant and ssh-agent)</li>
-                    <li> Disconnect project/folder/all actions were reworked</li>
-                    <li> Problem with connection properties save was fixed</li>
-                    <li> Connection properties dialogs UI was improved (test connection, password save, pref page search)</li>
-                    <li> Task management UI was improved (task create/save actions in data transfer wizard)</li>
-                    <li> ER diagrams: dummy errors are now suppressed (now they present in log file only)</li>
-                    <li> Legacy Eclipse plugins installation support was added (with hold update site format)</li>
-                    <li> Dark theme support was significantly improved</li>
-                    <li> Auto-commit mode behavior change:</li>
-                    <li>     Toolbar toggle now affects current connection only</li>
-                    <li>     Mode change affects active DBeaver session only</li>
-                    <li> Data export:</li>
-                    <li>     Export from SQL script now supports commands (@set and others)</li>
-                    <li>     Saved settings loading was fixed</li>
-                    <li>     XLSX exporter now respects export configuration</li>
-                    <li> Data editor:</li>
-                    <li>     Fetch size can be changed before query execute</li>
-                    <li>     Spatial viewer now supports different pluggable tiles (mapbox, osm, etc)</li>
-                    <li>     Wrong date/time format now treated as error</li>
-                    <li> SQL Editor: editor layout now saved between DBeaver sessions</li>
-                    <li> Object editor (tables, views, etc) now checks for object name duplicates</li>
-                    <li> Oracle: now we use full type name presentation by default</li>
-                    <li> PostgreSQL: support of extra type aliases and array data types was added</li>
-                    <li> CockroachDB: native CDB data types were added</li>
-                    <li> Impala: active schema change support was added</li>
-                    <li> A lot of minor UI/DB-specific bug fixes</li>
                 </ul>
             </description>
         </release>
