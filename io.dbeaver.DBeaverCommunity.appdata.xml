@@ -30,6 +30,50 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.0.2" date="2020-04-05">
+            <description>
+                <ul>
+                    <li> Database navigator:</li>
+                    <li>     Simplified database structure view was added</li>
+                    <li>     Navigator view settings and presets were added</li>
+                    <li> Object editor:</li>
+                    <li>     Context menu was added to the object breadcrumbs</li>
+                    <li>     Object alter script now can be opened in SQL editor</li>
+                    <li> Data editor:</li>
+                    <li>     Preference and data format changes now applying immediately (without data refresh)</li>
+                    <li>     Scrollbar position reset in columns reorder/filtering was fixed</li>
+                    <li>     Number of selected rows/columns/cells now shown in the status bar</li>
+                    <li>     Query filter history save/load was fixed</li>
+                    <li>     Floating point numbers (4-byte precision) rendering was fixed</li>
+                    <li> SQL Editor: quick search tool was added (ctrl+alt+shift+f)</li>
+                    <li> Driver copy was fixed (problem with read-only URL)</li>
+                    <li> PostgreSQL:</li>
+                    <li>     PGPASS support was fixed</li>
+                    <li>     Database information (ctype, collate) reading was fixed</li>
+                    <li>     Problems with default database change were fixed</li>
+                    <li>     OID types rendering fix</li>
+                    <li>     Domain metadata reading was fixed (base type qualified name)</li>
+                    <li>     Extra options were added to database backup/restore wizards</li>
+                    <li> Redshift: data type resolution was fixed (array types)</li>
+                    <li> SQL Server:</li>
+                    <li>     Driver download and "reset to default" was fixed</li>
+                    <li>     Default schema detection was added</li>
+                    <li>     Problems with read-only query results were fixed</li>
+                    <li>     Column comments edit was fixed</li>
+                    <li> MySQL:</li>
+                    <li>     Permission editor was fixed (schema privileges)</li>
+                    <li>     Index rename support was added</li>
+                    <li> Exasol:</li>
+                    <li>     Security tree (Exasol 7) was fixed</li>
+                    <li>     Auto-completion for builtin functions was added</li>
+                    <li>     Foreign keys metadata was fixed</li>
+                    <li> Oracle: "drop procedure" support was fixed</li>
+                    <li> SAP HANA: driver download was fixed</li>
+                    <li> Firebird: driver version was upgraded (4.0)</li>
+                    <li> Many other minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
         <release version="7.0.1" date="2020-03-22">
             <description>
                 <ul>
@@ -225,32 +269,6 @@
                     <li>SSH agents support was fixed (now we use ssh-agent on Linux)</li>
                     <li>SSH + private key + password: configuration dialog was fixed</li>
                     <li>A lot of minor bugfixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.3.2" date="2020-01-05">
-            <description>
-                <ul>
-                    <li> Database backup/restore/sql tools (PostgreSQL, MySQL, Oracle) now can be saved as tasks</li>
-                    <li> Smart auto-commit mode was introduced (enable transactions vefore data modifying query execute)</li>
-                    <li> SQL editor:</li>
-                    <li>     Alias generation was improved</li>
-                    <li>     Output log flush eas fixed</li>
-                    <li>     Default database assign (for SQL script) was fixed</li>
-                    <li> Data editor: advances paste now respects NULLs for dates and numbers</li>
-                    <li> PostgreSQL:</li>
-                    <li>     $$ strings parser was fixed</li>
-                    <li>     Domain type arrays support was fixed</li>
-                    <li> DB2 (iSeries, z/OS): new connection issue was fixed</li>
-                    <li> Oracle: session manager now shows servr-side execution plans (thanks to @SergDzh)</li>
-                    <li> MySQL: database backup/restore was fixed</li>
-                    <li> Firebird: unique key DDL was fixed</li>
-                    <li> Number of fixes and improvements in backup/restore tools</li>
-                    <li> Workspace switch: last chosen workspace is now saved between app restarts</li>
-                    <li> Dark theme support was improved (toolbars, dark colors customization)</li>
-                    <li> Eclipse 4.6 support was fixed</li>
-                    <li> Problem with missing toolbar buttons was fixed (Linux)</li>
-                    <li> A lot of minor bugfixes</li>
                 </ul>
             </description>
         </release>
