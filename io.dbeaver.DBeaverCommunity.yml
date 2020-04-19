@@ -55,21 +55,21 @@ modules:
         done
     sources:
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_16x16.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_16x16.png
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_32x32.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_32x32.png
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_48x48.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_48x48.png
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_64x64.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_64x64.png
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_128x128.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_128x128.png
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_256x256.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_256x256.png
       - type: file
-        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_512x512.png
+        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_512x512.png
       - type: file
-        path: io.dbeaver.DBeaverCommunity.appdata.xml
+        url: io.dbeaver.DBeaverCommunity.appdata.xml
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
