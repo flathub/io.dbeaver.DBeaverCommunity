@@ -76,7 +76,7 @@ modules:
         url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_512x512.png
         sha256: f8ab6c3cf98cc239a050334313c06eed78b7e5703427bc22410e66dc211ddb43
       - type: file
-        url: io.dbeaver.DBeaverCommunity.appdata.xml
+        path: io.dbeaver.DBeaverCommunity.appdata.xml
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
