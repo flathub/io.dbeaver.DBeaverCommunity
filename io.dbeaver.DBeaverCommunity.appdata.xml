@@ -33,13 +33,13 @@
         <release version="7.0.3" date="2020-04-19">
             <description>
                 <ul>
-                    <li>Data viewer:
-                        <li>Problem with unreachable last row/column was fixed</li>
-                        <li>"Open With" action now uses configuration from last data export</li>
-                        <li>Find/replace issues were fixed (scroll to found cell)</li>
-                        <li>Bug in reference panel was fixed (multiple value selection)</li>
-                        <li>Filter value auto-completion was fixed (popup close)</li>
-                        <li>Virtual unique keys management was improved</li>
+                    <li>Data viewer:</li>
+                    <li>Problem with unreachable last row/column was fixed</li>
+                    <li>"Open With" action now uses configuration from last data export</li>
+                    <li>Find/replace issues were fixed (scroll to found cell)</li>
+                    <li>Bug in reference panel was fixed (multiple value selection)</li>
+                    <li>Filter value auto-completion was fixed (popup close)</li>
+                    <li>Virtual unique keys management was improved</li>
                     <li>SQL editor: multiline code templates apply was fixed (thanks to @VASilaev)</li>
                     <li>Number of bugs were fixed in the Simple navigator view</li>
                     <li>Transaction management was improved (redundant transaction commit confirmations were removed)</li>
@@ -47,11 +47,11 @@
                     <li>Active catalog/schema selector UI was improved</li>
                     <li>Connection edit dialog was fixed (error during page switch)</li>
                     <li>Oracle:</li>
-                        <li>Connection settings (SID/Service) save was fixed</li>
-                        <li>Session terminate was fixed (for non-RAC databases)</li>
+                    <li>Connection settings (SID/Service) save was fixed</li>
+                    <li>Session terminate was fixed (for non-RAC databases)</li>
                     <li>Exasol:</li>
-                        <li>Foreign key creation was fixed</li>
-                        <li>View DDL extraction was fixed (auto-format was disabled)</li>
+                    <li>Foreign key creation was fixed</li>
+                    <li>View DDL extraction was fixed (auto-format was disabled)</li>
                     <li>HANA: unique key creation was fixed</li>
                     <li>Firebird: procedure metadata refresh was fixed</li>
                     <li>Problems with remote RDP connections (app crash) were fixed</li>
