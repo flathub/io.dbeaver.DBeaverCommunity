@@ -50,18 +50,24 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value='/app/dbeaver/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
-      - for icon_size in 32 48 64 128; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
-        install -m644 io.dbeaver.DBeaverCommunity-${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
+      - for icon_size in 16 32 48 64 128 256 512; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
+        install -m644 icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
         done
     sources:
       - type: file
-        path: io.dbeaver.DBeaverCommunity-32.png
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_16x16.png
       - type: file
-        path: io.dbeaver.DBeaverCommunity-48.png
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_32x32.png
       - type: file
-        path: io.dbeaver.DBeaverCommunity-64.png
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_48x48.png
       - type: file
-        path: io.dbeaver.DBeaverCommunity-128.png
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_64x64.png
+      - type: file
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_128x128.png
+      - type: file
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_256x256.png
+      - type: file
+        path: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_512x512.png
       - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
       - type: file
