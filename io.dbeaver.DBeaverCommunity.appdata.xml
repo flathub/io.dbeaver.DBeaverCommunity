@@ -30,6 +30,44 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.0.4" date="2020-05-03">
+            <description>
+                <ul>
+                    <li> SQL editor:</li>
+                    <li>     Format now formats active query by default</li>
+                    <li>     Matching brackets highlighting was improved</li>
+                    <li> Data viewer:</li>
+                    <li>     Find/replace highlighting and scrolling was fixed</li>
+                    <li>     Data filter save was fixed (problem with quoted column names)</li>
+                    <li>     Auto-completion in data filter now can be disabled</li>
+                    <li> Object editor: refresh button in bottom toolbar was unified for all pages</li>
+                    <li> Dark theme support improved (connection type colors)</li>
+                    <li> New connection wizard was fixed (problem with quick driver selector)</li>
+                    <li> Driver editor dialog was improved:</li>
+                    <li>     Extra properties save was fixed</li>
+                    <li>     Legacy drivers support was added</li>
+                    <li> Git extension packaging was fixed (older Eclipse versions support)</li>
+                    <li> Derby: new database create was fixed</li>
+                    <li> Firebird: system objects hide/show was fixed (determine system flag from fro meta table)</li>
+                    <li> MySQL:</li>
+                    <li>     Read-only connections support was fixed (SQL editors)</li>
+                    <li>     Query execution plan explain was fixed</li>
+                    <li> Oracle:</li>
+                    <li>     Driver configuration was fixed (typo in Maven artifact name)</li>
+                    <li>     Java classes source viewer was added</li>
+                    <li>     Materialized view DDL read was fixed</li>
+                    <li>     PL/SQL parser was fixed (CASE/WHEN/END)</li>
+                    <li> PostgreSQL:</li>
+                    <li>     search_path update was fixed</li>
+                    <li>     Numeric values rendering was fixed</li>
+                    <li> Redshift: SOCKS proxy support was fixed</li>
+                    <li> SQL Server: table DDL generation was fixed (column type names)</li>
+                    <li> SQLite: foreign key metadata read was fixed (FKs with no name)</li>
+                    <li> Portuguese (BR) localization was added (thanks to @wellesximenes)</li>
+                    <li> Many minor bug fixes and improvements</li>
+                </ul>
+            </description>
+        </release>
         <release version="7.0.3" date="2020-04-19">
             <description>
                 <ul>
@@ -253,53 +291,6 @@
                     <li> AWS Athena: error position highlighting was added</li>
                     <li> Sybase: legacy versions (12 and earlier) support was improved</li>
                     <li> A lot of minor bugfixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.3.4" date="2020-02-02">
-            <description>
-                <ul>
-                    <li> A lot of minor bugfixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.3.3" date="2020-01-19">
-            <description>
-                <ul>
-                    <li>Tasks:</li>
-                    <li>    SQL script execute task was added</li>
-                    <li>    Variables support was added</li>
-                    <li>    Grouping of tasks by project/type was added</li>
-                    <li>    Active database/schema now saved for custom SQL queries</li>
-                    <li>    Target table mapping was fixed for database-to-database data transfer</li>
-                    <li>Data viewer:</li>
-                    <li>    Column filter UI was improved (multi-value select, value search)</li>
-                    <li>    Null XML columns support was fixed</li>
-                    <li>    Column value transformations and coloring was fixed</li>
-                    <li>    Context menu was improved (layout was change, missing commands were added)</li>
-                    <li>    Problem with missing toolbar actions was fixed</li>
-                    <li>    Hex editor coloring was improved, dark theme support was added</li>
-                    <li>SQL editor:</li>
-                    <li>    Auto-complete now respects active schema</li>
-                    <li>    Database output read was fixed (async mode)</li>
-                    <li>    Hyperlinks and object navigation were fixed</li>
-                    <li>    Aliases generation algorithm was improved</li>
-                    <li>PostgreSQL:</li>
-                    <li>    Database restore task was fixed (target database)</li>
-                    <li>    SQL parser was fixed (BEGIN/END keywords)</li>
-                    <li>Oracle: procedures/views source code editor was fixed</li>
-                    <li>MySQL: database restore log level config was fixed</li>
-                    <li>Netezza: views and procedures source extraction was fixed</li>
-                    <li>Hive: view editor was fixed</li>
-                    <li>Neo4j: arrays support was fixed, SQL parser was fixed</li>
-                    <li>Metadata editor: current database detection was fixed</li>
-                    <li>Tooltips for database navigator were improved</li>
-                    <li>Variables in connection parameters now enabled by default</li>
-                    <li>Connection type permissions save was fixed</li>
-                    <li>Dark theme support was improved in the main toolbar and in different dialogs</li>
-                    <li>SSH agents support was fixed (now we use ssh-agent on Linux)</li>
-                    <li>SSH + private key + password: configuration dialog was fixed</li>
-                    <li>A lot of minor bugfixes</li>
                 </ul>
             </description>
         </release>
