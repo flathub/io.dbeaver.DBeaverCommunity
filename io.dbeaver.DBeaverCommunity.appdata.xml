@@ -30,6 +30,41 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.0.5" date="2020-05-17">
+            <description>
+                <ul>
+                    <li> Data viewer:</li>
+                    <li>     Pin (aka "freeze") column feature was added</li>
+                    <li>     Float (32bit) data type render was fixed (MySQL)</li>
+                    <li>     Plaintext renderer was fixed (binary values representation)</li>
+                    <li>     Filter value auto-complete was fixed (clipboard paste support)</li>
+                    <li>     Issue with "order by table column + column alias" was fixed</li>
+                    <li> SQL editor:</li>
+                    <li>     Script close prompt was fixed</li>
+                    <li>     Hyperlinks now contain procedure parameters</li>
+                    <li>     Script selector panel positioning was fixed</li>
+                    <li>     Execute in new tab: new tabs opening was fixed</li>
+                    <li>     SQL format preferences page was improved</li>
+                    <li>     SQL formatting was fixed (line feeds after brackets)</li>
+                    <li>     SQL console title was fixed (source object name was added)</li>
+                    <li> Non-https Maven repositories and driver links were removed</li>
+                    <li> PostgreSQL:</li>
+                    <li>     Added parameters to the SQL execution plan explain (ANALYSE is optional)</li>
+                    <li>     Database backup  was fixed on Linux/MacOS (proper table names quoting)</li>
+                    <li>     Table DDL was fixed (show table comment)</li>
+                    <li>     Sequence DDL was fixed (START parameter)</li>
+                    <li>     Object dependencies now contain links on dependent/depending object</li>
+                    <li>     Permission/role editors were fixed (roles are sorted by name now)</li>
+                    <li>     SQL auto-completion fixed for older PG (<= 8.4)</li>
+                    <li> Oracle: unique key detection was fixed</li>
+                    <li> DB2:</li>
+                    <li>     FOR BIT DATA columns support was fixed (show value as binary)</li>
+                    <li>     Native SQL dialect support was improved (BEGIN/END)</li>
+                    <li> SQLite: ROWID pseudo-column support was added (as unique key)</li>
+                    <li> Many other minor bug fixes and improvements</li>
+                </ul>
+            </description>
+        </release>
         <release version="7.0.4" date="2020-05-03">
             <description>
                 <ul>
@@ -243,54 +278,6 @@
                     <li>                     Linux: UI freezes were fixed</li>
                     <li>                     A few minor UI improvements (icons, English localization, ERD colors, shortcuts)</li>
                     <li>                     A lot of minor bug fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="6.3.5" date="2020-02-16">
-            <description>
-                <ul>
-                    <li> Data viewer:</li>
-                    <li>     Read-only columns UI was improved (icon + explanation were added)</li>
-                    <li>     Filter text content assistant was significantly improved</li>
-                    <li>     Row count calculation control UI ws fixed</li>
-                    <li>     "Set default value" shortcut was changed</li>
-                    <li>     Ordering in record mode was fixed</li>
-                    <li>     Data change confirmation was fixed</li>
-                    <li>     Plaintext presentation rendering was fixed (extra spaces)</li>
-                    <li>     Numbers native representation mode (no client-side formatting) was added</li>
-                    <li> SQL editor:</li>
-                    <li>     Export from query task was fixed</li>
-                    <li>     Output tab now remains active after query execute</li>
-                    <li>     Auto-commit toggle was fixed (rollback is performed on mode switch)</li>
-                    <li>     Connection initialization was fixed ("Not connected to a  database" bug)</li>
-                    <li>     Column values assistance was added</li>
-                    <li>     Numbers color and font was fixed</li>
-                    <li> ERD viewer:</li>
-                    <li>     Entity/schema diagram "reset" action was added</li>
-                    <li>     "Show views" option handle was fixed</li>
-                    <li> Connections and drivers:</li>
-                    <li>     Variables support was improved (now all properties may contain variables)</li>
-                    <li>     Maven artifact version resolution was fixed (null version bug)</li>
-                    <li>     External drivers configuration support was added (see wiki)</li>
-                    <li> PostgreSQL:</li>
-                    <li>     Query cancellation was fixed</li>
-                    <li>     Hyperlinks and "Go to object" action were fixed (now they use current database instead of default one)</li>
-                    <li>     Schema privileges were added in DDL</li>
-                    <li>     Indexes read was fixed (redundant primary key constraint was removed)</li>
-                    <li>     Arrays of domain types support was fixed</li>
-                    <li>     Column copy-paste support was added</li>
-                    <li> MySQL:</li>
-                    <li>     Identifiers redundant quotation was fixed</li>
-                    <li>     Column copy-paste support was added</li>
-                    <li> Oracle:</li>
-                    <li>     Default schema detection was fixed</li>
-                    <li>     Double compilation of package was fixed</li>
-                    <li>     PL/SQL parser was improved (case .. when .. end)</li>
-                    <li> DB2: alter column DDL was fixed (column modifiers were added)</li>
-                    <li> SQL Server: metadata search was fixed (wrong object types bug)</li>
-                    <li> AWS Athena: error position highlighting was added</li>
-                    <li> Sybase: legacy versions (12 and earlier) support was improved</li>
-                    <li> A lot of minor bugfixes</li>
                 </ul>
             </description>
         </release>
