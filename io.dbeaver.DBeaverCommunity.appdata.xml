@@ -55,7 +55,7 @@
                     <li>     Sequence DDL was fixed (START parameter)</li>
                     <li>     Object dependencies now contain links on dependent/depending object</li>
                     <li>     Permission/role editors were fixed (roles are sorted by name now)</li>
-                    <li>     SQL auto-completion fixed for older PG (<= 8.4)</li>
+                    <li>     SQL auto-completion fixed for older PG (&lt;= 8.4)</li>
                     <li> Oracle: unique key detection was fixed</li>
                     <li> DB2:</li>
                     <li>     FOR BIT DATA columns support was fixed (show value as binary)</li>
