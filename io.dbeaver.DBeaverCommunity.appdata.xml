@@ -30,6 +30,39 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.1.0" date="2020-05-31">
+            <description>
+                <ul>
+                    <li>It has been hard quarantine time. But we haven’t stopped development process.</li>
+                    <li>And now, it’s time for the new minor release 7.1.0.</li>
+                    <li>Thank you to our new and old contributors. Stay well and healthy!</li>
+                    <li> Database navigator:</li>
+                    <li>     Statistics view (table sizes) was added</li>
+                    <li>     Connection coloring was redesigned</li>
+                    <li>     Connection host name tip was added</li>
+                    <li> Data viewer:</li>
+                    <li>     Ref cursor panel viewer was added</li>
+                    <li>     Columns sort settings save/load was added</li>
+                    <li>     Data export in HTML format was fixed (styles)</li>
+                    <li> SQL editor:</li>
+                    <li>     Function call formatting was improved</li>
+                    <li>     Table alias generation was fixed (for unicode/numeric table names)</li>
+                    <li> PostgreSQL:</li>
+                    <li>     Ref cursors refresh support was added</li>
+                    <li>     Table and schema statistics was added</li>
+                    <li>     Table comment and rules were added to DDL</li>
+                    <li> Oracle:</li>
+                    <li>     Metadata search was fixed</li>
+                    <li>     Java source read was fixed</li>
+                    <li> ODBC driver download was fixed</li>
+                    <li> Exasol: metadata edit dialogs were redesigned</li>
+                    <li> Clickhouse: table statistics was added</li>
+                    <li> Firebird: view editor was fixed</li>
+                    <li> Plain HTTP driver repositories (Maven or direct links) were replaced or removed</li>
+                    <li> Big number of minor UI and database-specific bugs were fixed</li>
+                </ul>
+            </description>
+        </release>
         <release version="7.0.5" date="2020-05-17">
             <description>
                 <ul>
@@ -219,65 +252,6 @@
                     <li> SQLite: column rename support was added</li>
                     <li> Snap package was significantly improved (thanks to @galgalesh)</li>
                     <li> Many other minor bug fixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="7.0.0" date="2020-03-02">
-            <description>
-                <ul>
-                    <li>                DBeaver 7.0 is our new major release.</li>
-                    <li>                Changes since 6.0:</li>
-                    <li>                     Tasks management: data transfer, backup-restore, SQL execution</li>
-                    <li>                     Data viewer and data editor UI major improvements:</li>
-                    <li>                         GIS/geo-spatial viewer</li>
-                    <li>                         JSON viewer</li>
-                    <li>                         Logical columns, primary and foreign keys</li>
-                    <li>                         References panel</li>
-                    <li>                         Advanced row coloring</li>
-                    <li>                     SQL editor major improvements:</li>
-                    <li>                         Smart-commit mode</li>
-                    <li>                         Enhanced SQL parser and auto-complete proposals</li>
-                    <li>                     Git integration</li>
-                    <li>                     SSH agents and jump servers support</li>
-                    <li>                     And a lot of other great things</li>
-                    <li>                Moreover:</li>
-                    <li>                     We increased number of supported drivers to 81</li>
-                    <li>                     We closed almost 2000 issues on GitHub.</li>
-                    <li>                Thank you for your support!</li>
-                    <li>                Changes since 6.3.5:</li>
-                    <li>                     SQL script execute task:</li>
-                    <li>                         Support of multiple scripts was added</li>
-                    <li>                         Support of multiple connections was added</li>
-                    <li>                         Configuration wizard was completely redesigned</li>
-                    <li>                     SQL editor:</li>
-                    <li>                         Auto-complete proposals were colorized</li>
-                    <li>                         Auto-complete for table column possible values</li>
-                    <li>                         Synonyms are now resolved as tables</li>
-                    <li>                     Data viewer:</li>
-                    <li>                         Filter panel auto-completion was fixed</li>
-                    <li>                         Value viewer panel refresh was fixed</li>
-                    <li>                         Boolean column transformation was added (view numeric columns as checkboxes)</li>
-                    <li>                     Import from CSV: column mappings was fixed</li>
-                    <li>                     Popup panels unexpected close was fixed</li>
-                    <li>                     Invalidation of dead SSH tunnels was fixed</li>
-                    <li>                     PostgreSQL:</li>
-                    <li>                         Type cast for updates and filters is now used</li>
-                    <li>                         Timestamp scale edit was fixed</li>
-                    <li>                     SQL Server:</li>
-                    <li>                         Driver version upgrade (to 8.2)</li>
-                    <li>                         Data import for IDENTITY columns was fixed</li>
-                    <li>                     MySQL: permission editor supports schema masks</li>
-                    <li>                     Oracle:</li>
-                    <li>                         PL/SQL parser was fixed</li>
-                    <li>                         Comment editor for views and functions was fixed</li>
-                    <li>                         TIMESTAMP WITH TIMEZONE support was improved</li>
-                    <li>                     HANA:</li>
-                    <li>                         GIS (geometry) data types support was improved (by @stefanuhrig)</li>
-                    <li>                         Table column drop was fixed</li>
-                    <li>                     OmniSci: driver version was updated.</li>
-                    <li>                     Linux: UI freezes were fixed</li>
-                    <li>                     A few minor UI improvements (icons, English localization, ERD colors, shortcuts)</li>
-                    <li>                     A lot of minor bug fixes</li>
                 </ul>
             </description>
         </release>
