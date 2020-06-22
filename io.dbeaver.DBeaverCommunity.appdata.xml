@@ -32,71 +32,62 @@
     <releases>
         <release version="7.1.1" date="2020-06-21">
             <description>
+                <p>Database navigator:</p>
                 <ul>
-                    <li>Database navigator:
-                        <ul>
-                            <li>Connection type highlighting was redesigned</li>
-                            <li>Simple view support was improved</li>
-                            <li>"Force object refresh on editor open" action was fixed</li>
-                            <li>Main toolbar UIX was improved (no disabled selectors)</li>
-                            <li>Database tools context menu was fixed</li>
-                        </ul>
-                    </li>
-                    <li>Table statistics:
-                        <ul>
-                            <li>Rendering problems (redraw on scrolling) were fixed</li>
-                            <li>Performance problems were fixed</li>
-                            <li>SQL Server support was added</li>
-                        </ul>
-                    </li>
-                    <li>Data viewer:
-                        <ul>
-                            <li>Wrong value extraction was fixed for expression aliases which conflict with table column names</li>
-                            <li>Dictionary values separator configuration was added</li>
-                            <li>Row coloring: support of gradient coloring for read-only columns was added</li>
-                            <li>Data formatter:</li>
-                            <li>Action "reset to default" was fixed in preferences</li>
-                            <li>Preference changes are immediately applied to open data editors</li>
-                        </ul>
-                    </li>
-                    <li>SQL editor:
-                        <ul>
-                            <li>Results tab rename was fixed (now we save tab title between results refresh)</li>
-                            <li>Parser of multiple SQL queries on a single line was fixed</li>
-                            <li>Execution plan explain operation cancel was implemented</li>
-                            <li>Coloring of numbers in scientific notation was fixed</li>
-                            <li>Paste from source code: \n and \r characters handle was fixed (now we use proper line feeds)</li>
-                            <li>Stored procedures call generation was fixed</li>
-                        </ul>
-                    </li>
-                    <li>Object editor: "reject changes" and command undo/redo command were fixed</li>
-                    <li>Data import: open target table on finish</li>
-                    <li>Data migration: DDL generation was improved (apply the same column data type when source and target databases use the same driver)</li>
-                    <li>Database tasks: PostgreSQL, MySQL and Oracle tools now can be saved as tasks</li>
-                    <li>SSH configurator: UI controls layout was fixed</li>
-                    <li>Database driver edit dialog was fixed (legacy driver option is disabled by default)</li>
-                    <li>MySQL:
-                        <ul>
-                            <li>User permission management was fixed (FLUSH PRIVILEGES is not needed for newer server versions)</li>
-                            <li>Unsigned INT and BIGINT data types support was added</li>
-                        </ul>
-                    </li>
-                    <li>Oracle:
-                        <ul>
-                            <li>Numeric data type modifiers (scale/precision) rendering was fixed</li>
-                            <li>Materialized views read/create and delete was fixed (mviews were removed from table list)</li>
-                        </ul>
-                    </li>
-                    <li>PostgreSQL:
-                        <ul>
-                            <li>Vacuum tool was improved (run in auto-commit mode)</li>
-                            <li>List of reserved keywords was updated</li>
-                        </ul>
-                    </li>
-                    <li>Redshift: View with no schema binding support was added</li>
-                    <li>SQL Server: timestamp columns were marked as auto-generated</li>
-                    <li>Big number of minor UI and database-specific bugs were fixed</li>
+                    <li>Connection type highlighting was redesigned</li>
+                    <li>Simple view support was improved</li>
+                    <li>"Force object refresh on editor open" action was fixed</li>
+                    <li>Main toolbar UIX was improved (no disabled selectors)</li>
+                    <li>Database tools context menu was fixed</li>
                 </ul>
+                <p>Table statistics:</p>
+                <ul>
+                    <li>Rendering problems (redraw on scrolling) were fixed</li>
+                    <li>Performance problems were fixed</li>
+                    <li>SQL Server support was added</li>
+                </ul>
+                <p>Data viewer:</p>
+                <ul>
+                    <li>Wrong value extraction was fixed for expression aliases which conflict with table column names</li>
+                    <li>Dictionary values separator configuration was added</li>
+                    <li>Row coloring: support of gradient coloring for read-only columns was added</li>
+                    <li>Data formatter:</li>
+                    <li>Action "reset to default" was fixed in preferences</li>
+                    <li>Preference changes are immediately applied to open data editors</li>
+                </ul>
+                <p>SQL editor:</p>
+                <ul>
+                    <li>Results tab rename was fixed (now we save tab title between results refresh)</li>
+                    <li>Parser of multiple SQL queries on a single line was fixed</li>
+                    <li>Execution plan explain operation cancel was implemented</li>
+                    <li>Coloring of numbers in scientific notation was fixed</li>
+                    <li>Paste from source code: \n and \r characters handle was fixed (now we use proper line feeds)</li>
+                    <li>Stored procedures call generation was fixed</li>
+                </ul>
+                <p>Object editor: "reject changes" and command undo/redo command were fixed</p>
+                <p>Data import: open target table on finish</p>
+                <p>Data migration: DDL generation was improved (apply the same column data type when source and target databases use the same driver)</p>
+                <p>Database tasks: PostgreSQL, MySQL and Oracle tools now can be saved as tasks</p>
+                <p>SSH configurator: UI controls layout was fixed</p>
+                <p>Database driver edit dialog was fixed (legacy driver option is disabled by default)</p>
+                <p>MySQL:</p>
+                <ul>
+                    <li>User permission management was fixed (FLUSH PRIVILEGES is not needed for newer server versions)</li>
+                    <li>Unsigned INT and BIGINT data types support was added</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Numeric data type modifiers (scale/precision) rendering was fixed</li>
+                    <li>Materialized views read/create and delete was fixed (mviews were removed from table list)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Vacuum tool was improved (run in auto-commit mode)</li>
+                    <li>List of reserved keywords was updated</li>
+                </ul>
+                <p>Redshift: View with no schema binding support was added</p>
+                <p>SQL Server: timestamp columns were marked as auto-generated</p>
+                <p>Big number of minor UI and database-specific bugs were fixed</p>
             </description>
         </release>
         <release version="7.1.0" date="2020-05-31">
