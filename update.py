@@ -14,6 +14,19 @@ from lxml import etree
 MANIFEST = 'io.dbeaver.DBeaverCommunity.yml'
 APPDATA = 'io.dbeaver.DBeaverCommunity.appdata.xml'
 
+
+def parse_notes(notes):
+    res = {}
+    sec_name = ''
+    for rn in notes.splitlines():
+        if rn[:2] == '- ':
+            sec_name = rn.replace("-", "", 1).strip()
+            res[sec_name] = []
+        else:
+            res[sec_name].append(rn.replace("-", "", 1).strip())
+    return res
+
+
 with urllib.request.urlopen('https://api.github.com/repos/dbeaver/dbeaver/releases/latest') as url:
     RELEASEDATA = json.loads(url.read().decode())
     VERSION = RELEASEDATA['tag_name']
@@ -34,7 +47,7 @@ new_url = 'https://github.com/dbeaver/dbeaver/releases/download/' + \
 
 print('Downloading ' + FILENAME)
 with urllib.request.urlopen(new_url) as response, open(FILENAME, 'wb') as out_file:
-     shutil.copyfileobj(response, out_file)
+    shutil.copyfileobj(response, out_file)
 print('Download complete')
 
 # using replace, yaml reformats file funny
@@ -51,7 +64,7 @@ filedata = filedata.replace(old_url, new_url)
 filedata = filedata.replace(old_sha256, new_sha256)
 # Write the file out again
 with open(MANIFEST, 'w') as file:
-  file.write(filedata)
+    file.write(filedata)
 
 release = etree.Element('release', {
     'version': VERSION,
@@ -70,13 +83,28 @@ ul.text = '\n                    '
 
 release_notes = textwrap.dedent(RELEASEDATA['body'])
 release_notes = os.linesep.join([s for s in release_notes.splitlines() if s])
-for rn in release_notes.splitlines():
+parsed_notes = parse_notes(release_notes)
+for key in parsed_notes:
     li = etree.SubElement(ul, 'li')
-    li.text = rn.replace("-","",1)
-    if rn == release_notes.splitlines()[-1]:
-      li.tail = '\n                '
+    if key == list(parsed_notes.keys())[-1]:
+        li.tail = '\n                '
     else:
-      li.tail = '\n                    '
+        li.tail = '\n                    '
+    # add description if exists
+    if len(parsed_notes[key]) > 0:
+        li.text = '%s\n                        ' % key
+        ul2 = etree.SubElement(li, 'ul')
+        ul2.tail = '\n                    '
+        ul2.text = '\n                            '
+        for desc in parsed_notes[key]:
+            li2 = etree.SubElement(ul2, 'li')
+            li2.text = desc
+            if desc == parsed_notes[key][-1]:
+                li2.tail = '\n                        '
+            else:
+                li2.tail = '\n                            '
+    else:
+        li.text = key
 
 
 parser = etree.XMLParser(remove_comments=False)
