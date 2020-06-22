@@ -64,12 +64,12 @@
                     <li>Paste from source code: \n and \r characters handle was fixed (now we use proper line feeds)</li>
                     <li>Stored procedures call generation was fixed</li>
                 </ul>
-                <p>Object editor: "reject changes" and command undo/redo command were fixed</p>
-                <p>Data import: open target table on finish</p>
-                <p>Data migration: DDL generation was improved (apply the same column data type when source and target databases use the same driver)</p>
-                <p>Database tasks: PostgreSQL, MySQL and Oracle tools now can be saved as tasks</p>
-                <p>SSH configurator: UI controls layout was fixed</p>
-                <p>Database driver edit dialog was fixed (legacy driver option is disabled by default)</p>
+                <p>Object editor: "reject changes" and command undo/redo command were fixed
+                Data import: open target table on finish
+                Data migration: DDL generation was improved (apply the same column data type when source and target databases use the same driver)
+                Database tasks: PostgreSQL, MySQL and Oracle tools now can be saved as tasks
+                SSH configurator: UI controls layout was fixed
+                Database driver edit dialog was fixed (legacy driver option is disabled by default)</p>
                 <p>MySQL:</p>
                 <ul>
                     <li>User permission management was fixed (FLUSH PRIVILEGES is not needed for newer server versions)</li>
