@@ -53,12 +53,12 @@
                     <li>Main menu File items were reordered</li>
                     <li>Heading and trailing spaces trim was added to all edit dialogs/panels</li>
                 </ul>
-                <p>Session manager: problem with multiple windows was fixed</p>
-                <p>SQL Server: Database tools (index rebuild, triggers disable) were redesigned</p>
-                <p>Firebird: new table and table column creation was fixed</p>
-                <p>PostgreSQL: Table partition DDL was fixed</p>
-                <p>MySQL: CHECK constraints edit support was added</p>
-                <p>Oracle:</p>
+                <p>Session manager: problem with multiple windows was fixed
+                SQL Server: Database tools (index rebuild, triggers disable) were redesigned
+                Firebird: new table and table column creation was fixed
+                PostgreSQL: Table partition DDL was fixed
+                MySQL: CHECK constraints edit support was added
+                Oracle:</p>
                 <ul>
                     <li>Table statistics read was fixed</li>
                     <li>Schema indexes folder was added</li>
@@ -73,10 +73,10 @@
                     <li>Index create DDL was fixed</li>
                     <li>Table statistics read performance was improved</li>
                 </ul>
-                <p>Redshift: driver download was fixed</p>
-                <p>SQreamDB driver was added</p>
-                <p>YugabyteDB driver was added</p>
-                <p>We upgraded Eclipse platform version to 2020-06. It affects dark theme and General preferences and fixes several minor bugs</p>
+                <p>Redshift: driver download was fixed
+                SQreamDB driver was added
+                YugabyteDB driver was added
+                We upgraded Eclipse platform version to 2020-06. It affects dark theme and General preferences and fixes several minor bugs</p>
             </description>
         </release>
         <release version="7.1.1" date="2020-06-21">
@@ -276,6 +276,6 @@
                 </ul>
             </description>
         </release>
-        </releases>
-    <content_rating type="oars-1.1"/>
+    </releases>
+    <content_rating type="oars-1.1" />
 </component>
