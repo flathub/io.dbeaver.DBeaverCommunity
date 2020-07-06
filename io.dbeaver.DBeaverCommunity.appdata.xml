@@ -57,8 +57,8 @@
                 SQL Server: Database tools (index rebuild, triggers disable) were redesigned
                 Firebird: new table and table column creation was fixed
                 PostgreSQL: Table partition DDL was fixed
-                MySQL: CHECK constraints edit support was added
-                Oracle:</p>
+                MySQL: CHECK constraints edit support was added</p>
+                <p>Oracle:</p>
                 <ul>
                     <li>Table statistics read was fixed</li>
                     <li>Schema indexes folder was added</li>
