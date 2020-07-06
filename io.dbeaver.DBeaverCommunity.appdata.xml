@@ -30,6 +30,55 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.1.2" date="2020-07-05">
+            <description>
+                <p>Data viewer:</p>
+                <ul>
+                    <li>Now we refresh entire row after cell value update (handy if you have triggers)</li>
+                    <li>Generate SQL context menu was fixed</li>
+                    <li>Horizontal scroll with mouse wheel support was added</li>
+                    <li>Export data in source code (PHP arrays) format was added</li>
+                    <li>Bug with Ctrl+Backspace handler was fixed</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Query cancel handler was improved (problem with UI stuck was fixed)</li>
+                    <li>Now we show query information in the result tab tooltip</li>
+                    <li>Query parser was fixed (active query extraction for Ctrl+Enter action)</li>
+                    <li>Template variables (${word_selection} and ${line_selection}) support was fixed</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Icons for "Create object" actions were fixed</li>
+                    <li>Main menu File items were reordered</li>
+                    <li>Heading and trailing spaces trim was added to all edit dialogs/panels</li>
+                </ul>
+                <p>Session manager: problem with multiple windows was fixed</p>
+                <p>SQL Server: Database tools (index rebuild, triggers disable) were redesigned</p>
+                <p>Firebird: new table and table column creation was fixed</p>
+                <p>PostgreSQL: Table partition DDL was fixed</p>
+                <p>MySQL: CHECK constraints edit support was added</p>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Table statistics read was fixed</li>
+                    <li>Schema indexes folder was added</li>
+                    <li>Check constraints editor was added</li>
+                    <li>Trigger status icon was fixed</li>
+                </ul>
+                <p>Exasol: (thanks to @Sargul)</p>
+                <ul>
+                    <li>Metadata read performance was improved</li>
+                    <li>Metadata search support was added</li>
+                    <li>Table references</li>
+                    <li>Index create DDL was fixed</li>
+                    <li>Table statistics read performance was improved</li>
+                </ul>
+                <p>Redshift: driver download was fixed</p>
+                <p>SQreamDB driver was added</p>
+                <p>YugabyteDB driver was added</p>
+                <p>We upgraded Eclipse platform version to 2020-06. It affects dark theme and General preferences and fixes several minor bugs</p>
+            </description>
+        </release>
         <release version="7.1.1" date="2020-06-21">
             <description>
                 <p>Database navigator:</p>
@@ -224,50 +273,6 @@
                     <li>Japanese localization was significantly improved (thanks to @ScratchBuild)</li>
                     <li>We have migrated to Eclipse platform 2020-03</li>
                     <li>Many other minor bug fixes and improvements</li>
-                </ul>
-            </description>
-        </release>
-        <release version="7.0.2" date="2020-04-05">
-            <description>
-                <ul>
-                    <li> Database navigator:</li>
-                    <li>     Simplified database structure view was added</li>
-                    <li>     Navigator view settings and presets were added</li>
-                    <li> Object editor:</li>
-                    <li>     Context menu was added to the object breadcrumbs</li>
-                    <li>     Object alter script now can be opened in SQL editor</li>
-                    <li> Data editor:</li>
-                    <li>     Preference and data format changes now applying immediately (without data refresh)</li>
-                    <li>     Scrollbar position reset in columns reorder/filtering was fixed</li>
-                    <li>     Number of selected rows/columns/cells now shown in the status bar</li>
-                    <li>     Query filter history save/load was fixed</li>
-                    <li>     Floating point numbers (4-byte precision) rendering was fixed</li>
-                    <li> SQL Editor: quick search tool was added (ctrl+alt+shift+f)</li>
-                    <li> Driver copy was fixed (problem with read-only URL)</li>
-                    <li> PostgreSQL:</li>
-                    <li>     PGPASS support was fixed</li>
-                    <li>     Database information (ctype, collate) reading was fixed</li>
-                    <li>     Problems with default database change were fixed</li>
-                    <li>     OID types rendering fix</li>
-                    <li>     Domain metadata reading was fixed (base type qualified name)</li>
-                    <li>     Extra options were added to database backup/restore wizards</li>
-                    <li> Redshift: data type resolution was fixed (array types)</li>
-                    <li> SQL Server:</li>
-                    <li>     Driver download and "reset to default" was fixed</li>
-                    <li>     Default schema detection was added</li>
-                    <li>     Problems with read-only query results were fixed</li>
-                    <li>     Column comments edit was fixed</li>
-                    <li> MySQL:</li>
-                    <li>     Permission editor was fixed (schema privileges)</li>
-                    <li>     Index rename support was added</li>
-                    <li> Exasol:</li>
-                    <li>     Security tree (Exasol 7) was fixed</li>
-                    <li>     Auto-completion for builtin functions was added</li>
-                    <li>     Foreign keys metadata was fixed</li>
-                    <li> Oracle: "drop procedure" support was fixed</li>
-                    <li> SAP HANA: driver download was fixed</li>
-                    <li> Firebird: driver version was upgraded (4.0)</li>
-                    <li> Many other minor bug fixes</li>
                 </ul>
             </description>
         </release>
