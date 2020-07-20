@@ -68,10 +68,21 @@ with open(MANIFEST, 'w') as file:
 
 release = etree.Element('release', {
     'version': VERSION,
-    'date': iso8601.parse_date(RELEASEDATA['published_at']).strftime('%Y-%m-%d'),
-    'url': 'https://github.com/dbeaver/dbeaver/releases/tag/%s' % VERSION
+    'date': iso8601.parse_date(RELEASEDATA['published_at']).strftime('%Y-%m-%d')
 })
+release.text = '\n            '
 release.tail = '\n        '
+
+description = etree.SubElement(release, 'description')
+description.tail = '\n            '
+description.text = '\n                '
+p = etree.SubElement(description, 'p')
+p.tail = '\n            '
+p.text = 'Release of version: %s' % VERSION
+
+desc_url = etree.SubElement(release, 'url')
+desc_url.tail = '\n        '
+desc_url.text = 'https://github.com/dbeaver/dbeaver/releases/tag/%s' % VERSION
 
 parser = etree.XMLParser(remove_comments=False)
 tree = etree.parse(APPDATA, parser=parser)

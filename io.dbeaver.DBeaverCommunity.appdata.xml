@@ -6,6 +6,7 @@
     <project_license>Apache-2.0</project_license>
     <name>DBeaver Community</name>
     <url type="homepage">https://dbeaver.io</url>
+    <url type="bugtracker">https://github.com/dbeaver/dbeaver/issues</url>
     <summary>Universal Database Manager.</summary>
     <description>
         <p>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
@@ -30,7 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
-        <release version="7.1.3" date="2020-07-19" url="https://github.com/dbeaver/dbeaver/releases/tag/7.1.3"/>
+        <release version="7.1.3" date="2020-07-19">
+            <description>
+                <p>Release of version: 7.1.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.3</url>
+        </release>
         <release version="7.1.2" date="2020-07-05">
             <description>
                 <p>Data viewer:</p>
@@ -208,44 +214,6 @@
                 </ul>
             </description>
         </release>
-        <release version="7.0.4" date="2020-05-03">
-            <description>
-                <ul>
-                    <li> SQL editor:</li>
-                    <li>     Format now formats active query by default</li>
-                    <li>     Matching brackets highlighting was improved</li>
-                    <li> Data viewer:</li>
-                    <li>     Find/replace highlighting and scrolling was fixed</li>
-                    <li>     Data filter save was fixed (problem with quoted column names)</li>
-                    <li>     Auto-completion in data filter now can be disabled</li>
-                    <li> Object editor: refresh button in bottom toolbar was unified for all pages</li>
-                    <li> Dark theme support improved (connection type colors)</li>
-                    <li> New connection wizard was fixed (problem with quick driver selector)</li>
-                    <li> Driver editor dialog was improved:</li>
-                    <li>     Extra properties save was fixed</li>
-                    <li>     Legacy drivers support was added</li>
-                    <li> Git extension packaging was fixed (older Eclipse versions support)</li>
-                    <li> Derby: new database create was fixed</li>
-                    <li> Firebird: system objects hide/show was fixed (determine system flag from fro meta table)</li>
-                    <li> MySQL:</li>
-                    <li>     Read-only connections support was fixed (SQL editors)</li>
-                    <li>     Query execution plan explain was fixed</li>
-                    <li> Oracle:</li>
-                    <li>     Driver configuration was fixed (typo in Maven artifact name)</li>
-                    <li>     Java classes source viewer was added</li>
-                    <li>     Materialized view DDL read was fixed</li>
-                    <li>     PL/SQL parser was fixed (CASE/WHEN/END)</li>
-                    <li> PostgreSQL:</li>
-                    <li>     search_path update was fixed</li>
-                    <li>     Numeric values rendering was fixed</li>
-                    <li> Redshift: SOCKS proxy support was fixed</li>
-                    <li> SQL Server: table DDL generation was fixed (column type names)</li>
-                    <li> SQLite: foreign key metadata read was fixed (FKs with no name)</li>
-                    <li> Portuguese (BR) localization was added (thanks to @wellesximenes)</li>
-                    <li> Many minor bug fixes and improvements</li>
-                </ul>
-            </description>
-        </release>
-    </releases>
+        </releases>
     <content_rating type="oars-1.1"/>
 </component>
