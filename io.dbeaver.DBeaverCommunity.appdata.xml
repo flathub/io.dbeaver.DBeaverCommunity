@@ -39,8 +39,8 @@
                     <li>PostgreSQL: data type DDL was improved + comment edit support was added</li>
                     <li>Oracle: problem with connect as SYSDBA was fixed</li>
                     <li>Exasol: (thaks to @Sargul)</li>
-                    <li>  Database error type discovery was added (proper handle of "connection lost" errors)</li>
-                    <li>  Metadata read performance was improved</li>
+                    <li>-  Database error type discovery was added (proper handle of "connection lost" errors)</li>
+                    <li>-  Metadata read performance was improved</li>
                     <li>Googlee Spanner: official driver configuration was added (thanks to @olavloite)</li>
                     <li>Simple view mode was fixed (redundant database objects were hidden)</li>
                     <li>Proxy configuration UI was fixed</li>
