@@ -68,41 +68,10 @@ with open(MANIFEST, 'w') as file:
 
 release = etree.Element('release', {
     'version': VERSION,
-    'date': iso8601.parse_date(RELEASEDATA['published_at']).strftime('%Y-%m-%d')
+    'date': iso8601.parse_date(RELEASEDATA['published_at']).strftime('%Y-%m-%d'),
+    'url': 'https://github.com/dbeaver/dbeaver/releases/tag/%s' % VERSION
 })
-release.text = '\n            '
 release.tail = '\n        '
-
-description = etree.SubElement(release, 'description')
-description.tail = '\n        '
-description.text = '\n                '
-
-
-release_notes = textwrap.dedent(RELEASEDATA['body'])
-release_notes = os.linesep.join([s for s in release_notes.splitlines() if s])
-parsed_notes = parse_notes(release_notes)
-for key in parsed_notes:
-    p = etree.SubElement(description, 'p')
-    if key == list(parsed_notes.keys())[-1]:
-        p.tail = '\n            '
-    else:
-        p.tail = '\n                '
-    # add description if exists
-    if len(parsed_notes[key]) > 0:
-        p.text = key
-        ul = etree.SubElement(description, 'ul')
-        ul.tail = '\n                '
-        ul.text = '\n                    '
-        for desc in parsed_notes[key]:
-            li = etree.SubElement(ul, 'li')
-            li.text = desc
-            if desc == parsed_notes[key][-1]:
-                li.tail = '\n                '
-            else:
-                li.tail = '\n                    '
-    else:
-        p.text = key
-
 
 parser = etree.XMLParser(remove_comments=False)
 tree = etree.parse(APPDATA, parser=parser)
@@ -121,4 +90,8 @@ tree.write(APPDATA, encoding="utf-8", xml_declaration=True)
 
 os.remove(FILENAME)
 
+print('Running xml validation')
+subprocess.run(['org.freedesktop.appstream-glib', 'validate', 'io.dbeaver.DBeaverCommunity.appdata.xml'])
+
+print()
 print("Update done. New version: " + VERSION)
