@@ -30,27 +30,7 @@
         </screenshot>
     </screenshots>
     <releases>
-        <release version="7.1.3" date="2020-07-19">
-            <description>
-                <ul style-type="none">
-                    <li>Spatial presentation: tooltips rendering was fixed</li>
-                    <li>DB2: UI tools were converted into database tasks</li>
-                    <li>MySQL/MariaDB: database restore was fixed (binary data corruption)</li>
-                    <li>PostgreSQL: data type DDL was improved + comment edit support was added</li>
-                    <li>Oracle: problem with connect as SYSDBA was fixed</li>
-                    <li>Exasol: (thaks to @Sargul)</li>
-                    <li>-  Database error type discovery was added (proper handle of "connection lost" errors)</li>
-                    <li>-  Metadata read performance was improved</li>
-                    <li>Googlee Spanner: official driver configuration was added (thanks to @olavloite)</li>
-                    <li>Simple view mode was fixed (redundant database objects were hidden)</li>
-                    <li>Proxy configuration UI was fixed</li>
-                    <li>MacOS installer was fixed (potential vulnerability was removed, thanks to @De4dCr0w)</li>
-                    <li>Tasks management: error handing was improved (for deleted tables)</li>
-                    <li>We reverted to Eeclipse 2020-03 platform (it resolves a set of UI glitches on some platforms)</li>
-                    <li>A few minor UI and database-specific bugs were fixed</li>
-                </ul>
-            </description>
-        </release>
+        <release version="7.1.3" date="2020-07-19" url="https://github.com/dbeaver/dbeaver/releases/tag/7.1.3" />
         <release version="7.1.2" date="2020-07-05">
             <description>
                 <p>Data viewer:</p>
