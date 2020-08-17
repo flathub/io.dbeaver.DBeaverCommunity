@@ -31,6 +31,55 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.1.5" date="2020-08-16">
+            <description>
+                <p>Data transfer:</p>
+                <ul>
+                    <li>Import from multiple CSV files was added</li>
+                    <li>Import from files into new tables</li>
+                    <li>Data import preview dialog was added</li>
+                    <li>Target table create/alter DDL now supports database-specific options</li>
+                    <li>Virtual columns are ignored in SQL INSERTs export</li>
+                    <li>Problem with data transfer wizard and Darkest Dark theme was fixed</li>
+                    <li>Problem with timestamp format for CSV/XLSX export was fixed</li>
+                    <li>Case sensitive table/column names resolution was fixed</li>
+                </ul>
+                <p>Database navigator:</p>
+                <ul>
+                    <li>Statistics render was fixed for MacOS and Linux</li>
+                    <li>Database size statistics was added for PostgreSQL, MySQL, SQL Server, DB2</li>
+                </ul>
+                <p>Team work:</p>
+                <ul>
+                    <li>Problem with empty Git Repositories view was fixed</li>
+                    <li>Git integration was added in project navigator view</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Native client version was upgraded to version 12 (Windows)</li>
+                    <li>Check constraints read was fixed (PG 12+)</li>
+                    <li>SQL results limit was fixed (for queries with LIMIT/OFFSET/FETCH clauses)</li>
+                    <li>Object DDL generator was improved (comments, permissions)</li>
+                    <li>Support of case insensitive full-text search was added</li>
+                    <li>Table partitions statistics was added</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>TNS names search was fixed</li>
+                    <li>Connection info was fixed for TNS/custom URL connections</li>
+                    <li>Variables are now supported in custom JDBC URL (thanks to @insightfuls)</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Problem with check constraints read was fixed</li>
+                    <li>Table copy was fixed (bug with redundant indexes was resolved)</li>
+                </ul>
+                <p>Redshift: problem with read-only resultsets was fixed.
+                    Snowflake: SQL dialect support was fixed ($$ comments).
+                    A large number of minor UI improvements and bugfixes</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.5</url>
+        </release>
         <release version="7.1.4" date="2020-08-02">
             <description>
                 <p>Release of version: 7.1.4</p>
@@ -185,41 +234,6 @@
                 </ul>
             </description>
         </release>
-        <release version="7.0.5" date="2020-05-17">
-            <description>
-                <ul>
-                    <li> Data viewer:</li>
-                    <li>     Pin (aka "freeze") column feature was added</li>
-                    <li>     Float (32bit) data type render was fixed (MySQL)</li>
-                    <li>     Plaintext renderer was fixed (binary values representation)</li>
-                    <li>     Filter value auto-complete was fixed (clipboard paste support)</li>
-                    <li>     Issue with "order by table column + column alias" was fixed</li>
-                    <li> SQL editor:</li>
-                    <li>     Script close prompt was fixed</li>
-                    <li>     Hyperlinks now contain procedure parameters</li>
-                    <li>     Script selector panel positioning was fixed</li>
-                    <li>     Execute in new tab: new tabs opening was fixed</li>
-                    <li>     SQL format preferences page was improved</li>
-                    <li>     SQL formatting was fixed (line feeds after brackets)</li>
-                    <li>     SQL console title was fixed (source object name was added)</li>
-                    <li> Non-https Maven repositories and driver links were removed</li>
-                    <li> PostgreSQL:</li>
-                    <li>     Added parameters to the SQL execution plan explain (ANALYSE is optional)</li>
-                    <li>     Database backup  was fixed on Linux/MacOS (proper table names quoting)</li>
-                    <li>     Table DDL was fixed (show table comment)</li>
-                    <li>     Sequence DDL was fixed (START parameter)</li>
-                    <li>     Object dependencies now contain links on dependent/depending object</li>
-                    <li>     Permission/role editors were fixed (roles are sorted by name now)</li>
-                    <li>     SQL auto-completion fixed for older PG (&lt;= 8.4)</li>
-                    <li> Oracle: unique key detection was fixed</li>
-                    <li> DB2:</li>
-                    <li>     FOR BIT DATA columns support was fixed (show value as binary)</li>
-                    <li>     Native SQL dialect support was improved (BEGIN/END)</li>
-                    <li> SQLite: ROWID pseudo-column support was added (as unique key)</li>
-                    <li> Many other minor bug fixes and improvements</li>
-                </ul>
-            </description>
-        </release>
-        </releases>
-    <content_rating type="oars-1.1"/>
+    </releases>
+    <content_rating type="oars-1.1" />
 </component>
