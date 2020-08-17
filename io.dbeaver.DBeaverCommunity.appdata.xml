@@ -31,6 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.1.5" date="2020-08-16">
+            <description>
+                <p>Release of version: 7.1.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.5</url>
+        </release>
         <release version="7.1.4" date="2020-08-02">
             <description>
                 <p>Release of version: 7.1.4</p>
@@ -182,41 +188,6 @@
                     <li> Firebird: view editor was fixed</li>
                     <li> Plain HTTP driver repositories (Maven or direct links) were replaced or removed</li>
                     <li> Big number of minor UI and database-specific bugs were fixed</li>
-                </ul>
-            </description>
-        </release>
-        <release version="7.0.5" date="2020-05-17">
-            <description>
-                <ul>
-                    <li> Data viewer:</li>
-                    <li>     Pin (aka "freeze") column feature was added</li>
-                    <li>     Float (32bit) data type render was fixed (MySQL)</li>
-                    <li>     Plaintext renderer was fixed (binary values representation)</li>
-                    <li>     Filter value auto-complete was fixed (clipboard paste support)</li>
-                    <li>     Issue with "order by table column + column alias" was fixed</li>
-                    <li> SQL editor:</li>
-                    <li>     Script close prompt was fixed</li>
-                    <li>     Hyperlinks now contain procedure parameters</li>
-                    <li>     Script selector panel positioning was fixed</li>
-                    <li>     Execute in new tab: new tabs opening was fixed</li>
-                    <li>     SQL format preferences page was improved</li>
-                    <li>     SQL formatting was fixed (line feeds after brackets)</li>
-                    <li>     SQL console title was fixed (source object name was added)</li>
-                    <li> Non-https Maven repositories and driver links were removed</li>
-                    <li> PostgreSQL:</li>
-                    <li>     Added parameters to the SQL execution plan explain (ANALYSE is optional)</li>
-                    <li>     Database backup  was fixed on Linux/MacOS (proper table names quoting)</li>
-                    <li>     Table DDL was fixed (show table comment)</li>
-                    <li>     Sequence DDL was fixed (START parameter)</li>
-                    <li>     Object dependencies now contain links on dependent/depending object</li>
-                    <li>     Permission/role editors were fixed (roles are sorted by name now)</li>
-                    <li>     SQL auto-completion fixed for older PG (&lt;= 8.4)</li>
-                    <li> Oracle: unique key detection was fixed</li>
-                    <li> DB2:</li>
-                    <li>     FOR BIT DATA columns support was fixed (show value as binary)</li>
-                    <li>     Native SQL dialect support was improved (BEGIN/END)</li>
-                    <li> SQLite: ROWID pseudo-column support was added (as unique key)</li>
-                    <li> Many other minor bug fixes and improvements</li>
                 </ul>
             </description>
         </release>
