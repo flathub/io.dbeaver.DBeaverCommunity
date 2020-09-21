@@ -31,6 +31,37 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.2.1" date="2020-09-20">
+            <description>
+                <p>Preference pages structure was reorganized (in the standalone and plugin versions)</p>
+                <p>Database navigator:</p>
+                <ul>
+                    <li>Filters now support masks escape (_ and % characters)</li>
+                    <li>Connection state icons were replaced and adapted to dark themes</li>
+                </ul>
+                <p>SQL Editor: editor tab title now can include active database/schema name</p>
+                <p>MySQL: driver "MySQL 8" is now the default driver. "MySQL 5" driver can be used for older server versions.</p>
+                <p>Oracle: tables/views load performance was improved on some systems</p>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Latest PostGIS driver mapping was added</li>
+                    <li>Geometry data types export was improved (proper SQL format + SRID)</li>
+                    <li>Hidden databases can be loaded in the database navigater </li>
+                </ul>
+                <p>CockroarchDB: role manager was fixed</p>
+                <p>DB2: runstats utility support was fixed (wrong syntax)</p>
+                <p>SQL Server: extra T-SQL dialect keywords were added</p>
+                <p>CUBRID driver configuration was fixed</p>
+                <p>Several UI freeze issues were fixed (deadlocks)</p>
+                <p>Import from CSV/XLSX:</p>
+                <ul>
+                    <li>Wrong rows can be skipped (with disabled "Batch import" option)</li>
+                    <li>Import parameters documentation was updated </li>
+                </ul>
+                <p>Several minor bugs were fixed (NPE and UI glitches) </p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.1</url>
+        </release>
         <release version="7.2.0" date="2020-08-30">
             <description>
                 <p>Major changes since 7.1:</p>
@@ -174,66 +205,6 @@
                 We upgraded Eclipse platform version to 2020-06. It affects dark theme and General preferences and fixes several minor bugs</p>
             </description>
         </release>
-        <release version="7.1.1" date="2020-06-21">
-            <description>
-                <p>Database navigator:</p>
-                <ul>
-                    <li>Connection type highlighting was redesigned</li>
-                    <li>Simple view support was improved</li>
-                    <li>"Force object refresh on editor open" action was fixed</li>
-                    <li>Main toolbar UIX was improved (no disabled selectors)</li>
-                    <li>Database tools context menu was fixed</li>
-                </ul>
-                <p>Table statistics:</p>
-                <ul>
-                    <li>Rendering problems (redraw on scrolling) were fixed</li>
-                    <li>Performance problems were fixed</li>
-                    <li>SQL Server support was added</li>
-                </ul>
-                <p>Data viewer:</p>
-                <ul>
-                    <li>Wrong value extraction was fixed for expression aliases which conflict with table column names</li>
-                    <li>Dictionary values separator configuration was added</li>
-                    <li>Row coloring: support of gradient coloring for read-only columns was added</li>
-                    <li>Data formatter:</li>
-                    <li>Action "reset to default" was fixed in preferences</li>
-                    <li>Preference changes are immediately applied to open data editors</li>
-                </ul>
-                <p>SQL editor:</p>
-                <ul>
-                    <li>Results tab rename was fixed (now we save tab title between results refresh)</li>
-                    <li>Parser of multiple SQL queries on a single line was fixed</li>
-                    <li>Execution plan explain operation cancel was implemented</li>
-                    <li>Coloring of numbers in scientific notation was fixed</li>
-                    <li>Paste from source code: \n and \r characters handle was fixed (now we use proper line feeds)</li>
-                    <li>Stored procedures call generation was fixed</li>
-                </ul>
-                <p>Object editor: "reject changes" and command undo/redo command were fixed
-                Data import: open target table on finish
-                Data migration: DDL generation was improved (apply the same column data type when source and target databases use the same driver)
-                Database tasks: PostgreSQL, MySQL and Oracle tools now can be saved as tasks
-                SSH configurator: UI controls layout was fixed
-                Database driver edit dialog was fixed (legacy driver option is disabled by default)</p>
-                <p>MySQL:</p>
-                <ul>
-                    <li>User permission management was fixed (FLUSH PRIVILEGES is not needed for newer server versions)</li>
-                    <li>Unsigned INT and BIGINT data types support was added</li>
-                </ul>
-                <p>Oracle:</p>
-                <ul>
-                    <li>Numeric data type modifiers (scale/precision) rendering was fixed</li>
-                    <li>Materialized views read/create and delete was fixed (mviews were removed from table list)</li>
-                </ul>
-                <p>PostgreSQL:</p>
-                <ul>
-                    <li>Vacuum tool was improved (run in auto-commit mode)</li>
-                    <li>List of reserved keywords was updated</li>
-                </ul>
-                <p>Redshift: View with no schema binding support was added</p>
-                <p>SQL Server: timestamp columns were marked as auto-generated</p>
-                <p>Big number of minor UI and database-specific bugs were fixed</p>
-            </description>
-        </release>
     </releases>
-    <content_rating type="oars-1.1" />
+    <content_rating type="oars-1.1"/>
 </component>
