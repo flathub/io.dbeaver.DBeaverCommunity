@@ -1,13 +1,13 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: '3.36'
+runtime-version: '3.38'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
 command: /app/dbeaver/dbeaver
 finish-args:
   - "--share=ipc"
-  - "--socket=x11"
+  - "--socket=fallback-x11"
   - "--socket=wayland"
   - "--socket=ssh-auth"
   - "--share=network"
