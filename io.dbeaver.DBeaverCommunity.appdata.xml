@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
@@ -31,6 +31,73 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.2.2" date="2020-10-04">
+            <description>
+                <p>Release of version: 7.2.2</p>
+                <ul>
+                    <li>
+                  Database navigator:
+                        <ul>
+                            <li>View only connected data sources filter was added</li>
+                            <li>Quick search in connections/schemas options were added</li>
+                            <li>Multiple objects delete confirmation dialog was redesigned</li>
+                            <li>Tooltips visibility configuration was added in preferences</li>
+                        </ul>
+                    </li>
+                    <li>Windows installer: shortcuts for "All Users" were fixed</li>
+                    <li>
+                  SSH tunnels:
+                        <ul>
+                            <li>Support for OpenSSH key format was added</li>
+                            <li>Problem with dobule password prompt was fixed</li>
+                        </ul>
+                    </li>
+                    <li>
+                  Data viewer:
+                        <ul>
+                            <li>Grouping panel now supports column reordering</li>
+                            <li>Column modifier icons (key, read-only) were updated</li>
+                            <li>JSON/XML viewer performance was significantly improved</li>
+                        </ul>
+                    </li>
+                    <li>SQL editor: toolbar buttons enablement was fixed</li>
+                    <li>
+                  Data transfer:
+                        <ul>
+                            <li>Native client selector was fixed</li>
+                            <li>Extra file name pattern variables were added</li>
+                            <li>Native date/timestamp format support was added to the SQL INSERTS export</li>
+                            <li>Extra formatting options were added to the SQL INSERTS format</li>
+                        </ul>
+                    </li>
+                    <li>MySQL: user credentials of mysqldump overwrite local configuration now</li>
+                    <li>
+                  SQL Server:
+                        <ul>
+                            <li>SSL support was added</li>
+                            <li>Database create/drop/rename features were added</li>
+                        </ul>
+                    </li>
+                    <li>
+                  PostgreSQL:
+                        <ul>
+                            <li>Interval data type DDL was improved</li>
+                            <li>Table storage parameters were added to DDL</li>
+                            <li>"Connect as role" option was added in the connection settings</li>
+                            <li>Materialized view comment edit was fixed</li>
+                            <li>Trigger comment editor was added</li>
+                        </ul>
+                    </li>
+                    <li>Oracle: extra NLS parameters were added on the connection settings page</li>
+                    <li>Snowflake: active schema set command was fixed</li>
+                    <li>Derby: unique indexes metadata read was implemented</li>
+                    <li>SQLite: column autoincrement option support was added</li>
+                    <li>Firebird: data types information read was fixed</li>
+                    <li>Several other minor UI bugs were fixed</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.2</url>
+        </release>
         <release version="7.2.1" date="2020-09-20">
             <description>
                 <p>Preference pages structure was reorganized (in the standalone and plugin versions)</p>
@@ -46,7 +113,7 @@
                 <ul>
                     <li>Latest PostGIS driver mapping was added</li>
                     <li>Geometry data types export was improved (proper SQL format + SRID)</li>
-                    <li>Hidden databases can be loaded in the database navigater </li>
+                    <li>Hidden databases can be loaded in the database navigater</li>
                 </ul>
                 <p>CockroarchDB: role manager was fixed</p>
                 <p>DB2: runstats utility support was fixed (wrong syntax)</p>
@@ -56,9 +123,9 @@
                 <p>Import from CSV/XLSX:</p>
                 <ul>
                     <li>Wrong rows can be skipped (with disabled "Batch import" option)</li>
-                    <li>Import parameters documentation was updated </li>
+                    <li>Import parameters documentation was updated</li>
                 </ul>
-                <p>Several minor bugs were fixed (NPE and UI glitches) </p>
+                <p>Several minor bugs were fixed (NPE and UI glitches)</p>
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.1</url>
         </release>
@@ -156,55 +223,6 @@
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.3</url>
         </release>
-        <release version="7.1.2" date="2020-07-05">
-            <description>
-                <p>Data viewer:</p>
-                <ul>
-                    <li>Now we refresh entire row after cell value update (handy if you have triggers)</li>
-                    <li>Generate SQL context menu was fixed</li>
-                    <li>Horizontal scroll with mouse wheel support was added</li>
-                    <li>Export data in source code (PHP arrays) format was added</li>
-                    <li>Bug with Ctrl+Backspace handler was fixed</li>
-                </ul>
-                <p>SQL Editor:</p>
-                <ul>
-                    <li>Query cancel handler was improved (problem with UI stuck was fixed)</li>
-                    <li>Now we show query information in the result tab tooltip</li>
-                    <li>Query parser was fixed (active query extraction for Ctrl+Enter action)</li>
-                    <li>Template variables (${word_selection} and ${line_selection}) support was fixed</li>
-                </ul>
-                <p>Navigator:</p>
-                <ul>
-                    <li>Icons for "Create object" actions were fixed</li>
-                    <li>Main menu File items were reordered</li>
-                    <li>Heading and trailing spaces trim was added to all edit dialogs/panels</li>
-                </ul>
-                <p>Session manager: problem with multiple windows was fixed.
-                SQL Server: Database tools (index rebuild, triggers disable) were redesigned.
-                Firebird: new table and table column creation was fixed.
-                PostgreSQL: Table partition DDL was fixed.
-                MySQL: CHECK constraints edit support was added</p>
-                <p>Oracle:</p>
-                <ul>
-                    <li>Table statistics read was fixed</li>
-                    <li>Schema indexes folder was added</li>
-                    <li>Check constraints editor was added</li>
-                    <li>Trigger status icon was fixed</li>
-                </ul>
-                <p>Exasol: (thanks to @Sargul)</p>
-                <ul>
-                    <li>Metadata read performance was improved</li>
-                    <li>Metadata search support was added</li>
-                    <li>Table references</li>
-                    <li>Index create DDL was fixed</li>
-                    <li>Table statistics read performance was improved</li>
-                </ul>
-                <p>Redshift: driver download was fixed.
-                SQreamDB driver was added.
-                YugabyteDB driver was added.
-                We upgraded Eclipse platform version to 2020-06. It affects dark theme and General preferences and fixes several minor bugs</p>
-            </description>
-        </release>
     </releases>
-    <content_rating type="oars-1.1"/>
+    <content_rating type="oars-1.1" />
 </component>
