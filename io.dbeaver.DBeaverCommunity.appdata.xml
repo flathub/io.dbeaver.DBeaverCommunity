@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
@@ -31,6 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.2.3" date="2020-10-18">
+            <description>
+                <p>Release of version: 7.2.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.3</url>
+        </release>
         <release version="7.2.2" date="2020-10-04">
             <description>
                 <p>Release of version: 7.2.2</p>
@@ -217,12 +223,6 @@
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.4</url>
         </release>
-        <release version="7.1.3" date="2020-07-19">
-            <description>
-                <p>Release of version: 7.1.3</p>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.3</url>
-        </release>
     </releases>
-    <content_rating type="oars-1.1" />
+    <content_rating type="oars-1.1"/>
 </component>
