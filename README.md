@@ -4,5 +4,5 @@ Free multi-platform database tool for developers, SQL programmers, database admi
 
 ## Flatpak local build test
 ```
-flatpak-builder --repo=repo --force-clean build-dir io.dbeaver.DBeaverCommunity.json 
+flatpak-builder --repo=repo --force-clean build-dir io.dbeaver.DBeaverCommunity.yml
 ```
