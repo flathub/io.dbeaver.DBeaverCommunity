@@ -31,6 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.2.5" date="2020-11-15">
+            <description>
+                <p>Release of version: 7.2.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.5</url>
+        </release>
         <release version="7.2.4" date="2020-11-01">
             <description>
                 <p>Release of version: 7.2.4</p>
@@ -174,61 +180,6 @@
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.0</url>
         </release>
-        <release version="7.1.5" date="2020-08-16">
-            <description>
-                <p>Data transfer:</p>
-                <ul>
-                    <li>Import from multiple CSV files was added</li>
-                    <li>Import from files into new tables</li>
-                    <li>Data import preview dialog was added</li>
-                    <li>Target table create/alter DDL now supports database-specific options</li>
-                    <li>Virtual columns are ignored in SQL INSERTs export</li>
-                    <li>Problem with data transfer wizard and Darkest Dark theme was fixed</li>
-                    <li>Problem with timestamp format for CSV/XLSX export was fixed</li>
-                    <li>Case sensitive table/column names resolution was fixed</li>
-                </ul>
-                <p>Database navigator:</p>
-                <ul>
-                    <li>Statistics render was fixed for MacOS and Linux</li>
-                    <li>Database size statistics was added for PostgreSQL, MySQL, SQL Server, DB2</li>
-                </ul>
-                <p>Team work:</p>
-                <ul>
-                    <li>Problem with empty Git Repositories view was fixed</li>
-                    <li>Git integration was added in project navigator view</li>
-                </ul>
-                <p>PostgreSQL:</p>
-                <ul>
-                    <li>Native client version was upgraded to version 12 (Windows)</li>
-                    <li>Check constraints read was fixed (PG 12+)</li>
-                    <li>SQL results limit was fixed (for queries with LIMIT/OFFSET/FETCH clauses)</li>
-                    <li>Object DDL generator was improved (comments, permissions)</li>
-                    <li>Support of case insensitive full-text search was added</li>
-                    <li>Table partitions statistics was added</li>
-                </ul>
-                <p>Oracle:</p>
-                <ul>
-                    <li>TNS names search was fixed</li>
-                    <li>Connection info was fixed for TNS/custom URL connections</li>
-                    <li>Variables are now supported in custom JDBC URL (thanks to @insightfuls)</li>
-                </ul>
-                <p>MySQL:</p>
-                <ul>
-                    <li>Problem with check constraints read was fixed</li>
-                    <li>Table copy was fixed (bug with redundant indexes was resolved)</li>
-                </ul>
-                <p>Redshift: problem with read-only resultsets was fixed.
-                    Snowflake: SQL dialect support was fixed ($$ comments).
-                    A large number of minor UI improvements and bugfixes</p>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.5</url>
-        </release>
-        <release version="7.1.4" date="2020-08-02">
-            <description>
-                <p>Release of version: 7.1.4</p>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.1.4</url>
-        </release>
-    </releases>
+        </releases>
     <content_rating type="oars-1.1"/>
 </component>
