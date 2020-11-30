@@ -31,6 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.3.0" date="2020-11-29">
+            <description>
+                <p>Release of version: 7.3.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.3.0</url>
+        </release>
         <release version="7.2.5" date="2020-11-15">
             <description>
                 <p>Release of version: 7.2.5</p>
@@ -146,39 +152,6 @@
                 <p>Several minor bugs were fixed (NPE and UI glitches)</p>
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.1</url>
-        </release>
-        <release version="7.2.0" date="2020-08-30">
-            <description>
-                <p>Major changes since 7.1:</p>
-                <ul>
-                    <li>Simplified database structure view was added</li>
-                    <li>Database maintenance tools can be saved as tasks now</li>
-                    <li>Table and schema size statistics were added in the database navigator</li>
-                    <li>Import from multiple CSV files was added. Files can be imported into new or existing tables</li>
-                    <li>Many problems with UI freeze on disconnect or query cancel were fixed</li>
-                    <li>Database navigator rendering was redesigned</li>
-                    <li>A number of problems with keyboard shortcuts were fixed</li>
-                    <li>Git integration was improved: now we show file status in the Project Explorer view</li>
-                    <li>New database drivers were added: YugabyteDB and SQreamDB</li>
-                </ul>
-                <p>Changes since 7.1.5:</p>
-                <ul>
-                    <li>Problem with database list load was fixed (PostgreSQL, Redshift, MySQL, Oracle, SQL Server)</li>
-                    <li>Metadata editor: edit property form rendering was improved (non-applicable fields are hidden)</li>
-                    <li>Performance for table statistics reading was improved</li>
-                    <li>Data viewer: Column ordering was fixed (for custom SQL queries). UUID transform: version 2 support was added</li>
-                    <li>Default database name and default user name were added for many database drivers</li>
-                    <li>Data export: custom data type formatting support was fixed</li>
-                    <li>PostgreSQL: Cursor fetch was fixed. Native client was upgraded to version 12. Table OID support was fixed (PG 12). PgPass parser was improved (support for escaped characters was added).</li>
-                    <li>Oracle: Materialized view comment editor was fixed. View definition reading was fixed (for non-DBA users). Table reading now uses DBA views (optional). Profile resources metadata reading was fixed.</li>
-                    <li>MariaDB/MySQL: table column resolving was fixed</li>
-                    <li>CockroachDB: connectivity problem was fixed</li>
-                    <li>Greenplum: Metadata search was fixed (for procedures). Table metadata reading was fixed.</li>
-                    <li>Dark theme support was improved (tab folders, toolbars)</li>
-                    <li>A large number of minor UI bugfixes</li>
-                </ul>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.0</url>
         </release>
         </releases>
     <content_rating type="oars-1.1"/>
