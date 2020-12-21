@@ -31,6 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.3.1" date="2020-12-20">
+            <description>
+                <p>Release of version: 7.3.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.3.1</url>
+        </release>
         <release version="7.3.0" date="2020-11-29">
             <description>
                 <p>Release of version: 7.3.0</p>
@@ -121,37 +127,6 @@
                 </ul>
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.2</url>
-        </release>
-        <release version="7.2.1" date="2020-09-20">
-            <description>
-                <p>Preference pages structure was reorganized (in the standalone and plugin versions)</p>
-                <p>Database navigator:</p>
-                <ul>
-                    <li>Filters now support masks escape (_ and % characters)</li>
-                    <li>Connection state icons were replaced and adapted to dark themes</li>
-                </ul>
-                <p>SQL Editor: editor tab title now can include active database/schema name</p>
-                <p>MySQL: driver "MySQL 8" is now the default driver. "MySQL 5" driver can be used for older server versions.</p>
-                <p>Oracle: tables/views load performance was improved on some systems</p>
-                <p>PostgreSQL:</p>
-                <ul>
-                    <li>Latest PostGIS driver mapping was added</li>
-                    <li>Geometry data types export was improved (proper SQL format + SRID)</li>
-                    <li>Hidden databases can be loaded in the database navigater</li>
-                </ul>
-                <p>CockroarchDB: role manager was fixed</p>
-                <p>DB2: runstats utility support was fixed (wrong syntax)</p>
-                <p>SQL Server: extra T-SQL dialect keywords were added</p>
-                <p>CUBRID driver configuration was fixed</p>
-                <p>Several UI freeze issues were fixed (deadlocks)</p>
-                <p>Import from CSV/XLSX:</p>
-                <ul>
-                    <li>Wrong rows can be skipped (with disabled "Batch import" option)</li>
-                    <li>Import parameters documentation was updated</li>
-                </ul>
-                <p>Several minor bugs were fixed (NPE and UI glitches)</p>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.1</url>
         </release>
         </releases>
     <content_rating type="oars-1.1"/>
