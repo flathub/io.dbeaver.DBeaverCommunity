@@ -31,6 +31,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        
+        <release version="7.3.2" date="2021-01-04">
+            <description>
+                <p>Release of version: 7.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.3.2</url>
+        </release>
         <release version="7.3.1" date="2020-12-20">
             <description>
                 <p>Release of version: 7.3.1</p>
