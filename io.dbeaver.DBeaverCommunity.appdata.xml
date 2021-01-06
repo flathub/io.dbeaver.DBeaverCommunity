@@ -31,6 +31,12 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="7.3.2" date="2021-01-03">
+            <description>
+                <p>Release of version: 7.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.3.2</url>
+        </release>
         <release version="7.3.1" date="2020-12-20">
             <description>
                 <p>Release of version: 7.3.1</p>
@@ -60,73 +66,6 @@
                 <p>Release of version: 7.2.3</p>
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.3</url>
-        </release>
-        <release version="7.2.2" date="2020-10-04">
-            <description>
-                <p>Release of version: 7.2.2</p>
-                <ul>
-                    <li>
-                  Database navigator:
-                        <ul>
-                            <li>View only connected data sources filter was added</li>
-                            <li>Quick search in connections/schemas options were added</li>
-                            <li>Multiple objects delete confirmation dialog was redesigned</li>
-                            <li>Tooltips visibility configuration was added in preferences</li>
-                        </ul>
-                    </li>
-                    <li>Windows installer: shortcuts for "All Users" were fixed</li>
-                    <li>
-                  SSH tunnels:
-                        <ul>
-                            <li>Support for OpenSSH key format was added</li>
-                            <li>Problem with dobule password prompt was fixed</li>
-                        </ul>
-                    </li>
-                    <li>
-                  Data viewer:
-                        <ul>
-                            <li>Grouping panel now supports column reordering</li>
-                            <li>Column modifier icons (key, read-only) were updated</li>
-                            <li>JSON/XML viewer performance was significantly improved</li>
-                        </ul>
-                    </li>
-                    <li>SQL editor: toolbar buttons enablement was fixed</li>
-                    <li>
-                  Data transfer:
-                        <ul>
-                            <li>Native client selector was fixed</li>
-                            <li>Extra file name pattern variables were added</li>
-                            <li>Native date/timestamp format support was added to the SQL INSERTS export</li>
-                            <li>Extra formatting options were added to the SQL INSERTS format</li>
-                        </ul>
-                    </li>
-                    <li>MySQL: user credentials of mysqldump overwrite local configuration now</li>
-                    <li>
-                  SQL Server:
-                        <ul>
-                            <li>SSL support was added</li>
-                            <li>Database create/drop/rename features were added</li>
-                        </ul>
-                    </li>
-                    <li>
-                  PostgreSQL:
-                        <ul>
-                            <li>Interval data type DDL was improved</li>
-                            <li>Table storage parameters were added to DDL</li>
-                            <li>"Connect as role" option was added in the connection settings</li>
-                            <li>Materialized view comment edit was fixed</li>
-                            <li>Trigger comment editor was added</li>
-                        </ul>
-                    </li>
-                    <li>Oracle: extra NLS parameters were added on the connection settings page</li>
-                    <li>Snowflake: active schema set command was fixed</li>
-                    <li>Derby: unique indexes metadata read was implemented</li>
-                    <li>SQLite: column autoincrement option support was added</li>
-                    <li>Firebird: data types information read was fixed</li>
-                    <li>Several other minor UI bugs were fixed</li>
-                </ul>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/7.2.2</url>
         </release>
         </releases>
     <content_rating type="oars-1.1"/>
