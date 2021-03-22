@@ -37,7 +37,7 @@ modules:
       - cp -r dbeaver_unpack/dbeaver /app
       - install -d /app/clients/bin
       - install -Dm644 dbeaver_unpack/dbeaver/dbeaver.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=WM_CLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Keywords /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
