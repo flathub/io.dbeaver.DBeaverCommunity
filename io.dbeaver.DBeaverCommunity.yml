@@ -37,7 +37,7 @@ modules:
       - cp -r dbeaver_unpack/dbeaver /app
       - install -d /app/clients/bin
       - install -Dm644 dbeaver_unpack/dbeaver/dbeaver.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=WM_CLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Keywords /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -82,5 +82,5 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/21.0.0/dbeaver-ce-21.0.0-linux.gtk.x86_64.tar.gz
-        sha256: 666d40db004e7cb44c50d56177a735e294dc3018cf59441b5f7d8773e54166e6
+        url: https://github.com/dbeaver/dbeaver/releases/download/21.0.1/dbeaver-ce-21.0.1-linux.gtk.x86_64.tar.gz
+        sha256: 5b10843010ea707e38786272adc706c5280ef2f29fbba22c3f66d434bdf813ea
