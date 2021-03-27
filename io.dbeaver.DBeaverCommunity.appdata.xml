@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
@@ -31,6 +31,7 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="21.0.1" date="2021-03-21"/>
         <release version="21.0.1" date="2021-03-21">
             <description>
                 <p>Release of version: 21.0.1</p>
