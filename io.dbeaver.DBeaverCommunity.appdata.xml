@@ -32,12 +32,6 @@
     </screenshots>
     <releases>
         <release version="21.0.1" date="2021-03-21"/>
-        <release version="21.0.1" date="2021-03-21">
-            <description>
-                <p>Release of version: 21.0.1</p>
-            </description>
-            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.0.1</url>
-        </release>
         <release version="21.0.0" date="2021-02-28">
             <description>
                 <p>Release of version: 21.0.0</p>
@@ -68,6 +62,6 @@
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.3.2</url>
         </release>
-        </releases>
+    </releases>
     <content_rating type="oars-1.1"/>
 </component>
