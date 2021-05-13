@@ -44,7 +44,7 @@ modules:
       - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;'
         /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=GenericName /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=GenericName --set-value='Database Manager;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=GenericName --set-value='Database Manager' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=MimeType /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
