@@ -1,6 +1,6 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: '3.38'
+runtime-version: '40'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
@@ -36,7 +36,7 @@ modules:
       - rm -rf dbeaver.tar.gz
       - cp -r dbeaver_unpack/dbeaver /app
       - install -d /app/clients/bin
-      - install -Dm644 dbeaver_unpack/dbeaver/dbeaver.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - install -Dm644 dbeaver_unpack/dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -83,8 +83,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/21.1.4/dbeaver-ce-21.1.4-linux.gtk.x86_64.tar.gz
-        sha256: ce3dd5bc8ab19b7d99eb74d4778d5ee31f76212ff6c589caf9fbf88b46bcdb89
+        url: https://download.dbeaver.com/community/21.1.5/dbeaver-ce-21.1.5-linux.gtk.x86_64.tar.gz
+        sha256: c34ada1ad0a14b4d91e3909ff2d5318af376ec29d771bff0955787209cf6051b
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64.tar.gz
