@@ -41,7 +41,8 @@ modules:
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Keywords /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;'
+        /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=GenericName /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=GenericName --set-value='Database Manager' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=MimeType /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -83,8 +84,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/21.2.1/dbeaver-ce-21.2.1-linux.gtk.x86_64.tar.gz
-        sha256: 29923e86928143aff28898cda40f5027df764fd1476a207cf731c2ed2bed5bdf
+        url: https://download.dbeaver.com/community/21.2.2/dbeaver-ce-21.2.2-linux.gtk.x86_64.tar.gz
+        sha256: 155449a5c29b19828f3fa6ff6d38b68a2d307f42dd2bb20229e3843dd6b6ce71
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64.tar.gz
