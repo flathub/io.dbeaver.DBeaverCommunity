@@ -14,6 +14,7 @@ finish-args:
   - --socket=pulseaudio
   - --device=dri
   - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.FileManager1
   - --filesystem=home
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin
 add-extensions:
