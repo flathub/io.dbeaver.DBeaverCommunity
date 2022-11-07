@@ -85,8 +85,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/22.2.3/dbeaver-ce-22.2.3-linux.gtk.x86_64.tar.gz
-        sha256: 759d59d1347ebfeeabbc0ed6de122af3343d1465d95debebd7cae34c23d749bb
+        url: https://download.dbeaver.com/community/22.2.4/dbeaver-ce-22.2.4-linux.gtk.x86_64.tar.gz
+        sha256: dedc545b7ac6e1a2c68e1046dabe5cb026d8dfc2715300bd47c6283eba538397
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64.tar.gz
