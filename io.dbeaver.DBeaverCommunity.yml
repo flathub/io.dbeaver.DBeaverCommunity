@@ -26,10 +26,12 @@ add-extensions:
     no-autodownload: true
     autodelete: true
 modules:
+
   - name: openjdk
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk11/install.sh
+
   - name: dbeaver-client
     buildsystem: simple
     build-commands:
@@ -85,9 +87,19 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/22.3.0/dbeaver-ce-22.3.0-linux.gtk.x86_64.tar.gz
+        url: https://download.dbeaver.com/community/22.3.0/dbeaver-ce-22.3.0-linux.gtk.x86_64-nojdk.tar.gz
         sha256: 93c21851e623dcfe633d9ada03e6280e416e014e4100d0db48119cf4a1a6f355
         x-checker-data:
           type: rotating-url
-          url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64.tar.gz
-          pattern: https://download.dbeaver.com/community/([0-9.]+)/dbeaver-ce-([0-9.]+)-linux.gtk.x86_64.tar.gz
+          url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64-nojdk.tar.gz
+          pattern: https://download.dbeaver.com/community/([0-9.]+)/dbeaver-ce-([0-9.]+)-linux.gtk.x86_64-nojdk.tar.gz
+      - type: file
+        dest-filename: dbeaver.tar.gz
+        only-arches:
+          - aarch64
+        url: https://download.dbeaver.com/community/22.3.0/dbeaver-ce-22.3.0-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: 93c21851e623dcfe633d9ada03e6280e416e014e4100d0db48119cf4a1a6f355
+        x-checker-data:
+          type: rotating-url
+          url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.aarch64-nojdk.tar.gz
+          pattern: https://download.dbeaver.com/community/([0-9.]+)/dbeaver-ce-([0-9.]+)-linux.gtk.aarch64-nojdk.tar.gz
