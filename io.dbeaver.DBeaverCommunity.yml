@@ -88,7 +88,7 @@ modules:
         only-arches:
           - x86_64
         url: https://download.dbeaver.com/community/22.3.0/dbeaver-ce-22.3.0-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: 0ddb65dc028bd79aac85ff423080fe13f3a6b0c06a71a85a11459b6c027aee37
+        sha256: c925444fbd1eff139be029557f01dedf55ade82c2e5dcf4e7d42aeb8336f9938
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64-nojdk.tar.gz
@@ -98,7 +98,7 @@ modules:
         only-arches:
           - aarch64
         url: https://download.dbeaver.com/community/22.3.0/dbeaver-ce-22.3.0-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: 40ee70170abd6066344c6597b47d45e865c080c6ea55e236cbf90d1b4f00fd1e
+        sha256: dd55fb7598292f1976fc43861d0c8a8e858bcbaf0c514ad5a5e3b1b886e72d0f
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.aarch64-nojdk.tar.gz
