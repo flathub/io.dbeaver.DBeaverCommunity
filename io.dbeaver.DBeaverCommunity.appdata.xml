@@ -7,7 +7,7 @@
     <name>DBeaver Community</name>
     <url type="homepage">https://dbeaver.io</url>
     <url type="bugtracker">https://github.com/dbeaver/dbeaver/issues</url>
-    <summary>Universal Database Manager.</summary>
+    <summary>Universal Database Manager</summary>
     <description>
         <p>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
         <p>This is the official build of DBeaver, packaged into a Flatpak. This repackaging is not supported by DBeaver Community Edition.</p>
