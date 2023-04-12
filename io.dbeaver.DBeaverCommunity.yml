@@ -1,9 +1,9 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: '43'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk11
+  - org.freedesktop.Sdk.Extension.openjdk17
 command: /app/dbeaver/dbeaver
 finish-args:
   - --share=ipc
@@ -30,7 +30,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk11/install.sh
+      - /usr/lib/sdk/openjdk17/install.sh
 
   - name: dbeaver-client
     buildsystem: simple
@@ -87,8 +87,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/23.0.1/dbeaver-ce-23.0.1-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: 22ae5d00598a6da4c86359cf883e79c1c97f615c49564424137aa856f2895169
+        url: https://download.dbeaver.com/community/23.0.2/dbeaver-ce-23.0.2-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: ae8b16a0eb24102946ef9702f2244e93f81701ba30fbd58484826426676425b9
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64-nojdk.tar.gz
@@ -97,8 +97,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://download.dbeaver.com/community/23.0.1/dbeaver-ce-23.0.1-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: a36b065e2bdbac747879570042db0a9c0a628f1f4d1c8166227b719854d6ace3
+        url: https://download.dbeaver.com/community/23.0.2/dbeaver-ce-23.0.2-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: 07b81f8f540a48c62c7ddb0d8bebd18cf0bcfc18136918ea523ff3b8ba7e3fbb
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.aarch64-nojdk.tar.gz
