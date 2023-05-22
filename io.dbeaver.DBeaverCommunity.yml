@@ -87,8 +87,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/23.0.4/dbeaver-ce-23.0.4-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: 70ff4afab7164d2f0e40e2ee9c7b9caf70d377c1193a0e8d141e70249fc19bea
+        url: https://download.dbeaver.com/community/23.0.5/dbeaver-ce-23.0.5-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: ca3840b84665ee8184767ed98d75f27c584ae91d6f888338efa348ab58824266
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64-nojdk.tar.gz
@@ -97,8 +97,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://download.dbeaver.com/community/23.0.4/dbeaver-ce-23.0.4-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: fb38650ffed8412d8873a586a51849b8d6ef0b201e3010c5db68c63f6c3a6e9b
+        url: https://download.dbeaver.com/community/23.0.5/dbeaver-ce-23.0.5-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: 2657b8b44d0f323c1c24dcf01047e1c3f362b1c65edbc41fe4e2337ed8058614
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.aarch64-nojdk.tar.gz
