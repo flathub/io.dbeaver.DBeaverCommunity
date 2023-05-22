@@ -14,20 +14,20 @@
     </description>
     <screenshots>
         <screenshot type="default">
-            <image>https://i.imgur.com/AiCETK9.png</image>
-            <caption>Query properties overview</caption>
+            <image>https://dbeaver.io/wp-content/uploads/2018/03/data_edit.png</image>
+            <caption>General overview</caption>
         </screenshot>
         <screenshot>
-            <image>https://i.imgur.com/5S6ohkF.png</image>
-            <caption>Query properties overview</caption>
+            <image>https://dbeaver.io/wp-content/uploads/2018/03/erd.png</image>
+            <caption>General overview</caption>
         </screenshot>
         <screenshot>
-            <image>https://i.imgur.com/0a4OyvB.png</image>
-            <caption>Query search overview</caption>
+            <image>https://dbeaver.io/wp-content/uploads/2018/03/sql_script.png</image>
+            <caption>General overview</caption>
         </screenshot>
         <screenshot>
-            <image>https://i.imgur.com/neoEtsF.png</image>
-            <caption>ER Diagram Example</caption>
+            <image>https://dbeaver.io/wp-content/uploads/2018/03/procedures.png</image>
+            <caption>General overview</caption>
         </screenshot>
     </screenshots>
     <releases>
