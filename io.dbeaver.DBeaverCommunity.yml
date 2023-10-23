@@ -1,10 +1,14 @@
 app-id: io.dbeaver.DBeaverCommunity
+
 runtime: org.gnome.Platform
 runtime-version: '45'
+
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
+
 command: /app/dbeaver/dbeaver
+
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -17,6 +21,7 @@ finish-args:
   - --talk-name=org.freedesktop.FileManager1
   - --filesystem=home
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin
+
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
     directory: clients
@@ -25,14 +30,19 @@ add-extensions:
     subdirectories: true
     no-autodownload: true
     autodelete: true
+
 modules:
 
   - name: openjdk
+    build-options:
+      no-debuginfo: true
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk17/install.sh
 
   - name: dbeaver-client
+    build-options:
+      no-debuginfo: true
     buildsystem: simple
     build-commands:
       - tar -xf dbeaver.tar.gz  --one-top-level=dbeaver_unpack
