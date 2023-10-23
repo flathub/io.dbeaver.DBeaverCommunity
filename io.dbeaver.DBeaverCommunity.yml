@@ -1,10 +1,14 @@
 app-id: io.dbeaver.DBeaverCommunity
+
 runtime: org.gnome.Platform
 runtime-version: '45'
+
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
+
 command: /app/dbeaver/dbeaver
+
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -17,6 +21,7 @@ finish-args:
   - --talk-name=org.freedesktop.FileManager1
   - --filesystem=home
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin
+
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
     directory: clients
@@ -25,14 +30,19 @@ add-extensions:
     subdirectories: true
     no-autodownload: true
     autodelete: true
+
 modules:
 
   - name: openjdk
+    build-options:
+      no-debuginfo: true
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk17/install.sh
 
   - name: dbeaver-client
+    build-options:
+      no-debuginfo: true
     buildsystem: simple
     build-commands:
       - tar -xf dbeaver.tar.gz  --one-top-level=dbeaver_unpack
@@ -87,8 +97,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/23.2.2/dbeaver-ce-23.2.2-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: dddbc024445cd125a50e9e27145fb1491a7185648e57ee06a620d7d29b195136
+        url: https://download.dbeaver.com/community/23.2.3/dbeaver-ce-23.2.3-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: 7a52123abe579180b093990edba7f26c38ead68c5c7eb65a5077c2a073b004d7
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64-nojdk.tar.gz
@@ -97,8 +107,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://download.dbeaver.com/community/23.2.2/dbeaver-ce-23.2.2-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: e92813e699f841aecfef521de51243ae570f222aeaeaffa4b4c3aa40f33ae143
+        url: https://download.dbeaver.com/community/23.2.3/dbeaver-ce-23.2.3-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: a6ea6bbc235c4b8dbb31c103ff0d2435babeb3caadfcc1c7bffb92aa54de6235
         x-checker-data:
           type: rotating-url
           url: https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.aarch64-nojdk.tar.gz
