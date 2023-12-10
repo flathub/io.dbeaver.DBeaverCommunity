@@ -45,7 +45,7 @@ modules:
       no-debuginfo: true
     buildsystem: simple
     build-commands:
-      - tar -xf dbeaver.tar.gz  --one-top-level=dbeaver_unpack
+      - tar -xf dbeaver.tar.gz --one-top-level=dbeaver_unpack
       - rm -rf dbeaver.tar.gz
       - cp -r dbeaver_unpack/dbeaver /app
       - install -d /app/clients/bin
