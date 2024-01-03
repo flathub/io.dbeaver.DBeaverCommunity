@@ -5,7 +5,7 @@ runtime-version: '45'
 
 sdk: org.gnome.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk17
+  - org.freedesktop.Sdk.Extension.openjdk21
 
 command: /app/dbeaver/dbeaver
 
@@ -38,7 +38,7 @@ modules:
       no-debuginfo: true
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk17/install.sh
+      - /usr/lib/sdk/openjdk21/install.sh
 
   - name: dbeaver-client
     build-options:
