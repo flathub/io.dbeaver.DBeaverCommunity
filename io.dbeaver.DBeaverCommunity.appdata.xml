@@ -5,6 +5,7 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>Apache-2.0</project_license>
     <name>DBeaver Community</name>
+    <developer_name>DBeaver Corporation</developer_name>
     <url type="homepage">https://dbeaver.io</url>
     <url type="bugtracker">https://github.com/dbeaver/dbeaver/issues</url>
     <summary>Universal Database Manager</summary>
