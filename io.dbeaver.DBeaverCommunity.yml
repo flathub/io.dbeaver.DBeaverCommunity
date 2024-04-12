@@ -97,7 +97,7 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://download.dbeaver.com/community/24.0.2/dbeaver-ce-24.0.2-linux.gtk.x86_64-nojdk.tar.gz
+        url: https://objects.githubusercontent.com/github-production-release-asset-2e65be/44662669/4d8d31b6-7c6e-4ddc-bd0f-15b622308a0e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240412T114012Z&X-Amz-Expires=300&X-Amz-Signature=271a9a2ac773721edc5204ba891e79c82de498d89417616f1d30d3e229883c06&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=44662669&response-content-disposition=attachment%3B+filename%3Ddbeaver-ce-24.0.2-linux.gtk.x86_64-nojdk.tar.gz&response-content-type=application%2Foctet-stream
         sha256: 215da3e621e77c2dc4e9729d333ff3b8db8f50a6346fc87a09a665c68ac7e2a8
         x-checker-data:
           type: rotating-url
@@ -107,7 +107,7 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://download.dbeaver.com/community/24.0.2/dbeaver-ce-24.0.2-linux.gtk.aarch64-nojdk.tar.gz
+        url: https://objects.githubusercontent.com/github-production-release-asset-2e65be/44662669/7c7cab07-8c01-44a0-a9b6-d2f784f5bef5?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240412T114012Z&X-Amz-Expires=300&X-Amz-Signature=2d27c07af53a53acbcd937cc8aef04515844de58bec2b4ad251bbef0f302f0e8&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=44662669&response-content-disposition=attachment%3B+filename%3Ddbeaver-ce-24.0.2-linux.gtk.aarch64-nojdk.tar.gz&response-content-type=application%2Foctet-stream
         sha256: 7132c8e79535f2ef5c8615c2e6958e0c178b4650419170d679db4877f50b3c4a
         x-checker-data:
           type: rotating-url
