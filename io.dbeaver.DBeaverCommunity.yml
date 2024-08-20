@@ -7,7 +7,7 @@ sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk21
 
-command: /app/dbeaver/dbeaver
+command: dbeaver
 
 finish-args:
   - --share=ipc
@@ -20,7 +20,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.FileManager1
   - --filesystem=home
-  - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin
+  - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
 
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
@@ -45,24 +45,23 @@ modules:
       no-debuginfo: true
     buildsystem: simple
     build-commands:
-      - tar -xf dbeaver.tar.gz --one-top-level=dbeaver_unpack
+      - tar -xf dbeaver.tar.gz 
       - rm -rf dbeaver.tar.gz
-      - cp -r dbeaver_unpack/dbeaver /app
+      - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
-      - install -Dm644 dbeaver_unpack/dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Keywords /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;'
-        /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=GenericName /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=GenericName --set-value='Database Manager' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=MimeType /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Exec /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Exec --set-value='/app/dbeaver/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
@@ -97,8 +96,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/24.1.4/dbeaver-ce-24.1.4-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: c4ef61431884b59272a0edcf42b34fb8b3c18fc88617db6fa47923f59f2830c7
+        url: https://github.com/dbeaver/dbeaver/releases/download/24.1.5/dbeaver-ce-24.1.5-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: 15dad00d0fb69ec669e38fac0115d3f3dfd95e5925fce19e8f526e7b35c6814e
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -107,8 +106,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/24.1.4/dbeaver-ce-24.1.4-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: e1d911d0347f7be824332b4518d4b9809fc4a3a8a1da969c60c4772dd2ccbff1
+        url: https://github.com/dbeaver/dbeaver/releases/download/24.1.5/dbeaver-ce-24.1.5-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: a0d3f49edb10efd724357b90dd37957fda281b3c02abb5972344db8d32c2e432
         x-checker-data:
           type: anitya
           project-id: 16276

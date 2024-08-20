@@ -4,3 +4,4 @@ repo
 _build
 venv
 .vscode
+testing-repo/
