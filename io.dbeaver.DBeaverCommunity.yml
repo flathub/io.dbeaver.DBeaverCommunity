@@ -45,7 +45,7 @@ modules:
       no-debuginfo: true
     buildsystem: simple
     build-commands:
-      - tar -xf dbeaver.tar.gz 
+      - tar -xf dbeaver.tar.gz
       - rm -rf dbeaver.tar.gz
       - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
@@ -54,7 +54,8 @@ modules:
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Keywords /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;'
+        /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=GenericName /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=GenericName --set-value='Database Manager' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=MimeType /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -96,8 +97,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/24.1.5/dbeaver-ce-24.1.5-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: 15dad00d0fb69ec669e38fac0115d3f3dfd95e5925fce19e8f526e7b35c6814e
+        url: https://github.com/dbeaver/dbeaver/releases/download/24.2.0/dbeaver-ce-24.2.0-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: 378af68a69a51fa07aad696e157f5a6d4e609dabcf158d59a0db4aa730b1c21e
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -106,8 +107,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/24.1.5/dbeaver-ce-24.1.5-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: a0d3f49edb10efd724357b90dd37957fda281b3c02abb5972344db8d32c2e432
+        url: https://github.com/dbeaver/dbeaver/releases/download/24.2.0/dbeaver-ce-24.2.0-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: a1153ed2230b9e8d712152373737897c3af3e42b8f95c70808cff3a7146f578d
         x-checker-data:
           type: anitya
           project-id: 16276
