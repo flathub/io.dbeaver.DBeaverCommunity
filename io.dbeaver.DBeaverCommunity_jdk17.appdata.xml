@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-    <id>io.dbeaver.DBeaverCommunity</id>
-    <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
+    <id>io.dbeaver.DBeaverCommunity_jdk17</id>
+    <launchable type="desktop-id">io.dbeaver.DBeaverCommunity_jdk17.desktop</launchable>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>Apache-2.0</project_license>
-    <name>DBeaver Community</name>
+    <name>DBeaver Community (jdk17)</name>
     <developer_name>DBeaver Corporation</developer_name>
     <url type="homepage">https://dbeaver.io</url>
     <url type="bugtracker">https://github.com/dbeaver/dbeaver/issues</url>
     <summary>Free Universal Database Tool</summary>
     <description>
         <p>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
-        <p>This is the official build of DBeaver, packaged into a Flatpak. This repackaging is not supported by DBeaver Community Edition.</p>
+        <p>This is the official build of DBeaver, packaged into a Flatpak, using jdk17 (needed to mantain compability with Databricks driver). This repackaging is not supported by DBeaver Community Edition.</p>
     </description>
     <screenshots>
         <screenshot type="default">
