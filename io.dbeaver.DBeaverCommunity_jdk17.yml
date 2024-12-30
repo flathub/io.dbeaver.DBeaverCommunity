@@ -1,9 +1,9 @@
 app-id: io.dbeaver.DBeaverCommunity_jdk17
 
-runtime: org.gnome.Platform
-runtime-version: '47'
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
 
-sdk: org.gnome.Sdk
+sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 
