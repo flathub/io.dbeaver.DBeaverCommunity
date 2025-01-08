@@ -1,11 +1,12 @@
 app-id: io.dbeaver.DBeaverCommunity
-
 runtime: org.gnome.Platform
 runtime-version: '47'
-
 sdk: org.gnome.Sdk
+
+# Make sure to match the OpenJDK version with the linux.tar.gz
+# This is the only version that Upstream actually tests against.
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk21
+  - org.freedesktop.Sdk.Extension.openjdk17
 
 command: dbeaver
 
@@ -38,7 +39,7 @@ modules:
       no-debuginfo: true
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk21/install.sh
+      - /usr/lib/sdk/openjdk17/install.sh
 
   - name: dbeaver-client
     build-options:
