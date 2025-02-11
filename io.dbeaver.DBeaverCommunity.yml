@@ -8,7 +8,7 @@ sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 
-command: dbeaver
+command: dbeaver.sh
 
 finish-args:
   - --share=ipc
@@ -20,8 +20,8 @@ finish-args:
   - --device=dri
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.FileManager1
-  - --filesystem=home
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
+  - --persist=.swt
 
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
@@ -50,6 +50,7 @@ modules:
       - rm -rf dbeaver.tar.gz
       - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
+      - install -Dm755 dbeaver.sh /app/bin/dbeaver.sh
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -63,7 +64,7 @@ modules:
       - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Exec /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver.sh' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
@@ -94,6 +95,8 @@ modules:
         sha256: f8ab6c3cf98cc239a050334313c06eed78b7e5703427bc22410e66dc211ddb43
       - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
+      - type: file
+        path: dbeaver.sh
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
