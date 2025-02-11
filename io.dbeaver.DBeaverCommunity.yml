@@ -22,7 +22,7 @@ finish-args:
   - --talk-name=org.freedesktop.FileManager1
   - --talk-name=org.freedesktop.secrets
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
-  - --persist=.swt
+  - --persist=.eclipse
 
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
