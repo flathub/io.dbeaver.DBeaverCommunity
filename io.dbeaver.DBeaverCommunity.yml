@@ -118,3 +118,18 @@ modules:
           type: anitya
           project-id: 16276
           url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.aarch64-nojdk.tar.gz
+    - name: migration-dialog
+      build-options:
+        no-debuginfo: true
+      builddir: true
+      buildsystem: simple
+      build-commands:
+      - glib-compile-resources migration/migration.gresource.xml --target=migration/resources.c --generate-source
+      - gcc $( pkg-config --cflags gtk4 ) -o /app/bin/migration-dialog migration/migration-dialog.c $( pkg-config --libs gtk4 ) $(pkg-config --cflags --libs libadwaita-1)
+      sources:
+      - type: file
+        path: migration/migration-dialog.c
+      - type: file
+        path: migration/migration-dialog.ui
+      - type: file
+        path: migration/migration.gresource.xml
