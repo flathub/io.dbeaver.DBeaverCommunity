@@ -24,7 +24,12 @@
 	(1,44,"GtkImage",None,43,None,None,None,0,None,None),
 	(1,46,"GtkLabel",None,43,None,None,None,1,None,None),
 	(1,48,"AdwWindow","MigrationDialog",None,None,None,None,1,None,None),
-	(1,49,"AdwClamp",None,28,None,None,None,2,None,None)
+	(1,49,"AdwClamp",None,28,None,None,None,2,None,None),
+	(1,50,"GtkBox",None,36,None,None,None,3,None,None),
+	(1,51,"GtkImage",None,50,None,None,None,0,None,None),
+	(1,52,"GtkLabel",None,53,None,None,None,0,None,None),
+	(1,53,"GtkBox",None,50,None,None,None,1,None,None),
+	(1,54,"GtkEntry",None,53,None,None,None,1,None,None)
   </object>
   <object_property>
 	(1,28,"AdwToolbarView","extend-content-to-bottom-edge","True",None,None,None,None,None,None,None,None,None),
@@ -72,11 +77,29 @@
 	(1,46,"GtkWidget","hexpand","True",None,None,None,None,None,None,None,None,None),
 	(1,46,"GtkWidget","margin-bottom","5",None,None,None,None,None,None,None,None,None),
 	(1,46,"GtkWidget","margin-top","5",0,None,None,None,None,None,None,None,None),
-	(1,48,"GtkWidget","height-request","385",None,None,None,None,None,None,None,None,None),
+	(1,48,"GtkWidget","height-request","507",None,None,None,None,None,None,None,None,None),
 	(1,48,"GtkWidget","width-request","535",None,None,None,None,None,None,None,None,None),
-	(1,48,"GtkWindow","default-height","385",None,None,None,None,None,None,None,None,None),
+	(1,48,"GtkWindow","default-height","507",None,None,None,None,None,None,None,None,None),
 	(1,48,"GtkWindow","default-width","650",None,None,None,None,None,None,None,None,None),
-	(1,48,"GtkWindow","title","DBeaver Migration Assistant",None,None,None,None,None,None,None,None,None)
+	(1,48,"GtkWindow","title","DBeaver Migration Assistant",None,None,None,None,None,None,None,None,None),
+	(1,50,"GtkBox","css-name","entry",0,None,None,None,None,None,None,None,None),
+	(1,50,"GtkBox","spacing","5",0,None,None,None,None,None,None,None,None),
+	(1,50,"GtkWidget","margin-top","5",0,None,None,None,None,None,None,None,None),
+	(1,51,"GtkImage","icon-name","system-lock-screen-symbolic",None,None,None,None,None,None,None,None,None),
+	(1,51,"GtkWidget","sensitive","False",0,None,None,None,None,None,None,None,None),
+	(1,52,"GtkLabel","justify","fill",0,None,None,None,None,None,None,None,None),
+	(1,52,"GtkLabel","label","If you now want to completely disable access to your home directory, you can execute this command in a terminal:",None,None,None,None,None,None,None,None,None),
+	(1,52,"GtkLabel","wrap","True",0,None,None,None,None,None,None,None,None),
+	(1,52,"GtkLabel","xalign","0.0",0,None,None,None,None,None,None,None,None),
+	(1,52,"GtkWidget","hexpand","True",0,None,None,None,None,None,None,None,None),
+	(1,53,"GtkBox","spacing","5",None,None,None,None,None,None,None,None,None),
+	(1,53,"GtkOrientable","orientation","vertical",None,None,None,None,None,None,None,None,None),
+	(1,53,"GtkWidget","margin-bottom","5",None,None,None,None,None,None,None,None,None),
+	(1,53,"GtkWidget","margin-top","5",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkEditable","editable","False",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkEditable","enable-undo","False",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkEditable","text","flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=xdg-data/DBeaverData",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkWidget","can-focus","False",None,None,None,None,None,None,None,None,None)
   </object_property>
   <object_data>
 	(1,35,"GtkWidget",1,1,None,None,None,None,None,None),
@@ -91,13 +114,22 @@
 	(1,46,"GtkWidget",2,2,None,1,None,None,None,None),
 	(1,43,"GtkWidget",1,1,None,None,None,None,None,None),
 	(1,43,"GtkWidget",2,2,None,1,None,None,None,None),
-	(1,36,"GtkWidget",1,1,None,None,None,None,None,None)
+	(1,36,"GtkWidget",1,1,None,None,None,None,None,None),
+	(1,52,"GtkWidget",1,1,None,None,None,None,None,None),
+	(1,52,"GtkWidget",2,2,None,1,None,None,None,None),
+	(1,50,"GtkWidget",1,1,None,None,None,None,None,None),
+	(1,50,"GtkWidget",2,2,None,1,None,None,None,None),
+	(1,54,"GtkWidget",1,1,None,None,None,None,None,None),
+	(1,54,"GtkWidget",2,2,None,1,None,None,None,None)
   </object_data>
   <object_data_arg>
 	(1,35,"GtkWidget",2,2,"name","suggested-action"),
 	(1,38,"GtkWidget",2,2,"name","title-1"),
 	(1,39,"GtkWidget",2,2,"name","heading"),
 	(1,46,"GtkWidget",2,2,"name","heading"),
-	(1,43,"GtkWidget",2,2,"name","warning")
+	(1,43,"GtkWidget",2,2,"name","warning"),
+	(1,52,"GtkWidget",2,2,"name","heading"),
+	(1,50,"GtkWidget",2,2,"name","success"),
+	(1,54,"GtkWidget",2,2,"name","monospace")
   </object_data_arg>
 </cambalache-project>

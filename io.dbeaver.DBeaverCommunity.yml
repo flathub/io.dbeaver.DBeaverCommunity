@@ -23,6 +23,7 @@ finish-args:
   - --talk-name=org.freedesktop.secrets
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
   - --persist=.eclipse
+  - --filesystem=xdg-data/DBeaverData
 
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:

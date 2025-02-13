@@ -5,9 +5,9 @@
   <requires lib="gtk" version="4.12"/>
   <requires lib="libadwaita" version="1.4"/>
   <object class="AdwWindow" id="MigrationDialog">
-    <property name="default-height">385</property>
+    <property name="default-height">507</property>
     <property name="default-width">650</property>
-    <property name="height-request">385</property>
+    <property name="height-request">507</property>
     <property name="title">DBeaver Migration Assistant</property>
     <property name="width-request">535</property>
     <child>
@@ -139,6 +139,53 @@ However, a command line argument have been found to change the workspace folder.
                     </child>
                     <style>
                       <class name="warning"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="css-name">entry</property>
+                    <property name="margin-top">5</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="icon-name">system-lock-screen-symbolic</property>
+                        <property name="sensitive">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-bottom">5</property>
+                        <property name="margin-top">5</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">5</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="hexpand">True</property>
+                            <property name="justify">fill</property>
+                            <property name="label">If you now want to completely disable access to your home directory, you can execute this command in a terminal:</property>
+                            <property name="wrap">True</property>
+                            <property name="xalign">0.0</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="can-focus">False</property>
+                            <property name="editable">False</property>
+                            <property name="enable-undo">False</property>
+                            <property name="text">flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=xdg-data/DBeaverData</property>
+                            <style>
+                              <class name="monospace"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="success"/>
                     </style>
                   </object>
                 </child>
