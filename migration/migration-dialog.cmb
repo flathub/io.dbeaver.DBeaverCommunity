@@ -98,7 +98,7 @@
 	(1,53,"GtkWidget","margin-top","5",None,None,None,None,None,None,None,None,None),
 	(1,54,"GtkEditable","editable","False",None,None,None,None,None,None,None,None,None),
 	(1,54,"GtkEditable","enable-undo","False",None,None,None,None,None,None,None,None,None),
-	(1,54,"GtkEditable","text","flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=xdg-data/DBeaverData",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkEditable","text","flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=home:ro",None,None,None,None,None,None,None,None,None),
 	(1,54,"GtkWidget","can-focus","False",None,None,None,None,None,None,None,None,None)
   </object_property>
   <object_data>

@@ -176,7 +176,7 @@ However, a command line argument have been found to change the workspace folder.
                             <property name="can-focus">False</property>
                             <property name="editable">False</property>
                             <property name="enable-undo">False</property>
-                            <property name="text">flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=xdg-data/DBeaverData</property>
+                            <property name="text">flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=home:ro</property>
                             <style>
                               <class name="monospace"/>
                             </style>
