@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 WORKSPACE_FOLDER="$XDG_DATA_HOME/workspace"
+CONFIG_FOLDER="$XDG_CONFIG_HOME/eclipse"
 DRIVERS_FOLDER="$XDG_DATA_HOME/drivers"
 
 # If workspace data is still in old place, start the migration process
@@ -11,4 +12,4 @@ then
   /app/bin/migration-dialog
 fi
 
-exec /app/bin/dbeaver -data "$WORKSPACE_FOLDER"
+exec /app/bin/dbeaver -data "$WORKSPACE_FOLDER" -configuration "$CONFIG_FOLDER" $@

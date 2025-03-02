@@ -50,7 +50,6 @@ modules:
       - tar -xf dbeaver.tar.gz
       - rm -rf dbeaver.tar.gz
       - cp -r ./dbeaver /app/bin
-      - echo "-Dosgi.configuration.area=@user.home/.var/app/io.dbeaver.DBeaverCommunity/config/eclipse" >> /app/bin/dbeaver.ini
       - install -d /app/clients/bin
       - install -Dm755 dbeaver.sh /app/bin/dbeaver.sh
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
