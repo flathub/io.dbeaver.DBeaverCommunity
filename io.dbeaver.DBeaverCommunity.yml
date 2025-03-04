@@ -102,8 +102,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/24.3.5/dbeaver-ce-24.3.5-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: 2adf823cf81ea8a3316597961b736334a7657101724bd36f11a010488f5ce422
+        url: https://github.com/dbeaver/dbeaver/releases/download/25.0.0/dbeaver-ce-25.0.0-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: f69c07a105b2cbfa62bf941410b6d525cf8c5dab6b63bcec8a7bb45f915599db
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -112,8 +112,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/24.3.5/dbeaver-ce-24.3.5-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: f4ed0186cae154ca5fdc5333a9979a36b08a752b1cb0eacb9a8e8cab8d9a44b5
+        url: https://github.com/dbeaver/dbeaver/releases/download/25.0.0/dbeaver-ce-25.0.0-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: 12fbda87c6bead441c84c3916eb61356e06acd74e4fe4aa93fcb531ffd76cc15
         x-checker-data:
           type: anitya
           project-id: 16276
