@@ -1,7 +1,7 @@
 app-id: io.dbeaver.DBeaverCommunity
-runtime: org.gnome.Platform
-runtime-version: '47'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
 
 # Make sure to match the OpenJDK version with the linux.tar.gz
 # This is the only version that Upstream actually tests against.
