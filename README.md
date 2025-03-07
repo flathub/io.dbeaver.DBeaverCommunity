@@ -2,6 +2,16 @@
 
 Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.
 
+## File directory
+
+All files for DBeaver are now stored within its own directory:
+
+```
+~/.var/app/io.dbeaver.DBeaverCommunity
+```
+
+Home-access is still available though for backwards compatibility and ease-of-use. If you want, you can now improve DBeaver' sandboxing by remove Home-access. To do so, you can use an application like Flatseal.
+
 ## Flatpak local build test
 
 Make sure you install the OpenJDK SDK extension first, else the system will complain that it can't find
