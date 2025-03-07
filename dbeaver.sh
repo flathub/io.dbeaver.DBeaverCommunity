@@ -8,7 +8,7 @@ DRIVERS_FOLDER="$XDG_DATA_HOME/drivers"
 # We might remove this notice in the future, although this is still open for debate.
 if [ ! -d "$HOME/.local/share/DBeaverData/workspace6" ] && [ ! -d "$WORKSPACE_FOLDER" ]
 then
-  zenity --info --title="DBeaver sandboxing" --text="If you want, you can now improve DBeaver' sandboxing by remove Home-access. To do so, you can use an application like Flatseal."
+  zenity --info --title="DBeaver sandboxing" --text="We've recently updated DBeaver to better support Flatpak. \n\nIf you want, you can now improve DBeaver' sandboxing by remove Home-access. To do so, you can use an application like Flatseal."
 fi
 
 
