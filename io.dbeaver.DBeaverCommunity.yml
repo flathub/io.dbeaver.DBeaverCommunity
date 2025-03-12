@@ -69,7 +69,7 @@ modules:
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
-      - "echo \"-Dosgi.configuration.area=@user.home/.var/app/io.dbeaver.DBeaverCommunity/config/eclipse\" >> /app/bin/eclipse.ini",
+      - "echo \"-Dosgi.configuration.area=@user.home/.var/app/io.dbeaver.DBeaverCommunity/config/eclipse\" >> /app/bin/dbeaver.ini",
       - for icon_size in 16 32 48 64 128 256 512; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
         install -m644 icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
         done
