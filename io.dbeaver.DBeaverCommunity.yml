@@ -1,14 +1,14 @@
 app-id: io.dbeaver.DBeaverCommunity
-runtime: org.gnome.Platform
-runtime-version: '47'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
 
 # Make sure to match the OpenJDK version with the linux.tar.gz
 # This is the only version that Upstream actually tests against.
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 
-command: dbeaver
+command: dbeaver.sh
 
 finish-args:
   - --share=ipc
@@ -20,6 +20,7 @@ finish-args:
   - --device=dri
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.FileManager1
+  - --talk-name=org.freedesktop.secrets
   - --filesystem=home
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
 
@@ -50,6 +51,7 @@ modules:
       - rm -rf dbeaver.tar.gz
       - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
+      - install -Dm755 dbeaver.sh /app/bin/dbeaver.sh
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -63,14 +65,18 @@ modules:
       - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Exec /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver.sh' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
+      - echo "-Dosgi.configuration.area=@user.home/.var/app/io.dbeaver.DBeaverCommunity/config/eclipse" >> /app/bin/dbeaver.ini
+      - echo "-eclipse.keyring=@user.home/.var/app/io.dbeaver.DBeaverCommunity/config/eclipse" >> /app/bin/dbeaver.ini
       - for icon_size in 16 32 48 64 128 256 512; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
         install -m644 icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
         done
     sources:
+      - type: file
+        path: dbeaver.sh
       - type: file
         url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_16x16.png
         sha256: 357982b7fe66bb5a7d809629c1b957d25b73605b12060bc31bde9d701221c377
