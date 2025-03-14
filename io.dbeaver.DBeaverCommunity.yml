@@ -1,7 +1,7 @@
 app-id: io.dbeaver.DBeaverCommunity
-runtime: org.gnome.Platform
-runtime-version: '47'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
 
 # Make sure to match the OpenJDK version with the linux.tar.gz
 # This is the only version that Upstream actually tests against.
@@ -22,7 +22,7 @@ finish-args:
   - --talk-name=org.freedesktop.FileManager1
   - --talk-name=org.freedesktop.secrets
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
-  - --filesystem=home:ro
+  - --filesystem=home
 
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
@@ -125,7 +125,7 @@ modules:
     buildsystem: simple
     build-commands:
       - glib-compile-resources migration.gresource.xml --target=resources.c --generate-source
-      - gcc $( pkg-config --cflags gtk4 ) -o /app/bin/migration-dialog migration-dialog.c $( pkg-config --libs gtk4 ) $(pkg-config --cflags --libs libadwaita-1)
+      - gcc $( pkg-config --cflags gtk+-3.0 ) -o /app/bin/migration-dialog migration-dialog.c $( pkg-config --libs gtk+-3.0 )
     sources:
       - type: file
         path: migration/migration-dialog.c
@@ -133,3 +133,5 @@ modules:
         path: migration/migration-dialog.ui
       - type: file
         path: migration/migration.gresource.xml
+      - type: file
+        path: migration/style.css

@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/io/dbeaver/migration">
     <file preprocess="xml-stripblanks">migration-dialog.ui</file>
+    <file>style.css</file>
   </gresource>
 </gresources>
 
