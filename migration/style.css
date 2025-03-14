@@ -1,0 +1,27 @@
+.warning-box {
+    background-color: #E5A50A;
+    border-radius: 8px;
+    color: #FFF2D5;
+}
+
+.tip-box {
+    background-color: #2EC27E;
+    border-radius: 8px;
+    color: #DFFFF0;
+}
+
+entry.tip-box {
+   background-color: #18985E;
+   border: none;
+}
+
+.flat-decorations headerbar {
+    background-color: @theme_bg_color;
+    background-image: none;
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.flat-decorations headerbar .title {
+    color: transparent;
+}

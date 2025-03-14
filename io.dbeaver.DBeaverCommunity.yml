@@ -1,14 +1,14 @@
 app-id: io.dbeaver.DBeaverCommunity
-runtime: org.gnome.Platform
-runtime-version: '47'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
 
 # Make sure to match the OpenJDK version with the linux.tar.gz
 # This is the only version that Upstream actually tests against.
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 
-command: dbeaver
+command: dbeaver.sh
 
 finish-args:
   - --share=ipc
@@ -20,8 +20,9 @@ finish-args:
   - --device=dri
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.FileManager1
-  - --filesystem=home
+  - --talk-name=org.freedesktop.secrets
   - --env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin:/app/bin
+  - --filesystem=home
 
 add-extensions:
   io.dbeaver.DBeaverCommunity.Client:
@@ -50,6 +51,7 @@ modules:
       - rm -rf dbeaver.tar.gz
       - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
+      - install -Dm755 dbeaver.sh /app/bin/dbeaver.sh
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -63,7 +65,7 @@ modules:
       - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=Exec /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
+      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver.sh' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
@@ -95,6 +97,8 @@ modules:
       - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
       - type: file
+        path: dbeaver.sh
+      - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
@@ -114,3 +118,20 @@ modules:
           type: anitya
           project-id: 16276
           url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.aarch64-nojdk.tar.gz
+  - name: migration-dialog
+    build-options:
+      no-debuginfo: true
+    builddir: true
+    buildsystem: simple
+    build-commands:
+      - glib-compile-resources migration.gresource.xml --target=resources.c --generate-source
+      - gcc $( pkg-config --cflags gtk+-3.0 ) -o /app/bin/migration-dialog migration-dialog.c $( pkg-config --libs gtk+-3.0 )
+    sources:
+      - type: file
+        path: migration/migration-dialog.c
+      - type: file
+        path: migration/migration-dialog.ui
+      - type: file
+        path: migration/migration.gresource.xml
+      - type: file
+        path: migration/style.css

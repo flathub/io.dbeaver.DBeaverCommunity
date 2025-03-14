@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.94.1 -->
+<interface>
+  <!-- interface-name migration-dialog.ui -->
+  <requires lib="gtk+" version="3.22"/>
+  <object class="GtkWindow" id="MigrationDialog">
+    <property name="default-height">460</property>
+    <property name="default-width">600</property>
+    <property name="type-hint">desktop</property>
+    <child>
+      <object class="GtkBox">
+        <property name="margin-bottom">10</property>
+        <property name="margin-end">10</property>
+        <property name="margin-start">10</property>
+        <property name="margin-top">10</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="min-content-height">300</property>
+            <property name="min-content-width">500</property>
+            <property name="propagate-natural-width">True</property>
+            <property name="vexpand">True</property>
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkBox">
+                <property name="margin-bottom">5</property>
+                <property name="margin-end">10</property>
+                <property name="margin-start">10</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">15</property>
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">3</property>
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkLabel" id="msg_title">
+                        <property name="label">Data folder have moved</property>
+                        <property name="visible">True</property>
+                        <property name="xalign">0.0</property>
+                        <style>
+                          <class name="title-1"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="msg_subtitle">
+                        <property name="label">Your workspace files have been moved to Flatpak's data folder</property>
+                        <property name="visible">True</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0.0</property>
+                        <style>
+                          <class name="heading"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">7</property>
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="justify">fill</property>
+                        <property name="label">Since the beginning, DBeaver was granted &lt;u&gt;full home folder permissions&lt;/u&gt; because it does not follows XDG specs for storing its data.
+However, a command line argument have been found to change the workspace folder.</property>
+                        <property name="use-markup">True</property>
+                        <property name="visible">True</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0.0</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="justify">fill</property>
+                        <property name="label">Now that we have the tools, DBeaver can finally follow Flatpak packaging recommendations and store its data in the right place.</property>
+                        <property name="visible">True</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0.0</property>
+                        <style/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="margin-top">5</property>
+                    <property name="spacing">10</property>
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="icon-name">dialog-warning</property>
+                        <property name="margin-start">10</property>
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="justify">fill</property>
+                        <property name="label">Long term, home permissions will be removed from the Flatpak to better sandbox the application. This evolution will be seen as a breaking change because the migration will no longer be possible.</property>
+                        <property name="margin-bottom">5</property>
+                        <property name="margin-end">10</property>
+                        <property name="margin-top">5</property>
+                        <property name="visible">True</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0.0</property>
+                        <style>
+                          <class name="heading"/>
+                        </style>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="warning-box"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="margin-top">5</property>
+                    <property name="spacing">10</property>
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="icon-name">system-lock-screen-symbolic</property>
+                        <property name="margin-start">10</property>
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-bottom">5</property>
+                        <property name="margin-end">10</property>
+                        <property name="margin-top">5</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">5</property>
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="justify">fill</property>
+                            <property name="label">If you now want to completely disable access to your home directory, you can execute this command in a terminal:</property>
+                            <property name="visible">True</property>
+                            <property name="wrap">True</property>
+                            <property name="xalign">0.0</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="editable">False</property>
+                            <property name="hexpand">True</property>
+                            <property name="text">flatpak override io.dbeaver.DBeaverCommunity --nofilesystem=home</property>
+                            <property name="visible">True</property>
+                            <style>
+                              <class name="tip-box"/>
+                              <class name="monospace"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="tip-box"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <style/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="homogeneous">True</property>
+            <property name="valign">end</property>
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLinkButton" id="LinkButton">
+                <property name="always-show-image">True</property>
+                <property name="halign">start</property>
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="spacing">10</property>
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="halign">center</property>
+                        <property name="icon-name">folder-open-symbolic</property>
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Open folder</property>
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <style/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="continue_btn">
+                <property name="halign">end</property>
+                <property name="label">Continue</property>
+                <property name="visible">True</property>
+                <style>
+                  <class name="suggested-action"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="flat-decorations"/>
+    </style>
+  </object>
+</interface>
