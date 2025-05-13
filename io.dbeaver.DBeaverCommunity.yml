@@ -48,7 +48,6 @@ modules:
     buildsystem: simple
     build-commands:
       - tar -xf dbeaver.tar.gz
-      - rm -rf dbeaver.tar.gz
       - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -68,33 +67,32 @@ modules:
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
-      - for icon_size in 16 32 48 64 128 256 512; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
-        install -m644 icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
+        # Icons
+      - tar -xf sources.tar.gz --strip-components=1
+      - for icon_size in 16 32 48 64 128 256 512; do
+          install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
+          install -m644 product/community/icons-sources/icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
         done
+    cleanup:
+      - /bin/dbeaver-ce.desktop
+      - /bin/.eclipseproduct
+      - /bin/icon.xpm
+      - /bin/dbeaver.png
+      - /bin/readme
+      - /bin/readme.txt
     sources:
       - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_16x16.png
-        sha256: 357982b7fe66bb5a7d809629c1b957d25b73605b12060bc31bde9d701221c377
-      - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_32x32.png
-        sha256: f411294a4f8c2b610cf6283e488d5a70142af6ca56c377eeb2ed66a4d6497bc3
-      - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_48x48.png
-        sha256: d7c31b2a7932c67a7bb742445166852b4cf5d0ae713e3cf539b82e3115f41cd0
-      - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_64x64.png
-        sha256: 6f7663dd9954c72fcac3354b5fef2230b3fb92aea700d65a65c54ce2d61da1d3
-      - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_128x128.png
-        sha256: c6c4401560e91ea617b249191262c903f9fa387125c8d2343c40f696a6fa6265
-      - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_256x256.png
-        sha256: 787b48c17d099ea028df136cdec1096c4a87963c87adf2da9e3da85e3afb95df
-      - type: file
-        url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/community/icons-sources/icon_512x512.png
-        sha256: f8ab6c3cf98cc239a050334313c06eed78b7e5703427bc22410e66dc211ddb43
-      - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
+        # This file contains all the icons
+      - type: file
+        dest-filename: sources.tar.gz
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.0.4.tar.gz
+        sha256: b793856a6639bdcc441b6788635d5707b72109edd3b17f4dae2172a47f253693
+        x-checker-data:
+          type: anitya
+          project-id: 16276
+          url-template: https://github.com/dbeaver/dbeaver/archive/refs/tags/$version.tar.gz
+        # Main application, x86
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
@@ -105,6 +103,7 @@ modules:
           type: anitya
           project-id: 16276
           url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.x86_64-nojdk.tar.gz
+        # Main application, ARM
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
