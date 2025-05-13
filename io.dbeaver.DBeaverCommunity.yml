@@ -79,7 +79,7 @@ modules:
       - /bin/icon.xmp
       - /bin/dbeaver.png
       - /bin/readme/*
-      -/bin/readmy.txt
+      - /bin/readmy.txt
     sources:
       - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
