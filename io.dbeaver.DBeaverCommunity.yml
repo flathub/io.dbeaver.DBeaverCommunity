@@ -76,10 +76,11 @@ modules:
     cleanup:
       - /bin/dbeaver-ce.desktop
       - /bin/.eclipseproduct
-      - /bin/icon.xmp
+      - /bin/icon.xpm
       - /bin/dbeaver.png
-      - /bin/readme/*
-      - /bin/readmy.txt
+      - /bin/readme
+      - /bin/licenses
+      - /bin/readme.txt
     sources:
       - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
