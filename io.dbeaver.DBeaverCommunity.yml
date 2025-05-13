@@ -79,7 +79,6 @@ modules:
       - /bin/icon.xpm
       - /bin/dbeaver.png
       - /bin/readme
-      - /bin/licenses
       - /bin/readme.txt
     sources:
       - type: file
