@@ -67,12 +67,19 @@ modules:
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
-        # Icons        
+        # Icons
       - tar -xf sources.tar.gz --strip-components=1
-      - for icon_size in 16 32 48 64 128 256 512; do 
+      - for icon_size in 16 32 48 64 128 256 512; do
           install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
           install -m644 product/community/icons-sources/icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
         done
+    cleanup:
+      - /bin/dbeaver-ce.desktop
+      - /bin/.eclipseproduct
+      - /bin/icon.xmp
+      - /bin/dbeaver.png
+      - /bin/readme/*
+      -/bin/readmy.txt
     sources:
       - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
@@ -85,7 +92,7 @@ modules:
           type: anitya
           project-id: 16276
           url-template: https://github.com/dbeaver/dbeaver/archive/refs/tags/$version.tar.gz
-        # Main application, x86  
+        # Main application, x86
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
@@ -96,7 +103,7 @@ modules:
           type: anitya
           project-id: 16276
           url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.x86_64-nojdk.tar.gz
-        # Main application, ARM  
+        # Main application, ARM
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
