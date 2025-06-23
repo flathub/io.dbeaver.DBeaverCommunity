@@ -3,10 +3,9 @@ runtime: org.gnome.Platform
 runtime-version: '48'
 sdk: org.gnome.Sdk
 
-# Make sure to match the OpenJDK version with the linux.tar.gz
-# This is the only version that Upstream actually tests against.
+# Upstream moved to Open JDK 21
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk17
+  - org.freedesktop.Sdk.Extension.openjdk21
 
 command: dbeaver
 
@@ -40,7 +39,7 @@ modules:
       no-debuginfo: true
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk17/install.sh
+      - /usr/lib/sdk/openjdk21/install.sh
 
   - name: dbeaver-client
     build-options:
