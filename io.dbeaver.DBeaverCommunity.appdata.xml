@@ -36,8 +36,11 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
-        <release version="25.2.0" date="2025-08-31">
+        <release version="25.2.1" date="2025-09-21">
             <description></description>
+        </release>
+        <release version="25.2.0" date="2025-08-31">
+            <description/>
         </release>
         <release version="25.1.5" date="2025-08-17">
             <description/>
