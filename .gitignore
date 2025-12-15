@@ -5,3 +5,4 @@ _build
 venv
 .vscode
 testing-repo/
+scripts/

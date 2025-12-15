@@ -4,7 +4,7 @@ Free multi-platform database tool for developers, SQL programmers, database admi
 
 ## Silverblue specific problems
 
-The way how Eclipse, DBeaver and plug-ins work, means that alternative DXG-config is not well supported. 
+The way how Eclipse, DBeaver and plug-ins work, means that alternative DXG-config is not well supported.
 
 ### Workaround
 
@@ -18,11 +18,11 @@ Make sure you install the OpenJDK SDK extension first, else the system will comp
 the extension with the version of the GNOME SDK:
 
 ```sh
-flatpak install org.freedesktop.Sdk.Extension.openjdk/x86_64/24.08
+flatpak install org.freedesktop.Sdk.Extension.openjdk/x86_64/25.08
 ```
 
 To build and install the app execute:
 
 ```sh
-flatpak-builder --repo=repo --force-clean build-dir io.dbeaver.DBeaverCommunity.yml
+bash build_install.sh
 ```
