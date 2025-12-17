@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <component type="desktop">
     <id>io.dbeaver.DBeaverCommunity</id>
     <launchable type="desktop-id">io.dbeaver.DBeaverCommunity.desktop</launchable>
@@ -10,8 +10,11 @@
     <url type="bugtracker">https://github.com/dbeaver/dbeaver/issues</url>
     <summary>Free Universal Database Tool</summary>
     <description>
-        <p>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
-        <p>This is the official build of DBeaver, packaged into a Flatpak. This repackaging is not supported by DBeaver Community Edition.</p>
+        <p>Free multi-platform database tool for developers, SQL programmers, database
+            administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB,
+            SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
+        <p>This is the official build of DBeaver, packaged into a Flatpak. This repackaging is not
+            supported by DBeaver Community Edition.</p>
     </description>
     <screenshots>
         <screenshot type="default">
@@ -36,162 +39,678 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
+        <release version="25.3.0" date="2025-11-30">
+            <description>
+                <p>Release of version: 25.3.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.3.0</url>
+        </release>
+        <release version="25.2.5" date="2025-11-16">
+            <description>
+                <p>Release of version: 25.2.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.2.5</url>
+        </release>
+        <release version="25.2.4" date="2025-11-02">
+            <description>
+                <p>Release of version: 25.2.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.2.4</url>
+        </release>
+        <release version="25.2.3" date="2025-10-19">
+            <description>
+                <p>Release of version: 25.2.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.2.3</url>
+        </release>
+        <release version="25.2.2" date="2025-10-06">
+            <description>
+                <p>Release of version: 25.2.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.2.2</url>
+        </release>
+        <release version="25.2.1" date="2025-09-21">
+            <description>
+                <p>Release of version: 25.2.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.2.1</url>
+        </release>
+        <release version="25.2.0" date="2025-08-31">
+            <description>
+                <p>Release of version: 25.2.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.2.0</url>
+        </release>
+        <release version="25.1.5" date="2025-08-17">
+            <description>
+                <p>Release of version: 25.1.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.1.5</url>
+        </release>
+        <release version="25.1.4" date="2025-08-03">
+            <description>
+                <p>Release of version: 25.1.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.1.4</url>
+        </release>
+        <release version="25.1.3" date="2025-07-20">
+            <description>
+                <p>Release of version: 25.1.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.1.3</url>
+        </release>
         <release version="25.1.2" date="2025-07-06">
-            <description></description>
+            <description>
+                <p>Release of version: 25.1.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.1.2</url>
         </release>
         <release version="25.1.1" date="2025-06-22">
-            <description/>
+            <description>
+                <p>Release of version: 25.1.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.1.1</url>
         </release>
         <release version="25.1.0" date="2025-06-01">
-            <description/>
+            <description>
+                <p>Release of version: 25.1.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.1.0</url>
         </release>
         <release version="25.0.5" date="2025-05-18">
-            <description/>
+            <description>
+                <p>Release of version: 25.0.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.0.5</url>
         </release>
         <release version="25.0.4" date="2025-05-04">
-            <description/>
+            <description>
+                <p>Release of version: 25.0.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.0.4</url>
         </release>
         <release version="25.0.3" date="2025-04-20">
-            <description/>
+            <description>
+                <p>Release of version: 25.0.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.0.3</url>
         </release>
         <release version="25.0.2" date="2025-04-06">
-            <description/>
+            <description>
+                <p>Release of version: 25.0.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.0.2</url>
         </release>
         <release version="25.0.1" date="2025-03-23">
-            <description/>
+            <description>
+                <p>Release of version: 25.0.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.0.1</url>
         </release>
         <release version="25.0.0" date="2025-03-02">
-            <description/>
+            <description>
+                <p>Release of version: 25.0.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.0.0</url>
         </release>
         <release version="24.3.5" date="2025-02-16">
-            <description/>
+            <description>
+                <p>Release of version: 24.3.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.3.5</url>
         </release>
         <release version="24.3.4" date="2025-02-02">
-            <description/>
+            <description>
+                <p>Release of version: 24.3.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.3.4</url>
         </release>
         <release version="24.3.3" date="2025-01-19">
-            <description/>
+            <description>
+                <p>Release of version: 24.3.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.3.3</url>
         </release>
         <release version="24.3.2" date="2025-01-05">
-            <description/>
+            <description>
+                <p>Release of version: 24.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.3.2</url>
         </release>
         <release version="24.3.1" date="2024-12-22">
-            <description/>
+            <description>
+                <p>Release of version: 24.3.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.3.1</url>
         </release>
         <release version="24.3.0" date="2024-12-01">
-            <description/>
+            <description>
+                <p>Release of version: 24.3.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.3.0</url>
         </release>
         <release version="24.2.5" date="2024-11-17">
-            <description/>
+            <description>
+                <p>Release of version: 24.2.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.2.5</url>
         </release>
         <release version="24.2.4" date="2024-11-03">
-            <description/>
+            <description>
+                <p>Release of version: 24.2.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.2.4</url>
         </release>
         <release version="24.2.3" date="2024-10-20">
-            <description/>
+            <description>
+                <p>Release of version: 24.2.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.2.3</url>
         </release>
         <release version="24.2.2" date="2024-10-06">
-            <description/>
+            <description>
+                <p>Release of version: 24.2.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.2.2</url>
         </release>
         <release version="24.2.1" date="2024-09-22">
-            <description/>
+            <description>
+                <p>Release of version: 24.2.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.2.1</url>
         </release>
         <release version="24.2.0" date="2024-09-01">
-            <description/>
+            <description>
+                <p>Release of version: 24.2.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.2.0</url>
         </release>
         <release version="24.1.5" date="2024-08-18">
-            <description/>
+            <description>
+                <p>Release of version: 24.1.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.1.5</url>
         </release>
         <release version="24.1.4" date="2024-08-04">
-            <description/>
+            <description>
+                <p>Release of version: 24.1.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.1.4</url>
         </release>
         <release version="24.1.2" date="2024-07-07">
-            <description/>
+            <description>
+                <p>Release of version: 24.1.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.1.2</url>
         </release>
         <release version="24.1.1" date="2024-06-23">
-            <description/>
+            <description>
+                <p>Release of version: 24.1.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.1.1</url>
         </release>
         <release version="24.1.0" date="2024-06-02">
-            <description/>
+            <description>
+                <p>Release of version: 24.1.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.1.0</url>
         </release>
         <release version="24.0.5" date="2024-05-19">
-            <description/>
+            <description>
+                <p>Release of version: 24.0.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.0.5</url>
         </release>
-        <release version="24.0.4" date="2024-05-05"/>
-        <release version="24.0.3" date="2024-04-21"/>
-        <release version="24.0.2" date="2024-04-07"/>
-        <release version="24.0.1" date="2024-03-24"/>
-        <release version="24.0.0" date="2024-03-03"/>
-        <release version="23.3.5" date="2024-02-18"/>
-        <release version="23.3.4" date="2024-02-04"/>
-        <release version="23.3.3" date="2024-01-21"/>
-        <release version="23.3.2" date="2024-01-07"/>
-        <release version="23.3.1" date="2023-12-24"/>
-        <release version="23.3.0" date="2023-12-03"/>
-        <release version="23.2.5" date="2023-11-19"/>
-        <release version="23.2.4" date="2023-11-05"/>
-        <release version="23.2.3" date="2023-10-22"/>
-        <release version="23.2.2" date="2023-10-08"/>
-        <release version="23.2.0" date="2023-09-04"/>
-        <release version="23.1.5" date="2023-08-20"/>
-        <release version="23.1.4" date="2023-08-06"/>
-        <release version="23.1.3" date="2023-07-23"/>
-        <release version="23.1.2" date="2023-07-09"/>
-        <release version="23.1.1" date="2023-06-25"/>
-        <release version="23.1.0" date="2023-06-04"/>
-        <release version="23.0.5" date="2023-05-21"/>
-        <release version="23.0.4" date="2023-05-07"/>
-        <release version="23.0.3" date="2023-04-23"/>
-        <release version="23.0.2" date="2023-04-09"/>
-        <release version="23.0.1" date="2023-03-26"/>
-        <release version="23.0.0" date="2023-03-05"/>
-        <release version="22.3.5" date="2023-02-19"/>
-        <release version="22.3.4" date="2023-02-05"/>
-        <release version="22.3.3" date="2023-01-22"/>
-        <release version="22.3.2" date="2023-01-08"/>
-        <release version="22.3.1" date="2022-12-25"/>
-        <release version="22.3.0" date="2022-12-04"/>
-        <release version="22.2.5" date="2022-11-20"/>
-        <release version="22.2.4" date="2022-11-06"/>
-        <release version="22.2.3" date="2022-10-23"/>
-        <release version="22.2.2" date="2022-10-10"/>
-        <release version="22.2.1" date="2022-09-25"/>
-        <release version="22.2.0" date="2022-09-05"/>
-        <release version="22.1.5" date="2022-08-21"/>
-        <release version="22.1.4" date="2022-08-07"/>
-        <release version="22.1.3" date="2022-07-24"/>
-        <release version="22.1.2" date="2022-07-10"/>
-        <release version="22.1.1" date="2022-06-26"/>
-        <release version="22.1.0" date="2022-06-05"/>
-        <release version="22.0.5" date="2022-05-22"/>
-        <release version="22.0.4" date="2022-05-01"/>
-        <release version="22.0.3" date="2022-04-17"/>
-        <release version="22.0.2" date="2022-04-03"/>
-        <release version="22.0.1" date="2022-03-20"/>
-        <release version="22.0.0" date="2022-03-06"/>
-        <release version="21.3.5" date="2022-02-20"/>
-        <release version="21.3.4" date="2022-02-06"/>
-        <release version="21.3.3" date="2022-01-23"/>
-        <release version="21.3.2" date="2021-12-27"/>
-        <release version="21.3.1" date="2021-12-12"/>
-        <release version="21.3.0" date="2021-11-28"/>
-        <release version="21.2.5" date="2021-11-14"/>
-        <release version="21.2.4" date="2021-11-01"/>
-        <release version="21.2.3" date="2021-10-17"/>
-        <release version="21.2.2" date="2021-10-03"/>
-        <release version="21.2.1" date="2021-09-19"/>
-        <release version="21.2.0" date="2021-08-30"/>
-        <release version="21.1.5" date="2021-08-16"/>
-        <release version="21.1.4" date="2021-08-02"/>
-        <release version="21.1.3" date="2021-07-18"/>
-        <release version="21.1.2" date="2021-07-04"/>
-        <release version="21.1.1" date="2021-06-21"/>
-        <release version="21.1.0" date="2021-05-31"/>
-        <release version="21.0.5" date="2021-05-16"/>
-        <release version="21.0.4" date="2021-05-02"/>
-        <release version="21.0.3" date="2021-04-18"/>
-        <release version="21.0.2" date="2021-04-04"/>
-        <release version="21.0.1" date="2021-03-21"/>
+        <release version="24.0.4" date="2024-05-05">
+            <description>
+                <p>Release of version: 24.0.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.0.4</url>
+        </release>
+        <release version="24.0.3" date="2024-04-21">
+            <description>
+                <p>Release of version: 24.0.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.0.3</url>
+        </release>
+        <release version="24.0.2" date="2024-04-07">
+            <description>
+                <p>Release of version: 24.0.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.0.2</url>
+        </release>
+        <release version="24.0.1" date="2024-03-24">
+            <description>
+                <p>Release of version: 24.0.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.0.1</url>
+        </release>
+        <release version="24.0.0" date="2024-03-03">
+            <description>
+                <p>Release of version: 24.0.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/24.0.0</url>
+        </release>
+        <release version="23.3.5" date="2024-02-18">
+            <description>
+                <p>Release of version: 23.3.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.3.5</url>
+        </release>
+        <release version="23.3.4" date="2024-02-04">
+            <description>
+                <p>Release of version: 23.3.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.3.4</url>
+        </release>
+        <release version="23.3.3" date="2024-01-21">
+            <description>
+                <p>Release of version: 23.3.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.3.3</url>
+        </release>
+        <release version="23.3.2" date="2024-01-07">
+            <description>
+                <p>Release of version: 23.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.3.2</url>
+        </release>
+        <release version="23.3.1" date="2023-12-24">
+            <description>
+                <p>Release of version: 23.3.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.3.1</url>
+        </release>
+        <release version="23.3.0" date="2023-12-03">
+            <description>
+                <p>Release of version: 23.3.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.3.0</url>
+        </release>
+        <release version="23.2.5" date="2023-11-19">
+            <description>
+                <p>Release of version: 23.2.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.2.5</url>
+        </release>
+        <release version="23.2.4" date="2023-11-05">
+            <description>
+                <p>Release of version: 23.2.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.2.4</url>
+        </release>
+        <release version="23.2.3" date="2023-10-22">
+            <description>
+                <p>Release of version: 23.2.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.2.3</url>
+        </release>
+        <release version="23.2.2" date="2023-10-08">
+            <description>
+                <p>Release of version: 23.2.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.2.2</url>
+        </release>
+        <release version="23.2.0" date="2023-09-04">
+            <description>
+                <p>Release of version: 23.2.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.2.0</url>
+        </release>
+        <release version="23.1.5" date="2023-08-20">
+            <description>
+                <p>Release of version: 23.1.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.1.5</url>
+        </release>
+        <release version="23.1.4" date="2023-08-06">
+            <description>
+                <p>Release of version: 23.1.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.1.4</url>
+        </release>
+        <release version="23.1.3" date="2023-07-23">
+            <description>
+                <p>Release of version: 23.1.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.1.3</url>
+        </release>
+        <release version="23.1.2" date="2023-07-09">
+            <description>
+                <p>Release of version: 23.1.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.1.2</url>
+        </release>
+        <release version="23.1.1" date="2023-06-25">
+            <description>
+                <p>Release of version: 23.1.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.1.1</url>
+        </release>
+        <release version="23.1.0" date="2023-06-04">
+            <description>
+                <p>Release of version: 23.1.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.1.0</url>
+        </release>
+        <release version="23.0.5" date="2023-05-21">
+            <description>
+                <p>Release of version: 23.0.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.0.5</url>
+        </release>
+        <release version="23.0.4" date="2023-05-07">
+            <description>
+                <p>Release of version: 23.0.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.0.4</url>
+        </release>
+        <release version="23.0.3" date="2023-04-23">
+            <description>
+                <p>Release of version: 23.0.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.0.3</url>
+        </release>
+        <release version="23.0.2" date="2023-04-09">
+            <description>
+                <p>Release of version: 23.0.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.0.2</url>
+        </release>
+        <release version="23.0.1" date="2023-03-26">
+            <description>
+                <p>Release of version: 23.0.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.0.1</url>
+        </release>
+        <release version="23.0.0" date="2023-03-05">
+            <description>
+                <p>Release of version: 23.0.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/23.0.0</url>
+        </release>
+        <release version="22.3.5" date="2023-02-19">
+            <description>
+                <p>Release of version: 22.3.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.3.5</url>
+        </release>
+        <release version="22.3.4" date="2023-02-05">
+            <description>
+                <p>Release of version: 22.3.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.3.4</url>
+        </release>
+        <release version="22.3.3" date="2023-01-22">
+            <description>
+                <p>Release of version: 22.3.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.3.3</url>
+        </release>
+        <release version="22.3.2" date="2023-01-08">
+            <description>
+                <p>Release of version: 22.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.3.2</url>
+        </release>
+        <release version="22.3.1" date="2022-12-25">
+            <description>
+                <p>Release of version: 22.3.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.3.1</url>
+        </release>
+        <release version="22.3.0" date="2022-12-04">
+            <description>
+                <p>Release of version: 22.3.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.3.0</url>
+        </release>
+        <release version="22.2.5" date="2022-11-20">
+            <description>
+                <p>Release of version: 22.2.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.2.5</url>
+        </release>
+        <release version="22.2.4" date="2022-11-06">
+            <description>
+                <p>Release of version: 22.2.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.2.4</url>
+        </release>
+        <release version="22.2.3" date="2022-10-23">
+            <description>
+                <p>Release of version: 22.2.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.2.3</url>
+        </release>
+        <release version="22.2.2" date="2022-10-10">
+            <description>
+                <p>Release of version: 22.2.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.2.2</url>
+        </release>
+        <release version="22.2.1" date="2022-09-25">
+            <description>
+                <p>Release of version: 22.2.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.2.1</url>
+        </release>
+        <release version="22.2.0" date="2022-09-05">
+            <description>
+                <p>Release of version: 22.2.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.2.0</url>
+        </release>
+        <release version="22.1.5" date="2022-08-21">
+            <description>
+                <p>Release of version: 22.1.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.1.5</url>
+        </release>
+        <release version="22.1.4" date="2022-08-07">
+            <description>
+                <p>Release of version: 22.1.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.1.4</url>
+        </release>
+        <release version="22.1.3" date="2022-07-24">
+            <description>
+                <p>Release of version: 22.1.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.1.3</url>
+        </release>
+        <release version="22.1.2" date="2022-07-10">
+            <description>
+                <p>Release of version: 22.1.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.1.2</url>
+        </release>
+        <release version="22.1.1" date="2022-06-26">
+            <description>
+                <p>Release of version: 22.1.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.1.1</url>
+        </release>
+        <release version="22.1.0" date="2022-06-05">
+            <description>
+                <p>Release of version: 22.1.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.1.0</url>
+        </release>
+        <release version="22.0.5" date="2022-05-22">
+            <description>
+                <p>Release of version: 22.0.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.0.5</url>
+        </release>
+        <release version="22.0.4" date="2022-05-01">
+            <description>
+                <p>Release of version: 22.0.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.0.4</url>
+        </release>
+        <release version="22.0.3" date="2022-04-17">
+            <description>
+                <p>Release of version: 22.0.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.0.3</url>
+        </release>
+        <release version="22.0.2" date="2022-04-03">
+            <description>
+                <p>Release of version: 22.0.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.0.2</url>
+        </release>
+        <release version="22.0.1" date="2022-03-20">
+            <description>
+                <p>Release of version: 22.0.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.0.1</url>
+        </release>
+        <release version="22.0.0" date="2022-03-06">
+            <description>
+                <p>Release of version: 22.0.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/22.0.0</url>
+        </release>
+        <release version="21.3.5" date="2022-02-20">
+            <description>
+                <p>Release of version: 21.3.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.3.5</url>
+        </release>
+        <release version="21.3.4" date="2022-02-06">
+            <description>
+                <p>Release of version: 21.3.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.3.4</url>
+        </release>
+        <release version="21.3.3" date="2022-01-23">
+            <description>
+                <p>Release of version: 21.3.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.3.3</url>
+        </release>
+        <release version="21.3.2" date="2021-12-27">
+            <description>
+                <p>Release of version: 21.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.3.2</url>
+        </release>
+        <release version="21.3.1" date="2021-12-12">
+            <description>
+                <p>Release of version: 21.3.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.3.1</url>
+        </release>
+        <release version="21.3.0" date="2021-11-28">
+            <description>
+                <p>Release of version: 21.3.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.3.0</url>
+        </release>
+        <release version="21.2.5" date="2021-11-14">
+            <description>
+                <p>Release of version: 21.2.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.2.5</url>
+        </release>
+        <release version="21.2.4" date="2021-11-01">
+            <description>
+                <p>Release of version: 21.2.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.2.4</url>
+        </release>
+        <release version="21.2.3" date="2021-10-17">
+            <description>
+                <p>Release of version: 21.2.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.2.3</url>
+        </release>
+        <release version="21.2.2" date="2021-10-03">
+            <description>
+                <p>Release of version: 21.2.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.2.2</url>
+        </release>
+        <release version="21.2.1" date="2021-09-19">
+            <description>
+                <p>Release of version: 21.2.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.2.1</url>
+        </release>
+        <release version="21.2.0" date="2021-08-30">
+            <description>
+                <p>Release of version: 21.2.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.2.0</url>
+        </release>
+        <release version="21.1.5" date="2021-08-16">
+            <description>
+                <p>Release of version: 21.1.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.1.5</url>
+        </release>
+        <release version="21.1.4" date="2021-08-02">
+            <description>
+                <p>Release of version: 21.1.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.1.4</url>
+        </release>
+        <release version="21.1.3" date="2021-07-18">
+            <description>
+                <p>Release of version: 21.1.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.1.3</url>
+        </release>
+        <release version="21.1.2" date="2021-07-04">
+            <description>
+                <p>Release of version: 21.1.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.1.2</url>
+        </release>
+        <release version="21.1.1" date="2021-06-21">
+            <description>
+                <p>Release of version: 21.1.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.1.1</url>
+        </release>
+        <release version="21.1.0" date="2021-05-31">
+            <description>
+                <p>Release of version: 21.1.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.1.0</url>
+        </release>
+        <release version="21.0.5" date="2021-05-16">
+            <description>
+                <p>Release of version: 21.0.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.0.5</url>
+        </release>
+        <release version="21.0.4" date="2021-05-02">
+            <description>
+                <p>Release of version: 21.0.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.0.4</url>
+        </release>
+        <release version="21.0.3" date="2021-04-18">
+            <description>
+                <p>Release of version: 21.0.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.0.3</url>
+        </release>
+        <release version="21.0.2" date="2021-04-04">
+            <description>
+                <p>Release of version: 21.0.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.0.2</url>
+        </release>
+        <release version="21.0.1" date="2021-03-21">
+            <description>
+                <p>Release of version: 21.0.1</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/21.0.1</url>
+        </release>
         <release version="21.0.0" date="2021-02-28">
             <description>
                 <p>Release of version: 21.0.0</p>
@@ -223,5 +742,5 @@
             <url>https://github.com/dbeaver/dbeaver/releases/tag/7.3.2</url>
         </release>
     </releases>
-    <content_rating type="oars-1.1"/>
+    <content_rating type="oars-1.1" />
 </component>

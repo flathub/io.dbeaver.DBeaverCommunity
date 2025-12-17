@@ -1,13 +1,13 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: "49"
 sdk: org.gnome.Sdk
 
 # Upstream moved to Open JDK 21
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk21
 
-command: dbeaver
+command: dbeaver-wrapper
 
 finish-args:
   - --share=ipc
@@ -34,7 +34,6 @@ add-extensions:
     autodelete: true
 
 modules:
-
   - name: openjdk
     build-options:
       no-debuginfo: true
@@ -67,6 +66,9 @@ modules:
       - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --set-key=Name --set-value='DBeaver CE' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
+        # Install the wrapper script and update desktop file
+      - install -Dm755 dbeaver-wrapper /app/bin/dbeaver-wrapper
+      - desktop-file-edit --set-key=Exec --set-value='/app/bin/dbeaver-wrapper' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
         # Icons
       - tar -xf sources.tar.gz --strip-components=1
       - for icon_size in 16 32 48 64 128 256 512; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
@@ -82,12 +84,16 @@ modules:
       - /bin/readme.txt
     sources:
       - type: file
+        path: run.sh
+        dest-filename: dbeaver-wrapper
+        # Wrapper script
+      - type: file
         path: io.dbeaver.DBeaverCommunity.appdata.xml
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.1.2.tar.gz
-        sha256: 35551a3b5ce210fe9662ee3a9857b050c8ec7dc78904c2fbb4857f89b5aea80a
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.3.0.tar.gz
+        sha256: 66217c72417000d3dc49e0d49c9509391f53875fd209b2c4248d2902295e74a1
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -97,8 +103,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/25.1.2/dbeaver-ce-25.1.2-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: 8f2a9421aaff46752f7275ce077fdcec5e4101ca5454bdee7e71ae28d187ab43
+        url: https://github.com/dbeaver/dbeaver/releases/download/25.3.0/dbeaver-ce-25.3.0-linux.gtk.x86_64-nojdk.tar.gz
+        sha256: c49235b4d127153c27512b5c7076440e73f94a22101d9584a144dbc277a37f21
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -108,8 +114,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/25.1.2/dbeaver-ce-25.1.2-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: d5a11bae03d521a586deb5301d009c9d54d0b51812da4b23a87e65d77791ecd6
+        url: https://github.com/dbeaver/dbeaver/releases/download/25.3.0/dbeaver-ce-25.3.0-linux.gtk.aarch64-nojdk.tar.gz
+        sha256: 36e8db8e4cb85d676da962a2a0f5cbd680b76ea4659dad2d95124db6b048ec9b
         x-checker-data:
           type: anitya
           project-id: 16276
