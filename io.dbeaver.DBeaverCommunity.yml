@@ -1,6 +1,6 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: "49"
+runtime-version: '49'
 sdk: org.gnome.Sdk
 
 # Upstream moved to Open JDK 21
@@ -91,8 +91,8 @@ modules:
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.3.0.tar.gz
-        sha256: 66217c72417000d3dc49e0d49c9509391f53875fd209b2c4248d2902295e74a1
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.3.1.tar.gz
+        sha256: 60270e78ad2e826ac3c5e8a6401e98322b53de4ab3a5d48165d0db0cf3b55b91
         x-checker-data:
           type: anitya
           project-id: 16276
