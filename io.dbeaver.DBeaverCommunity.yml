@@ -1,6 +1,6 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: "49"
+runtime-version: '49'
 sdk: org.gnome.Sdk
 
 # Upstream moved to Open JDK 21
@@ -46,6 +46,7 @@ modules:
     buildsystem: simple
     build-commands:
       - tar -xf dbeaver.tar.gz
+      - rm -rf ./dbeaver/jre
       - cp -r ./dbeaver /app/bin
       - install -d /app/clients/bin
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
@@ -91,8 +92,8 @@ modules:
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.3.0.tar.gz
-        sha256: 66217c72417000d3dc49e0d49c9509391f53875fd209b2c4248d2902295e74a1
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.3.1.tar.gz
+        sha256: 60270e78ad2e826ac3c5e8a6401e98322b53de4ab3a5d48165d0db0cf3b55b91
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -102,20 +103,20 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/25.3.0/dbeaver-ce-25.3.0-linux.gtk.x86_64-nojdk.tar.gz
-        sha256: c49235b4d127153c27512b5c7076440e73f94a22101d9584a144dbc277a37f21
+        url: https://github.com/dbeaver/dbeaver/releases/download/25.3.1/dbeaver-ce-25.3.1-linux.gtk.x86_64.tar.gz
+        sha256: fbd6ca29f2c547ef6206ffd28306ddfe056951ad9ce2ebe4646cf1eb5c796c9f
         x-checker-data:
           type: anitya
           project-id: 16276
-          url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.x86_64-nojdk.tar.gz
+          url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.x86_64.tar.gz
         # Main application, ARM
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/25.3.0/dbeaver-ce-25.3.0-linux.gtk.aarch64-nojdk.tar.gz
-        sha256: 36e8db8e4cb85d676da962a2a0f5cbd680b76ea4659dad2d95124db6b048ec9b
+        url: https://github.com/dbeaver/dbeaver/releases/download/25.3.1/dbeaver-ce-25.3.1-linux.gtk.aarch64.tar.gz
+        sha256: b1faf2b4edfd467a8e0c40a8d023e3dadbacbd9048a3923d2ae46ace82db1343
         x-checker-data:
           type: anitya
           project-id: 16276
-          url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.aarch64-nojdk.tar.gz
+          url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux.gtk.aarch64.tar.gz
