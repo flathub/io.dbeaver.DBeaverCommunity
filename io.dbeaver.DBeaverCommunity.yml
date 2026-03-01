@@ -92,8 +92,8 @@ modules:
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/25.3.5.tar.gz
-        sha256: 91c0d71f3a935263af514fdd0a675b807aa45c38f3af55f60f0f336fd2af5497
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.0.0.tar.gz
+        sha256: 950a01755a52e5af90ffe60f8dc0e278babd63ddb26821939b12f666e08d013b
         x-checker-data:
           type: anitya
           project-id: 16276
