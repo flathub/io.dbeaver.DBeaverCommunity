@@ -44,20 +44,35 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
-				<release version="26.0.0" date="2026-03-02">
-            <description></description>
+		<release version="26.0.0" date="2026-03-02">
+            <description>
+                <p>Release of version: 26.0.0</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.0</url>
         </release>
-				<release version="25.3.5" date="2026-02-16">
-            <description></description>
+		<release version="25.3.5" date="2026-02-16">
+            <description>
+                <p>Release of version: 25.3.5</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.3.5</url>
         </release>
         <release version="25.3.4" date="2026-02-01">
-            <description></description>
+            <description>
+                <p>Release of version: 25.3.4</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.3.4</url>
         </release>
         <release version="25.3.3" date="2026-01-18">
-            <description/>
+            <description>
+                <p>Release of version: 25.3.3</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.3.3</url>
         </release>
         <release version="25.3.2" date="2026-01-04">
-            <description/>
+            <description>
+                <p>Release of version: 25.3.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/25.3.2</url>
         </release>
         <release version="25.3.1" date="2025-12-21">
             <description>
