@@ -44,6 +44,9 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
+		<release version="26.0.1" date="2026-03-22">
+			<description></description>
+		</release>
 		<release version="26.0.0" date="2026-03-02">
             <description>
                 <p>Release of version: 26.0.0</p>
