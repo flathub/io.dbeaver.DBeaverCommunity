@@ -46,7 +46,7 @@
     <releases>
         <release version="26.0.2" date="2026-04-06">
             <description>
-                <p> Release 26.0.2.
+                <p> Release 26.0.2.</p>
                     <ul>
                         <li>Navigator:
                             <ul>
@@ -99,7 +99,6 @@
                             </ul>
                         </li>
                     </ul>
-                </p>
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.2</url>
         </release>
