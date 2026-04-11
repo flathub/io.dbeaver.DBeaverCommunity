@@ -44,8 +44,69 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
-		<release version="26.0.1" date="2026-03-22">
-			<description></description>
+        <release version="26.0.2" date="2026-04-06">
+            <description>
+                <p> Release 26.0.2</p>
+
+                <p>Navigator:</p>
+                <ul>
+                    <li>Fixed Copy/Paste for active connections</li>
+                    <li>Returned the ability to show/hide system objects in Simple view mode</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Fixed "Access blocked" error in Spatial Viewer when loading
+                        OpenStreetMap</li>
+                </ul> 
+
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Fixed an issue where Git and Proxy settings could break the
+                                    workspace path</li>
+                     <li>Fixed -con attribute handling when starting the application
+                                    from the command line</li>
+                </ul>
+
+                <p>Databases:</p>
+                <ul>
+                    <li>Athena: Default driver was updated to AWS Athena JDBC driver. 
+                        The previous driver is still available as Athena (Legacy)</li>
+                    <li>ClickHouse: Fixed an issue where the database failed due to
+                        unknown driver parameters</li>
+                    <li>DuckDB: Fixed geometry type display for database versions > 1.5
+                        (thanks to @EastLord)</li>
+                    <li>MariaDB: Fixed an issue when zero dates were displayed as
+                                    NULL (thanks to @EastLord)</li>
+                </ul>
+
+                <p>MySQL:</p>
+                <ul>
+                    <li>Added MANUAL to the keyword list (thanks to @EastLord)</li>
+                    <li>Fixed user management</li>
+                </ul>
+                
+                <p>Oracle:</p>
+                <ul>
+                    <li>Fixed an issue where the default schema was not selected automatically</li>
+                    <li>Restored navigation from procedure to the corresponding package body code line</li>
+                </ul>
+
+                <p>SQL Server:</p>
+                <ul>
+                    <li>SQL Server driver was updated to version 13.4.0 (thanks
+                        to @EastLord)</li>
+                    <li>Added warning about expired password (thanks to
+                        @bittoby)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.2</url>
+        </release>
+		
+        <release version="26.0.1" date="2026-03-22">
+			<description>
+                <p>Release of version: 26.0.2</p>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.1</url>
 		</release>
 		<release version="26.0.0" date="2026-03-02">
             <description>

@@ -92,8 +92,8 @@ modules:
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.0.1.tar.gz
-        sha256: b735af3ddac9b461afca848aed88399fdc3a3974d7ec82005aef3779ec096803
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.0.2.tar.gz
+        sha256: 3ae8eacd94a73c46eab14e9f4789afcdc3b4da9e124ceb11c363ea9bd2893b9e
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -103,8 +103,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/26.0.1/dbeaver-ce-26.0.1-linux-x86_64.tar.gz
-        sha256: b664fad8cd8dbef4ac05629b453d224d575056e06e3ec0ee0c1b55b6bec528f5
+        url: https://github.com/dbeaver/dbeaver/releases/download/26.0.2/dbeaver-ce-26.0.2-linux-x86_64.tar.gz
+        sha256: a808c6626d7ae3fb5e35c37167030db4134a50e01dffb12324c9350ed40a1850
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -114,8 +114,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/26.0.1/dbeaver-ce-26.0.1-linux-aarch64.tar.gz
-        sha256: 58bee93b49794d9125d94afc422ab0ff9640291e226a837ccb1a46ef0b4f99db
+        url: https://github.com/dbeaver/dbeaver/releases/download/26.0.2/dbeaver-ce-26.0.2-linux-aarch64.tar.gz
+        sha256: b4c08c44c340d6c429ac3a2e1ed44a3c0135087591208dbfa74e54a9568f7291
         x-checker-data:
           type: anitya
           project-id: 16276
