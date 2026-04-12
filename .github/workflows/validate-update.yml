@@ -5,7 +5,8 @@ on:
     inputs:
       expected_version:
         description: Expected DBeaver version
-        required: true
+        required: false
+        type: string
   pull_request:
 
 jobs:
@@ -14,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Flatpak tooling
         run: |
@@ -42,9 +43,20 @@ jobs:
           flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
             'test -x /app/bin/dbeaver-wrapper && test -x /app/bin/dbeaver'
 
+      - name: Determine expected version
+        id: version
+        shell: bash
+        run: |
+          ver="${{ inputs.expected_version }}"
+          if [ -z "$ver" ]; then
+            ver=$(grep -oE 'dbeaver-ce-[0-9]+\.[0-9]+\.[0-9]+' io.dbeaver.DBeaverCommunity.yml | head -1 | sed 's/dbeaver-ce-//')
+          fi
+          test -n "$ver"
+          echo "expected_version=$ver" >> "$GITHUB_OUTPUT"
+
       - name: Check expected version appears in installed app
         env:
-          EXPECTED_VERSION: ${{ github.event.inputs.expected_version }}
+          EXPECTED_VERSION: ${{ steps.version.outputs.expected_version }}
         run: |
           test -n "$EXPECTED_VERSION"
           flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
