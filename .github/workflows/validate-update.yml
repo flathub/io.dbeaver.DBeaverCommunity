@@ -20,7 +20,54 @@ jobs:
       - name: Install Flatpak tooling
         run: |
           sudo apt-get update
-          sudo apt-get install -y flatpak flatpak-builder grep coreutils tar xvfb
+          sudo apt-get install -y flatpak flatpak-builder grep coreutils sed tar xvfb
+
+      - name: Determine expected version
+        id: version
+        shell: bash
+        run: |
+          ver="${{ inputs.expected_version }}"
+          if [ -z "$ver" ]; then
+            ver=$(
+              grep -Eo 'https://github\.com/dbeaver/dbeaver/releases/download/[0-9]+\.[0-9]+\.[0-9]+/dbeaver-ce-[^" ]+\.tar\.gz' io.dbeaver.DBeaverCommunity.yml \
+              | grep -E '(x86_64|aarch64)' \
+              | head -1 \
+              | sed -E 's#.*/download/([0-9]+\.[0-9]+\.[0-9]+)/.*#\1#'
+            )
+          fi
+          test -n "$ver"
+          echo "expected_version=$ver" >> "$GITHUB_OUTPUT"
+          echo "Detected version: $ver"
+
+      - name: Validate manifest source versions
+        shell: bash
+        env:
+          EXPECTED_VERSION: ${{ steps.version.outputs.expected_version }}
+        run: |
+          test -n "$EXPECTED_VERSION"
+
+          mapfile -t urls < <(
+            grep -Eo 'https://github\.com/dbeaver/dbeaver/releases/download/[^" ]+' io.dbeaver.DBeaverCommunity.yml
+          )
+
+          printf 'Found URLs:\n%s\n' "${urls[@]}"
+
+          mapfile -t app_urls < <(
+            printf '%s\n' "${urls[@]}" \
+              | grep -E 'dbeaver-ce-.*(x86_64|aarch64).*(\.tar\.gz)$'
+          )
+
+          printf 'App URLs:\n%s\n' "${app_urls[@]}"
+
+          test "${#app_urls[@]}" -ge 2
+
+          printf '%s\n' "${app_urls[@]}" | grep -E 'x86_64' >/dev/null
+          printf '%s\n' "${app_urls[@]}" | grep -E 'aarch64' >/dev/null
+
+          while IFS= read -r url; do
+            ver=$(printf '%s\n' "$url" | sed -E 's#.*/download/([0-9]+\.[0-9]+\.[0-9]+)/.*#\1#')
+            test "$ver" = "$EXPECTED_VERSION"
+          done < <(printf '%s\n' "${app_urls[@]}")
 
       - name: Add Flathub remote
         run: |
@@ -43,18 +90,8 @@ jobs:
           flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
             'test -x /app/bin/dbeaver-wrapper && test -x /app/bin/dbeaver'
 
-      - name: Determine expected version
-        id: version
-        shell: bash
-        run: |
-          ver="${{ inputs.expected_version }}"
-          if [ -z "$ver" ]; then
-            ver=$(grep -oE 'dbeaver-ce-[0-9]+\.[0-9]+\.[0-9]+' io.dbeaver.DBeaverCommunity.yml | head -1 | sed 's/dbeaver-ce-//')
-          fi
-          test -n "$ver"
-          echo "expected_version=$ver" >> "$GITHUB_OUTPUT"
-
       - name: Check expected version appears in installed app
+        shell: bash
         env:
           EXPECTED_VERSION: ${{ steps.version.outputs.expected_version }}
         run: |
@@ -64,6 +101,7 @@ jobs:
           test -s version_hits.txt
 
       - name: Smoke test startup
+        shell: bash
         run: |
           timeout 20s xvfb-run -a flatpak run io.dbeaver.DBeaverCommunity >smoke.log 2>&1 || rc=$?
           test "${rc:-0}" -eq 0 -o "${rc:-0}" -eq 124
