@@ -2,11 +2,6 @@ name: Validate DBeaver update
 
 on:
   workflow_dispatch:
-    inputs:
-      expected_version:
-        description: Expected DBeaver version
-        required: false
-        type: string
   pull_request:
 
 jobs:
@@ -17,53 +12,198 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Collect relevant DBeaver source URLs and hashes
+        id: sources
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          manifest="io.dbeaver.DBeaverCommunity.yml"
+          tmpdir="$(mktemp -d)"
+          sources_file="$tmpdir/sources.tsv"
+
+          : > "$sources_file"
+
+          export sources_file
+
+          awk '
+            BEGIN {
+              in_sources = 0
+              current_url = ""
+              awaiting_sha = 0
+            }
+
+            /^[[:space:]]*sources:[[:space:]]*$/ {
+              in_sources = 1
+              next
+            }
+
+            in_sources && /^[^[:space:]-]/ {
+              in_sources = 0
+            }
+
+            !in_sources {
+              next
+            }
+
+            /^[[:space:]]*url-template:[[:space:]]+/ {
+              next
+            }
+
+            /^[[:space:]]*url:[[:space:]]+/ {
+              url = $2
+              gsub(/"/, "", url)
+
+              if (
+                url ~ /^https:\/\/github\.com\/dbeaver\/dbeaver\/archive\/refs\/tags\/[0-9]+\.[0-9]+\.[0-9]+\.tar\.gz$/ ||
+                url ~ /^https:\/\/github\.com\/dbeaver\/dbeaver\/releases\/download\/[0-9]+\.[0-9]+\.[0-9]+\/[^ ]+\.tar\.gz$/
+              ) {
+                current_url = url
+                awaiting_sha = 1
+              } else {
+                current_url = ""
+                awaiting_sha = 0
+              }
+              next
+            }
+
+            awaiting_sha && /^[[:space:]]*sha256:[[:space:]]+/ {
+              print current_url "\t" $2 >> ENVIRON["sources_file"]
+              current_url = ""
+              awaiting_sha = 0
+              next
+            }
+          ' "$manifest"
+
+          test -s "$sources_file"
+
+          echo "Collected source records:"
+          cat "$sources_file"
+
+          echo "sources_file=$sources_file" >> "$GITHUB_OUTPUT"
+
+      - name: Validate URLs, versions, fetchability, and hashes
+        id: validate_sources
+        shell: bash
+        env:
+          SOURCES_FILE: ${{ steps.sources.outputs.sources_file }}
+        run: |
+          set -euo pipefail
+
+          tmpdir="$(mktemp -d)"
+          versions_file="$tmpdir/versions.txt"
+          : > "$versions_file"
+
+          source_count=0
+          x86_count=0
+          aarch64_count=0
+
+          while IFS=$'\t' read -r url sha; do
+            test -n "$url"
+            test -n "$sha"
+
+            echo "Checking URL: $url"
+
+            curl -fL --range 0-0 "$url" -o /dev/null
+
+            if [[ "$url" =~ ^https://github\.com/dbeaver/dbeaver/archive/refs/tags/([0-9]+\.[0-9]+\.[0-9]+)\.tar\.gz$ ]]; then
+              ver="${BASH_REMATCH[1]}"
+              source_count=$((source_count + 1))
+
+              echo "Type: source archive"
+              echo "Version: $ver"
+
+              outfile="$tmpdir/source-${ver}.tar.gz"
+              curl -fsSL "$url" -o "$outfile"
+              actual_sha="$(sha256sum "$outfile" | awk '{print $1}')"
+
+              echo "Manifest SHA: $sha"
+              echo "Actual SHA:   $actual_sha"
+
+              test "$actual_sha" = "$sha"
+
+            elif [[ "$url" =~ ^https://github\.com/dbeaver/dbeaver/releases/download/([0-9]+\.[0-9]+\.[0-9]+)/([^/]+\.tar\.gz)$ ]]; then
+              ver="${BASH_REMATCH[1]}"
+              asset_name="${BASH_REMATCH[2]}"
+
+              echo "Type: release asset"
+              echo "Version: $ver"
+              echo "Asset: $asset_name"
+
+              case "$asset_name" in
+                *x86_64*)
+                  x86_count=$((x86_count + 1))
+                  ;;
+                *aarch64*)
+                  aarch64_count=$((aarch64_count + 1))
+                  ;;
+              esac
+
+              asset_json="$(curl -fsSL "https://api.github.com/repos/dbeaver/dbeaver/releases/tags/$ver")"
+
+              upstream_sha="$(
+                ASSET_JSON="$asset_json" ASSET_NAME="$asset_name" python3 - <<'PY'
+                import json, os, sys
+
+                data = json.loads(os.environ["ASSET_JSON"])
+                name = os.environ["ASSET_NAME"]
+
+                for asset in data.get("assets", []):
+                    if asset.get("name") == name:
+                        digest = asset.get("digest", "")
+                        if digest.startswith("sha256:"):
+                            print(digest.split(":", 1)[1])
+                            sys.exit(0)
+
+                sys.exit(1)
+                PY
+              )"
+
+              echo "Manifest SHA: $sha"
+              echo "Upstream SHA: $upstream_sha"
+
+              test "$upstream_sha" = "$sha"
+
+            else
+              echo "Unexpected URL shape: $url" >&2
+              exit 1
+            fi
+
+            echo "$ver" >> "$versions_file"
+
+          done < "$SOURCES_FILE"
+
+          test "$source_count" -ge 1
+          test "$x86_count" -ge 1
+          test "$aarch64_count" -ge 1
+
+          unique_versions="$(sort -u "$versions_file" | sed '/^$/d')"
+          version_count="$(printf '%s\n' "$unique_versions" | sed '/^$/d' | wc -l | tr -d ' ')"
+
+          echo "Unique versions found:"
+          printf '%s\n' "$unique_versions"
+
+          test "$version_count" -eq 1
+
+          release_ver="$(printf '%s\n' "$unique_versions" | head -1)"
+          test -n "$release_ver"
+
+          echo "release_ver=$release_ver" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Flatpak user data
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/flatpak
+            ~/.cache/flatpak-builder
+          key: flatpak-${{ runner.os }}-v1-runtime49-openjdk21
+          restore-keys: |
+            flatpak-${{ runner.os }}-v1-
+
       - name: Install Flatpak tooling
         run: |
           sudo apt-get update
-          sudo apt-get install -y flatpak flatpak-builder grep coreutils sed tar xvfb
-
-      - name: Determine expected version
-        id: version
-        shell: bash
-        run: |
-          ver="${{ inputs.expected_version }}"
-          if [ -z "$ver" ]; then
-            ver=$(
-              grep -Eo 'https://github\.com/dbeaver/dbeaver/releases/download/[0-9]+\.[0-9]+\.[0-9]+/dbeaver-ce-[^" ]+\.tar\.gz' io.dbeaver.DBeaverCommunity.yml \
-              | grep -E '(x86_64|aarch64)' \
-              | head -1 \
-              | sed -E 's#.*/download/([0-9]+\.[0-9]+\.[0-9]+)/.*#\1#'
-            )
-          fi
-          test -n "$ver"
-          echo "expected_version=$ver" >> "$GITHUB_OUTPUT"
-          echo "Detected version: $ver"
-
-      - name: Validate manifest source versions
-        shell: bash
-        env:
-          EXPECTED_VERSION: ${{ steps.version.outputs.expected_version }}
-        run: |
-          test -n "$EXPECTED_VERSION"
-
-          mapfile -t app_urls < <(
-            grep -Eo 'https://github\.com/dbeaver/dbeaver/releases/download/[0-9]+\.[0-9]+\.[0-9]+/dbeaver-ce-[^" ]+\.tar\.gz' io.dbeaver.DBeaverCommunity.yml \
-              | grep -E '(x86_64|aarch64)'
-          )
-
-          printf 'App URLs:\n%s\n' "${app_urls[@]}"
-
-          test "${#app_urls[@]}" -ge 2
-
-          printf '%s\n' "${app_urls[@]}" | grep -E 'x86_64' >/dev/null
-          printf '%s\n' "${app_urls[@]}" | grep -E 'aarch64' >/dev/null
-
-          while IFS= read -r url; do
-            ver=$(printf '%s\n' "$url" | sed -E 's#.*/download/([0-9]+\.[0-9]+\.[0-9]+)/.*#\1#')
-            echo "Checking URL: $url"
-            echo "Extracted version: $ver"
-            test "$ver" = "$EXPECTED_VERSION"
-          done < <(printf '%s\n' "${app_urls[@]}")
+          sudo apt-get install -y flatpak flatpak-builder xvfb
 
       - name: Add Flathub remote
         run: |
@@ -75,28 +215,33 @@ jobs:
           flatpak --user install -y flathub org.gnome.Platform//49
           flatpak --user install -y flathub org.freedesktop.Sdk.Extension.openjdk21//25.08
 
-      - name: Build and install test package
+      - name: Build test package
         run: |
           flatpak-builder --repo=testing-repo --force-clean build-dir io.dbeaver.DBeaverCommunity.yml
+
+      - name: Install built package
+        run: |
           flatpak --user remote-add --if-not-exists --no-gpg-verify db-testing-repo testing-repo
           flatpak --user install -y db-testing-repo io.dbeaver.DBeaverCommunity
+
+      - name: Verify built output version is consistent
+        shell: bash
+        env:
+          RELEASE_VER: ${{ steps.validate_sources.outputs.release_ver }}
+        run: |
+          set -euo pipefail
+
+          flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
+            "grep -R '$RELEASE_VER' /app/bin 2>/dev/null | head -20" | tee version_hits.txt
+
+          test -s version_hits.txt
 
       - name: Verify launch files exist
         run: |
           flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
             'test -x /app/bin/dbeaver-wrapper && test -x /app/bin/dbeaver'
 
-      - name: Check expected version appears in installed app
-        shell: bash
-        env:
-          EXPECTED_VERSION: ${{ steps.version.outputs.expected_version }}
-        run: |
-          test -n "$EXPECTED_VERSION"
-          flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
-            "grep -R \"$EXPECTED_VERSION\" /app/bin 2>/dev/null | head -20" | tee version_hits.txt
-          test -s version_hits.txt
-
-      - name: Smoke test startup
+      - name: Smoke test
         shell: bash
         run: |
           timeout 20s xvfb-run -a flatpak run io.dbeaver.DBeaverCommunity >smoke.log 2>&1 || rc=$?
