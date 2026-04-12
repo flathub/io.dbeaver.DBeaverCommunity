@@ -12,6 +12,8 @@ concurrency:
 jobs:
   validate-sources:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: |
       github.actor == 'flathubbot' ||
       contains(github.event.pull_request.labels.*.name, 'bot-update') ||
@@ -96,6 +98,7 @@ jobs:
         shell: bash
         env:
           SOURCES_FILE: ${{ steps.sources.outputs.sources_file }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
@@ -148,7 +151,9 @@ jobs:
                   ;;
               esac
 
-              asset_json="$(curl -fsSL "https://api.github.com/repos/dbeaver/dbeaver/releases/tags/$ver")"
+              asset_json="$(curl -fsSL \
+                -H "Authorization: Bearer $GITHUB_TOKEN" \
+                "https://api.github.com/repos/dbeaver/dbeaver/releases/tags/$ver")"
 
               asset_lookup="$(
                 ASSET_JSON="$asset_json" ASSET_NAME="$asset_name" python3 -c "
@@ -224,6 +229,8 @@ jobs:
 
   build-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     needs: validate-sources
 
     steps:
