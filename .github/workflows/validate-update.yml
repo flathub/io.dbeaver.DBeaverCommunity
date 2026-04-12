@@ -54,10 +54,12 @@ jobs:
               url = $2
               gsub(/"/, "", url)
 
-              if (
+              is_relevant = (
                 url ~ /^https:\/\/github\.com\/dbeaver\/dbeaver\/archive\/refs\/tags\/[0-9]+\.[0-9]+\.[0-9]+\.tar\.gz$/ ||
                 url ~ /^https:\/\/github\.com\/dbeaver\/dbeaver\/releases\/download\/[0-9]+\.[0-9]+\.[0-9]+\/[^ ]+\.tar\.gz$/
-              ) {
+              )
+
+              if (is_relevant) {
                 current_url = url
                 awaiting_sha = 1
               } else {
