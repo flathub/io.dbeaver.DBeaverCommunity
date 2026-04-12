@@ -140,21 +140,18 @@ jobs:
               asset_json="$(curl -fsSL "https://api.github.com/repos/dbeaver/dbeaver/releases/tags/$ver")"
 
               upstream_sha="$(
-                ASSET_JSON="$asset_json" ASSET_NAME="$asset_name" python3 - <<'PY'
-            import json, os, sys
-
-            data = json.loads(os.environ["ASSET_JSON"])
-            name = os.environ["ASSET_NAME"]
-
-            for asset in data.get("assets", []):
-                if asset.get("name") == name:
-                    digest = asset.get("digest", "")
-                    if digest.startswith("sha256:"):
-                        print(digest.split(":", 1)[1])
-                        sys.exit(0)
-
-            sys.exit(1)
-            PY
+                ASSET_JSON="$asset_json" ASSET_NAME="$asset_name" python3 -c "
+                import json, os, sys
+                data = json.loads(os.environ['ASSET_JSON'])
+                name = os.environ['ASSET_NAME']
+                for asset in data.get('assets', []):
+                    if asset.get('name') == name:
+                        digest = asset.get('digest', '')
+                        if digest.startswith('sha256:'):
+                            print(digest.split(':', 1)[1])
+                            sys.exit(0)
+                sys.exit(1)
+                "
               )"
 
               echo "Manifest SHA: $sha"
