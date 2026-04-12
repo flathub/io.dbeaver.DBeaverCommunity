@@ -23,13 +23,13 @@ jobs:
 
       - name: Add Flathub remote
         run: |
-          flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
       - name: Install runtimes
         run: |
-          flatpak install -y flathub org.gnome.Sdk//49
-          flatpak install -y flathub org.gnome.Platform//49
-          flatpak install -y flathub org.freedesktop.Sdk.Extension.openjdk21//25.08
+          flatpak --user install -y flathub org.gnome.Sdk//49
+          flatpak --user install -y flathub org.gnome.Platform//49
+          flatpak --user install -y flathub org.freedesktop.Sdk.Extension.openjdk21//25.08
 
       - name: Build and install test package
         run: |
