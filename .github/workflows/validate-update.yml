@@ -150,24 +150,50 @@ jobs:
 
               asset_json="$(curl -fsSL "https://api.github.com/repos/dbeaver/dbeaver/releases/tags/$ver")"
 
-              upstream_sha="$(
+              asset_lookup="$(
                 ASSET_JSON="$asset_json" ASSET_NAME="$asset_name" python3 -c "
           import json, os, sys
           data = json.loads(os.environ['ASSET_JSON'])
           name = os.environ['ASSET_NAME']
           for asset in data.get('assets', []):
               if asset.get('name') == name:
-                  digest = asset.get('digest', '')
-                  if digest.startswith('sha256:'):
-                      print(digest.split(':', 1)[1])
-                      sys.exit(0)
-          sys.exit(1)
+                  digest = asset.get('digest')
+                  if isinstance(digest, str) and digest.startswith('sha256:'):
+                      print('FOUND_SHA256\t' + digest.split(':', 1)[1])
+                  else:
+                      print('MISSING_DIGEST')
+                  sys.exit(0)
+          print('ASSET_NOT_FOUND')
           "
               )"
+
+              asset_status="${asset_lookup%%$'\t'*}"
+
+              case "$asset_status" in
+                FOUND_SHA256)
+                  upstream_sha="${asset_lookup#*$'\t'}"
+                  echo "Using SHA from GitHub API digest"
+                  ;;
+                MISSING_DIGEST)
+                  echo "GitHub API has no sha256 digest for '$asset_name', downloading to compute SHA locally." >&2
+                  outfile="$tmpdir/release-${ver}-${asset_name}"
+                  curl -fsSL "$url" -o "$outfile"
+                  upstream_sha="$(sha256sum "$outfile" | awk '{print $1}')"
+                  ;;
+                ASSET_NOT_FOUND)
+                  echo "Asset '$asset_name' not found in GitHub API response for tag '$ver'." >&2
+                  exit 1
+                  ;;
+                *)
+                  echo "Unexpected result from asset lookup: $asset_lookup" >&2
+                  exit 1
+                  ;;
+              esac
 
               echo "Manifest SHA: $sha"
               echo "Upstream SHA: $upstream_sha"
 
+              test -n "$upstream_sha"
               test "$upstream_sha" = "$sha"
 
             else
