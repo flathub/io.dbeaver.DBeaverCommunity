@@ -46,15 +46,9 @@ jobs:
         run: |
           test -n "$EXPECTED_VERSION"
 
-          mapfile -t urls < <(
-            grep -Eo 'https://github\.com/dbeaver/dbeaver/releases/download/[^" ]+' io.dbeaver.DBeaverCommunity.yml
-          )
-
-          printf 'Found URLs:\n%s\n' "${urls[@]}"
-
           mapfile -t app_urls < <(
-            printf '%s\n' "${urls[@]}" \
-              | grep -E 'dbeaver-ce-.*(x86_64|aarch64).*(\.tar\.gz)$'
+            grep -Eo 'https://github\.com/dbeaver/dbeaver/releases/download/[0-9]+\.[0-9]+\.[0-9]+/dbeaver-ce-[^" ]+\.tar\.gz' io.dbeaver.DBeaverCommunity.yml \
+              | grep -E '(x86_64|aarch64)'
           )
 
           printf 'App URLs:\n%s\n' "${app_urls[@]}"
@@ -66,6 +60,8 @@ jobs:
 
           while IFS= read -r url; do
             ver=$(printf '%s\n' "$url" | sed -E 's#.*/download/([0-9]+\.[0-9]+\.[0-9]+)/.*#\1#')
+            echo "Checking URL: $url"
+            echo "Extracted version: $ver"
             test "$ver" = "$EXPECTED_VERSION"
           done < <(printf '%s\n' "${app_urls[@]}")
 
