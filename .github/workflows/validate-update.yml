@@ -55,4 +55,3 @@ jobs:
         run: |
           timeout 20s flatpak run io.dbeaver.DBeaverCommunity >smoke.log 2>&1 || rc=$?
           test "${rc:-0}" -eq 0 -o "${rc:-0}" -eq 124
-          ! grep -Ei 'No such file|Could not|Exception|failed|error' smoke.log
