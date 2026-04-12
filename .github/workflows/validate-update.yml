@@ -246,7 +246,7 @@ jobs:
           set -euo pipefail
 
           flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
-            "grep -R '$RELEASE_VER' /app/bin 2>/dev/null | head -20" | tee version_hits.txt
+            "grep -RF '$RELEASE_VER' /app/bin 2>/dev/null | head -20" | tee version_hits.txt
 
           test -s version_hits.txt
 
