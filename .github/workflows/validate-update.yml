@@ -141,20 +141,20 @@ jobs:
 
               upstream_sha="$(
                 ASSET_JSON="$asset_json" ASSET_NAME="$asset_name" python3 - <<'PY'
-                import json, os, sys
+import json, os, sys
 
-                data = json.loads(os.environ["ASSET_JSON"])
-                name = os.environ["ASSET_NAME"]
+data = json.loads(os.environ["ASSET_JSON"])
+name = os.environ["ASSET_NAME"]
 
-                for asset in data.get("assets", []):
-                    if asset.get("name") == name:
-                        digest = asset.get("digest", "")
-                        if digest.startswith("sha256:"):
-                            print(digest.split(":", 1)[1])
-                            sys.exit(0)
+for asset in data.get("assets", []):
+    if asset.get("name") == name:
+        digest = asset.get("digest", "")
+        if digest.startswith("sha256:"):
+            print(digest.split(":", 1)[1])
+            sys.exit(0)
 
-                sys.exit(1)
-                PY
+sys.exit(1)
+PY
               )"
 
               echo "Manifest SHA: $sha"
