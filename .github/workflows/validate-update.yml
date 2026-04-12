@@ -19,7 +19,7 @@ jobs:
       - name: Install Flatpak tooling
         run: |
           sudo apt-get update
-          sudo apt-get install -y flatpak flatpak-builder grep coreutils tar
+          sudo apt-get install -y flatpak flatpak-builder grep coreutils tar xvfb
 
       - name: Add Flathub remote
         run: |
@@ -53,5 +53,5 @@ jobs:
 
       - name: Smoke test startup
         run: |
-          timeout 20s flatpak run io.dbeaver.DBeaverCommunity >smoke.log 2>&1 || rc=$?
+          timeout 20s xvfb-run -a flatpak run io.dbeaver.DBeaverCommunity >smoke.log 2>&1 || rc=$?
           test "${rc:-0}" -eq 0 -o "${rc:-0}" -eq 124
