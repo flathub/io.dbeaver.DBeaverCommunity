@@ -1,0 +1,58 @@
+name: Validate DBeaver update
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_version:
+        description: Expected DBeaver version
+        required: true
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Flatpak tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y flatpak flatpak-builder grep coreutils tar
+
+      - name: Add Flathub remote
+        run: |
+          flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+      - name: Install runtimes
+        run: |
+          flatpak install -y flathub org.gnome.Sdk//49
+          flatpak install -y flathub org.gnome.Platform//49
+          flatpak install -y flathub org.freedesktop.Sdk.Extension.openjdk21//25.08
+
+      - name: Build and install test package
+        run: |
+          flatpak-builder --repo=testing-repo --force-clean build-dir io.dbeaver.DBeaverCommunity.yml
+          flatpak --user remote-add --if-not-exists --no-gpg-verify db-testing-repo testing-repo
+          flatpak --user install -y db-testing-repo io.dbeaver.DBeaverCommunity
+
+      - name: Verify launch files exist
+        run: |
+          flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
+            'test -x /app/bin/dbeaver-wrapper && test -x /app/bin/dbeaver'
+
+      - name: Check expected version appears in installed app
+        env:
+          EXPECTED_VERSION: ${{ github.event.inputs.expected_version }}
+        run: |
+          test -n "$EXPECTED_VERSION"
+          flatpak run --command=sh io.dbeaver.DBeaverCommunity -c \
+            "grep -R \"$EXPECTED_VERSION\" /app/bin 2>/dev/null | head -20" | tee version_hits.txt
+          test -s version_hits.txt
+
+      - name: Smoke test startup
+        run: |
+          timeout 20s flatpak run io.dbeaver.DBeaverCommunity >smoke.log 2>&1 || rc=$?
+          test "${rc:-0}" -eq 0 -o "${rc:-0}" -eq 124
+          ! grep -Ei 'No such file|Could not|Exception|failed|error' smoke.log
