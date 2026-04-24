@@ -44,6 +44,106 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
+        <release version="26.0.3" date="2026-04-20">
+            <description>
+                <p> Release 26.0.3</p>
+
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Added keywords autocompletion for partially typed</li>
+                    <li>Added the source table name to column header tooltips for query results with
+                        JOIN (thanks to @bittoby)</li>
+                    <li>Fixed an issue where the row count calculation icon did not reset after
+                        counting (thanks to @HellAmbro)</li>
+                    <li>Fixed the display of spatial data when multiple columns were selected</li>
+                    <li>Fixed the ability to calculate row count for non-standard SELECT statements
+                        (thanks to @fdcastel)</li>
+                </ul>
+
+                <p>Navigator:</p>
+                <ul>
+                    <li>Added a key binding to focus the Database Navigator filter (thanks to @EastLord)</li>
+                </ul>
+
+                <p>ER Diagram:</p>
+                <ul>
+                    <li>Added preference option to load lazy comments in diagrams (thanks to @jhjalison01)</li>
+                </ul>
+
+                <p>Data Export:</p>
+                <ul>
+                    <li>Fixed export in SQL format for values containing single quotes (thanks to @dev-miro26)</li>
+                    <li>Fixed a corrupted UI area during the Extraction step in Export</li>
+                </ul>
+
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Added the ability to set Navigator filters in connection settings</li>
+                    <li>Fixed an issue with filtering for embedded databases</li>
+                </ul>
+
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Fixed an issue with an inverted splash screen on macOS Tahoe</li>
+                </ul>
+
+                <p>Databases</p>
+
+                <p>ClickHouse:</p>
+                <ul>
+                    <li>Fixed the display of Array(JSON) types in the data grid (thanks to @EastLord)</li>
+                </ul>
+
+                <p>CUBRID:</p>
+                <ul>
+                    <li>Fixed a CSV export error caused by a missing child object (thanks to @longhaseng52)</li>
+                    <li>Fixed a binding failure in PreparedStatement for table names containing single quotes (thanks to @longhaseng52)</li>
+                    <li>Fixed incorrect partitioning DDL generation for values containing commas (thanks to @longhaseng52)</li>
+                </ul>
+
+                <p>Databricks:</p>
+                <ul>
+                    <li>Added a logo and fixed the link on the connection page</li>
+                </ul>
+
+                <p>H2:</p>
+                <ul>
+                    <li>H2GIS driver was updated to the latest version</li>
+                </ul>
+
+                 <p>MySQL:</p>
+                <ul>
+                    <li>Fixed an issue when the Dump database tool did not work with URL-based connections (thanks to @mango766)</li>
+                </ul>
+
+                <p>MySQL/MariaDB:</p>
+                <ul>
+                    <li>Fixed an issue when changing an auto-increment value generated an incorrect query on the first attempt</li>
+                </ul>
+
+                <p>Oracle:</p>
+                <ul>
+                    <li>
+                        Fixed an issue in the Metadata Editor when clicking a procedure moved the
+                        cursor to a comment containing the procedure name instead of the
+                        procedure itself
+                    </li>
+                </ul>
+
+                <p>Redshift:</p>
+                <ul>
+                    <li>Set the client_protocol_version driver property to default, which fixed an issue with the availability of external schemas</li>
+                </ul>
+
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Fixed an issue where user-defined data types based on NVARCHAR were shown with double length (thanks to @EastLord)</li>
+                    <li>Removed redundant spaces between CREATE and PROCEDURE in the procedure view</li>
+                    <li>Fixed an issue that prevented creating a view in the Metadata Editor</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.3</url>
+        </release>
         <release version="26.0.2" date="2026-04-06">
             <description>
                 <p> Release 26.0.2</p>
@@ -104,7 +204,7 @@
 		
         <release version="26.0.1" date="2026-03-22">
 			<description>
-                <p>Release of version: 26.0.2</p>
+                <p>Release of version: 26.0.1</p>
             </description>
             <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.1</url>
 		</release>
