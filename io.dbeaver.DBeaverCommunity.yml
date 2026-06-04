@@ -1,6 +1,6 @@
 app-id: io.dbeaver.DBeaverCommunity
 runtime: org.gnome.Platform
-runtime-version: '49'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 
 # Upstream moved to Open JDK 21
@@ -92,8 +92,8 @@ modules:
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.0.5.tar.gz
-        sha256: 3fdd348cc59a357a9ae016ec110018d7a6d87ba146b6f5d91884790ed424dee9
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.1.0.tar.gz
+        sha256: 44bd31ac58a21b82d897e81d3bef5ef542558c460dd8f31863079be759c5f1da
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -103,8 +103,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/26.0.5/dbeaver-ce-26.0.5-linux-x86_64.tar.gz
-        sha256: bab82f19934ced5e739adb3edd9bfb9c3b7206ecb20078dcf470d43f6097c79d
+        url: https://github.com/dbeaver/dbeaver/releases/download/26.1.0/dbeaver-ce-26.1.0-linux-x86_64.tar.gz
+        sha256: cc090775d879c66f521cc57a39c269976037fa54b818c2436d9ffece0ff93f31
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -114,8 +114,8 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/26.0.5/dbeaver-ce-26.0.5-linux-aarch64.tar.gz
-        sha256: 61ee8d1fcb419926c34b7b098d3cef73d0beab25370c0d072f472c154cc3d697
+        url: https://github.com/dbeaver/dbeaver/releases/download/26.1.0/dbeaver-ce-26.1.0-linux-aarch64.tar.gz
+        sha256: d13bf8e4dfa7676951827fcba391e93e3b868a02345f608920857de943b46ecf
         x-checker-data:
           type: anitya
           project-id: 16276
