@@ -1,0 +1,128 @@
+name: Bug report
+description: Report a problem with the DBeaver Community Flatpak
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the DBeaver Community Flatpak. Please search existing issues and update the app before reporting.
+
+        Report DBeaver bugs that also occur with an official upstream package to [DBeaver](https://github.com/dbeaver/dbeaver/issues/new/choose) instead.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before reporting
+      options:
+        - label: I reproduced the problem with the latest Flatpak version.
+          required: true
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This problem is specific to the Flatpak package, or I am unsure whether it is.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem description
+      description: What happened? Include the exact error and when it first appeared.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start DBeaver...
+        2. Open...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Linux distribution and version
+      placeholder: openSUSE Leap 15.6, Fedora 44, Ubuntu 26.04, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: desktop
+    attributes:
+      label: Desktop environment
+      placeholder: KDE Plasma 6.5, GNOME 50, etc.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: session
+    attributes:
+      label: Display session
+      options:
+        - Wayland
+        - X11
+        - Other or unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Flatpak installation scope
+      options:
+        - System
+        - User
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: flatpak
+    attributes:
+      label: Flatpak information
+      description: |
+        Paste the output of:
+        `flatpak --version`
+        `flatpak info io.dbeaver.DBeaverCommunity`
+        `flatpak info --show-permissions io.dbeaver.DBeaverCommunity`
+        `flatpak override --user --show io.dbeaver.DBeaverCommunity`
+        `flatpak override --system --show io.dbeaver.DBeaverCommunity`
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: display-environment
+    attributes:
+      label: Display environment (startup or UI problems)
+      description: For display-related problems, paste the output of the following command. Otherwise write "Not applicable".
+      placeholder: |
+        printf 'session=%s\ndesktop=%s\nDISPLAY=%s\nWAYLAND_DISPLAY=%s\nGDK_BACKEND=%s\nGTK_MODULES=%s\n' "$XDG_SESSION_TYPE" "$XDG_CURRENT_DESKTOP" "$DISPLAY" "$WAYLAND_DISPLAY" "$GDK_BACKEND" "$GTK_MODULES"
+      render: shell
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and terminal output
+      description: Run `flatpak run io.dbeaver.DBeaverCommunity` in a terminal and paste its complete output and relevant DBeaver log entries. Remove passwords, tokens, hostnames, and other sensitive data.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add screenshots, recent updates, workarounds tried, or anything else that may help.

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: DBeaver application issue
+    url: https://github.com/dbeaver/dbeaver/issues/new/choose
+    about: Report bugs that also occur with an official, non-Flatpak DBeaver package.
