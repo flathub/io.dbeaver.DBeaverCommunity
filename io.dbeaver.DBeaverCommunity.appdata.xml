@@ -14,9 +14,6 @@
     <content_rating type="oars-1.1"/>
     <summary>Free Universal Database Tool</summary>
     <description>
-        <p>**NOTE: This is a community package of DBeaver Community and not officially
-          supported by DBeaver Corporation.**</p>
-      <p>This repackaging is not supported by DBeaver Corporation.</p>
         <p>Free multi-platform database tool for developers, SQL programmers, database
             administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB,
             SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
