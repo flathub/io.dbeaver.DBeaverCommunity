@@ -10,14 +10,15 @@ mkdir -p "$STATE_DIR"
 
 # --- STEP 1: Calculate Current State ---
 
-# Get the robust Hash (The decision maker)
-# We specifically target the OSGi kernel jar because its change triggers the error.
-SYSTEM_BUNDLE=$(ls /app/bin/plugins/org.eclipse.osgi_*.jar 2>/dev/null | head -n 1)
-if [ -f "$SYSTEM_BUNDLE" ]; then
-    CURRENT_HASH=$(sha256sum "$SYSTEM_BUNDLE" | cut -d " " -f 1)
-else
-    # Fallback only if the file structure changes drastically in the future
-    CURRENT_HASH="unknown"
+# The decision maker: the Flatpak app commit, which changes on every update.
+# Flatpak sets every file mtime in /app to 1970, so Equinox cannot see that a bundle
+# changed when its version stays the same (e.g. sshj jars, issue #318) and keeps a
+# stale cache. Cleaning once per app commit covers that and OSGi updates (#336).
+# (State file keeps its old name so existing installs don't leave an orphan behind.)
+CURRENT_HASH=$(sed -n 's/^app-commit=//p' /.flatpak-info 2>/dev/null)
+if [ -z "$CURRENT_HASH" ]; then
+    # Not running inside Flatpak: never matches, so we clean every start (safe, just slower)
+    CURRENT_HASH="unknown-$(date +%s)"
 fi
 
 # Get the Human-Readable Version (For the log message ONLY)
@@ -48,7 +49,7 @@ if [ ! -f "$HASH_FILE" ] || [ "$(cat "$HASH_FILE")" != "$CURRENT_HASH" ]; then
         OLD_VERSION="fresh-install"
     fi
 
-    echo "System Bundle change detected ($OLD_VERSION -> $CURRENT_VERSION). Cleaning OSGi cache..."
+    echo "App update detected ($OLD_VERSION -> $CURRENT_VERSION). Cleaning OSGi cache..."
     ARGS+=("-clean")
     
     # Update state files so we don't clean next time
