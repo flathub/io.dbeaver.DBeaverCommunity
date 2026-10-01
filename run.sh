@@ -57,5 +57,24 @@ if [ ! -f "$HASH_FILE" ] || [ "$(cat "$HASH_FILE")" != "$CURRENT_HASH" ]; then
     echo "$CURRENT_VERSION" > "$VERSION_FILE"
 fi
 
-# --- STEP 3: Launch ---
+# --- STEP 3: Trust the host's CA certificates (issue #1) ---
+
+# The bundled JDK only trusts its own cacerts. Flatpak forwards the host trust store
+# into the sandbox via p11-kit, so merge the host's server-auth anchors into a copy of
+# the JDK store. Additive only: JDK entries win on alias clashes. On any failure the
+# JDK default is used, as before. A user -vmargs -Djavax.net.ssl.trustStore still wins.
+TRUST_DIR="${XDG_CACHE_HOME}/dbeaver-community"
+TRUSTSTORE="${TRUST_DIR}/cacerts"
+mkdir -p "$TRUST_DIR"
+if trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "${TRUSTSTORE}.tmp" 2>/dev/null &&
+   chmod u+w "${TRUSTSTORE}.tmp" &&
+   /app/jre/bin/keytool -importkeystore -noprompt -srckeystore /app/jre/lib/security/cacerts -srcstorepass changeit \
+       -destkeystore "${TRUSTSTORE}.tmp" -deststorepass changeit >/dev/null 2>&1; then
+    mv -f "${TRUSTSTORE}.tmp" "$TRUSTSTORE"
+    export JAVA_TOOL_OPTIONS="-Djavax.net.ssl.trustStore=${TRUSTSTORE} ${JAVA_TOOL_OPTIONS:-}"
+else
+    rm -f "${TRUSTSTORE}.tmp"
+fi
+
+# --- STEP 4: Launch ---
 exec /app/bin/dbeaver "${ARGS[@]}"
