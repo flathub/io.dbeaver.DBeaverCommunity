@@ -42,34 +42,896 @@
     </branding>
     <releases>
         <release version="26.2.1" date="2026-09-21">
-            <description></description>
+            <description>
+                <p>Product configuration:</p>
+                <ul>
+                    <li>Fixed an issue where toolbars for disabled tools remained visible</li>
+                </ul>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Added profile and model selectors to AI Chat</li>
+                    <li>Fixed a white flash when opening AI Chat in the dark theme</li>
+                    <li>Improved AI Chat prompt caching, reducing repeated input-token processing in multi-turn conversations</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Detached query result tabs now preserve the original result tab name and tooltip</li>
+                    <li>Disconnecting a data source no longer prompts to save or automatically saves an open SQL script (thanks to @gsastraw)</li>
+                    <li>User-defined Escape key bindings now work when no inline suggestion is visible (thanks to @danielpallettfr)</li>
+                    <li>Fixed default formatting of column lists in CREATE TABLE constraints</li>
+                    <li>Fixed intermittent errors in the Error Log when editing INSERT statements</li>
+                    <li>Fixed an error that could occur when editing or moving the caret quickly while code completion was open</li>
+                </ul>
+                <p>Metadata Editor:</p>
+                <ul>
+                    <li>Added a tooltip explaining that object names are transformed according to database naming conventions</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Added an option to display very small numbers in scientific notation instead of rounding them to zero</li>
+                    <li>Fixed dictionary lookups for columns with composite foreign keys (thanks to @gsastraw)</li>
+                    <li>Fixed an issue where hiding a column reset manually adjusted widths for other columns (thanks to @gsastraw)</li>
+                    <li>Fixed incorrect row filtering when navigating composite foreign-key references</li>
+                    <li>Improved performance when pasting a large number of cells</li>
+                    <li>Improved Value panel performance when navigating between text columns</li>
+                    <li>Fixed an issue where Advanced Paste could make the application unresponsive when inserting a large number of rows</li>
+                </ul>
+                <p>Data transfer:</p>
+                <ul>
+                    <li>Fixed invalid exported DDL when apostrophes in inline column comments caused separator commas to be misplaced (thanks to @MicBun)</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Connection URLs can now be selected and copied while using host-based connection settings</li>
+                    <li>Added support for specifying a custom SSH agent socket for SSH tunnel authentication on macOS (thanks to @LystranG)</li>
+                    <li>Fixed importing connections from custom CSV files when optional URL parameters were missing</li>
+                    <li>Network profiles are now sorted alphabetically</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Fixed object filtering in Database Navigator folders when the "Connected only" filter was enabled</li>
+                    <li>Connection type color changes are now applied immediately in Database Navigator (thanks to @sernopay)</li>
+                    <li>Fixed an issue where the active project disappeared from the Projects view after being renamed (thanks to @anton-erofeev)</li>
+                    <li>Fixed an issue where changing connection view settings without reconnecting could leave the connection tree empty</li>
+                    <li>Fixed an issue where connections were not displayed in Database Navigator after switching workspaces in the Eclipse plugin</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Version updates are now shown in the toolbar instead of a pop-up dialog, and update download progress was improved</li>
+                    <li>Added a "Run DBeaver" option to the Windows installer</li>
+                    <li>Improved editor tab highlighting for colored connections: active tabs now use the connection color, while inactive tabs use a lighter shade</li>
+                    <li>Fixed UNC path handling for DBeaver data directories on Windows (thanks to @gsastraw)</li>
+                    <li>Fixed low-contrast text in read-only dropdown menus when using the dark theme on macOS</li>
+                    <li>Improved dark theme colors for progress bars and embedded SQL editors</li>
+                    <li>Fixed an issue where log rotation failures could interrupt tasks and data transfers</li>
+                    <li>Windows ARM: Fixed a startup crash</li>
+                    <li>Fixed excessive CPU usage when the update notification appeared over the master password prompt</li>
+                    <li>Reorganized standard preference pages for easier navigation</li>
+                    <li>Windows: Restored the splash screen when DBeaver is installed in Program Files</li>
+                </ul>
+                <p>New drivers:</p>
+                <ul>
+                    <li>Added the Manticore Search driver (thanks to @akmalsyrf)</li>
+                    <li>Added the TiDB Cloud Lake driver (thanks to @hantmac)</li>
+                </ul>
+                <p>Databases</p>
+                <p>Apache Doris:</p>
+                <ul>
+                    <li>Fixed SQL query execution in the default schema without requiring the database and schema to be reselected</li>
+                </ul>
+                <p>Apache IoTDB:</p>
+                <ul>
+                    <li>Fixed changing the active database in the SQL Editor (thanks to @LJW21-02)</li>
+                </ul>
+                <p>DuckDB:</p>
+                <ul>
+                    <li>Added SQL LIMIT clauses to Data Editor queries to prevent excessive memory use with large tables</li>
+                    <li>Added support for connections on Windows ARM64</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Fixed function DDL generation to preserve parameter and return types, nullability, and SQL security mode (thanks to @sakshichitnis27)</li>
+                </ul>
+                <p>GBase 8s:</p>
+                <ul>
+                    <li>Fixed loading large CLOB and TEXT values when DBeaver is installed for all users on Windows (thanks to @Downstream1998)</li>
+                </ul>
+                <p>MariaDB:</p>
+                <ul>
+                    <li>Fixed an issue where the Constraints tab could show a CHECK expression from another table (thanks to @zanlucathiago)</li>
+                    <li>Named CHECK constraints are now shown in the Constraints tab for users with SELECT-only access (thanks to @zanlucathiago)</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Fixed execution of the SOURCE command in SQL scripts (thanks to @gsastraw)</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Standalone indexes used by constraints are now preserved in generated DDL</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed active schema changes in manual commit mode by prompting users to commit the current transaction and updating the schema indicator</li>
+                    <li>Fixed errors when displaying curved PostGIS geometries in the Spatial data viewer</li>
+                    <li>Fixed the ability to backup selected tables</li>
+                </ul>
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Added support for selecting target column collations during data transfer</li>
+                </ul>
+                <p>Timeplus:</p>
+                <ul>
+                    <li>Fixed data transfer and CSV import by generating STREAM DDL for target objects (thanks to @EastLord)</li>
+                </ul>
+                <p>VeloDB:</p>
+                <ul>
+                    <li>Fixed an issue where Describe object failed for VeloDB</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>Windows installer: Restored the language selector</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.2.1</url>
         </release>
         <release version="26.2.0" date="2026-08-30">
-            <description/>
+            <description>
+                <p>Changes since 26.1.5:</p>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Added support for AI subscriptions for OpenAI</li>
+                    <li>Added a warning about possible AI mistakes in AI Chat</li>
+                    <li>Reorganized AI preferences</li>
+                    <li>AI-generated SQL scripts are executed like regular scripts, with a results tab, progress tracking, and the ability to fix errors</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>fixed toolbar background in the dark theme on Windows</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Updated the reset icon in Result set Order/Filter settings</li>
+                    <li>Fixed an event loop exception when opening the context menu in the Calc panel</li>
+                </ul>
+                <p>Diagram:</p>
+                <ul>
+                    <li>fixed an issue where relationship lines were not handled correctly when manually rearranging entities</li>
+                </ul>
+                <p>Data transfer:</p>
+                <ul>
+                    <li>fixed keyboard navigation in the Transform settings dropdown</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Fixed an exception when opening connection settings for a generic driver with URL configuration</li>
+                    <li>Fixed database logo rendering on macOS</li>
+                    <li>Improved automatic connection name generation</li>
+                    <li>Fixed repeated driver download prompts during connection attempts</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>fixed Navigator background in the dark theme</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Fixed multiple issues in the dark theme: native tool presentation, Tip of the Day dialog display, toolbar background display, and others</li>
+                    <li>Fixed profile slider scrolling on Linux</li>
+                    <li>Updated the driver selector to show all drivers when opening the dialog</li>
+                    <li>Fixed a widget disposed error after changing the application language</li>
+                    <li>Removed project selector from the global Eclipse status bar</li>
+                </ul>
+                <p>Databases</p>
+                <p>Apache Doris:</p>
+                <ul>
+                    <li>Fixed the ability to transfer data from SQLite</li>
+                </ul>
+                <p>Athena:</p>
+                <ul>
+                    <li>Fixed Apache Calcite Avatica driver installation</li>
+                </ul>
+                <p>BigQuery:</p>
+                <ul>
+                    <li>Updated the driver to version 1.2.0</li>
+                </ul>
+                <p>ClickHouse:</p>
+                <ul>
+                    <li>Fixed date filtering</li>
+                </ul>
+                <p>Exasol:</p>
+                <ul>
+                    <li>Fixed an exception when opening users</li>
+                </ul>
+                <p>Flight SQL:</p>
+                <ul>
+                    <li>Fixed connection errors with Flight SQL JDBC driver 19.0.0</li>
+                </ul>
+                <p>MariaDB:</p>
+                <ul>
+                    <li>Fixed ENUM dropdown opening in Record view and the Value panel</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Fixed an AI response handling error</li>
+                    <li>Fixed data export to clipboard (thanks to @EastLord)</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Fixed endless refresh when the References panel was open</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed CSV import with bulk load enabled</li>
+                    <li>Fixed schema switching after changing the active schema</li>
+                    <li>Fixed incorrect search path update after changing the active schema</li>
+                </ul>
+                <p>Snowflake:</p>
+                <ul>
+                    <li>Fixed column ordering in Result Set Order/Filter settings</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.2.0</url>
         </release>
         <release version="26.1.5" date="2026-08-16">
-            <description/>
+            <description>
+                <p>Product configuration:</p>
+                <ul>
+                    <li>Added Product configuration, a new setup flow that opens on first start</li>
+                </ul>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Fixed alignment of fields in the OpenAI configuration dialog (thanks to @HellAmbro)</li>
+                    <li>Added the ability to duplicate AI profiles</li>
+                    <li>Improved model refresh and test connection behavior for AI engine settings</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Added read-only HTML preview for text/html values in the Value panel (thanks to @michaaels)</li>
+                    <li>Fixed array and complex column visualization when "Show complex column structure" was disabled</li>
+                    <li>Fixed sorting in the Metadata panel (thanks to @gsastraw)</li>
+                    <li>Restored support for CSS color names in spatial data colorization</li>
+                    <li>Fixed spatial data display with map backgrounds and locales that use decimal commas</li>
+                </ul>
+                <p>Data Transfer:</p>
+                <ul>
+                    <li>Fixed an issue on Linux when export error dialogs could be hidden behind the export window (thanks to @JackyLin0123)</li>
+                    <li>Fixed column enablement in table mapping when using the Space key (thanks to @EastLord)</li>
+                    <li>Fixed an issue where saved import tasks could lose target table and column mapping settings after an update</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Added support for custom authentication models in Custom CSV/XML connection import (thanks to @weih-kahoot)</li>
+                    <li>Fixed browser-based authentication on Linux systems where the default browse action is not supported</li>
+                    <li>Fixed connection color updates when changing the connection type in connection settings</li>
+                    <li>Added database and driver version information to diagnostic log archives</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Hid the Delete context menu item when metadata changes are disabled in Simple view mode (thanks to @MilosM348)</li>
+                    <li>Fixed an issue where the database Navigator did not open correctly</li>
+                </ul>
+                <p>New Drivers:</p>
+                <ul>
+                    <li>GreptimeDB: Added a dedicated driver entry using the MySQL-compatible protocol (thanks to @EastLord)</li>
+                </ul>
+                <p>Databases</p>
+                <p>ClickHouse:</p>
+                <ul>
+                    <li>Added support for displaying Map values in the Data Editor</li>
+                    <li>Fixed DDL generation for views that do not contain a table-style column declaration block (thanks to @SEPURI-SAI-KRISHNA)</li>
+                </ul>
+                <p>Databricks:</p>
+                <ul>
+                    <li>Improved display of ARRAY and STRUCT values by showing complex arrays as JSON</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Fixed SSH tunnel testing when required database connection parameters were not set</li>
+                </ul>
+                <p>MonetDB:</p>
+                <ul>
+                    <li>Updated the default JDBC driver class name to restore driver loading (thanks to @scorpion3399)</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Fixed native database dumps when passwords contain # or other special characters (thanks to @sakshichitnis27)</li>
+                </ul>
+                <p>Netezza:</p>
+                <ul>
+                    <li>Fixed NCHAR length generation in DDL and improved recognition of NCHAR and NVARCHAR data types (thanks to @KrzysztofDusko)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed an issue where the selected schema could be lost after a query error in manual commit mode</li>
+                    <li>Fixed backup and restore behavior that could omit tables during restore</li>
+                    <li>Fixed generated calls for functions that return composite types (thanks to @HellAmbro)</li>
+                </ul>
+                <p>StarRocks and Apache Doris:</p>
+                <ul>
+                    <li>Preserved raw SHOW CREATE DDL output without applying additional formatting (thanks to @dupen01)</li>
+                </ul>
+                <p>TDengine:</p>
+                <ul>
+                    <li>Fixed unresolved Maven dependency warnings in the built-in driver configuration (thanks to @EastLord)</li>
+                </ul>
+                <p>LibSQL:</p>
+                <ul>
+                    <li>Added support for database views</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.1.5</url>
         </release>
         <release version="26.1.4" date="2026-08-02">
-            <description/>
+            <description>
+                <p>AI assistant:</p>
+                <ul>
+                    <li>AI Chat is now accessible via keyboard (added some shortcuts)</li>
+                    <li>Added the ability to always open AI-generated scripts in a new SQL console</li>
+                    <li>Fixed models that do not support temperature dynamically</li>
+                    <li>No model is selected by default when creating an engine configuration for Open AI. Users need to select a model manually</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Fixed an issue when all result tabs showed the same query after executing a script with multiple queries</li>
+                    <li>Fixed tab color update when changing the connection in SQL Console (thanks to @anantgupta001)</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Fixed paste with Ctrl+V in Find/Replace panel</li>
+                    <li>Fixed Find/Replace in the Value panel</li>
+                    <li>Fixed an issue where maximization did not work correctly when Find/Replace was open</li>
+                </ul>
+                <p>Metadata Editor:</p>
+                <ul>
+                    <li>Column key icons are displayed again</li>
+                </ul>
+                <p>Data Transfer:</p>
+                <ul>
+                    <li>Redesigned table mapping in database to database migration</li>
+                </ul>
+                <p>Task Management:</p>
+                <ul>
+                    <li>Fixed the ability to sort tasks moved to the new folder</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Added support for retrieving passwords from a shell command for native database authentication (thanks to @kgns)</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Fixed the high vulnerability (CVE-2026-10050) in the jetty-security library. The library was updated to version 12.1.11</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Added the "link-project" command to import a project using command line</li>
+                    <li>Fixed log viewer colors in the dark theme (thanks to @anantgupta001)</li>
+                    <li>Fixed connection type colors broken after the update to the new Eclipse version</li>
+                </ul>
+                <p>Databases</p>
+                <p>Altibase:</p>
+                <ul>
+                    <li>Added support for the JSON data type in Altibase 8.1 (thanks to @zennken)</li>
+                </ul>
+                <p>BigQuery:</p>
+                <ul>
+                    <li>The official BigQuery driver is now used by default, and the previous Simba driver was renamed to BigQuery (Legacy)</li>
+                </ul>
+                <p>ClickHouse:</p>
+                <ul>
+                    <li>ClickHouse driver was updated to version 0.10.0</li>
+                    <li>Improved JSON display in the Value panel (thanks to @bakhtiiartashbolotov)</li>
+                </ul>
+                <p>CUBRID:</p>
+                <ul>
+                    <li>Fixed connection fails caused by metadata loading (thanks to @longhaseng52)</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Added the ability to connect to Firebird Embedded (thanks to @fdcastel)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>PostgreSQL driver was updated to version 42.7.13 (Fixed CVE-2026-54291)</li>
+                    <li>Fixed the ability to backup selected tables</li>
+                    <li>Fixed generated calls for procedures with OUT parameters (thanks to @HellAmbro)</li>
+                    <li>Fixed an error that occurred when applying filters to database nodes (thanks to @anantgupta001)</li>
+                </ul>
+                <p>Redshift:</p>
+                <ul>
+                    <li>Schemas are now visible only to users with the USAGE privilege or higher</li>
+                </ul>
+                <p>SAP HANA:</p>
+                <ul>
+                    <li>Improved the message in the license renewal dialog (thanks to @kai-morich)</li>
+                </ul>
+                <ul>
+                    <li>Starrocks driver was updated to version 1.1.2 (thanks to @chris-celerdata)</li>
+                </ul>
+                <p>Snowflake:</p>
+                <ul>
+                    <li>Fixed connection using the sample URL</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.1.4</url>
         </release>
         <release version="26.1.3" date="2026-07-19">
-            <description/>
+            <description>
+                <p>AI assistant:</p>
+                <ul>
+                    <li>Added a setting in Preferences for the maximum wait time for AI Engine responses</li>
+                    <li>Fixed the model list display for GitHub Copilot with the free plan</li>
+                    <li>Engine settings were redesigned</li>
+                    <li>GPT-5 is now used as the default model for OpenAI</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Fixed an issue in the Grouping Panel when selecting an item from the "Add" menu required an extra click before applying changes (thanks to @EastLord)</li>
+                </ul>
+                <p>Metadata:</p>
+                <ul>
+                    <li>Fixed schema dropdown width when creating a new constraint</li>
+                </ul>
+                <p>Data Transfer:</p>
+                <ul>
+                    <li>Improved memory usage when importing large CSV files (thanks to @HellAmbro)</li>
+                    <li>Fixed CSV export with multi-character quotes and improved quote/delimiter validation</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Added global network profiles that can be used in all projects</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Added escaping for the pipe character in connection CLI parameters (thanks to @dhufnagel)</li>
+                    <li>Removed unnecessary zoom restart prompts on Linux and macOS when moving or resizing the application window (thanks to @elcapo)</li>
+                    <li>Fixed color refresh when switching themes (thanks to @anantgupta001)</li>
+                    <li>Added the ability to reset font settings to default on the User Interface page in Preferences</li>
+                </ul>
+                <p>Databases</p>
+                <p>Apache Doris:</p>
+                <ul>
+                    <li>database icon was updated (thanks to @xylaaaaa)</li>
+                </ul>
+                <ul>
+                    <li>Databend driver was updated to version 0.4.8</li>
+                </ul>
+                <p>DuckDB:</p>
+                <ul>
+                    <li>Fixed LIST and ARRAY display in the Data Grid</li>
+                </ul>
+                <p>GaussDB:</p>
+                <ul>
+                    <li>Materialized views are now available in the Navigator tree (thanks to @kkk000111999)</li>
+                </ul>
+                <p>Google Cloud SQL - MySQL:</p>
+                <ul>
+                    <li>Fixed backup and restore failures caused by an exception</li>
+                </ul>
+                <p>Greenplum:</p>
+                <ul>
+                    <li>Fixed an out-of-memory error when loading the table list for schemas with resource groups enabled (thanks to @vaefremov95)</li>
+                </ul>
+                <p>MariaDB:</p>
+                <ul>
+                    <li>Fixed a UI freeze when deleting multiple table columns at once (thanks to @a3894281)</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Fixed an issue when creating a new table failed with an exception (thanks to @HellAmbro)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed an issue where the MAINTAIN privilege was not shown for users who had it granted</li>
+                    <li>Fixed an issue where text arrays could be corrupted after editing values containing commas in the Data Grid</li>
+                    <li>Fixed unsupported constraint type warnings for NOT NULL constraints (thanks to @jmax01)</li>
+                </ul>
+                <p>SQLite:</p>
+                <ul>
+                    <li>Fixed an issue where SQL script execution processed only the first line of the script (thanks to @HellAmbro)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.1.3</url>
         </release>
         <release version="26.1.2" date="2026-07-05">
-            <description/>
+            <description>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Added AI Chat with the ability to generate SQL queries and answer user questions</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Updated the appearance of Find/Replace</li>
+                    <li>Added quick filter: enter a value in the Find field and use the dedicated icon to hide rows that do not match</li>
+                    <li>Fixed incorrect data display when expanding complex types in record mode with "Show complex column structure" disabled</li>
+                    <li>Fixed handling of JSONB and other text content values in SQL generation and CSV import (thanks to @HellAmbro)</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Changed confusing localization for "Enable parameters in DDL and $$..$$ blocks"</li>
+                </ul>
+                <p>Metadata Editor:</p>
+                <ul>
+                    <li>Fixed entity background color</li>
+                </ul>
+                <p>Data transfer: Fixed an issue where import jobs continued running after cancellation</p>
+                <p>Security:</p>
+                <ul>
+                    <li>Fixed an XXE vulnerability caused by an unhardened XML parser (CWE-611)</li>
+                    <li>Fixed an SQL injection vulnerability in Exasol related to string formatting (CWE-89)</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Added the ability to specify the main and monospace fonts on the User Interface page in Preferences</li>
+                    <li>Added the DBEAVER_WORKSPACE and DBEAVER_DATA environment variables to set the workspace path and DBeaverData location in the application</li>
+                    <li>Fixed a macOS launcher crash that occurred when the application was started without launch arguments</li>
+                    <li>Data Search: Fixed an issue where the "Search in LOBs" checkbox used the "Search in numbers" state instead of its own (thanks to @Srltas)</li>
+                    <li>Fixed an issue where a new debug log was not created after application restart</li>
+                    <li>Fixed background color for Tip of the Day in the Dark theme for MacOS</li>
+                    <li>Fixed the application installation as Eclipse extension</li>
+                </ul>
+                <p>Development:</p>
+                <ul>
+                    <li>Added custom instructions for GitHub Copilot code review</li>
+                </ul>
+                <p>New Drivers:</p>
+                <ul>
+                    <li>Add support for Timeplus database (thanks to @MkDev11)</li>
+                </ul>
+                <p>Databases</p>
+                <p>CUBRID:</p>
+                <ul>
+                    <li>Added Table Triggers and User Triggers nodes to the Navigator (thanks to @longhaseng52)</li>
+                    <li>Fixed object search by partial names in Go to Object and metadata search (thanks to @Srltas)</li>
+                </ul>
+                <p>DuckDB:</p>
+                <ul>
+                    <li>Fixed formatting for DATE values (thanks to @EastLord)</li>
+                </ul>
+                <p>GBase 8s:</p>
+                <ul>
+                    <li>Fixed editing CLOB values in the Data Editor (thanks to @Downstream1998)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed connection with Asia/Saigon time zone</li>
+                    <li>Fixed an issue where the connection limit was not applied when editing role properties (thanks to @Adul23)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.1.2</url>
         </release>
         <release version="26.1.1" date="2026-06-21">
-            <description/>
+            <description>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Fixed autocomplete after SELECT with table with alias</li>
+                    <li>Fixed column highlighting with typecasts</li>
+                    <li>Fixed single/multiple tab mode toggle state when several editors are opened</li>
+                    <li>Fixed an issue where SQL templates showed an incorrect list of columns</li>
+                    <li>Disabled spell checking for annotations</li>
+                    <li>Added autocomplete suggestions for dialect-specific global variables, such as SYSDATE, SYSTIMESTAMP, current_date, and current_timestamp (thanks to @alonfaraj)</li>
+                </ul>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Fixed prompt of AI command results</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Added the ability to save the current filter as the default and reset it</li>
+                    <li>Fixed total row count calculation in the toolbar (thanks to @odegroot1234)</li>
+                </ul>
+                <p>Data Transfer:</p>
+                <ul>
+                    <li>Fixed CSV import with multi-character delimiters, quotes, and escape values</li>
+                    <li>Added XML escaping for JSON and JSONB columns when exporting data to DBUnit format</li>
+                </ul>
+                <p>Database Tasks:</p>
+                <ul>
+                    <li>Fixed task failures when using newly created or recreated database objects</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Fixed schema filter dialog opening in Simple view mode(thanks to @xingxing21)</li>
+                    <li>Fixed the delete objects dialog layout for large database selections</li>
+                </ul>
+                <p>New driver:</p>
+                <ul>
+                    <li>Added connector for Apache Doris(thanks to @xylaaaaa)</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Fixed the high vulnerability (CVE-2026-44249) in the netty-handler library. The netty-bom library was updated to version 4.2.15.</li>
+                </ul>
+                <p>General:</p>
+                <ul>
+                    <li>Application was migrated to Eclipse 2026-05</li>
+                    <li>Tycho library was updated to version 5.0.3</li>
+                </ul>
+                <p>Databases</p>
+                <p>CockroachDB:</p>
+                <ul>
+                    <li>Fixed SSL connection issues</li>
+                </ul>
+                <p>CUBRID:</p>
+                <ul>
+                    <li>Fixed table list opening when connecting with a generic JDBC driver (thanks to @Srltas)</li>
+                </ul>
+                <ul>
+                    <li>Databricks driver was updated to version 3.4.1</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Fixed SQL injection vulnerabilities (thanks to @fdcastel)</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Added an option to show column comments in the data grid (thanks to @EastLord)</li>
+                    <li>Fixed the ability to CREATE VIEW statements ending with CASE...END (thanks to @a3894281)</li>
+                    <li>Added details into NO_DATA_FOUND error message (thanks to @mgustimz)</li>
+                </ul>
+                <p>Redshift:</p>
+                <ul>
+                    <li>Improved performance for queries with many columns by reducing unnecessary metadata calls during result set loading</li>
+                </ul>
+                <p>Snowflake:</p>
+                <ul>
+                    <li>Fixed an issue where the connection failed due to an incorrect URL template</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>German localization was improved (thanks to @polluks)</li>
+                    <li>Fixed pluralization in the auto-refresh interval label in the Data Editor (thanks to @Jashan66)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.1.1</url>
         </release>
         <release version="26.1.0" date="2026-05-31">
-            <description/>
+            <description>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Added support for double-curly SQL parameters[#40914] (thanks to @namoguy)</li>
+                </ul>
+                <p>AI assistant:</p>
+                <ul>
+                    <li>Added support for new OpenAI codex models with the GitHub Copilot</li>
+                </ul>
+                <p>Metadata Editor:</p>
+                <ul>
+                    <li>Fixed an issue where the item count disappeared after refreshing the editor (thanks to @jack-stormentswe)</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Added new shortcuts: 'Shift+Alt+Insert' inserts a row before the current,  'Ctrl+Shift+Alt+Insert' duplicates a row and inserts before the current row (thanks to @jack-stormentswe)</li>
+                    <li>Added the ability to hide filters (thanks to @EastLord)</li>
+                    <li>Added the "Insert new rows" option to Advanced Copy, allowing users to insert new rows without replacing existing ones</li>
+                    <li>Fixed an issue when some spatial data was displayed as grayed in the Spatial viewer</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Fixed an issue when the newly created object was deleted after the refresh (thanks to @Desel72)</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Jump servers settings are now updated on the fly (thanks to @jack-stormentswe)</li>
+                </ul>
+                <p>Data Transfer:</p>
+                <ul>
+                    <li>Fixed incorrect export to HTML format when only one of the "Table header" or "Column headers" options was enabled (thanks to @boskodev790)</li>
+                </ul>
+                <p>Task Management:</p>
+                <ul>
+                    <li>Fixed multiple issues where content could disappear on some tool pages inside the Task wizard</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Fixed XXE Injection in DBeaver XML Viewer</li>
+                </ul>
+                <p>New drivers:</p>
+                <ul>
+                    <li>Added support for GizmoSQL driver (thanks to @prmoore77)</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>The Copy button in the Generate DDL dialog now remains disabled until DDL generation is complete (thanks to @dhgoal)</li>
+                    <li>Fixed an issue with white background of vertical tabs and some toolbar items in the Dark theme</li>
+                    <li>Improved import from DataGrip for Snowflake, BigQuery and other non-standard connections (thanks to @a3894281)</li>
+                    <li>Added the 'supports-ddl-transactions' parameter for custom generic drivers to configure DDL transaction support (thanks to @popsiclelmlm)</li>
+                </ul>
+                <p>Development:</p>
+                <ul>
+                    <li>Fixed build failures caused by non-English default JVM locales on developer machines (thanks to @EastLord)</li>
+                </ul>
+                <p>Databases:</p>
+                <ul>
+                    <li>BigQuery: Fixed the incorrect presentation of multiple query results (thanks to @EastLord)</li>
+                    <li>DuckDB: Fixed  LIST array presentation in the Data Editor (thanks to @EastLord)</li>
+                    <li>Databricks: Fixed the ability to open schemas with a hyphen in the name (thanks to @tonicebrian)</li>
+                    <li>Microsoft Fabric: Fixed Execution plan opening</li>
+                    <li>Oracle: Result tabs are named depending on the executed query (thanks to @EastLord)</li>
+                    <li>Redshift driver was updated to version 2.2.6</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>French localization was improved (thanks to @Jean-BaptisteC)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.1.0</url>
         </release>
         <release version="26.0.5" date="2026-05-17">
-            <description/>
+            <description>
+                <p>AI assistant:</p>
+                <ul>
+                    <li>Added support for new Codex models in GitHub Copilot</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Fixed syntax highlighting for inline ORDER BY clauses inside aggregate functions (thanks to @tmimmanuel)</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Disabled Save and Cancel buttons for read-only databases (thanks to @MilosM348)</li>
+                    <li>Added a group row striping option that allows rows to be colored by column values in the result grid (thanks to @MkDev11)</li>
+                    <li>Added the ability to show multiple selected rows in the Text record mode (thanks to @EastLord)</li>
+                </ul>
+                <p>Data Transfer:</p>
+                <ul>
+                    <li>Wizard pages were redesigned</li>
+                    <li>The export window now stays open after errors, allowing the export to be restarted</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Added indicators for connection view type (Simple, Advanced, or Custom) and updated simple view mode switching</li>
+                    <li>Added the ability to change the current project from the bottom-left corner</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Fixed an issue where the option to save credentials was disabled after testing the connection</li>
+                    <li>Fixed multi-line pasting in driver properties</li>
+                </ul>
+                <p>Charts and Dashboards:</p>
+                <ul>
+                    <li>Fixed an issue where deleting one dashboard removed other dashboards from the panel</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Added a Format SQL option to the Generate SQL dialog</li>
+                    <li>Fixed the white background for some toolbar items in the dark theme</li>
+                    <li>Fixed grouping panel queries when generated aliases matched SQL keywords (thanks to @HellAmbro)</li>
+                </ul>
+                <p>Databases</p>
+                <p>BigQuery:</p>
+                <ul>
+                    <li>Fixed array display for the new BigQuery driver</li>
+                </ul>
+                <p>Exasol:</p>
+                <ul>
+                    <li>Fixed view loading in the Database Navigator (thanks to @antonireus)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Updated driver to version 42.7.11</li>
+                    <li>Added support for the MAINTAIN keyword (thanks to @boskodev790)</li>
+                    <li>Fixed handling of "24:00" values in time columns</li>
+                    <li>Fixed missing INOUT parameters in CHECK generation for procedures and functions</li>
+                </ul>
+                <p>Redshift:</p>
+                <ul>
+                    <li>Fixed default schema switching when the "public" schema is missing</li>
+                </ul>
+                <p>Snowflake:</p>
+                <ul>
+                    <li>Updated driver to version 4.1.0</li>
+                    <li>Fixed an occasional error that could appear while typing SQL in the editor</li>
+                </ul>
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Fixed the ability to connect to the database after the Java update</li>
+                </ul>
+                <p>Starrocks:</p>
+                <ul>
+                    <li>Added external catalogs support (thanks to @chris-celerdata)</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>Fixed hardcoded localization for several command labels in the SQL Editor main menu (thanks to @MilosM348)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.5</url>
         </release>
         <release version="26.0.4" date="2026-05-03">
-            <description/>
+            <description>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Added options to trim leading or trailing spaces in the selected text or the whole script (thanks to @seroperson)</li>
+                    <li>Resolved an issue with incorrect transaction mode display</li>
+                    <li>Fixed an issue where the transaction monitor showed "N/A" after the toolbar was changed with drag-and-drop (thanks to @xingxing21)</li>
+                    <li>Fixed an issue where the "Open a separate connection for each editor" preference was not saved (thanks to @xingxing21)</li>
+                    <li>Fixed the DROP confirmation dialog layout for long SQL queries (thanks to @EastLord)</li>
+                </ul>
+                <p>AI assistant:</p>
+                <ul>
+                    <li>Fixed the default temperature value for different AI engines</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Fixed an issue where reference tables became empty when fetching the next page in the References panel</li>
+                    <li>Added an option to show column data type names in column headers (disabled by default) (thanks to @seroperson)</li>
+                    <li>Fixed an exception when expanding a custom data type value in Record mode</li>
+                </ul>
+                <p>Data Export:</p>
+                <ul>
+                    <li>Fixed object list resizing in the Export/Dump window (thanks to @EastLord)</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Fixed an issue where cleared driver proxy credentials were still saved (thanks to @EastLord)</li>
+                    <li>Fixed an issue where testing an SSH connection with a passphrase failed if the passphrase was not saved</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Fixed the high vulnerability (CVE-2026-3505) in the bcpg-jdk18on library. The library was updated to version 1.84.0</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Added the ability to save SQL to a file from the Generate SQL dialog</li>
+                    <li>Added the ability to import JetBrains database connections by pasting datasource configuration text directly into the import wizard (thanks to @EastLord)</li>
+                    <li>Fixed an issue where the splash screen was flipped on macOS 14.x.</li>
+                </ul>
+                <p>Databases</p>
+                <p>Athena:</p>
+                <ul>
+                    <li>Added type casting for date values in data filters</li>
+                </ul>
+                <p>BigQuery:</p>
+                <ul>
+                    <li>Added a new driver BigQuery (Experimental)</li>
+                </ul>
+                <p>ClickHouse:</p>
+                <ul>
+                    <li>Fixed SQL Editor recognition for existing tables with uppercase letters in their names</li>
+                </ul>
+                <p>Denodo:</p>
+                <ul>
+                    <li>Added support for custom data types and fixed column names for nested arrays</li>
+                </ul>
+                <p>DuckDB:</p>
+                <ul>
+                    <li>Fixed map rendering for GEOMETRY types with CRS parameters (thanks to @EastLord)</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Expanded database-specific SQL dialect coverage for the SQL Editor. Added more keywords, built-in functions, and SQL generators (thanks to @fdcastel)</li>
+                </ul>
+                <p>Greenplum/Cloudberry:</p>
+                <ul>
+                    <li>Fixed external table recognition in the Database Navigator (thanks to @talmacschen-arch)</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Fixed query boundaries recognition in the SQL Editor for scripts with the DELIMITER keyword (thanks to @HellAmbro)</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed debug configuration dialog layout and datasource saving</li>
+                    <li>Fixed DDL generation for VIRTUAL generated columns (thanks to @EastLord)</li>
+                </ul>
+                <p>SAP HANA:</p>
+                <ul>
+                    <li>Added the ability to reset the license during connection when the database is in license-only mode (thanks to @kc1r74p)</li>
+                </ul>
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Fixed DDL generation for external tables</li>
+                    <li>Fixed row limiting for table-valued function queries (thanks to @xingxing21)</li>
+                </ul>
+                <p>StarRocks:</p>
+                <ul>
+                    <li>Fixed ADD COLUMN DDL generation (thanks to @EastLord)</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>Localization: Improved Chinese localization (thanks to @EastLord)</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.0.4</url>
         </release>
         <release version="26.0.3" date="2026-04-20">
             <description>
