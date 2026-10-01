@@ -48,6 +48,8 @@ modules:
       - tar -xf dbeaver.tar.gz
       - rm -rf ./dbeaver/jre
       - cp -r ./dbeaver /app/bin
+        # Updates come from Flatpak: upstream policy turns off DBeaver's own update check/prompt
+      - echo '-Dpolicy.software.update.disabled=true' >> /app/bin/dbeaver.ini
       - install -d /app/clients/bin
       - install -Dm644 ./dbeaver/dbeaver-ce.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
       - desktop-file-edit --remove-key=WMCLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
