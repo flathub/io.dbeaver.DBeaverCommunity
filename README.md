@@ -12,7 +12,7 @@ Older versions of this Flatpak used `~/.local/share/DBeaverData` and `~/.eclipse
 rm -rf ~/.local/share/DBeaverData ~/.eclipse/*_linux_gtk_*
 ```
 
-Only do this if you don't also use a non-Flatpak DBeaver or Eclipse, which use the same folders.
+Only do this if you don't also use a non-Flatpak DBeaver or Eclipse, which use the same folders. If your home folder is reached through a symlink (other than Silverblue's `/home` → `/var/home`), first check that your connections and scripts still open.
 
 ## Silverblue specific problems
 
