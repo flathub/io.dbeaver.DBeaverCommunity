@@ -73,8 +73,10 @@ rewrite_paths() {
     # sed delimiter: a control character, so "|" keeps its meaning (alternation) in the pattern
     local dir="$1" script="" patterns=() homes=("$HOME") real i h old new f D=$'\001'
     real=$(readlink -f "$HOME"); [ "$real" != "$HOME" ] && homes+=("$real")
-    for h in "/home/${USER:-$(id -un)}" "/var/home/${USER:-$(id -un)}"; do
-        [ "$h" != "$HOME" ] && [ "$h" != "$real" ] && [ "$(readlink -f "$h" 2>/dev/null)" = "$real" ] && homes+=("$h")
+    # Silverblue & co.: /home is a symlink to /var/home and files may use either spelling. The
+    # sandbox can't resolve that link, so map the prefix by convention.
+    for h in "$HOME" "$real"; do
+        case "$h" in */var/home/*) homes+=("${h%%/var/home/*}/home/${h#*/var/home/}") ;; esac
     done
     for i in "${!OLDS[@]}"; do
         for h in "${homes[@]}"; do

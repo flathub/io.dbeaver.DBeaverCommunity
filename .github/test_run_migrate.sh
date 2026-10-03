@@ -75,6 +75,12 @@ echo "script=$REAL/.local/share/DBeaverData/workspace6/a.sql" >> "$HOME/.local/s
 run_block
 check "both spellings rewritten"        '! grep -qF -e "$HOME/.local/share/DBeaverData/" -e "$REAL/.local/share/DBeaverData/" "$(NEWD)/workspace6/General/data-sources.json"'
 
+echo "== Silverblue inside the sandbox: home is .../var/home/u, /home is NOT resolvable"
+setup "$ROOT/sb2/var/home/u"   # no /home symlink exists here, like inside the Flatpak sandbox
+echo "x=$ROOT/sb2/home/u/.local/share/DBeaverData/workspace6/a.sql" >> "$HOME/.local/share/DBeaverData/workspace6/General/data-sources.json"
+run_block
+check "/home/u spelling rewritten"      'grep -qF "x=$(NEWD)/workspace6/a.sql" "$(NEWD)/workspace6/General/data-sources.json"'
+
 echo "== %20-encoded paths (home with a space)"
 setup "$ROOT/sp ace"; echo "uri=file:${HOME// /%20}/.local/share/DBeaverData/workspace6/x" >> "$HOME/.local/share/DBeaverData/workspace6/General/data-sources.json"
 run_block
