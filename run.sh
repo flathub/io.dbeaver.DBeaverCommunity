@@ -37,6 +37,39 @@ fi
 
 ARGS=("$@")
 
+# --- Keep user-installed plugins working across updates ---
+
+# Eclipse keeps the user's configuration in ~/.eclipse/<hash>_linux_gtk_<arch>, named after
+# hashCode("/app/bin"): the same for every Flatpak install. Two problems after every update:
+# - Eclipse ignores the user's plugin list (bundles.info) once the base install's list looks
+#   changed. Flatpak sets every mtime to 0, so Eclipse compares its ctime instead, which changes
+#   on every update (and reinstall): all user-installed plugins vanished after each update.
+# - Installing a plugin also writes a full config.ini there, naming that DBeaver version's OSGi
+#   framework jar; after a version update the jar is gone and DBeaver doesn't start at all
+#   (ClassNotFoundException: EclipseStarter).
+# When the base list changes, rebuild the user's list as the new base list plus the user's own
+# plugins (base entries the new version no longer ships are dropped), remove Eclipse's stale
+# timestamp so it uses that list, and replace config.ini (it holds no user settings).
+CONFIG_AREA="${HOME}/.eclipse/487352054_linux_gtk_$(uname -m)/configuration"
+SC_DIR="${CONFIG_AREA}/org.eclipse.equinox.simpleconfigurator"
+BASE_LIST=/app/bin/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
+BASE_STAMP=$(stat -c %Z "$BASE_LIST" 2>/dev/null)
+if [ -f "${SC_DIR}/bundles.info" ] && [ "$BASE_STAMP" != "$(cat "${STATE_DIR}/base_bundles.ctime" 2>/dev/null)" ]; then
+    # User entries: not in the base list and not pointing into the base install (plugins/...)
+    if { cat "$BASE_LIST"; awk -F, 'NR == FNR { base[$1] = 1; next }
+             !/^#/ && !($1 in base) && $3 !~ /^plugins\// { print }' "$BASE_LIST" "${SC_DIR}/bundles.info"; } \
+           > "${SC_DIR}/bundles.info.new" && mv -f "${SC_DIR}/bundles.info.new" "${SC_DIR}/bundles.info"; then
+        rm -f "${SC_DIR}/.baseBundlesInfoTimestamp"
+        [ -f "${CONFIG_AREA}/config.ini" ] && cp -f /app/bin/configuration/config.ini "${CONFIG_AREA}/config.ini"
+        echo "$BASE_STAMP" > "${STATE_DIR}/base_bundles.ctime"
+        echo "Kept user-installed plugins across the update"
+    else
+        rm -f "${SC_DIR}/bundles.info.new"
+    fi
+elif [ -n "$BASE_STAMP" ]; then
+    echo "$BASE_STAMP" > "${STATE_DIR}/base_bundles.ctime"
+fi
+
 # --- STEP 2: Compare and Clean ---
 
 # We check the HASH to decide if we need to clean. This is the safety mechanism.
