@@ -37,6 +37,140 @@ fi
 
 ARGS=("$@")
 
+# java_prop NAME VALUE: add -DNAME=VALUE to JAVA_TOOL_OPTIONS. The JVM splits that variable on
+# spaces, so the value is quoted (the JVM strips the quotes); a value containing a double quote
+# can't be passed safely, so it is refused (returns 1).
+java_prop() {
+    [[ "$2" == *\"* ]] && return 1
+    export JAVA_TOOL_OPTIONS="-D$1=\"$2\" ${JAVA_TOOL_OPTIONS:-}"
+}
+
+# --- Keep DBeaver's files in the app's own Flatpak folder (issue #316, phase 1) ---
+
+# DBeaver reads XDG_DATA_HOME as a Java property (not the env var), so its data ends up in
+# ~/.local/share/DBeaverData; Eclipse puts its configuration and user-installed plugins in
+# ~/.eclipse because /app/bin is read-only. Point both into ~/.var/app instead. Existing data
+# is copied (never moved, so older builds keep working) with absolute paths rewritten. If the
+# copy can't be done we keep using the old locations: never start on an empty folder.
+NEW_DATA="${XDG_DATA_HOME}/DBeaverData"
+NEW_CONFIG="${XDG_CONFIG_HOME}/eclipse"
+OLD_DATA="${HOME}/.local/share/DBeaverData"
+# DBeaver before 6.1.3 used .DBeaverData and still falls back to it (dbeaver#6316)
+[ ! -e "$OLD_DATA" ] && [ -d "${HOME}/.local/share/.DBeaverData" ] && OLD_DATA="${HOME}/.local/share/.DBeaverData"
+# Eclipse names this folder after hashCode("/app/bin"): the same for every Flatpak install, and
+# different from any non-Flatpak Eclipse or DBeaver, whose folders must not be picked up.
+OLD_CONFIG="${HOME}/.eclipse/487352054_linux_gtk_$(uname -m)"
+FAIL_FILE="${STATE_DIR}/migrate.failed"
+
+OLDS=("$OLD_DATA" "$OLD_CONFIG")
+NEWS=("$NEW_DATA" "$NEW_CONFIG")
+
+# rewrite_paths DIR: in DIR's text and gzip'ed files, replace every old location with its new
+# one (Eclipse and p2 store absolute paths, and the configuration refers to the data folder).
+# Every spelling of the home folder is covered (Silverblue: /home/u is a symlink to /var/home/u),
+# also %20-encoded, and only whole path names match (DBeaverData2 is left alone).
+rewrite_paths() {
+    # sed delimiter: a control character, so "|" keeps its meaning (alternation) in the pattern
+    local dir="$1" script="" patterns=() homes=("$HOME") real i h old new f D=$'\001'
+    real=$(readlink -f "$HOME"); [ "$real" != "$HOME" ] && homes+=("$real")
+    for h in "/home/${USER:-$(id -un)}" "/var/home/${USER:-$(id -un)}"; do
+        [ "$h" != "$HOME" ] && [ "$h" != "$real" ] && [ "$(readlink -f "$h" 2>/dev/null)" = "$real" ] && homes+=("$h")
+    done
+    for i in "${!OLDS[@]}"; do
+        for h in "${homes[@]}"; do
+            old="${h}${OLDS[$i]#"$HOME"}"; new="${NEWS[$i]}"
+            for enc in no yes; do
+                if [ "$enc" = yes ]; then
+                    [[ "$old$new" == *" "* ]] || continue
+                    old="${old// /%20}"; new="${new// /%20}"
+                fi
+                patterns+=(-e "$old/")
+                script+="s${D}$(printf '%s' "$old" | sed 's/[]\/$*.^[]/\\&/g')\\([^A-Za-z0-9._-]\\|\$\\)${D}$(printf '%s' "$new" | sed 's/[\/&]/\\&/g')\\1${D}g;"
+            done
+        done
+    done
+    grep -rlIZF "${patterns[@]}" -- "$dir" | xargs -0r sed -i "$script" || return 1
+    while IFS= read -r -d '' f; do
+        zcat "$f" | sed "$script" | gzip > "${f}.new" && mv -f "${f}.new" "$f" || return 1
+    done < <(find "$dir" -name '*.gz' -print0)
+    # Never use a copy that still points into the old folders (a spelling we don't know)
+    if grep -rlIF "${patterns[@]}" -- "$dir" >&2; then
+        echo "Old paths left in the files above." >&2
+        return 1
+    fi
+}
+
+USE_NEW_DIRS=yes
+if [ -n "${DBEAVER_DATA:-}" ] || [[ "$XDG_DATA_HOME" == *\"* ]]; then
+    USE_NEW_DIRS=no  # the user chose their own data folder, or the path can't be passed to Java
+else {
+    flock 9  # two windows started at once must not copy twice
+    # Copy only what exists in the old place and was not migrated yet (fresh installs skip this)
+    PENDING=(); UNREADABLE=no
+    for i in "${!OLDS[@]}"; do
+        [ -e "${NEWS[$i]}" ] && continue
+        # An old folder that exists but can't be read here (e.g. a symlink to a place the sandbox
+        # can't see) must not be replaced by an empty new one
+        if { [ -L "${OLDS[$i]}" ] && [ ! -d "${OLDS[$i]}" ]; } || { [ -d "${OLDS[$i]}" ] && [ ! -r "${OLDS[$i]}" ]; }; then
+            UNREADABLE=yes
+        elif [ -d "${OLDS[$i]}" ]; then
+            PENDING+=("$i")
+        fi
+    done
+    SRCS=(); for i in "${PENDING[@]}"; do SRCS+=("${OLDS[$i]}/."); done
+    if [ "$UNREADABLE" = yes ]; then
+        echo "DBeaver's old files exist but can't be read inside the Flatpak; keeping the old locations." >&2
+        USE_NEW_DIRS=no
+    elif [ ${#PENDING[@]} -gt 0 ] && [ "$(cat "$FAIL_FILE" 2>/dev/null)" = "$CURRENT_HASH" ]; then
+        USE_NEW_DIRS=no  # failed with this version already; try again after the next update
+    elif [ ${#PENDING[@]} -gt 0 ]; then
+        # Never fill the disk: need the size of the old folders plus 10% free
+        need=$(du -sk "${SRCS[@]}" | awk '{ s += $1 } END { print int(s * 1.1) }')
+        avail=$(df -Pk "$XDG_DATA_HOME" | awk 'NR == 2 { print $4 }')
+        ok=yes
+        if [ "$need" -gt "${avail:-0}" ]; then
+            echo "Not enough free space to copy DBeaver's files (${need} KiB needed, ${avail} KiB free)." >&2
+            ok=no
+        else
+            [ "$need" -gt 102400 ] && notify-send --app-name="DBeaver" "DBeaver" \
+                "Moving DBeaver's files into its Flatpak folder. This first start may take a while." 2>/dev/null
+            # All or nothing: rename the copies into place only if every copy succeeded, so
+            # DBeaver never runs on a mix of old and new folders. "OLD/." copies the folder's
+            # contents, also when OLD is a symlink (the link's target is never modified).
+            for i in "${PENDING[@]}"; do
+                rm -rf "${NEWS[$i]}.tmp"
+                mkdir -p "$(dirname "${NEWS[$i]}")" &&
+                    cp -a --reflink=auto "${OLDS[$i]}/." "${NEWS[$i]}.tmp" &&
+                    rewrite_paths "${NEWS[$i]}.tmp" || { ok=no; break; }
+            done
+        fi
+        for i in "${PENDING[@]}"; do
+            if [ "$ok" = yes ]; then
+                mv "${NEWS[$i]}.tmp" "${NEWS[$i]}" && echo "Copied ${OLDS[$i]} to ${NEWS[$i]}"
+            else
+                rm -rf "${NEWS[$i]}.tmp"
+            fi
+        done
+        if [ "$ok" = yes ]; then
+            rm -f "$FAIL_FILE"
+            ARGS+=("-clean")  # cached bundle locations point at the old copy
+        else
+            echo "Could not copy DBeaver's files into the Flatpak folder; keeping the old locations." >&2
+            echo "$CURRENT_HASH" > "$FAIL_FILE"
+            USE_NEW_DIRS=no
+        fi
+    fi
+} 9>"${STATE_DIR}/migrate.lock"
+fi
+
+if [ "$USE_NEW_DIRS" = yes ]; then
+    java_prop XDG_DATA_HOME "$XDG_DATA_HOME"
+    ARGS=("-configuration" "${NEW_CONFIG}/configuration" "${ARGS[@]}")
+    CONFIG_AREA="${NEW_CONFIG}/configuration"
+else
+    CONFIG_AREA="${OLD_CONFIG}/configuration"
+fi
+
 # --- Keep user-installed plugins working across updates ---
 
 # Eclipse keeps the user's configuration in ~/.eclipse/<hash>_linux_gtk_<arch>, named after
@@ -50,7 +184,7 @@ ARGS=("$@")
 # When the base list changes, rebuild the user's list as the new base list plus the user's own
 # plugins (base entries the new version no longer ships are dropped), remove Eclipse's stale
 # timestamp so it uses that list, and replace config.ini (it holds no user settings).
-CONFIG_AREA="${HOME}/.eclipse/487352054_linux_gtk_$(uname -m)/configuration"
+CONFIG_AREA="${CONFIG_AREA:-${HOME}/.eclipse/487352054_linux_gtk_$(uname -m)/configuration}"  # Phase 1 sets the moved one
 SC_DIR="${CONFIG_AREA}/org.eclipse.equinox.simpleconfigurator"
 BASE_LIST=/app/bin/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
 BASE_STAMP=$(stat -c %Z "$BASE_LIST" 2>/dev/null)
@@ -104,7 +238,7 @@ if trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose
    /app/jre/bin/keytool -importkeystore -noprompt -srckeystore /app/jre/lib/security/cacerts -srcstorepass changeit \
        -destkeystore "${TRUSTSTORE}.tmp" -deststorepass changeit >/dev/null 2>&1; then
     mv -f "${TRUSTSTORE}.tmp" "$TRUSTSTORE"
-    export JAVA_TOOL_OPTIONS="-Djavax.net.ssl.trustStore=${TRUSTSTORE} ${JAVA_TOOL_OPTIONS:-}"
+    java_prop javax.net.ssl.trustStore "$TRUSTSTORE"
 else
     rm -f "${TRUSTSTORE}.tmp"
 fi
