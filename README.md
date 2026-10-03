@@ -18,6 +18,12 @@ DBeaver trusts the CA certificates in your system trust store, in addition to th
 
 Flatpak can only pass your trust store to the app when the `p11-kit server` command is available on the host. Most desktop installs have it; if your CA is still not trusted, install it (package `p11-kit-server` on Fedora and openSUSE) and log out and back in.
 
+## Eclipse plugins
+
+Plugins you install with *Help > Install New Software* or the Eclipse Marketplace keep working after DBeaver updates.
+
+After a DBeaver version update, Eclipse no longer lists plugins installed before the update as "installed by you": they don't show up for removal in *Installed Software*, and uninstalling another plugin that depends on them can remove them too. To manage such a plugin again, install it once more with *Help > Install New Software*.
+
 ## Flatpak local build test
 
 To build and install the app execute:
