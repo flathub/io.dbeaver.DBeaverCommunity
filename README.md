@@ -6,6 +6,8 @@ Free multi-platform database tool for developers, SQL programmers, database admi
 
 DBeaver's workspace, connections, scripts and drivers are stored in `~/.var/app/io.dbeaver.DBeaverCommunity/data/DBeaverData`, and Eclipse's configuration and any plugins you install in `~/.var/app/io.dbeaver.DBeaverCommunity/config/eclipse`.
 
+SSH host keys you accept for SSH tunnels are kept in `~/.var/app/io.dbeaver.DBeaverCommunity/config/ssh/known_hosts`, which starts as a copy of your `~/.ssh/known_hosts`.
+
 Older versions of this Flatpak used `~/.local/share/DBeaverData` and `~/.eclipse`. On the first start after the update, their contents are copied to the new location; the old folders are left untouched. Once you have checked that everything is there, you can delete them:
 
 ```sh

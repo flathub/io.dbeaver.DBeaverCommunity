@@ -16,6 +16,7 @@ release goes wrong, and how to test changes. User-facing recovery steps are in t
 | **Keep DBeaver's files in the app's Flatpak folder** | Data in `~/.var/app/…/data/DBeaverData`, Eclipse configuration and plugins in `~/.var/app/…/config/eclipse` | Old locations kept (copy failed, not enough space, old folder unreadable in the sandbox); retried after the next update only | #316 phase 1, #376 |
 | **Keep user-installed plugins working across updates** | Rebuild the user's `bundles.info`, drop Eclipse's stale timestamp, replace the user's `config.ini` | List not rebuilt → plugins missing after the update (startup unaffected unless `config.ini` is stale) | #375 |
 | Compare and clean | `-clean` once per app commit (stale OSGi cache: Flatpak mtimes are all 0) | — | #318, #336, #373 |
+| **Remember SSH host keys in the app's Flatpak folder** | Eclipse's "SSH2 home" set to `~/.var/app/…/config/ssh` in the configuration area (`.settings/org.eclipse.jsch.core.prefs`), seeded once from `~/.ssh/known_hosts` | Eclipse default `~/.ssh` used, as before | #316 phase 2 |
 | Trust the host's CA certificates | Merge the host trust store (p11-kit) into a copy of the JDK `cacerts` | JDK default store used, as before | #1, #374 |
 | Launch | `exec /app/bin/dbeaver` | — | — |
 
@@ -33,6 +34,7 @@ passed through `JAVA_TOOL_OPTIONS` are quoted by `run.sh` (the JVM splits that v
 | `…/data/dbeaver-community/migrate.failed` | data move | App commit of a failed copy; no retry until the commit changes |
 | `…/data/dbeaver-community/migrate.lock` | data move | Lock so two starts don't copy at once |
 | `~/.var/app/io.dbeaver.DBeaverCommunity/cache/dbeaver-community/cacerts` | trust store | Rebuilt on every start |
+| `~/.var/app/io.dbeaver.DBeaverCommunity/config/ssh/known_hosts` | SSH host keys (seed), then DBeaver | Host keys DBeaver accepted; copied from `~/.ssh/known_hosts` only while it doesn't exist |
 
 Deleting `data/dbeaver-community/` is safe: it only causes one extra `-clean` and plugin rebuild.
 
@@ -49,6 +51,12 @@ Deleting `data/dbeaver-community/` is safe: it only causes one extra `-clean` an
 - After a DBeaver version update p2 starts the user's profile afresh (Eclipse shared-install
   behaviour), so earlier plugins keep working but no longer count as user-installed (README).
 - The sandbox can't resolve host symlinks such as Silverblue's `/home` → `/var/home`.
+- DBeaver keeps SSH host keys in Eclipse's "SSH2 home" preference (`org.eclipse.jsch.core/SSH2HOME`,
+  default `~/.ssh`) and writes there when a new host key is accepted. A value in the workspace
+  (instance scope) beats the configuration-area one `run.sh` writes. Eclipse preference files are
+  Latin-1 Java properties, hence the `\uXXXX` escaping. DBeaver doesn't read `~/.ssh/config`.
+- DBeaver Community writes no Java preferences (`~/.java/.userPrefs`): the EULA check isn't
+  registered in Community and the deployment id is only used by DataDam, which isn't shipped.
 
 ## When a release goes wrong
 
@@ -74,8 +82,8 @@ Deleting `data/dbeaver-community/` is safe: it only causes one extra `-clean` an
 
 ## Testing a change
 
-- **Self-checks** (seconds, no Flatpak needed): `.github/test_run_migrate.sh` and
-  `.github/test_run_plugins.sh` run the real `run.sh` blocks against fake homes.
+- **Self-checks** (seconds, no Flatpak needed): `.github/test_run_migrate.sh`,
+  `.github/test_run_plugins.sh` and `.github/test_run_ssh.sh` run the real `run.sh` blocks against fake homes.
   `python3 .github/release_notes.py io.dbeaver.DBeaverCommunity.appdata.xml --check` checks the
   release-notes converter.
 - **Local build:** `bash build_install.sh`.
@@ -98,10 +106,10 @@ Deleting `data/dbeaver-community/` is safe: it only causes one extra `-clean` an
 - Homes reached through a symlink other than `/var/home`: paths stored in that other spelling keep
   pointing at the old folder (README warns before deleting it).
 - Eclipse plugins after a version update: see "Key facts" above.
-- Dropping home access (#316 phase 2) needs: `~/.java/.userPrefs` (EULA, `DeploymentId`), `~/.ssh`
-  keys, **certificate and key files that connections reference by path** (e.g. `~/certificates/ca.pem`;
+- Dropping home access (#316 phase 2) needs: `~/.ssh` key files (host keys already moved), **certificate and key files that connections reference by path** (e.g. `~/certificates/ca.pem`;
   host CA trust itself is already independent of home access), user scripts/exports/SQLite files, host database clients (e.g. `mysqldump`), project
-  `.location` files outside the workspace, and the file-chooser portal's paths.
+  `.location` files outside the workspace, and the file-chooser portal's paths (untested: SQLite
+  creating its `-journal`/`-wal` files next to a database picked through the portal).
 - Phase 2 must keep read-only access to the two old folders (`~/.local/share/DBeaverData`,
   `~/.eclipse`) so users who skip every phase 1 build still get migrated; otherwise wait 6+ months.
 - Upstream-blocked: #203 (Flathub verification needs the dbeaver.io domain owner);
