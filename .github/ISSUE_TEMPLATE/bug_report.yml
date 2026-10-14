@@ -62,7 +62,7 @@ body:
     id: desktop
     attributes:
       label: Desktop environment
-      placeholder: KDE Plasma 6.5, GNOME 50, etc.
+      placeholder: KDE Plasma 6.5, GNOME 51, etc.
     validations:
       required: true
 

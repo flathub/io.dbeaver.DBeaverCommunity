@@ -5,7 +5,7 @@
 exec > >(tee -a /root/result.log) 2>&1
 R() { echo "RESULT $*"; echo "<1>RESULT $*" > /dev/kmsg 2>/dev/null || true; }
 APP=io.dbeaver.DBeaverCommunity; T=/mnt/t; DIAG=/root/diag; mkdir -p $DIAG
-. /etc/os-release; R "distro=$ID $VERSION_ID golden=$(flatpak list --runtime --columns=application,branch | grep -c 'org.gnome.Platform.*50')"
+. /etc/os-release; R "distro=$ID $VERSION_ID golden=$(flatpak list --runtime --columns=application,branch | grep -c 'org.gnome.Platform.*51')"
 mkdir -p $T && mount -o ro /dev/disk/by-label/TESTDATA $T || R "FATAL no test iso"
 command -v Xvfb >/dev/null && command -v flatpak >/dev/null || R "FATAL golden image lacks packages"
 HOMEBASE=/home; [ "$(readlink -f /home)" = /var/home ] && HOMEBASE=/var/home
