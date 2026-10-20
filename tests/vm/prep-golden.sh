@@ -1,5 +1,5 @@
 #!/bin/bash
-# prep-golden.sh [distro...]: build <distro>-golden.qcow2 = cloud image + test packages + GNOME 50
+# prep-golden.sh [distro...]: build <distro>-golden.qcow2 = cloud image + test packages + GNOME 51
 # runtime, so test runs don't download them. Re-run to refresh (always before a final pre-merge run).
 H=$(dirname "$(readlink -f "$0")"); . "$H/common.sh"
 genisoimage -quiet -V TESTDATA -r -J -o "$WORK/logs/prep.iso" "$H/guest" || exit 1

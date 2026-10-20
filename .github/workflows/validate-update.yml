@@ -274,7 +274,7 @@ jobs:
           path: |
             ~/.local/share/flatpak
             ~/.cache/flatpak-builder
-          key: flatpak-${{ runner.os }}-v1-runtime50-openjdk21
+          key: flatpak-${{ runner.os }}-v1-runtime51-openjdk21
           restore-keys: |
             flatpak-${{ runner.os }}-v1-
 
@@ -289,9 +289,9 @@ jobs:
 
       - name: Install runtimes
         run: |
-          flatpak --user install -y flathub org.gnome.Sdk//50
-          flatpak --user install -y flathub org.gnome.Platform//50
-          flatpak --user install -y flathub org.freedesktop.Sdk.Extension.openjdk21//25.08
+          flatpak --user install -y flathub org.gnome.Sdk//51
+          flatpak --user install -y flathub org.gnome.Platform//51
+          flatpak --user install -y flathub org.freedesktop.Sdk.Extension.openjdk21//26.08
 
       - name: Build test package
         run: |

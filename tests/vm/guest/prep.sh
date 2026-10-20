@@ -17,12 +17,12 @@ if [ "$ID" = fedora ]; then   # Silverblue layout: homes in /var/home, /home is 
   rm -rf /home && ln -s var/home /home
 fi
 flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y --noninteractive --system flathub org.gnome.Platform//50 >/dev/null 2>&1; R "runtime_rc=$?"
+flatpak install -y --noninteractive --system flathub org.gnome.Platform//51 >/dev/null 2>&1; R "runtime_rc=$?"
 R "tools flatpak=$(command -v flatpak) xvfb=$(command -v Xvfb) xwininfo=$(command -v xwininfo) xwd=$(command -v xwd) home=$(readlink -f /home)"
 R "runtimes: $(flatpak list --runtime --columns=application,branch | tr '\n' ' ')"
 # Refuse to bless a golden image that lacks what the tests need
 if ! command -v flatpak >/dev/null || ! command -v Xvfb >/dev/null || ! command -v xwininfo >/dev/null || \
-   ! flatpak list --runtime --columns=application,branch | grep -q 'org.gnome.Platform.*50'; then
+   ! flatpak list --runtime --columns=application,branch | grep -q 'org.gnome.Platform.*51'; then
   R "PREP FAILED: missing tools or runtime"; poweroff; exit 1
 fi
 cloud-init clean --logs --machine-id 2>/dev/null || cloud-init clean --logs; sync
