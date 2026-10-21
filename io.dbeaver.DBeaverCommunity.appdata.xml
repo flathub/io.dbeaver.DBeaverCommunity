@@ -41,6 +41,92 @@
         <color type="primary" scheme_preference="dark">#324658</color>
     </branding>
     <releases>
+        <release version="26.2.3" date="2026-10-18">
+            <description>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Added drag-and-drop support for Navigator objects and files in AI Chat</li>
+                    <li>Added support for attaching images to AI Chat from files, drag-and-drop, and the clipboard</li>
+                    <li>Fixed an issue where closing multiple SQL Editor tabs cleared the selected AI Chat connection and conversation</li>
+                    <li>Fixed SQL block Execute, Copy, and Open in editor actions on Linux (thanks to @Josephur)</li>
+                    <li>Fixed small font sizes and unnecessary truncation for profile and model names in AI Chat</li>
+                    <li>ChatGPT subscription errors are now displayed as readable messages instead of raw JSON</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Added the ability to execute SQL script files without opening them in the SQL Editor</li>
+                    <li>Added a notification for refreshing affected metadata after successful DDL execution</li>
+                    <li>Fixed an issue where new SQL templates used Vertica instead of abstract SQL as the default context</li>
+                    <li>Fixed SQL Editor corruption when deleting an auto-inserted closing bracket in Eclipse installations with TM4E (thanks to @RoiSoleil)</li>
+                </ul>
+                <p>Metadata Editor:</p>
+                <ul>
+                    <li>Fixed checkbox backgrounds in the table column dialog on macOS in dark mode</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Fixed Adaptive Ordering for large numeric values</li>
+                    <li>Fixed row order when dragging multiple selected result-set rows into the SQL Editor (thanks to @Abdulrahman295)</li>
+                </ul>
+                <p>Data transfer:</p>
+                <ul>
+                    <li>Redesigned the extraction settings page</li>
+                    <li>Redesigned the export target page with in-wizard source management</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Improved error messages for invalid SSH known-hosts files with the affected file path and corrective guidance</li>
+                    <li>Fixed empty credential dialogs for integrated authentication methods</li>
+                    <li>Fixed an issue where connection settings could be cut off and could not be scrolled after changing authentication options</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Fixed a command execution vulnerability by requiring confirmation before running shell commands used to retrieve connection passwords (CWE-78, CWE-306)</li>
+                    <li>Fixed high, medium, and low vulnerabilities in the lz4-java library used by the ClickHouse and Databricks drivers (CVE-2026-106451, CVE-2026-106450, and CVE-2026-106449). The library was updated to version 1.11.4.</li>
+                </ul>
+                <p>Product configuration:</p>
+                <ul>
+                    <li>Git integration is now enabled by default when existing Git projects are detected</li>
+                    <li>The SQLite sample database is now enabled by default</li>
+                </ul>
+                <p>New drivers:</p>
+                <ul>
+                    <li>Added support for YashanDB (thanks to @YoungQinger9)</li>
+                </ul>
+                <p>Databases</p>
+                <p>Clickhouse:</p>
+                <ul>
+                    <li>Added the ability to rename tables from the Navigator tree.</li>
+                </ul>
+                <p>CUBRID:</p>
+                <ul>
+                    <li>Fixed extra quoting around hexadecimal default values in generated DDL (thanks to @longhaseng52)</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Restored bold highlighting for catalogs and tables with granted privileges</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>User profiles now show their assigned users</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Fixed bulk imports that mishandled literal backslashes or custom CSV escape characters</li>
+                    <li>Fixed SQL formatting for the @? operator (thanks to @SemTiOne)</li>
+                </ul>
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Fixed missing quotes around datetimeoffset values when copying multiple cells or rows as SQL</li>
+                    <li>Non-online databases are now marked in Navigator, and their status is shown in the Databases tab (thanks to @michalpsyk)</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>Added Traditional Chinese (Taiwan) localization</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.2.3</url>
+        </release>
         <release version="26.2.2" date="2026-10-04">
             <description>
                 <p>AI Assistant:</p>
