@@ -42,7 +42,11 @@ probe() {  # probe U MODE LABEL
   local st; st=$(started_wait "$u" "$l1" "$l2")
   if [ "$st" = yes ] || [ "$st" = wizard ]; then
     exec 7>"$fifo"; printf 'ss vrapper\nss org.jkiss.dbeaver.core\nss\ngetprop osgi.configuration.area\ngetprop osgi.instance.area\ngetprop javax.net.ssl.trustStore\n' >&7
-    for i in $(seq 1 25); do grep -av 'Picked up' "$out" | grep -aq 'javax.net.ssl.trustStore=' && grep -aq 'osgi.instance.area=' "$out" && break; sleep 1; done; exec 7>&-
+    for i in $(seq 1 25); do grep -av 'Picked up' "$out" | grep -aq 'javax.net.ssl.trustStore=' && grep -aq 'osgi.instance.area=' "$out" && break; sleep 1; done
+    # Where DBeaver's own SSH code keeps host keys (Eclipse's "SSH2 home")
+    local sid; sid=$(grep -aP '^[0-9]+\t\S+ +org\.jkiss\.dbeaver\.net\.ssh_' "$out" | head -1 | cut -f1)
+    [ -n "$sid" ] && printf 'c = ($.context bundle %s) loadClass org.jkiss.dbeaver.model.net.ssh.SSHUtils\nm = $c getMethod getKnownSshHostsFileOrNull\nk = $m invoke $nothing\necho KNOWN $k\n' "$sid" >&7
+    for i in $(seq 1 15); do grep -aq 'KNOWN /' "$out" && break; sleep 1; done; exec 7>&-
   fi
   xwd -root -display :99 -silent > "$DIAG/shot-$lbl.xwd" 2>/dev/null
   stop_app "$u"; kill $keep 2>/dev/null; rm -f "$fifo"
@@ -51,7 +55,7 @@ probe() {  # probe U MODE LABEL
   inst=$(grep -ao 'osgi.instance.area=.*' "$out" | head -1 | sed "s|osgi.instance.area=file:||; s|$h|~|")
   ts=$(grep -av 'Picked up' "$out" | grep -ao 'javax.net.ssl.trustStore=.*' | head -1 | sed "s|javax.net.ssl.trustStore=||; s|$h|~|")
   R "[$lbl] started=$st vrapper=$(grep -aoE '(ACTIVE|RESOLVED|STARTING|INSTALLED) +net.sourceforge.vrapper.eclipse_' "$out" | awk '{print $1}' | head -1) core=$(grep -aoE 'org.jkiss.dbeaver.core_[0-9]+\.[0-9]+\.[0-9]+' "$out" | head -1 | sed 's/.*_//') copied=$(grep -ac '^Copied' "$out") kept_old=$(grep -acE 'keeping the old locations' "$out")"
-  R "[$lbl] areas: config=${cfg:-?} instance=${inst:-?} truststore=${ts:-?}"
+  R "[$lbl] areas: config=${cfg:-?} instance=${inst:-?} truststore=${ts:-?} known_hosts=$(grep -ao 'KNOWN /.*' "$out" | head -1 | sed "s|KNOWN ||; s|$h|~|")"
 }
 p2_old() {  # install Vrapper with the currently installed (old-layout) launcher
   as "$1" flatpak run --"$2" --command=/app/bin/dbeaver $APP -nosplash -application org.eclipse.equinox.p2.director \
@@ -64,12 +68,14 @@ add_data() {  # a connection, a script, a /home-spelled path, a decoy non-Flatpa
   [ "$(readlink -f "/home/$u")" = "$(readlink -f "$h")" ] && [ "/home/$u" != "$h" ] && alias=",\\\"x\\\":\\\"/home/$u/.local/share/DBeaverData/workspace6/x\\\""
   as "$u" mkdir -p "$g/.dbeaver" "$g/Scripts" "$h/Documents" "$h/.eclipse/999_linux_gtk_$(uname -m)/configuration"
   as "$u" touch "$h/.eclipse/999_linux_gtk_$(uname -m)/configuration/DECOY"
+  as "$u" sh -c "mkdir -p -m 700 '$h/.ssh' && echo 'vmtest.example ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIVMTEST' > '$h/.ssh/known_hosts'"
   as "$u" sh -c "printf '{\"folders\":{},\"connections\":{\"sqlite-vmtest\":{\"provider\":\"generic\",\"driver\":\"sqlite_jdbc\",\"name\":\"VM test\",\"configuration\":{\"database\":\"%s/Documents/t.db\",\"url\":\"jdbc:sqlite:%s/Documents/t.db\",\"type\":\"dev\"}}}$alias}' '$h' '$h' > '$g/.dbeaver/data-sources.json'; echo 'select 1;' > '$g/Scripts/Script.sql'"
 }
 snap_old() { (cd "$(home "$1")" && find -L .local/share/DBeaverData .local/share/.DBeaverData .eclipse -type f ! -name dbeaver-debug.log -exec md5sum {} + 2>/dev/null | sort | md5sum); }
 checks() {  # checks U: migrated data and paths
   local u=$1 nd nc; nd=$(NEWD "$u"); nc=$(NEWC "$u")
   R "[$u] connection_in_new=$(grep -c sqlite-vmtest "$nd/workspace6/General/.dbeaver/data-sources.json" 2>/dev/null) script_in_new=$([ -f "$nd/workspace6/General/Scripts/Script.sql" ] && echo yes || echo no) new_is_link=$([ -L "$nd" ] && echo YES || echo no) decoy_copied=$([ -e "$nc/configuration/DECOY" ] && echo YES || echo no)"
+  R "[$u] ssh_seeded=$([ "$(md5sum < "$(home "$u")/.ssh/known_hosts")" = "$(md5sum < "$(home "$u")/.var/app/$APP/config/ssh/known_hosts" 2>/dev/null)" ] && echo yes || echo NO)"
   R "[$u] old_paths_left=$(grep -rlIF -e '.local/share/DBeaverData/' -e '.local/share/.DBeaverData/' -e '/.eclipse/487352054' "$nd" "$nc" 2>/dev/null | wc -l)"
 }
 setup_old() {  # setup_old U MODE BUNDLE: old-layout install with Vrapper and user data
