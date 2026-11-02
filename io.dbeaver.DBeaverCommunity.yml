@@ -94,8 +94,8 @@ modules:
         # This file contains all the icons
       - type: file
         dest-filename: sources.tar.gz
-        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.2.3.tar.gz
-        sha256: 7386cc3b31277b7e8259575901bac2956632156761bd7d0c17ca1945b53ec576
+        url: https://github.com/dbeaver/dbeaver/archive/refs/tags/26.2.4.tar.gz
+        sha256: 39b80d467707dd6f73aa30fa9c0424346c20f8defe64a94e17f5c637b2b89c9d
         x-checker-data:
           type: anitya
           project-id: 16276
@@ -105,20 +105,24 @@ modules:
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/26.2.3/dbeaver-ce-26.2.3-linux-x86_64.tar.gz
-        sha256: 9322b9b2ccb28a7084ec4dffe991051c0b3e58e64a738cac5b1de02dd1f56641
+        url: 
+          https://github.com/dbeaver/dbeaver/releases/download/26.2.4/dbeaver-ce-26.2.4-linux-x86_64.tar.gz
+        sha256: a0dce46bb01cd2447c2d51388a39d3cda7ac58930fc558ebf3945aca5b859360
         x-checker-data:
           type: anitya
           project-id: 16276
-          url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux-x86_64.tar.gz
+          url-template: 
+            https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux-x86_64.tar.gz
         # Main application, ARM
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
           - aarch64
-        url: https://github.com/dbeaver/dbeaver/releases/download/26.2.3/dbeaver-ce-26.2.3-linux-aarch64.tar.gz
-        sha256: e842efef59927986fc73f2964efe9d473c4e2c0fad5620014ec33936214bf11b
+        url: 
+          https://github.com/dbeaver/dbeaver/releases/download/26.2.4/dbeaver-ce-26.2.4-linux-aarch64.tar.gz
+        sha256: e64f2b4265097c0501db9141234b62f979cb14eda993df3c592b70cc166f01c6
         x-checker-data:
           type: anitya
           project-id: 16276
-          url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux-aarch64.tar.gz
+          url-template: 
+            https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux-aarch64.tar.gz
