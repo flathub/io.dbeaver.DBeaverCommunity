@@ -42,7 +42,132 @@
     </branding>
     <releases>
         <release version="26.2.4" date="2026-11-01">
-            <description></description>
+            <description>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Added support for configuring AI providers, including OpenAI and GitHub Copilot, through environment variables</li>
+                    <li>Fixed AI scope selection for nested tables, views, and other object folders</li>
+                    <li>Improved AI Chat image previews with aspect-ratio thumbnails, popup viewing, zoom, and scrolling</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Added cross-statement SQL variable tracking for autocomplete, highlighting, hover information, and the SQL outline</li>
+                    <li>Added Ask, Always, and Never options for reloading metadata after DDL execution</li>
+                    <li>Added "Select All" to text editor context menus and the Edit menu (thanks to @kbrianps)</li>
+                    <li>Fixed SQL script tasks failing when writing stored procedure OUT parameter values to the log (thanks to @fizzbeom)</li>
+                    <li>The "New" and "Import" buttons in SQL template preferences are now available without selecting an existing template (thanks to @augustocbx)</li>
+                </ul>
+                <p>Metadata Editor:</p>
+                <ul>
+                    <li>Connection type color changes now refresh throughout open table Properties editors (thanks to @EastLord)</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Fixed nested arrays expanding beyond their actual depth</li>
+                    <li>Fixed Value panel format changes not being applied immediately</li>
+                    <li>Small arrays are now shown in full when they fit within a Data Grid cell</li>
+                </ul>
+                <p>Diagram:</p>
+                <ul>
+                    <li>ER diagram palettes and object colors now update immediately after switching themes</li>
+                    <li>Fixed an error when activating an ER diagram with the Content Outline open (thanks to @zsewasdsdsd)</li>
+                </ul>
+                <p>Data transfer:</p>
+                <ul>
+                    <li>Added configurable XLSX sheet name patterns with `${n}` and `${table}` variables</li>
+                    <li>Canceled data exports now show a cancellation notification instead of a completion message</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Added support for more than 200 CData drivers. Users can now start a trial or purchase a license for personal use directly from the connection page</li>
+                    <li>Fixed the "Close idle connections after" setting being lost after saving or restarting DBeaver (thanks to @zsewasdsdsd)</li>
+                    <li>Network profile changes are now saved only after Apply or OK; Cancel discards them</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Delete actions now identify the selected object type, such as "Delete Connection" or "Delete Table"</li>
+                    <li>Fixed duplicated icons and other artifacts during horizontal scrolling in the Navigator on macOS</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Updated the bundled Java runtime to protect TLS connections from certificates affected by the eMudhra CA key compromise</li>
+                </ul>
+                <p>Product configuration:</p>
+                <ul>
+                    <li>Disabling AI integration now hides AI Chat and prevents saved chat views from reopening as errors</li>
+                    <li>Product Configuration now shows and highlights only newly available features when opened after an update</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Fixed automatic updates for ZIP-based DBeaver installations on Windows</li>
+                    <li>Fixed Git extension installation and missing Git features in Community Edition</li>
+                    <li>Improved application startup performance</li>
+                </ul>
+                <p>New drivers:</p>
+                <ul>
+                    <li>Added the Mimer SQL driver with native support for database objects, privileges, and spatial data (thanks to @fredrikalund)</li>
+                </ul>
+                <p>Databases</p>
+                <p>Apache Hive:</p>
+                <ul>
+                    <li>Fixed driver library downloads for versions 4.0.0-alpha-1 and 4.0.0-alpha-2</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Improved table loading and database-to-database export mapping performance by eliminating long domain metadata delays</li>
+                </ul>
+                <p>GBase 8s:</p>
+                <ul>
+                    <li>Fixed database object loading when `SQLMODE=mysql` is enabled (thanks to @zerlinpi)</li>
+                </ul>
+                <p>MS Access:</p>
+                <ul>
+                    <li>Updated the UCanAccess driver definition to use the actively maintained Maven Central artifact (thanks to @spannm)</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Added a separate "Body Last DDL Time" property for packages (thanks to @akmalsyrf)</li>
+                    <li>Fixed an error when selecting a table from SQL autocomplete</li>
+                    <li>Fixed missing constraint columns when "Always use DBA views" is enabled (thanks to @tessarotto21)</li>
+                    <li>Fixed `tnsnames.ora` files remaining locked after DBeaver reads TNS aliases (thanks to @fizzbeom)</li>
+                    <li>Removed nested Users folders from Profiles in Navigator while keeping users available in the profile editor</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Anonymous record values are now displayed as expandable composite values</li>
+                    <li>Fixed conversion errors when displaying composite values from temporary views after metadata refresh</li>
+                    <li>Fixed invalid `USING` clauses in generated column type changes for foreign tables (thanks to @NikRom5531)</li>
+                    <li>Fixed zero connection limits appearing as unlimited in role source (thanks to @Suvrat1629)</li>
+                    <li>Foreign-key navigation filters are now shown in the filter panel and can be removed when source and target column names differ</li>
+                    <li>Generated aggregate DDL now preserves combine functions and parallel-safety settings (thanks to @zsewasdsdsd)</li>
+                    <li>Replaced cryptic dependency type codes with readable object types (thanks to @NikRom5531)</li>
+                </ul>
+                <p>Redshift:</p>
+                <ul>
+                    <li>Added Lock Manager support</li>
+                </ul>
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Database descriptions can now be read, saved, updated, and cleared (thanks to @michalpsyk)</li>
+                    <li>Fixed index DDL using an incorrect schema and missing identifier quoting</li>
+                    <li>Fixed object comments not being removed when cleared in the object editor (thanks to @michalpsyk)</li>
+                    <li>Index key columns are now displayed before INCLUDE columns (thanks to @zsewasdsdsd)</li>
+                </ul>
+                <p>SQLite:</p>
+                <ul>
+                    <li>Fixed metadata loading when a temporary table is named `pragma_table_list` (thanks to @zsewasdsdsd)</li>
+                </ul>
+                <p>YashanDB:</p>
+                <ul>
+                    <li>Added a logo to the connection dialog</li>
+                    <li>Fixed changing user passwords from the UI</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>Fixed Preferences search results for the language setting</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.2.4</url>
         </release>
         <release version="26.2.3" date="2026-10-18">
             <description>
