@@ -42,7 +42,149 @@
     </branding>
     <releases>
         <release version="26.2.5" date="2026-11-15">
-            <description></description>
+            <description>
+                <p>AI Assistant:</p>
+                <ul>
+                    <li>Added Ollama support for running local AI models</li>
+                    <li>Selecting an AI profile in chat now saves it as the user's default for new conversations</li>
+                    <li>Canceled responses now retain reported token usage and show N/A when usage is unavailable instead of zero counts</li>
+                    <li>Fixed AI Chat remaining blank or waiting indefinitely when chat history initialization fails</li>
+                    <li>Fixed conversation timestamps shifting after restarting DBeaver</li>
+                    <li>Clearing Temperature now uses the AI provider's server default instead of sending a numeric value</li>
+                    <li>Fixed AI Chat remaining on "Waiting for response..." after a tool or follow-up request fails</li>
+                    <li>Generated AI metadata now filters out objects and relationships outside the configured context scope</li>
+                    <li>Added per-connection AI metadata consent and scope settings</li>
+                    <li>Added a connection picker to AI Chat, including disconnected connections without chat history</li>
+                </ul>
+                <p>SQL Editor:</p>
+                <ul>
+                    <li>Added syntax analysis, autocomplete, and symbol information for supported procedure, function, trigger, and anonymous-block definitions</li>
+                    <li>Added explicit panel placement choices to tab context menus and the Panels menu</li>
+                    <li>Fixed empty detached result tabs when a statement returns multiple result sets (thanks to @fizzbeom)</li>
+                    <li>Restored foreign-key join conditions and column suggestions after an empty JOIN ON clause followed by WHERE, GROUP BY, or another JOIN</li>
+                    <li>Fixed autocomplete requests being lost while background parsing is still running</li>
+                    <li>Fixed text zoom in block selection mode (thanks to @Antoine2oo5)</li>
+                    <li>Reduced memory use when processing SQL scripts with positional parameters and dollar-quoted strings (thanks to @cypherbits)</li>
+                    <li>Fixed an intermittent error when selecting autocomplete suggestions after their information popup closes</li>
+                </ul>
+                <p>Data Editor:</p>
+                <ul>
+                    <li>Calculation panel results now follow Data Formats settings instead of always rounding to three decimal places (thanks to @yuki-nakano-520)</li>
+                    <li>Restoring a cell's original value before saving now clears its pending change (thanks to @yuki-nakano-520)</li>
+                    <li>Fixed expanded arrays being truncated in multi-record mode when selected rows contain arrays of different lengths</li>
+                </ul>
+                <p>Diagram:</p>
+                <ul>
+                    <li>Corrected Crow's Foot notation to show 0..n on the many side of non-unique foreign-key relationships (thanks to @adi567sin-beep)</li>
+                </ul>
+                <p>Data transfer:</p>
+                <ul>
+                    <li>Added independent CSV header quoting options: always, when necessary, and never</li>
+                    <li>Improved target-table mapping performance for schemas containing many objects</li>
+                </ul>
+                <p>Connectivity:</p>
+                <ul>
+                    <li>Connection names can now be edited directly on the main connection settings page</li>
+                    <li>Fixed an error when selecting a CData driver without an internet connection on Windows</li>
+                    <li>Fixed a secondary error hiding the original failure when connection settings cannot be initialized</li>
+                    <li>Aligned connection wizard sections and moved network configuration hints inside their corresponding sections</li>
+                    <li>Fixed the first character of connection names being clipped in the Windows dark theme</li>
+                </ul>
+                <p>Task Management:</p>
+                <ul>
+                    <li>Added project-reference remapping for additional task types when importing a project under a different name</li>
+                </ul>
+                <p>Navigator:</p>
+                <ul>
+                    <li>Database object search now connects to a data source only when its node is expanded, avoiding connection and driver-download prompts while browsing the list</li>
+                </ul>
+                <p>Security:</p>
+                <ul>
+                    <li>Added an optional, remembered "Sanitize logs" setting when collecting diagnostic information, without changing the original logs</li>
+                    <li>AI account tokens now use OS-native secure storage when an available provider can be selected</li>
+                    <li>Hardened driver and launcher archive extraction against files being written outside their intended directories (CWE-22)</li>
+                    <li>Fixed selection of native secure storage providers on Windows and Linux</li>
+                </ul>
+                <p>Product configuration:</p>
+                <ul>
+                    <li>Added Product Configuration to Preferences, with access to settings for hidden optional features</li>
+                </ul>
+                <p>Miscellaneous:</p>
+                <ul>
+                    <li>Replaced low-resolution overlay icons with scalable vector icons</li>
+                    <li>Fixed first-launch workspace initialization when the application's working directory is not writable</li>
+                    <li>Fixed tree headers and scrollbar areas retaining the previous theme's colors on Windows</li>
+                    <li>Added background cleanup of installation caches from previous versions that have not been modified for more than a week</li>
+                    <li>Fixed clipped text in the Tip of the Day dialog on macOS</li>
+                    <li>Updated remaining Eclipse-provided menu and view icons to use DBeaver icons</li>
+                    <li>Fixed vertical dialog tab backgrounds in the light theme</li>
+                    <li>The splash screen now displays startup progress details</li>
+                    <li>Applied the configured desktop font consistently across additional controls and prevented packed table and tree headers from being truncated</li>
+                </ul>
+                <p>New drivers:</p>
+                <ul>
+                    <li>Added Cloudflare D1 support</li>
+                </ul>
+                <p>Databases</p>
+                <p>ClickHouse:</p>
+                <ul>
+                    <li>Added support for editing nested Map, Tuple, and Array values</li>
+                    <li>Restored value-based filters for Nullable and LowCardinality columns (thanks to @guishiw)</li>
+                </ul>
+                <p>CUBRID:</p>
+                <ul>
+                    <li>Restored incoming foreign-key references in parent-table properties and diagrams for multi-schema databases (thanks to @zsewasdsdsd)</li>
+                </ul>
+                <p>Databricks:</p>
+                <ul>
+                    <li>Updated the JDBC driver to version 3.4.4</li>
+                </ul>
+                <p>Firebird:</p>
+                <ul>
+                    <li>Fixed a freeze when opening column properties in databases with many internal domains (thanks to @seonwooj0810)</li>
+                </ul>
+                <p>MariaDB:</p>
+                <ul>
+                    <li>Updated Connector/J to version 3.5.11 to address CVE-2026-119276, CVE-2026-119281, CVE-2026-119210, and CVE-2026-119277</li>
+                </ul>
+                <p>MySQL:</p>
+                <ul>
+                    <li>Added multiple-row selection to the database dump object chooser</li>
+                    <li>Fixed false SQL validation errors for column type modifiers such as UNSIGNED</li>
+                    <li>Native script execution is now disabled until a database is selected</li>
+                </ul>
+                <p>Oracle:</p>
+                <ul>
+                    <li>Fixed timestamp SQL literals preserving fractional seconds and time-zone offsets when dragging cells into SQL Editor or exporting fetched rows (thanks to @fizzbeom)</li>
+                    <li>Removed duplicate package results from database object searches</li>
+                    <li>Reorganized connection settings and local-client selection</li>
+                </ul>
+                <p>PostgreSQL:</p>
+                <ul>
+                    <li>Added publication and subscription management for PostgreSQL 14 and later</li>
+                    <li>Fixed invalid target-column aliases in generated MERGE statements (thanks to @brankoradovanovic-mcom)</li>
+                    <li>Fixed SSL connections failing because converted private-key files had overly permissive permissions (thanks to @zsewasdsdsd)</li>
+                    <li>Improved SQL script tokenization performance (thanks to @cypherbits)</li>
+                    <li>Updated the JDBC driver to version 42.7.14 to address CVE-2026-107314</li>
+                </ul>
+                <p>Redshift:</p>
+                <ul>
+                    <li>Fixed IAM Identity Center browser sign-in failing because a required driver dependency was missing (thanks to @gururagavan2008)</li>
+                </ul>
+                <p>SQL Server:</p>
+                <ul>
+                    <li>Fixed repeated rows and endless data transfers when using multiple-query extraction with SQL-based row limits</li>
+                </ul>
+                <p>SQLite:</p>
+                <ul>
+                    <li>Restored network and SSH tunnel settings for remote connections</li>
+                </ul>
+                <p>Localization:</p>
+                <ul>
+                    <li>Completed missing translations and corrected localized UI text across supported languages</li>
+                </ul>
+            </description>
+            <url>https://github.com/dbeaver/dbeaver/releases/tag/26.2.5</url>
         </release>
         <release version="26.2.4" date="2026-11-01">
             <description>
