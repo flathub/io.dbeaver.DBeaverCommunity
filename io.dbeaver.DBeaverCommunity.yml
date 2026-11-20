@@ -99,6 +99,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 16276
+          update-group: dbeaver-client
           url-template: https://github.com/dbeaver/dbeaver/archive/refs/tags/$version.tar.gz
         # Main application, x86
       - type: file
@@ -110,6 +111,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 16276
+          update-group: dbeaver-client
           url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux-x86_64.tar.gz
         # Main application, ARM
       - type: file
@@ -121,4 +123,5 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 16276
+          update-group: dbeaver-client
           url-template: https://github.com/dbeaver/dbeaver/releases/download/$version/dbeaver-ce-$version-linux-aarch64.tar.gz
