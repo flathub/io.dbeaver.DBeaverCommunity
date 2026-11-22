@@ -226,6 +226,38 @@ if [ ! -f "$HASH_FILE" ] || [ "$(cat "$HASH_FILE")" != "$CURRENT_HASH" ]; then
     echo "$CURRENT_VERSION" > "$VERSION_FILE"
 fi
 
+# --- Remember SSH host keys in the app's own Flatpak folder (issue #316, phase 2) ---
+
+# DBeaver saves the host keys of SSH tunnels in Eclipse's "SSH2 home", ~/.ssh by default, which
+# the Flatpak won't be able to write once home access is narrowed. Point it into ~/.var/app,
+# starting from a copy of ~/.ssh/known_hosts so known hosts aren't asked about again. It goes into
+# Eclipse's configuration area, so an SSH2 home set in the workspace preferences still wins.
+SSH_HOME="${XDG_CONFIG_HOME}/ssh"
+SSH_PREFS="${CONFIG_AREA}/.settings/org.eclipse.jsch.core.prefs"
+if [ ! -e "${SSH_HOME}/known_hosts" ]; then
+    mkdir -p -m 700 "$SSH_HOME"
+    cp "${HOME}/.ssh/known_hosts" "$SSH_HOME/" 2>/dev/null
+fi
+if ! grep -qs '^SSH2HOME=' "$SSH_PREFS"; then
+    # Eclipse reads preference files as Latin-1 Java properties: escape "\" and every other
+    # character as \uXXXX (UTF-16, so characters above U+FFFF become a surrogate pair)
+    prop_escape() {
+        local LC_ALL=C.UTF-8 s="${1//\\/\\\\}" out="" c n i
+        for ((i = 0; i < ${#s}; i++)); do
+            c="${s:i:1}"; printf -v n '%d' "'$c"
+            if ((n >= 32 && n < 127)); then out+="$c"
+            elif ((n > 0xFFFF)); then n=$((n - 0x10000)); printf -v c '\\u%04x\\u%04x' $((0xD800 + (n >> 10))) $((0xDC00 + (n & 0x3FF))); out+="$c"
+            else printf -v c '\\u%04x' "$n"; out+="$c"
+            fi
+        done
+        printf '%s' "$out"
+    }
+    mkdir -p "$(dirname "$SSH_PREFS")" && {
+        [ -s "$SSH_PREFS" ] || echo "eclipse.preferences.version=1"
+        echo "SSH2HOME=$(prop_escape "$SSH_HOME")"
+    } >> "$SSH_PREFS"
+fi
+
 # --- STEP 3: Trust the host's CA certificates (issue #1) ---
 
 # The bundled JDK only trusts its own cacerts. Flatpak forwards the host trust store
